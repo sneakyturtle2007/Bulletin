@@ -1,6 +1,6 @@
 const net = require('net');
 const https = require('https');
-
+const sql = require('sqlite3').verbose();
 const fs = require('fs');
 const path = require('path');
 /*
