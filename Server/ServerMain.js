@@ -3,14 +3,21 @@ const https = require('https');
 const sql = require('sqlite3').verbose();
 const fs = require('fs');
 const path = require('path');
-/*
+
 const express = require('express');
 const app = express();
 const Port_HTTPS = 443;
 
 app.use(express.static('../Website'));
 
-*/
+app.listen(Port_HTTPS, () => {
+    console.log('HTTP Server is running on port ' + Port_HTTPS + '.');
+});
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'Main.html'));
+});
+
 const Port_TCP = 22;
 const host = "127.0.0.1";
 const server = net.createServer();
