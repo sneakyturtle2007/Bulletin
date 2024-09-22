@@ -15,7 +15,7 @@ app.listen(Port_HTTPS, () => {
 });
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'Main.html'));
+    res.sendFile(path.join(__dirname,'../Website', 'Main.html'));
 });
 
 const Port_TCP = 22;
