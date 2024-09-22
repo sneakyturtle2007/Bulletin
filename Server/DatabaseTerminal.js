@@ -6,9 +6,9 @@ let db = new sql.Database('./Server/database.db', (err) => {
     }
     console.log('Connected to the in-memory SQlite database.');
 });
-db.serialize(() =>{
-    db.run('CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT NOT NULL, email TEXT NOT NULL DEFAULT "unknown", password TEXT NOT NULL)');
-});
+while(true){
+    
+}
 db.close((err) => {
     if (err) {
         console.error(err.message);
