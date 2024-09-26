@@ -10,24 +10,28 @@ let db = new sql.Database('./database.db',  (err) => {
 
 // Table Management
     function ShowTables(){
-        db.serialize(() =>{
+        db.serialize(()=>{
             db.all('SELECT name FROM sqlite_master WHERE type="table";', (err,tables) => {
                 if(err){
                     console.log(err.message);
                 }
                 console.log(tables);
-            })
+            });
         });
+        
+    
     }
     function CreateTable(name, listofparams){
         let sql = `CREATE TABLE ${name} (${listofparams});`;
-        db.run(sql, (err) => {
-            if(err){
-                console.log(err.message);
-            }
-            console.log(`${name} Table created`);
+        db.serialize(()=>{
+            db.run(sql, (err) => {
+                if(err){
+                    console.log(err.message);
+                }
+                console.log(`${name} Table created`);
+            });
         });
-
+            
     }
     function DropTable(name){
         let sql = `DROP TABLE ${name};`;
@@ -50,11 +54,11 @@ let db = new sql.Database('./database.db',  (err) => {
     }
  
 CreateTable('test', 'id INTEGER PRIMARY KEY, name TEXT');
-
+console.log("created table");
 ShowTables();
 
 DropTable('test');
-
+console.log("dropped table");
 ShowTables();
 
 
@@ -65,4 +69,4 @@ db.close((err) => {
     console.log('Close the database connection.');
 }); 
 
-modules.export = {ShowTables, CreateTable, DropTable, InsertIntoTable};
+module.export = {ShowTables, CreateTable, DropTable, InsertIntoTable};
