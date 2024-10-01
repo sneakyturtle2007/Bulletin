@@ -1,17 +1,14 @@
 const sql = require('sqlite3').verbose();
-const readline = require('node:readline');
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
 
-let db = new sql.Database('./database.db',  (err) => {
-    if (err) {
-        console.error(err.message);
-    }
-    console.log('Connected to the SQlite database.');
-});
 
+function Start(){
+    let db = new sql.Database('./database.db',  (err) => {
+        if (err) {
+            console.error(err.message);
+        }
+        console.log('Connected to the SQlite database.');
+    });  
+}
 function CloseDatabase(){
     db.close((err) => {
         if (err) {
@@ -137,36 +134,38 @@ function CloseDatabase(){
         }
 
 
+function test(){
+    db.serialize(() => {
+        CreateTable('test', 'id INTEGER PRIMARY KEY, name TEXT');
+        console.log("created table");
+        ShowTables();
 
-db.serialize(() => {
-    CreateTable('test', 'id INTEGER PRIMARY KEY, name TEXT');
-    console.log("created table");
-    ShowTables();
+        DropTable('test');
+        console.log("dropped table");
+        ShowTables();
 
-    DropTable('test');
-    console.log("dropped table");
-    ShowTables();
+        CreateUser("admin", "admin");
+        //DeleteUser('admin');
 
-    CreateUser("admin", "admin");
-    //DeleteUser('admin');
+        DisplayTableContents('users', (err, rows) => {
+            if(err){
+                console.log(err.message);
+            }
+            console.log(rows);
+        });
 
-    DisplayTableContents('users', (err, rows) => {
-        if(err){
-            console.log(err.message);
-        }
-        console.log(rows);
+        let value = DescribeTable('users', (err, table) => {
+            if(err){
+                console.log(err.message);
+            }else{
+                //console.log(table);
+                return table;
+            }
+        });
     });
+}
 
-    let value = DescribeTable('users', (err, table) => {
-        if(err){
-            console.log(err.message);
-        }else{
-            //console.log(table);
-            return table;
-        }
-    });
-});
 
 module.export = {ShowTables, CreateTable, DropTable, DisplayTableContents,
                 DeleteFromTable, UpdateTable, GetUserInfo, CreateUser, DeleteUser,
-                DescribeTable, CloseDatabase};
+                DescribeTable, CloseDatabase, Start};

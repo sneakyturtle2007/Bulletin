@@ -7,3 +7,4 @@ function test(){
     DB.ShowTables();
 }
 
+DB.Start();

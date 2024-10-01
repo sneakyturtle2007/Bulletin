@@ -7,6 +7,7 @@
 // importing local files
     const Login = require('./Login.js');
     const Database = require('./Database.js');
+    Database.start();
 // Gets the required modules for the server
     const express = require('express');
     const app = express();
