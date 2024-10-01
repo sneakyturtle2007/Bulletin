@@ -1,35 +1,52 @@
+/* Style Types */
 h1 {
-    text-align: left;
+    text-align: center;
     font-family: 'Architects Daughter', cursive;
     font-size: 50px;
-    float: left;
+    padding-top: 45px;
+    position: relative;
 }
 
-p 
-{
+h2 {
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+    padding-top: 30px;
+}
+
+h3 {
+    float: left;
+    left: 0;
+    font-family: 'Caveat', cursive;
+    margin-top: 0px;
+}
+
+p {
     text-align: center;
     font-family: 'Caveat', cursive;
     font-size: 15px;
 }
 
-.architects-daughter-regular {
-    font-family: "Architects Daughter", cursive;
-    font-weight: 400;
-    font-style: normal;
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    border: 1px #000000;
+    border-radius: 2%;
+    height: 25%;
 }
 
-.caveat-apples {
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+input[type=text], input[type=password] {
+    width: 40%;
+    display: inline;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
 }
 
-.wrapper {
-    width: 1170px;
-    margin: auto;
-}
-
+/* Navigation Bar */
 .nav-area li {
 	display: inline-block;
 }
@@ -48,6 +65,51 @@ p
 	color: #000000;
 }
 
-.nav-area {
+.nav-area li {
     float: right;
+}
+
+.nav-area lg{
+    float: left;
+}
+/* Holders */
+section{
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+}
+
+footer {
+    background: #181818;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+header {
+    padding-bottom: 1px;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+}
+
+.wrapper {
+    width: 1170px;
+    margin: auto;
+}
+
+/* Fonts */
+.architects-daughter-regular {
+    font-family: "Architects Daughter", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.caveat-apples {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
