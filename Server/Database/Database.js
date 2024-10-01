@@ -1,4 +1,9 @@
 const sql = require('sqlite3').verbose();
+const readline = require('node:readline');
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
 let db = new sql.Database('./database.db',  (err) => {
     if (err) {
@@ -7,7 +12,15 @@ let db = new sql.Database('./database.db',  (err) => {
     console.log('Connected to the SQlite database.');
 });
 
-
+function CloseDatabase(){
+    db.close((err) => {
+        if (err) {
+            console.error(err.message);
+            console.log('Error closing the database connection');
+        }
+        console.log('Successfully closed the database connection.');
+    });
+}
 // Table Management
     function DescribeTable(name, callback){
         db.all(`PRAGMA table_info(${name});`, (err,table) => {
@@ -15,7 +28,6 @@ let db = new sql.Database('./database.db',  (err) => {
                 console.log(err.message);
                 callback(err, null);
             }
-            console.log(table);
             callback(null, table);
         });
     }
@@ -52,17 +64,8 @@ let db = new sql.Database('./database.db',  (err) => {
                 console.log(err.message);
                 callback(err, null);
             }
-            console.log(rows);
+            //console.log(rows);
             callback(null,rows);
-        });
-    }
-    function InsertIntoTable(name, values){
-    
-        db.run(`INSERT INTO ${name} VALUES (${values});`, (err) => {
-            if(err){
-                console.log(err.message);
-            }
-            console.log(`Inserted into ${name}`);
         });
     }
     function DeleteFromTable(name, condition){
@@ -71,7 +74,8 @@ let db = new sql.Database('./database.db',  (err) => {
             if(err){
                 console.log(err.message);
             }
-            console.log(`Deleted from ${name}`);
+            
+            console.log(`Deleted ${condition} from ${name}`);
         });
         
     }
@@ -87,25 +91,49 @@ let db = new sql.Database('./database.db',  (err) => {
     
     // Users Table
         function GetUserInfo(username, callback){
-            db.all(`SELECT username=${username} FROM users;`, (err,rows) => {
-                if(err){
-                    console.log(err.message);
-                    callback(err, null);
-                }
-                callback(null, rows);
-                console.log(rows);
+            db.serialize(() => {
+                db.all(`SELECT * FROM users WHERE username = ?;`, [username], (err,rows) => {
+                    if(err){
+                        console.log(err.message);
+                        callback(err, null);
+                    }
+                    callback(null, rows);
+                    console.log(rows);
+                });
             });
-
+                
         }
         function CreateUser(username, password){
-           
-            db.run(`INSERT INTO users (username, password) VALUES (${username}, ${password});`, (err) => {
+            
+            let userExists = GetUserInfo(username, (err, rows) => {
                 if(err){
                     console.log(err.message);
+                    console.log("Error in getting user info");
                 }
-                console.log(`Inserted into users`);
+                if(rows.length > 0){
+                    console.log("User already exists");
+                    userExists = true;
+                    return userExists;
+                }else{
+                    userExists = false;
+                    db.run('INSERT INTO users (username, password) VALUES (?, ?);',[username, password], (err) => {
+                        if(err){
+                            console.log(err.message);
+                        }
+                        console.log(`Inserted ${username} into users`);
+                    });
+                    return userExists;
+                }
             });
-
+            if(userExists == false){
+                
+            }
+        
+        }  
+            
+        function DeleteUser(username){
+            let condition = `username="${username}"`;
+            DeleteFromTable('users', condition);
         }
 
 
@@ -118,8 +146,9 @@ db.serialize(() => {
     DropTable('test');
     console.log("dropped table");
     ShowTables();
-    
-    CreateUser('admin', 'admin');
+
+    CreateUser("admin", "admin");
+    //DeleteUser('admin');
 
     DisplayTableContents('users', (err, rows) => {
         if(err){
@@ -127,22 +156,17 @@ db.serialize(() => {
         }
         console.log(rows);
     });
+
+    let value = DescribeTable('users', (err, table) => {
+        if(err){
+            console.log(err.message);
+        }else{
+            //console.log(table);
+            return table;
+        }
+    });
 });
 
-let value = DescribeTable('users', (err, table) => {
-    if(err){
-        console.log(err.message);
-    }else{
-        //console.log(table);
-        return table;
-    }
-});
-
-db.close((err) => {
-    if (err) {
-        console.error(err.message);
-    }
-    console.log('Close the database connection.');
-}); 
-
-module.export = {ShowTables, CreateTable, DropTable, InsertIntoTable};
+module.export = {ShowTables, CreateTable, DropTable, DisplayTableContents,
+                DeleteFromTable, UpdateTable, GetUserInfo, CreateUser, DeleteUser,
+                DescribeTable, CloseDatabase};
