@@ -13,7 +13,7 @@ let db = new sql.Database('./database.db',  (err) => {
         db.all(`PRAGMA table_info(${name});`, (err,table) => {
             if(err){
                 console.log(err.message);
-                return callback(err, null);
+                callback(err, null);
             }
             console.log(table);
             callback(null, table);
@@ -21,32 +21,23 @@ let db = new sql.Database('./database.db',  (err) => {
     }
 
     function ShowTables(){
-        db.serialize(()=>{
-            db.all('SELECT name FROM sqlite_master WHERE type="table";', (err,tables) => {
-                if(err){
-                    console.log(err.message);
-                }
-                console.log(tables);
-            });
+        db.all('SELECT name FROM sqlite_master WHERE type="table";', (err,tables) => {
+            if(err){
+                console.log(err.message);
+            }
+            console.log(tables);
         });
-        
-    
     }
     function CreateTable(name, listofparams){
-        let sql = `CREATE TABLE ${name} (${listofparams});`;
-        db.serialize(()=>{
-            db.run(sql, (err) => {
-                if(err){
-                    console.log(err.message);
-                }
-                console.log(`${name} Table created`);
-            });
+        db.run(`CREATE TABLE ${name} (${listofparams});`, (err) => {
+            if(err){
+                console.log(err.message);
+            }
+            console.log(`${name} Table created`);
         });
-            
     }
     function DropTable(name){
-        let sql = `DROP TABLE ${name};`;
-        db.run(sql, (err) => {
+        db.run(`DROP TABLE ${name};`, (err) => {
             if(err){
                 console.log(err.message);
             }
@@ -54,35 +45,98 @@ let db = new sql.Database('./database.db',  (err) => {
         });
     }
 // Information Management
+    function DisplayTableContents(name, callback){
+        
+        db.all(`SELECT * FROM ${name};`, (err,rows) => {
+            if(err){
+                console.log(err.message);
+                callback(err, null);
+            }
+            console.log(rows);
+            callback(null,rows);
+        });
+    }
     function InsertIntoTable(name, values){
-        let sql = `INSERT INTO ${name} VALUES (${values});`;
-        db.run(sql, (err) => {
+    
+        db.run(`INSERT INTO ${name} VALUES (${values});`, (err) => {
             if(err){
                 console.log(err.message);
             }
             console.log(`Inserted into ${name}`);
         });
     }
- 
-CreateTable('test', 'id INTEGER PRIMARY KEY, name TEXT');
-console.log("created table");
-ShowTables();
+    function DeleteFromTable(name, condition){
+        
+        db.run(`DELETE FROM ${name} WHERE ${condition};`, (err) => {
+            if(err){
+                console.log(err.message);
+            }
+            console.log(`Deleted from ${name}`);
+        });
+        
+    }
+    function UpdateTable(name, values, condition){
+        
+        db.run(`UPDATE ${name} SET ${values} WHERE ${condition};`, (err) => {
+            if(err){
+                console.log(err.message);
+            }
+            console.log(`Updated ${name}`);
+        });
+    }
+    
+    // Users Table
+        function GetUserInfo(username, callback){
+            db.all(`SELECT username=${username} FROM users;`, (err,rows) => {
+                if(err){
+                    console.log(err.message);
+                    callback(err, null);
+                }
+                callback(null, rows);
+                console.log(rows);
+            });
 
-DropTable('test');
-console.log("dropped table");
-ShowTables();
+        }
+        function CreateUser(username, password){
+           
+            db.run(`INSERT INTO users (username, password) VALUES (${username}, ${password});`, (err) => {
+                if(err){
+                    console.log(err.message);
+                }
+                console.log(`Inserted into users`);
+            });
+
+        }
 
 
-DescribeTable('users', (err, table) => {
+
+db.serialize(() => {
+    CreateTable('test', 'id INTEGER PRIMARY KEY, name TEXT');
+    console.log("created table");
+    ShowTables();
+
+    DropTable('test');
+    console.log("dropped table");
+    ShowTables();
+    
+    CreateUser('admin', 'admin');
+
+    DisplayTableContents('users', (err, rows) => {
+        if(err){
+            console.log(err.message);
+        }
+        console.log(rows);
+    });
+});
+
+let value = DescribeTable('users', (err, table) => {
     if(err){
         console.log(err.message);
     }else{
-        console.log(table);
+        //console.log(table);
+        return table;
     }
 });
-
-
-
 
 db.close((err) => {
     if (err) {
