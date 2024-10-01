@@ -9,6 +9,19 @@ let db = new sql.Database('./database.db',  (err) => {
 
 
 // Table Management
+    async function DescribeTable(name){
+        var results = await db.serialize( async ()=>{
+            let result = db.all(`PRAGMA table_info(${name});`,(err,table) => {
+                if(err){
+                    console.log(err.message);
+                }
+                //console.log(table);
+                result = table.toString();
+            });
+            return result;
+        });
+        return results;
+    }
     function ShowTables(){
         db.serialize(()=>{
             db.all('SELECT name FROM sqlite_master WHERE type="table";', (err,tables) => {
@@ -60,6 +73,13 @@ ShowTables();
 DropTable('test');
 console.log("dropped table");
 ShowTables();
+try{
+   DescribeTable('users').then((result) => {
+        console.log(result);
+    }); 
+}catch(err){
+    console.log(err.message);
+}
 
 
 db.close((err) => {
