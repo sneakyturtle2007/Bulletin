@@ -10,17 +10,18 @@ let db = new sql.Database('./database.db',  (err) => {
 
 // Table Management
     async function DescribeTable(name){
-        var results = await db.serialize( async ()=>{
-            let result = db.all(`PRAGMA table_info(${name});`,(err,table) => {
+       
+        return new Promise((resolve, reject) => {
+            db.all(`PRAGMA table_info(${name});`, async (err,table) => {
                 if(err){
                     console.log(err.message);
+                    reject(err.message);
                 }
-                //console.log(table);
-                result = table.toString();
+                console.log(table);
+
+                resolve(table.toString());
             });
-            return result;
         });
-        return results;
     }
     function ShowTables(){
         db.serialize(()=>{
@@ -73,13 +74,14 @@ ShowTables();
 DropTable('test');
 console.log("dropped table");
 ShowTables();
-try{
-   DescribeTable('users').then((result) => {
-        console.log(result);
-    }); 
+try {
+
+    let users = async function(){ let users = await DescribeTable('users'); console.log(users); };
+    //console.log(users);
 }catch(err){
-    console.log(err.message);
+    console.log(err);
 }
+
 
 
 db.close((err) => {
