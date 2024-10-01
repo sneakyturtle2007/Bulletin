@@ -4,7 +4,10 @@
     const sql = require('sqlite3').verbose();
     const fs = require('fs');
     const path = require('path');
-
+// importing local files
+    const Login = require('./Login.js');
+    const Database = require('./Database.js');
+    Database.start();
 // Gets the required modules for the server
     const express = require('express');
     const app = express();
@@ -66,8 +69,6 @@
     
     // login
         app.get('/api/login', async function (req, res) {
-            var username = req.query.username;
-            var password = req.query.password;
-            var result = await Login.login(username, password);
+            
             res.json(result);
         })
