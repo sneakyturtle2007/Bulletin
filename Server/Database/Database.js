@@ -9,20 +9,17 @@ let db = new sql.Database('./database.db',  (err) => {
 
 
 // Table Management
-    async function DescribeTable(name){
-       
-        return new Promise((resolve, reject) => {
-            db.all(`PRAGMA table_info(${name});`, async (err,table) => {
-                if(err){
-                    console.log(err.message);
-                    reject(err.message);
-                }
-                console.log(table);
-
-                resolve(table.toString());
-            });
+    function DescribeTable(name, callback){
+        db.all(`PRAGMA table_info(${name});`, (err,table) => {
+            if(err){
+                console.log(err.message);
+                return callback(err, null);
+            }
+            console.log(table);
+            callback(null, table);
         });
     }
+
     function ShowTables(){
         db.serialize(()=>{
             db.all('SELECT name FROM sqlite_master WHERE type="table";', (err,tables) => {
@@ -74,13 +71,16 @@ ShowTables();
 DropTable('test');
 console.log("dropped table");
 ShowTables();
-try {
 
-    let users = async function(){ let users = await DescribeTable('users'); console.log(users); };
-    //console.log(users);
-}catch(err){
-    console.log(err);
-}
+
+DescribeTable('users', (err, table) => {
+    if(err){
+        console.log(err.message);
+    }else{
+        console.log(table);
+    }
+});
+
 
 
 
