@@ -5,35 +5,16 @@
     const fs = require('fs');
     const path = require('path');
 // importing local files
-    const Login = require('./Login.js');
-    const Database = require('./Database.js');
-    Database.start();
-// Gets the required modules for the server
-    const express = require('express');
-    const app = express();
-    const Port_HTTPS = 443;
+    const Login = require('./Database_API/Login.js');
+    const Database = require('./Database/Database.js');
 
-// Server Connections
-    // Loads the website
-        app.use(express.static('../Website'));
+// Starting Database 
+const db = new Database();
 
-    // Starts the server on the port
-        app.listen(Port_HTTPS, () => {
-            console.log('HTTP Server is running on port ' + Port_HTTPS + '.');
-        });
-
-    // Static pages = Pages that don't change
-        app.get('/', function (req, res) {
-            res.sendFile(path.join(__dirname,'../Website', 'Main.html'));
-        });
-    // Dynamic pages = Pages that change based off of user input
-
-
-// Conn Info/Create Server
+// Connection Info/Create Server
     const Port_TCP = 22;
     const host = "127.0.0.1";
     const server = net.createServer();
-
 
 // TCP Server
     var sockets = [];
@@ -47,13 +28,20 @@
             console.log('Disconnected: ' + socket.remoteAddress + ':' + socket.remotePort);
             sockets.splice(sockets.indexOf(socket), 1);
         });
-
+        socket.on('data', function(data){
+            console.log('Received: ' + data);
+            if(data == 'Login'){
+                console.log("logging in");
+                Login.Login(db, socket);
+            }
+            socket.write('Echo: ' + data);
+        });
         socket.on('error', function(err){
             console.log('Error: ' + err);
         });
 
     });
-
+    
     //Starts the server on the port and IP
     server.listen(Port_TCP, host, () => {
         console.log('TCP Server is running on port ' + Port_TCP + '.');
@@ -65,10 +53,3 @@
         console.log('Error: ', err);
     });
 
-// API SETUP
-    
-    // login
-        app.get('/api/login', async function (req, res) {
-            
-            res.json(result);
-        })
