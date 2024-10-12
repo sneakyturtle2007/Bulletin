@@ -9,6 +9,7 @@ public class TestConnection {
         OutputStreamWriter outputStreamWriter;
         BufferedReader bufferedReader;
         BufferedWriter bufferedWriter;
+        System.out.println("test");
         try {
             // Create a socket to connect to the server
             Socket socket = new Socket("127.0.0.1", 22);
