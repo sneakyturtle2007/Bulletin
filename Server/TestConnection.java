@@ -30,23 +30,13 @@ public class TestConnection {
             if(bufferedReader.ready()){
                 message = bufferedReader.readLine();
             }
-            
+            bufferedReader.wait();
             System.out.println("Server: " + message);
             while(true){
+                bufferedReader.wait();
                 if(bufferedReader.ready()){
-                    System.out.println("Testsing");
-                    if(bufferedReader.ready()){
-                        message = bufferedReader.readLine();
-                    }
-                    
-                    System.out.println(message);
-                    if(message.equals("Login successful")){
-                        break;
-                    } else {
-                        System.out.println("Server: " + message);
-                    }
-                }else{
-                    System.out.println("Not Ready");
+                    message = bufferedReader.readLine();
+                    System.out.println("Server: " + message);
                 }
             }
             // Close the socket
