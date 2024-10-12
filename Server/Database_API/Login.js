@@ -10,9 +10,9 @@ function Login(data, db){
                 reject(err);
             }
             if(result){
-                resolve('Login successful');
+                resolve('Login successful\n');
             }else{
-                resolve('Login failed');
+                resolve('Login failed\n');
             }
         });
     });

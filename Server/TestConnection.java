@@ -27,16 +27,16 @@ public class TestConnection {
             bufferedWriter.flush();
             System.out.println("sent message to server");
             String message = "";
-            if(bufferedReader.ready()){
-                message = bufferedReader.readLine();
-            }
-            bufferedReader.wait();
             System.out.println("Server: " + message);
             while(true){
-                bufferedReader.wait();
                 if(bufferedReader.ready()){
+                    System.out.println("debug");
                     message = bufferedReader.readLine();
+                    System.out.println("Blahblahlbah");
                     System.out.println("Server: " + message);
+                    if(message.equals("Login successful")){
+                        break;
+                    }
                 }
             }
             // Close the socket

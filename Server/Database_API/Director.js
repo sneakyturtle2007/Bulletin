@@ -9,12 +9,12 @@ async function ProcessData(data, db, socket){
             case 'login':
                 let result = await login.Login(args, db);
                 return result;
+                break;
             case 'exit':
                 socket.end();
                 break;
             default:
-                console.log('Unknown command');
-                return "Unknown Command";
+                return "Unknown Command\n";
         }
     }
 }
