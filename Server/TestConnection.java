@@ -3,35 +3,7 @@ import java.io.*;
 import java.net.*;
 
 public class TestConnection {
-    
-    static void login(BufferedReader bufferedReader, BufferedWriter bufferedWriter) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your username: ");
-        String username = scanner.nextLine();
-        System.out.println("Enter your password: ");
-        String password = scanner.nextLine();
-        bufferedWriter.write(username);
-        bufferedWriter.newLine();
-        bufferedWriter.flush();
-        bufferedWriter.write(password);
-        bufferedWriter.newLine();
-        bufferedWriter.flush();
-        while(true){
-            if(bufferedReader.ready()){
-                String message = bufferedReader.readLine();
-                if(message.equals("exit")){
-                    System.out.println("Server: " + message);
-                    bufferedWriter.write("exit");
-                    bufferedWriter.newLine();
-                    bufferedWriter.flush();
-                    break;
-                } else {
-                    System.out.println("Server: " + message);
-                }
-            }
-        }
-        scanner.close();
-    }
+
     public static void main(String[] args) {
         InputStreamReader inputStreamReader;
         OutputStreamWriter outputStreamWriter;
@@ -48,19 +20,32 @@ public class TestConnection {
             bufferedWriter.write("Hello from the client");
             bufferedWriter.newLine();
             bufferedWriter.flush();
-            bufferedWriter.write("Login");
+            bufferedWriter.write("login admin admin");
             bufferedWriter.newLine();
+            System.out.println("test");
             bufferedWriter.flush();
+            System.out.println("sent message to server");
+            String message = "";
+            if(bufferedReader.ready()){
+                message = bufferedReader.readLine();
+            }
+            
+            System.out.println("Server: " + message);
             while(true){
                 if(bufferedReader.ready()){
-                    String message = bufferedReader.readLine();
-                    if(message.toString().equals("exit")){
-                        System.out.println("Server: " + message);
+                    System.out.println("Testsing");
+                    if(bufferedReader.ready()){
+                        message = bufferedReader.readLine();
+                    }
+                    
+                    System.out.println(message);
+                    if(message.equals("Login successful")){
                         break;
-                    } else if(message.toString().equals("Enter username")){ 
-                        TestConnection.login(bufferedReader, bufferedWriter);
+                    } else {
                         System.out.println("Server: " + message);
                     }
+                }else{
+                    System.out.println("Not Ready");
                 }
             }
             // Close the socket

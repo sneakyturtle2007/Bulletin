@@ -1,47 +1,40 @@
 
-
-var db;
-
-function Login(db, connection){
-    db = db;
-    connection.write('Enter username');
-    connection.on('data', function(data){
-
-        var username = data.toString().trim();
-        connection.write('Enter password');
-
-        connection.on('data', function(data){
-            var password = data.toString().trim();
-            if(CheckLogin(username, password)){
-                connection.write('Logged in');
-                connection.on('data', function(data){
-                    if(data == 'exit'){
-                        connection.end();
-                    }
-                });
+function Login(data, db){
+    return new Promise((resolve, reject) => {
+        var username = data[0];
+        var password = data[1];
+        console.log('Username: ' + username);
+        CheckLogin(username, password, db, (err, result) => {
+            if(err){
+                console.log(err);
+                reject(err);
+            }
+            if(result){
+                resolve('Login successful');
             }else{
-                connection.write('Login failed');
+                resolve('Login failed');
             }
         });
     });
+    
 }
-function CheckLogin(username, password){
+function CheckLogin(username, password, db,  callback){
     db.GetUserInfo(username, (err, user) => {
         if(err){
             console.log(err);
-            return null;
+            callback(err, false);
         }
         if(user.length == 0){
             console.log('User not found');
-            return null;
+            callback(null, false);
         }else if(user[0].password == password){
             console.log('User logged in');
-            return true;
+            callback(null, true);
         }else{
-            console.log('Incorrect password');
-            return false;
+            console.log('Incorrect login');
+            callback(null, false);
         } 
     });
 }
 
-module.export = {Login};
+module.exports = {Login};
