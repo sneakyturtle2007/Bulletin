@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
                     console.log('Response: ' + response);
                     console.log(response);
                     console.log(response.toString());
-                    socket.write(response.toString(), (err) =>{ console.log(err);});
+                    socket.write(response.toString());
                 }catch(err){
                     console.log('Error: ' + err);
                     socket.write('Error: ' + err);

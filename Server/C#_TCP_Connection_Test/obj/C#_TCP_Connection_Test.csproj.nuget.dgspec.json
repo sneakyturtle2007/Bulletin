@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\C#_TCP_Connection_Test.csproj": {}
+    "C:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\C#_TCP_Connection_Test.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\C#_TCP_Connection_Test.csproj": {
+    "C:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\C#_TCP_Connection_Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\C#_TCP_Connection_Test.csproj",
+        "projectUniqueName": "C:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\C#_TCP_Connection_Test.csproj",
         "projectName": "C#_TCP_Connection_Test",
-        "projectPath": "c:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\C#_TCP_Connection_Test.csproj",
+        "projectPath": "C:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\C#_TCP_Connection_Test.csproj",
         "packagesPath": "C:\\Users\\Luis Blake\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\obj\\",
+        "outputPath": "C:\\Users\\Luis Blake\\Documents\\GitHub\\Bulletin\\Server\\C#_TCP_Connection_Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

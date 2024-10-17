@@ -6,8 +6,9 @@ class Database{
         this.db = new sql.Database('./Database/database.db',  (err) => {
             if (err) {
                 console.error(err.message);
+            }else{
+                console.log('Connected to the SQlite database.');
             }
-            console.log('Connected to the SQlite database.');
         });
     }
     // Database Management
@@ -17,7 +18,7 @@ class Database{
                 console.error(err.message);
                 console.log('Error closing the database connection');
             }
-            console.log('Successfully closed the database connection.');
+            console.log('createdUserfully closed the database connection.');
         });
     }
     // Table Management
@@ -56,84 +57,82 @@ class Database{
             });
         }
     // Information Management
-    DisplayTableContents(name, callback){
-        
-        this.db.all(`SELECT * FROM ${name};`, (err,rows) => {
-            if(err){
-                console.log(err.message);
-                callback(err, null);
-            }
-            //console.log(rows);
-            callback(null,rows);
-        });
-    }
-    DeleteFromTable(name, condition){
-        
-        this.db.run(`DELETE FROM ${name} WHERE ${condition};`, (err) => {
-            if(err){
-                console.log(err.message);
-            }
+        DisplayTableContents(name, callback){
             
-            console.log(`Deleted ${condition} from ${name}`);
-        });
-        
-    }
-    UpdateTable(name, values, condition){
-        
-        this.db.run(`UPDATE ${name} SET ${values} WHERE ${condition};`, (err) => {
-            if(err){
-                console.log(err.message);
-            }
-            console.log(`Updated ${name}`);
-        });
-    }
-    
-    // Users Table
-    GetUserInfo(username, callback){
-        this.db.serialize(() => {
-            this.db.all(`SELECT * FROM users WHERE username = ?;`, [username], (err,user) => {
+            this.db.all(`SELECT * FROM ${name};`, (err,rows) => {
                 if(err){
                     console.log(err.message);
                     callback(err, null);
                 }
-                callback(null, user);
-                //console.log(user);
+                //console.log(rows);
+                callback(null,rows);
             });
-        });
+        }
+        DeleteFromTable(name, condition){
             
-    }
-    CreateUser(username, password){
-        
-        let userExists = GetUserInfo(username, (err, rows) => {
-            if(err){
-                console.log(err.message);
-                console.log("Error in getting user info");
-            }
-            if(rows.length > 0){
-                console.log("User already exists");
-                userExists = true;
-                return userExists;
-            }else{
-                userExists = false;
-                this.db.run('INSERT INTO users (username, password) VALUES (?, ?);',[username, password], (err) => {
-                    if(err){
-                        console.log(err.message);
-                    }
-                    console.log(`Inserted ${username} into users`);
-                });
-                return userExists;
-            }
-        });
-        if(userExists == false){
+            this.db.run(`DELETE FROM ${name} WHERE ${condition};`, (err) => {
+                if(err){
+                    console.log(err.message);
+                }
+                
+                console.log(`Deleted ${condition} from ${name}`);
+            });
             
         }
-    
-    }  
+        UpdateTable(name, values, condition){
+            
+            this.db.run(`UPDATE ${name} SET ${values} WHERE ${condition};`, (err) => {
+                if(err){
+                    console.log(err.message);
+                }
+                console.log(`Updated ${name}`);
+            });
+        }
         
-    DeleteUser(username){
-        let condition = `username="${username}"`;
-        DeleteFromTable('users', condition);
-    }
+    // Users Table
+        GetUserInfo(username, callback){
+            this.db.serialize(() => {
+                this.db.all(`SELECT * FROM users WHERE username = ?;`, [username], (err,user) => {
+                    if(err){
+                        console.log(err.message);
+                        callback(err, null);
+                    }
+                    callback(null, user);
+                    //console.log(user);
+                });
+            });
+                
+        }
+
+        CreateUser(username, password, callback){
+                this.GetUserInfo(username, (err, rows) => {
+                    let createdUser;
+                    if(err){
+                        console.log(err.message);
+                        console.log("Error in getting user info");
+                        callback(err, false);
+                    }
+                    if(rows.length > 0){
+                        console.log("User already exists");
+                        createdUser = false;
+                        callback(null, createdUser);
+                    }else{
+                        createdUser = true;
+                        this.db.run('INSERT INTO users (username, password) VALUES (?, ?);',[username, password], (err) => {
+                            if(err){
+                                console.log(err.message);
+                            }
+                            console.log(`Inserted ${username} into users`);
+                        });
+                        callback(null, createdUser);
+                    }
+                });
+        }  
+            
+        DeleteUser(username){
+            let condition = `username="${username}"`;
+            DeleteFromTable('users', condition);
+        }
 
 
     test(){

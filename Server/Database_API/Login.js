@@ -1,8 +1,8 @@
 
-function Login(data, db){
+function Login(args, db){
     return new Promise((resolve, reject) => {
-        var username = data[0];
-        var password = data[1];
+        var username = args[0];
+        var password = args[1];
         console.log('Username: ' + username);
         CheckLogin(username, password, db, (err, result) => {
             if(err){
@@ -10,13 +10,12 @@ function Login(data, db){
                 reject(err);
             }
             if(result){
-                resolve('Login successful\n');
+                resolve('true\n');
             }else{
-                resolve('Login failed\n');
+                resolve('false\n');
             }
         });
     });
-    
 }
 function CheckLogin(username, password, db,  callback){
     db.GetUserInfo(username, (err, user) => {

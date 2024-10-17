@@ -18,23 +18,19 @@ public class TestConnection {
             bufferedReader = new BufferedReader(inputStreamReader);
             bufferedWriter = new BufferedWriter(outputStreamWriter);
             System.out.println("Connected to the server");
-            bufferedWriter.write("Hello from the client");
             bufferedWriter.newLine();
             bufferedWriter.flush();
-            bufferedWriter.write("login admin admin");
+            bufferedWriter.write("createuser test test");
             bufferedWriter.newLine();
-            System.out.println("test");
             bufferedWriter.flush();
             System.out.println("sent message to server");
             String message = "";
             System.out.println("Server: " + message);
             while(true){
                 if(bufferedReader.ready()){
-                    System.out.println("debug");
                     message = bufferedReader.readLine();
-                    System.out.println("Blahblahlbah");
                     System.out.println("Server: " + message);
-                    if(message.equals("Login successful")){
+                    if(message.equals("true")){
                         break;
                     }
                 }
