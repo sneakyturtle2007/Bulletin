@@ -1,34 +1,21 @@
-
+﻿namespace C__TCP_Connection_Test;
 using System;
-
 using System.Net;
-
 using System.Net.Sockets;
-
 using System.Text;
 
-
-
-class TcpClientExample
-
-{
-
-    static void Main(string[] args)
-
-    {
+class TcpClientExample{
+    static void Main(string[] args){
 
         string serverAddress = "127.0.0.1"; // Localhost
-
+        
         int serverPort = 22;
-
-
-
         try{
             using (TcpClient client = new TcpClient(serverAddress, serverPort)){
                 Console.WriteLine("Connected to server");
                 // Send data to server
                 NetworkStream stream = client.GetStream();
-                byte[] data = Encoding.ASCII.GetBytes("Hello from client");
+                byte[] data = Encoding.ASCII.GetBytes("login admin admin");
                 stream.Write(data, 0, data.Length);
                 // Receive data from server
                 byte[] buffer = new byte[1024];
