@@ -3,7 +3,7 @@ const sql = require('sqlite3').verbose();
 class Database{
 
     constructor(){
-        this.db = new sql.Database('./Database/database.db',  (err) => {
+        this.db = new sql.Database('./Database/database.db',  (err) => {//'database.db'
             if (err) {
                 console.error(err.message);
             }else{
@@ -104,7 +104,7 @@ class Database{
                 
         }
 
-        CreateUser(username, password, callback){
+        CreateUser(username, email, password, callback){
                 this.GetUserInfo(username, (err, rows) => {
                     let createdUser;
                     if(err){
@@ -118,7 +118,7 @@ class Database{
                         callback(null, createdUser);
                     }else{
                         createdUser = true;
-                        this.db.run('INSERT INTO users (username, password) VALUES (?, ?);',[username, password], (err) => {
+                        this.db.run('INSERT INTO users (username, email, password) VALUES (?, ?, ?);',[username, email, password], (err) => {
                             if(err){
                                 console.log(err.message);
                             }
@@ -131,31 +131,31 @@ class Database{
             
         DeleteUser(username){
             let condition = `username="${username}"`;
-            DeleteFromTable('users', condition);
+            this.DeleteFromTable('users', condition);
         }
 
 
     test(){
         this.db.serialize(() => {
-            CreateTable('test', 'id INTEGER PRIMARY KEY, name TEXT');
+            /*this.CreateTable('test', 'id INTEGER PRIMARY KEY, name TEXT');
             console.log("created table");
-            ShowTables();
+            this.ShowTables();
 
-            DropTable('test');
+            this.DropTable('test');
             console.log("dropped table");
-            ShowTables();
+            this.ShowTables();*/
 
-            CreateUser("admin", "admin");
-            //DeleteUser('admin');
+            //CreateUser("admin", "admin");
+            this.DeleteUser('test2');
 
-            DisplayTableContents('users', (err, rows) => {
+            this.DisplayTableContents('users', (err, rows) => {
                 if(err){
                     console.log(err.message);
                 }
                 console.log(rows);
             });
 
-            let value = DescribeTable('users', (err, table) => {
+            let value = this.DescribeTable('users', (err, table) => {
                 if(err){
                     console.log(err.message);
                 }else{

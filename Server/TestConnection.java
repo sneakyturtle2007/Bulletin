@@ -20,7 +20,7 @@ public class TestConnection {
             System.out.println("Connected to the server");
             bufferedWriter.newLine();
             bufferedWriter.flush();
-            bufferedWriter.write("createuser test test");
+            bufferedWriter.write("createuser test2 email@gmail.com test2");
             bufferedWriter.newLine();
             bufferedWriter.flush();
             System.out.println("sent message to server");
