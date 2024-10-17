@@ -92,14 +92,26 @@ class Database{
     // Users Table
         GetUserInfo(username, callback){
             this.db.serialize(() => {
-                this.db.all(`SELECT * FROM users WHERE username = ?;`, [username], (err,user) => {
-                    if(err){
-                        console.log(err.message);
-                        callback(err, null);
-                    }
-                    callback(null, user);
-                    //console.log(user);
-                });
+                if(username.includes('@')){
+                    this.db.all(`SELECT * FROM users WHERE email = ?;`, [username], (err,user) => {
+                        if(err){
+                            console.log(err.message);
+                            callback(err, null);
+                        }
+                        callback(null, user);
+                        //console.log(user);
+                    });
+                }else{
+                    this.db.all(`SELECT * FROM users WHERE username = ?;`, [username], (err,user) => {
+                        if(err){
+                            console.log(err.message);
+                            callback(err, null);
+                        }
+                        callback(null, user);
+                        //console.log(user);
+                    });    
+                }
+                
             });
                 
         }
@@ -110,21 +122,33 @@ class Database{
                     if(err){
                         console.log(err.message);
                         console.log("Error in getting user info");
-                        callback(err, false);
+                        callback(err, "Error in getting user info");
                     }
-                    if(rows.length > 0){
-                        console.log("User already exists");
+                    if(rows.length > 0 ){
+                        console.log("Username taken");
                         createdUser = false;
-                        callback(null, createdUser);
+                        callback(null, "Username taken");
                     }else{
-                        createdUser = true;
-                        this.db.run('INSERT INTO users (username, email, password) VALUES (?, ?, ?);',[username, email, password], (err) => {
+                        this.GetUserInfo(email, (err, rows) => {
                             if(err){
                                 console.log(err.message);
+                                console.log("Error in getting user info");
+                                callback(err, "Error in getting user info");
                             }
-                            console.log(`Inserted ${username} into users`);
+                            if(rows.length > 0 ){
+                                console.log("Email taken");
+                                createdUser = false;
+                                callback(null, "Email taken");
+                            }
+                            createdUser = true;
+                            this.db.run('INSERT INTO users (username, email, password) VALUES (?, ?, ?);',[username, email, password], (err) => {
+                                if(err){
+                                    console.log(err.message);
+                                }
+                                console.log(`Inserted ${username} into users`);
+                            });
+                            callback(null, "User created");
                         });
-                        callback(null, createdUser);
                     }
                 });
         }  

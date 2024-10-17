@@ -11,11 +11,7 @@ function CreateUser(args, db){
                 console.log(err);
                 reject(err);
             }
-            if(result){
-                resolve('true\n');
-            }else{
-                resolve('false\n');
-            }
+            resolve(result);
         });
     });
 }

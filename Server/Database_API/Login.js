@@ -10,9 +10,9 @@ function Login(args, db){
                 reject(err);
             }
             if(result){
-                resolve('true\n');
+                resolve(result);
             }else{
-                resolve('false\n');
+                resolve(result);
             }
         });
     });
@@ -21,17 +21,17 @@ function CheckLogin(username, password, db,  callback){
     db.GetUserInfo(username, (err, user) => {
         if(err){
             console.log(err);
-            callback(err, false);
+            callback(err, "Error: + " + err.ToString());
         }
         if(user.length == 0){
-            console.log('User not found');
-            callback(null, false);
+            console.log("User not found");
+            callback(null, "User not found");
         }else if(user[0].password == password){
-            console.log('User logged in');
-            callback(null, true);
+            console.log("User logged in");
+            callback(null, "User logged in");
         }else{
-            console.log('Incorrect login');
-            callback(null, false);
+            console.log("Incorrect login");
+            callback(null, "Incorrect login");
         } 
     });
 }

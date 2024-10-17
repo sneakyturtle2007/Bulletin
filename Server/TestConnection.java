@@ -20,7 +20,7 @@ public class TestConnection {
             System.out.println("Connected to the server");
             bufferedWriter.newLine();
             bufferedWriter.flush();
-            bufferedWriter.write("createuser test2 email@gmail.com test2");
+            bufferedWriter.write("createuser test email@gmail.com test2");
             bufferedWriter.newLine();
             bufferedWriter.flush();
             System.out.println("sent message to server");
@@ -30,7 +30,7 @@ public class TestConnection {
                 if(bufferedReader.ready()){
                     message = bufferedReader.readLine();
                     System.out.println("Server: " + message);
-                    if(message.equals("true")){
+                    if(message.equals("User created")){
                         break;
                     }
                 }
