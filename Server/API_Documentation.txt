@@ -1,0 +1,6 @@
+API_Commands and their returns-
+    login <username or email> <password> 
+       - returns "User logged in" if login is successful, "Incorrect login" or "User not found" if login is unsuccessful
+    
+    creatuser <username> <email> <password> 
+       - returns "User created" if user is created successfully, "User already exists" if user already exists
