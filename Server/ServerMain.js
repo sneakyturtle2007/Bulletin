@@ -18,9 +18,11 @@ const app = express();
 app.use(express.static(path.join(__dirname, "../Website")));
 app.use(express.json());
 
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../Website/Main/Main.html'));
 });
+
 
 
 // Connection Info/Create Server
