@@ -1,4 +1,3 @@
-
 function CreateUser(args, db){
     return new Promise(async (resolve, reject) => {
         var username = args[0];
@@ -10,8 +9,9 @@ function CreateUser(args, db){
             if(err){
                 console.log(err);
                 reject(err);
+            }else{
+                resolve(result);
             }
-            resolve(result);
         });
     });
 }
