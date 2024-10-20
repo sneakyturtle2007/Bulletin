@@ -18,7 +18,7 @@ class Database{
                 console.error(err.message);
                 console.log('Error closing the database connection');
             }
-            console.log('createdUserfully closed the database connection.');
+            console.log('Successfully closed the database connection.');
         });
     }
     // Table Management
@@ -89,7 +89,7 @@ class Database{
             });
         }
         
-    // Users Table
+    // users Table
         GetUserInfo(username, callback){
             this.db.serialize(() => {
                 if(username.includes('@')){
@@ -118,7 +118,6 @@ class Database{
 
         CreateUser(username, email, password, callback){
                 this.GetUserInfo(username, (err, rows) => {
-                    let createdUser;
                     if(err){
                         console.log(err.message);
                         console.log("Error in getting user info");
@@ -126,7 +125,6 @@ class Database{
                     }
                     if(rows.length > 0 ){
                         console.log("Username taken");
-                        createdUser = false;
                         callback(null, "Username taken");
                     }else{
                         this.GetUserInfo(email, (err, rows) => {
@@ -137,10 +135,8 @@ class Database{
                             }
                             if(rows.length > 0 ){
                                 console.log("Email taken");
-                                createdUser = false;
                                 callback(null, "Email taken");
                             }
-                            createdUser = true;
                             this.db.run('INSERT INTO users (username, email, password) VALUES (?, ?, ?);',[username, email, password], (err) => {
                                 if(err){
                                     console.log(err.message);
@@ -157,8 +153,10 @@ class Database{
             let condition = `username="${username}"`;
             this.DeleteFromTable('users', condition);
         }
-
-
+    // events Table
+        CreateEvent(userID, title){
+            console.log("temp");
+        }
     test(){
         this.db.serialize(() => {
             /*this.CreateTable('test', 'id INTEGER PRIMARY KEY, name TEXT');
