@@ -16,7 +16,20 @@ function CreateUser(args, db){
 function DeleteUser(args, db){
     return new Promise(async (resolve, reject) => {
         username = args[0];
-        db.DeleteUser(username, (err, result) => {
+        try{
+            db.DeleteUser();
+        }catch(err){
+            reject(err);
+            return;
+        }
+        resolve("User Deleted");
+        
+    });
+}
+function GetUserInfo(args, db){
+    return new Promise(async (resolve, reject) => {
+        username = args[0];
+        db.GetUserInfo(username, (err, result) => {
             if(err){
                 reject(err);
             }else{
@@ -25,4 +38,4 @@ function DeleteUser(args, db){
         });
     });
 }
-module.exports = {CreateUser, DeleteUser};
+module.exports = {CreateUser, DeleteUser, GetUserInfo};

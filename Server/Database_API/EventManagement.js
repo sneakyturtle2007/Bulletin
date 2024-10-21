@@ -15,8 +15,10 @@ function CreateEvent(args, db){
             if(err){
                 console.log(err);
                 reject(err);
+                return;
             }else{
                 resolve(result);
+                return;
             }
         });
     });
@@ -25,15 +27,13 @@ function CreateEvent(args, db){
 function DeleteEvent(eventTitle, db){
     return new Promise(async (resolve, reject) =>{
         eventTitle = args[0];
-
-        db.DeleteEvent(eventTitle, (err, result) => {
-            if(err){
-                console.log(err);
-                reject(err);
-            }else{
-                resolve(result);
-            }
-        });
+        try{
+            db.DeleteEvent(eventTitle);
+        }catch(err){
+            reject(err);
+            return;
+        }  
+        resolve("Event deleted");
     });
 }
 

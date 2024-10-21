@@ -16,8 +16,24 @@ async function ProcessData(data, db, socket){
                 result = await usermanagement.CreateUser(args, db);
                 return result;
                 break;
+            case 'getuserinfo':
+                result = await usermanagement.GetUserInfo(args, db);
+                return result;
+                break;
             case 'deleteuser':
                 result = await usermanagement.DeleteUser(args, db);
+                return result;
+                break;
+            case 'createevent':
+                result = await eventmanagement.CreateEvent(args, db);
+                return result;
+                break;
+            case 'deleteevent':
+                result = await eventmanagement.DeleteEvent(args, db);
+                return result;
+                break;
+            case 'getevents':
+                result = await eventmanagement.GetEvents(args, db);
                 return result;
                 break;
             case 'exit':

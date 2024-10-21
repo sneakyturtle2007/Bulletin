@@ -186,8 +186,8 @@ class Database{
         DeleteEvent(title){
             this.DeleteFromTable('events', `title="${title}"`);
         }
-        GetAllEvents(callback){
-            this.db.all(`SELECT * FROM events;`, (err, events) =>{
+        GetAllEvents(userid, callback){
+            this.db.all(`SELECT * FROM events WHERE userid="${userid};`, (err, events) =>{
                 if(err){
                     console.log(err.message);
                     callback(err, null);
