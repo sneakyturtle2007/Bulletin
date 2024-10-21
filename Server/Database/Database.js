@@ -285,6 +285,6 @@ class Database{
             });
         }
 }
-db = new Database('database.db');
-db.UnitTests();
+//db = new Database('database.db');
+//db.UnitTests();
 module.exports = Database;
