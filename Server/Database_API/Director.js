@@ -1,5 +1,5 @@
 const login = require('./Login.js');
-const createuser = require('./CreateUser.js');
+const usermanagement = require('./UserManagement.js');
 
 async function ProcessData(data, db, socket){
     if(data){
@@ -13,7 +13,11 @@ async function ProcessData(data, db, socket){
                 return result;
                 break;
             case 'createuser':
-                result = await createuser.CreateUser(args, db);
+                result = await usermanagement.CreateUser(args, db);
+                return result;
+                break;
+            case 'deleteuser':
+                result = await usermanagement.DeleteUser(args, db);
                 return result;
                 break;
             case 'exit':

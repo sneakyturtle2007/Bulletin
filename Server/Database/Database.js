@@ -2,8 +2,8 @@ const sql = require('sqlite3').verbose();
 
 class Database{
 
-    constructor(){
-        this.db = new sql.Database('./Database/database.db',  (err) => {//'database.db'
+    constructor(databaseFile){
+        this.db = new sql.Database(databaseFile,  (err) => {//'database.db''./Database/database.db'
             if (err) {
                 throw err;
             }else{
@@ -144,6 +144,7 @@ class Database{
                             }
                             this.db.run('INSERT INTO users (username, email, password) VALUES (?, ?, ?);',[username, email, password], (err) => {
                                 if(err){
+                                    callback(err, null);
                                     throw err;
                                 }
                                 //console.log(`Inserted ${username} into users`);
@@ -156,8 +157,7 @@ class Database{
         }  
             
         DeleteUser(username){
-            let condition = `username="${username}"`;
-            this.DeleteFromTable('users', condition);
+            this.DeleteFromTable('users', `username="${username}"`);
         }
     // events Table
         CreateEvent(userID, title, date, startTime, endTime, location, publicityType, invitees, details, callback){
@@ -165,10 +165,11 @@ class Database{
                 if(err){
                     console.log(err.message);
                     callback(err, null);
-                    return;
+                    return false;
                 }
                 console.log(`Inserted ${title} into events`);
                 callback(null, "Event created");
+                return true;
             });
         }
         GetEventInfo(title, callback){
@@ -183,8 +184,7 @@ class Database{
             });
         }
         DeleteEvent(title){
-            let condition = `title="${title}"`;
-            this.DeleteFromTable('events', condition);
+            this.DeleteFromTable('events', `title="${title}"`);
         }
         GetAllEvents(callback){
             this.db.all(`SELECT * FROM events;`, (err, events) =>{
@@ -197,7 +197,7 @@ class Database{
             });
         }
     // Testing
-        test(){
+        UnitTests(){
             this.db.serialize(() => {
 
                 try{
@@ -220,15 +220,16 @@ class Database{
                         if(err){
                             throw err;
                         }
-                        try{
-                            this.DeleteUser('test2');
-                            console.log("Deleting User Test" + ' \u2713');
-                        }catch(err){
-                            console.log("Deleting User Test" + ' \u2717');
-                            console.log(err.message);
-                        }
+                        this.db.serialize(() =>{
+                            try{
+                                this.DeleteUser('test2');
+                                console.log("Deleting User Test" + ' \u2713');
+                            }catch(err){
+                                console.log("Deleting User Test" + ' \u2717');
+                                console.log(err.message);
+                            }
+                        });
                     });
-                    
                     console.log("Creating User Test" + ' \u2713');
                 }catch(err){
                     console.log("Creating User Test" + ' \u2717');
@@ -266,22 +267,24 @@ class Database{
                         }else{
                             console.log("Creating Event Test" + ' \u2713');
                         } 
-                        try{
-                            this.DeleteEvent('test');
-                            console.log("Dropping Event Test" + ' \u2713');
-                        }catch(err){
-                            console.log("Dropping Event Test" + ' \u2717');
-                            console.log(err.message);
-                        }
+                        this.db.serialize(() =>{
+                            try{
+                                this.DeleteEvent('test');
+                                console.log("Dropping Event Test" + ' \u2713');
+                            }catch(err){
+                                console.log("Dropping Event Test" + ' \u2717');
+                                console.log(err.message);
+                            }
+                        });
                     });
                 }catch(err){
                     console.log("Creating Event Test" + ' \u2717');
                     console.log(err.message);
                 }
-               
-
+            
             });
         }
 }
-
+db = new Database('database.db');
+db.UnitTests();
 module.exports = Database;

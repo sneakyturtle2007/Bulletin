@@ -11,7 +11,7 @@
     const Database = require('./Database/Database.js');
 
 // Starting Database & API Director
-const db = new Database();
+const db = new Database('./Database/database.db');
 
 // Starting Express
 const app = express();
