@@ -47,14 +47,18 @@ function AddFriend(args, DB){
             if(err){
                 reject(err);
             }else{
-                friends = user.friends;
-                if(user[0].friends.toString() == "NONE"){
+                friends = user[0].friends.toString();
+                if(friends == "NONE"){
                     friends = `${friend}`;
+                }else if(!friends.includes(friend)){
+                    friends = `${friends}`+ `,${friend}`;
+                }else{
+                    reject("Friend already added");
                 }
                 
                 DB.db.serialize(()=>{
                     try{
-                        DB.UpdateTable("users", `friends=${friends}`, `id=${user.id.toString()}`);
+                        DB.UpdateTable("users", `friends="${friends}"`, `id=${user[0].id}`);
                         resolve("Friend Added");
                     }catch(err){
                         reject(err);
