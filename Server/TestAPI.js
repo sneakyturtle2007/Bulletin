@@ -21,8 +21,11 @@ function UserTest(username, email, password, client){
             client.write(`getuserinfo ${username}`);
         
         }else if(value  > 0){
-            client.write(`addfriend ${username} example`);
+            client.write(`getuserinfo a`);
             
+        }else if(data.toString().trim() == 'User not found'){
+            client.write(`addfriend ${username} example`);
+        
         }else if(data.toString().trim() == 'Friend added'){
             client.write(`addfriend ${username} example`);
         

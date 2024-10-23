@@ -100,11 +100,7 @@ class Database{
                             callback(err, null);
                             return;
                         }
-                        if(user != null){
-                            callback(null, user);
-                        }else{
-                            callback(new Error("User not found"), null);
-                        }
+                        callback(null, user);
                         
                         //console.log(user);
                     });
@@ -115,7 +111,7 @@ class Database{
                             callback(err, null);
                             return;
                         }
-                        callback(null, user);
+                        callback(null,user);
                         //console.log(user);
                     });    
                 }

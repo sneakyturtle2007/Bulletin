@@ -30,11 +30,15 @@ function GetUserInfo(args, DB){
         username = args[0];
         DB.GetUserInfo(username, (err, result) => {
             if(err){
-                console.log(err.message);
+                //console.log(err.message);
                 resolve('User not found');
                 return;
             }else{
-                resolve(result[0].id + "," + result[0].username + "," + result[0].email + "," + result[0].friends + "\n");
+                if(result.length >0){
+                    resolve(result[0].id + "," + result[0].username + "," + result[0].email + "," + result[0].friends + "\n");
+                }else{
+                    resolve("User not found");
+                }
             }
         });
     });
