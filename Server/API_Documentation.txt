@@ -12,7 +12,7 @@ API_Commands and their returns-
       - returns all information associated with the user
    
    addfriend <username> <friend>
-      - returns "Friend added" if friend is added successfully, "Friend already exists" if friend already exists
+      - returns "Friend added" if friend is added successfully, "Friend already added" if friend already exists or an error message if error
 
    createevent <username> <title> <date> <startTime> <endTime> <location> <publicityType> <invitees> <details>
       - returns "Event created" if event is created successfully, If error, then returns error message
