@@ -173,8 +173,8 @@ class Database{
                 return true;
             });
         }
-        GetEventInfo(title, callback){
-            this.db.all(`SELECT * FROM events WHERE title = ?;`, [title], (err,event) => {
+        GetEventInfo(eventid, callback){
+            this.db.all(`SELECT * FROM events WHERE eventid = ${eventid};`, (err,event) => {
                 if(err){
                     console.log(err.message);
                     callback(err, null);

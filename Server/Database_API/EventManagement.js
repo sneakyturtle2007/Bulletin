@@ -1,5 +1,5 @@
 
-function CreateEvent(args, db){
+function CreateEvent(args, DB){
     return new Promise(async (resolve, reject) =>{
         userid = args[0];
         title = args[1];
@@ -11,7 +11,7 @@ function CreateEvent(args, db){
         invitees = args[7];
         details = args[8];
 
-        db.CreateEvent(userid, title, date, startTime, endTime, location, publicityType, invitees, details, (err, result) => {
+        DB.CreateEvent(userid, title, date, startTime, endTime, location, publicityType, invitees, details, (err, result) => {
             if(err){
                 console.log(err);
                 reject(err);
@@ -24,12 +24,12 @@ function CreateEvent(args, db){
     });
 }   
 
-function DeleteEvent(eventTitle, db){
+function DeleteEvent(args, DB){
     return new Promise(async (resolve, reject) =>{
         userid = args[0];
         eventTitle = args[1];
         try{
-            db.DeleteFromTable('events', eventTitle + "AND userid=" + userid);
+            DB.DeleteFromTable('events', eventTitle + "AND userid=" + userid);
         }catch(err){
             reject(err);
             return;
@@ -38,10 +38,10 @@ function DeleteEvent(eventTitle, db){
     });
 }
 
-function GetEvents(userid, db){
+function GetEvents(args, DB){
     return new Promise(async (resolve, reject) =>{
         userid = args[0];
-        db.GetEvents(userid, (err, result) => {
+        DB.GetEvents(userid, (err, result) => {
             if(err){
                 console.log(err);
                 reject(err);
@@ -52,4 +52,39 @@ function GetEvents(userid, db){
     });
 }
 
-module.exports = {CreateEvent, DeleteEvent, GetEvents};
+function AddInvitee(args, DB){
+    return new Promise(async (resolve, reject) => {
+        eventid = args[0];
+        invitee = args[1];
+
+        DB.GetEventInfo(eventid, (err, event) => {
+            if(err){
+                console.log(err.message);
+                resolve('Event not found');
+                return;
+            }
+            invitees = event[0].invitees.toString();
+            if(invitees == "NONE"){
+                invitees = `${invitee}`;
+            }else if(!invitees.includes(invitee)){
+                invitees = `${invitees}`+ `,${invitee}`;
+            }else{
+                resolve("Invitee already added");
+                return;
+            }  
+            DB.db.serialize(()=>{
+                try{
+                    DB.UpdateTable('events', `invitees="${invitees}"`, `id=${event[0].id}`);
+                    resolve("Invitee added");
+                    return;
+                }catch(err){
+                    resolve('Unable to add invitee');
+                    return;
+                }
+            });
+
+        })
+    });
+}
+
+module.exports = {CreateEvent, DeleteEvent, GetEvents, AddInvitee};

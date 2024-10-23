@@ -32,12 +32,16 @@ async function ProcessData(data, db, socket){
                 result = await eventmanagement.CreateEvent(args, db);
                 return result;
                 break;
-            case 'deleteevent':
-                result = await eventmanagement.DeleteEvent(args, db);
+            case 'addinvitee':
+                result = await eventmanagement.AddInvitee(args, db);
                 return result;
                 break;
             case 'getevents':
                 result = await eventmanagement.GetEvents(args, db);
+                return result;
+                break;
+            case 'deleteevent':
+                result = await eventmanagement.DeleteEvent(args, db);
                 return result;
                 break;
             case 'exit':
