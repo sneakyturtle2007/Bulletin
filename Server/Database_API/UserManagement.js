@@ -53,7 +53,8 @@ function AddFriend(args, DB){
                 }else if(!friends.includes(friend)){
                     friends = `${friends}`+ `,${friend}`;
                 }else{
-                    reject("Friend already added");
+                    resolve("Friend already added");
+                    return;
                 }
                 
                 DB.db.serialize(()=>{
