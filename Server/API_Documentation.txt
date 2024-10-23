@@ -10,11 +10,14 @@ API_Commands and their returns-
    
    getuserinfo <username>
       - returns all information associated with the user
+   
+   addfriend <username> <friend>
+      - returns "Friend added" if friend is added successfully, "Friend already exists" if friend already exists
 
    createevent <username> <title> <date> <startTime> <endTime> <location> <publicityType> <invitees> <details>
       - returns "Event created" if event is created successfully, If error, then returns error message
 
-   deleteevent <title>
+   deleteevent <userid> <title>
       - returns "Event deleted" if event is deleted successfully. If error, then returns error message
 
    getevents <userid>

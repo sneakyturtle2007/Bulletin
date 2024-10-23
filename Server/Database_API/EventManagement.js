@@ -26,9 +26,10 @@ function CreateEvent(args, db){
 
 function DeleteEvent(eventTitle, db){
     return new Promise(async (resolve, reject) =>{
-        eventTitle = args[0];
+        userid = args[0];
+        eventTitle = args[1];
         try{
-            db.DeleteEvent(eventTitle);
+            db.DeleteFromTable('events', eventTitle + "AND userid=" + userid);
         }catch(err){
             reject(err);
             return;

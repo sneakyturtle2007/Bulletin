@@ -80,16 +80,16 @@ class Database{
             });
             
         }
-        UpdateTable(name, values, condition){
+        UpdateTable(table, values, condition){
             
-            this.db.run(`UPDATE ${name} SET ${values} WHERE ${condition};`, (err) => {
+            this.db.run(`UPDATE ${table} SET ${values} WHERE ${condition};`, (err) => {
                 if(err){
                     throw err;
                 }
                 //console.log(`Updated ${name}`);
             });
         }
-        
+
     // users Table
         GetUserInfo(username, callback){
             this.db.serialize(() => {
@@ -103,7 +103,7 @@ class Database{
                         callback(null, user);
                         //console.log(user);
                     });
-                }else{
+                }else {
                     this.db.all(`SELECT * FROM users WHERE username = ?;`, [username], (err,user) => {
                         if(err){
                             console.log(err.message);
@@ -183,9 +183,6 @@ class Database{
                 //console.log(event);
             });
         }
-        DeleteEvent(title){
-            this.DeleteFromTable('events', `title="${title}"`);
-        }
         GetAllEvents(userid, callback){
             this.db.all(`SELECT * FROM events WHERE userid="${userid};`, (err, events) =>{
                 if(err){
@@ -221,6 +218,26 @@ class Database{
                             throw err;
                         }
                         this.db.serialize(() =>{
+                            try{
+                                this.db.serialize(() =>{ 
+                                    this.CreateUser("test2","admin@gmail.com", "admin", (err, message) => {
+                                            if(err){
+                                                throw err;
+                                            }
+                                        });
+                                        this.GetUserInfo('admin', (err, rows) => {
+                                            if(err){
+                                                throw err;
+                                            }
+                                            if(rows.length > 1){
+                                                console.log("ese");
+                                                throw new Error("Too many users with the same username");
+                                            }
+                                        });
+                                });  
+                            }catch(err){
+                                throw err;
+                            }
                             try{
                                 this.DeleteUser('test2');
                                 console.log("Deleting User Test" + ' \u2713');

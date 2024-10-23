@@ -38,4 +38,27 @@ function GetUserInfo(args, db){
         });
     });
 }
-module.exports = {CreateUser, DeleteUser, GetUserInfo};
+function AddFriend(args, db){
+    return new Promise(async (resolve, reject) => {
+        username = args[0];
+        friend = args[1];
+        db.serialize(()=>{
+            db.GetUserInfo(username, (err, user) => {
+                if(err){
+                    reject(err);
+                }else{
+                    user.friends.push(friend);
+                    db.serialize(()=>{
+                        try{
+                            db.UpdateTable("users", user.friends, `userid=${user.userid}`);
+                            resolve("Friend Added");
+                        }catch(err){
+                            reject(err);
+                        }
+                    });
+                }
+            });
+        });
+    });        
+}
+module.exports = {CreateUser, DeleteUser, GetUserInfo, AddFriend};
