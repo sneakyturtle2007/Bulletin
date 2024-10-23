@@ -9,7 +9,7 @@ API_Commands and their returns-
       - returns "User deleted" if user is deleted successfully. If error, then returns error message
    
    getuserinfo <username>
-      - returns all information associated with the user
+      - returns id, username, email, and friends of user, "User not found" if error or user not found
    
    addfriend <username> <friend>
       - returns "Friend added" if friend is added successfully, "Friend already added" if friend already exists or an error message if error

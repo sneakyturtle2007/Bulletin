@@ -17,13 +17,12 @@ function DeleteUser(args, DB){
     return new Promise(async (resolve, reject) => {
         username = args[0];
         try{
-            DB.DeleteUser();
+            DB.DeleteUser(username);
+            resolve("User deleted");
         }catch(err){
             reject(err);
             return;
         }
-        resolve("User Deleted");
-        
     });
 }
 function GetUserInfo(args, DB){
@@ -31,7 +30,8 @@ function GetUserInfo(args, DB){
         username = args[0];
         DB.GetUserInfo(username, (err, result) => {
             if(err){
-                reject(err);
+                console.log(err.message);
+                reject('User not found');
             }else{
                 resolve(result[0].id + "," + result[0].username + "," + result[0].email + "," + result[0].friends + "\n");
             }
@@ -59,7 +59,7 @@ function AddFriend(args, DB){
                 DB.db.serialize(()=>{
                     try{
                         DB.UpdateTable("users", `friends="${friends}"`, `id=${user[0].id}`);
-                        resolve("Friend Added");
+                        resolve("Friend added");
                     }catch(err){
                         reject(err);
                     }
