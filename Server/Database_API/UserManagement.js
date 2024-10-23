@@ -1,10 +1,10 @@
-function CreateUser(args, db){
+function CreateUser(args, DB){
     return new Promise(async (resolve, reject) => {
         var username = args[0];
         var email = args[1];
         var password = args[2];
         
-        db.CreateUser(username, email, password , (err, result) => {
+        DB.CreateUser(username, email, password , (err, result) => {
             if(err){
                 reject(err);
             }else{
@@ -13,11 +13,11 @@ function CreateUser(args, db){
         });
     });
 }
-function DeleteUser(args, db){
+function DeleteUser(args, DB){
     return new Promise(async (resolve, reject) => {
         username = args[0];
         try{
-            db.DeleteUser();
+            DB.DeleteUser();
         }catch(err){
             reject(err);
             return;
@@ -26,39 +26,43 @@ function DeleteUser(args, db){
         
     });
 }
-function GetUserInfo(args, db){
+function GetUserInfo(args, DB){
     return new Promise(async (resolve, reject) => {
         username = args[0];
-        db.GetUserInfo(username, (err, result) => {
+        DB.GetUserInfo(username, (err, result) => {
             if(err){
                 reject(err);
             }else{
-                resolve(result);
+                resolve(result[0].id + "," + result[0].username + "," + result[0].email + "," + result[0].friends + "\n");
             }
         });
     });
 }
-function AddFriend(args, db){
+function AddFriend(args, DB){
     return new Promise(async (resolve, reject) => {
         username = args[0];
         friend = args[1];
-        db.serialize(()=>{
-            db.GetUserInfo(username, (err, user) => {
-                if(err){
-                    reject(err);
-                }else{
-                    user.friends.push(friend);
-                    db.serialize(()=>{
-                        try{
-                            db.UpdateTable("users", user.friends, `userid=${user.userid}`);
-                            resolve("Friend Added");
-                        }catch(err){
-                            reject(err);
-                        }
-                    });
+        
+        DB.GetUserInfo(username, (err, user) => {
+            if(err){
+                reject(err);
+            }else{
+                friends = user.friends;
+                if(user[0].friends.toString() == "NONE"){
+                    friends = `${friend}`;
                 }
-            });
+                
+                DB.db.serialize(()=>{
+                    try{
+                        DB.UpdateTable("users", `friends=${friends}`, `id=${user.id.toString()}`);
+                        resolve("Friend Added");
+                    }catch(err){
+                        reject(err);
+                    }
+                });
+            }
         });
+
     });        
 }
 module.exports = {CreateUser, DeleteUser, GetUserInfo, AddFriend};
