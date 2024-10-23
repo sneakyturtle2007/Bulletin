@@ -17,8 +17,12 @@ API_Commands and their returns-
    createevent <username> <title> <date> <startTime> <endTime> <location> <publicityType> <invitees> <details>
       - returns "Event created" if event is created successfully, If error, then returns error message
 
-   deleteevent <userid> <title>
-      - returns "Event deleted" if event is deleted successfully. If error, then returns error message
+   addinvitee <eventid> <username of invitee>
+      - returns "Invitee added" if invitee is added successfully, "Invitee already added" if the invitee was already added, and "Unable to add invitee" if error.
 
    getevents <userid>
       - returns all events associated with the user
+   
+   deleteevent <userid> <title>
+      - returns "Event deleted" if event is deleted successfully. If error, then returns error message
+
