@@ -94,9 +94,21 @@ class Database{
         GetUserInfo(username, callback){
             this.db.serialize(() => {
                 if(username){
-                    try{
-                        Number(username);
+                    if(!isNaN(Number(username))){
                         this.db.all(`SELECT * FROM users WHERE id = ${username};`, (err,user) => {
+                            if(err){
+                                console.log(err.message);
+                                callback(err, null);
+                                return;
+                            }
+                            callback(null, user);
+                            return;
+                            //console.log(user);
+                        });
+                    }
+                
+                    if(username.includes('@')){
+                        this.db.all(`SELECT * FROM users WHERE email = ${username};`, (err,user) => {
                             if(err){
                                 console.log(err.message);
                                 callback(err, null);
@@ -106,30 +118,18 @@ class Database{
                             
                             //console.log(user);
                         });
-                    }catch(err){
-                        if(username.includes('@')){
-                            this.db.all(`SELECT * FROM users WHERE email = ${username};`, (err,user) => {
-                                if(err){
-                                    console.log(err.message);
-                                    callback(err, null);
-                                    return;
-                                }
-                                callback(null, user);
-                                
-                                //console.log(user);
-                            });
-                        }else{
-                            this.db.all(`SELECT * FROM users WHERE username = ${username};`, (err,user) => {
-                                if(err){
-                                    console.log(err.message);
-                                    callback(err, null);
-                                    return;
-                                }
-                                callback(null,user);
-                                //console.log(user);
-                            });    
-                        }
+                    }else{
+                        this.db.all(`SELECT * FROM users WHERE username = ${username};`, (err,user) => {
+                            if(err){
+                                console.log(err.message);
+                                callback(err, null);
+                                return;
+                            }
+                            callback(null,user);
+                            //console.log(user);
+                        });    
                     }
+                
                 }else{
                     callback('No username or email provided', null);
                 }
