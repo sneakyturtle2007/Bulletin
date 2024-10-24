@@ -61,7 +61,7 @@ function GetEventInfo(args, DB){
                 resolve("Error getting event info");
                 return;
             }else{
-                resolve(result[0].title + "," + result[0].details + ",(" + result[0].date + ")," + result[0].startTime + "," + result[0].endTime + "," + result[0].publicityType + "," + result[0].invitees + "," + result[0].userid);
+                resolve(result[0].title + "," + result[0].details + ",(" + result[0].date + ")," + result[0].startTime + "," + result[0].endTime + "," + result[0].publicityType + ",(" + result[0].invitees + ")," + result[0].userid);
             }
         });
 

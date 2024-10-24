@@ -55,10 +55,10 @@ async function UserTest(username, email, password, client){
    
 }
 
-async function EventTest(title, details, date, startTime, endTime, publicityType, invitees, userid, client){
+async function EventTest(userid, title, date, startTime, endTime, publicityType, invitees, details, client){
     return new Promise(async (resolve, reject) => {
         try{
-            client.write(`createevent ${title} ${details} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${userid}`);
+            client.write(`createevent ${userid} ${title} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${details}`);
             client.on('data', async (data) => {
 
                 value = -1;
@@ -73,13 +73,11 @@ async function EventTest(title, details, date, startTime, endTime, publicityType
                 
 
                 if(response == 'Event created'){
-                    client.write(`createevent ${title} ${details} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${userid}`);
-                
-                }else if(response == 'User already invited'){
-                    client.write(`geteventinfo 1`);
+                    client.write(`geteventinfo 1`); 
 
                 }else if(value >= 0){
                     resolve("Event Test" + ' \u2713')
+
                 }else{
                     err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
                     reject(err);
@@ -101,24 +99,26 @@ client.connect(22,'127.0.0.1' ,async () => {
     
     console.log('Connected');
     
+    try{
+        usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
+        console.log(usertest);
+        eventtest = await EventTest('1', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'john,aba', 'NONE', client);
+        console.log(eventtest);
+    }catch(err){
+        console.log(err);
+    }
     
-    client.write(`createevent 1 test 2021/2/24-2023/5/3 1500 1600 private john,aba NONE`);
+    
+});
+/*
+client.write(`createevent 1 test 2021/2/24,2023/5/3 1500 1600 private john,aba NONE`);
     client.on('data', ( data) =>{
 
         console.log(data.toString().trim());
     });
-    
-});
-/*
-try{
-        usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
-        console.log(usertest);
-    }catch(err){
-        console.log(err);
-    }
+
 */
 
 /*
-eventtest = await EventTest('title', 'details', '2021/12/01-2022/12/23', '12:00', '13:00', 'public', 'example', '1', client);
-    console.log(eventtest);
+
 */

@@ -180,7 +180,7 @@ class Database{
             this.db.run(`INSERT INTO events (userID, title, date, startTime, endTime, publicityType, invitees, details) VALUES (${userid}, "${title}", "${date}", "${startTime}", "${endTime}", "${publicityType}", "${invitees}", "${details}");`, (err) => {
                 if(err){
                     console.log(err.message);
-                    callback(err, null);
+                    callback("Error creating event", null);
                     return false;
                 }
                 console.log(`Inserted ${title} into events`);
@@ -188,7 +188,7 @@ class Database{
                     this.GetAllEvents(userid, (err, events) => {
                         if(err){
                             console.log(err.message);
-                            callback(err, null);
+                            callback("Error getting events", null);
                             return;
                         }
                         let newestEvent = 0;
