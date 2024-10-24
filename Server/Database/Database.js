@@ -199,6 +199,7 @@ class Database{
                                     }else{
                                         console.log("User already invited");
                                         callback(null, "User already invited");
+                                        return;
                                     }
                                     this.UpdateTable('users', `invited=${user[0].invited}`, `id=${user[0].id}`);
                                 });
