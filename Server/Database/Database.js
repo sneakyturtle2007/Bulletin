@@ -93,7 +93,7 @@ class Database{
     // users Table
         GetUserInfo(username, callback){
             this.db.serialize(() => {
-                if(username.includes('@')){
+                if(username && username.includes('@')){
                     this.db.all(`SELECT * FROM users WHERE email = ?;`, [username], (err,user) => {
                         if(err){
                             console.log(err.message);
@@ -104,7 +104,7 @@ class Database{
                         
                         //console.log(user);
                     });
-                }else {
+                }else if(username){
                     this.db.all(`SELECT * FROM users WHERE username = ?;`, [username], (err,user) => {
                         if(err){
                             console.log(err.message);

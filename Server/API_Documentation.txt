@@ -14,6 +14,9 @@ API_Commands and their returns-
    addfriend <username> <friend username>
       - returns "Friend added" if friend is added successfully, "Friend already added" if friend already exists or an error message if error. Can add friends that don't exist.
 
+   removefriend <username> <friend username>
+      - returns "Friend removed" if friend is removed successfully, "Friend not found" if friend doesn't exist, or "Error removing friend" if error
+
    createevent <username> <title> <date> <startTime> <endTime> <location> <publicityType> <invitees> <details>
       - returns "Event created" if event is created successfully, If error, then returns error message
 

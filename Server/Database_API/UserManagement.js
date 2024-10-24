@@ -74,4 +74,36 @@ function AddFriend(args, DB){
         });
     });        
 }
+function RemoveFriend(args, DB){
+    return new Promise(async (resolve, reject) => {
+        username = args[0];
+        friend = args[1];
+        
+        DB.GetUserInfo(username, (err, user) => {
+            if(err){
+                reject(err);
+            }else{
+                friends = user[0].friends.toString();
+                if(friends == "NONE"){
+                    resolve("Friend not found");
+                    return;
+                }else if(friends.includes(friend)){
+                    friends = friends.replace(friend, "");
+                }else{
+                    resolve("Friend not found");
+                    return;
+                }
+                
+                DB.db.serialize(()=>{
+                    try{
+                        DB.UpdateTable("users", `friends="${friends}"`, `id=${user[0].id}`);
+                        resolve("Friend removed");
+                    }catch(err){
+                        resolve("Error removing friend");
+                    }
+                });
+            }
+        });
+    });
+}
 module.exports = {CreateUser, DeleteUser, GetUserInfo, AddFriend};

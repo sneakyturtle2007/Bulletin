@@ -24,6 +24,10 @@ async function ProcessData(data, db, socket){
                 result = await usermanagement.AddFriend(args, db);
                 return result;
                 break;
+            case 'removefriend':
+                result = await usermanagement.RemoveFriend(args, db);
+                return result;
+                break;
             case 'deleteuser':
                 result = await usermanagement.DeleteUser(args, db);
                 return result;
