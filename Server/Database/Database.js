@@ -158,19 +158,55 @@ class Database{
                     }
                 });
         }  
-            
         DeleteUser(username){
             this.DeleteFromTable('users', `username="${username}"`);
         }
     // events Table
-        CreateEvent(userID, title, date, startTime, endTime, location, publicityType, invitees, details, callback){
-            this.db.run('INSERT INTO events (userID, title, date, startTime, endTime, location, publicityType, invitees, details) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);',[userID, title, date, startTime, endTime, location, publicityType, invitees, details], (err) => {
+        CreateEvent(userid, title, date, startTime, endTime, location, publicityType, invitees, details, callback){
+            this.db.run(`INSERT INTO events (userID, title, date, startTime, endTime, location, publicityType, invitees, details) VALUES (${userid}, ${title}, ${date}, ${startTime}, ${endTime}, ${location}, ${publicityType}, ${invitees}, ${details});`, (err) => {
                 if(err){
                     console.log(err.message);
                     callback(err, null);
                     return false;
                 }
                 console.log(`Inserted ${title} into events`);
+                this.db.serialize(() => {
+                    this.GetAllEvents(userid, (err, events) => {
+                        if(err){
+                            console.log(err.message);
+                            callback(err, null);
+                            return;
+                        }
+                        newestEvent = 0;
+                        for(let i = 0; i < events.length; i++){
+                            if(events[i].eventid > newestEvent){
+                                newestEvent = events[i].eventid;
+                            }
+                        }
+                        invitees = invitees.split(',');
+                        this.db.serialize(() =>{
+                            for(let i = 0; i < invitees.Length; i++){
+                                this.db.GetUserInfo(invitees[i], (err, user) => {
+                                    if(err){
+                                        console.log(err.message);
+                                        callback(err, null);
+                                        return;
+                                    }
+                                    if(user[0].invited == "NONE"){
+                                        user[0].invited = `${newestEvent}`;
+                                    }else if(!user[0].invited.includes(newestEvent)){
+                                        user[0].invited = `${user[0].invited},${newestEvent}`;
+                                    }else{
+                                        console.log("User already invited");
+                                        callback(null, "User already invited");
+                                    }
+                                    this.UpdateTable('users', `invited=${user[0].invited}`, `id=${user[0].id}`);
+                                });
+                            }
+                        });
+                        
+                    });
+                });
                 callback(null, "Event created");
                 return true;
             });

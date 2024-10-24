@@ -18,7 +18,7 @@ API_Commands and their returns-
       - returns "Friend removed" if friend is removed successfully, "Friend not found" if friend doesn't exist, or "Error removing friend" if error
 
    createevent <username> <title> <date> <startTime> <endTime> <location> <publicityType> <invitees> <details>
-      - returns "Event created" if event is created successfully, If error, then returns error message
+      - returns "Event created" if event is created successfully, "User already added" if eventid is already in invitees invited list,If error, then returns error message
 
    addinvitee <eventid> <username of invitee>
       - returns "Invitee added" if invitee is added successfully, "Invitee already added" if the invitee was already added, and "Unable to add invitee" if error.
