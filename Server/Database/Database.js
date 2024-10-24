@@ -257,7 +257,7 @@ class Database{
             this.db.all(`SELECT * FROM events WHERE userid=${userid};`, (err, events) =>{
                 if(err){
                     console.log(err.message);
-                    callback(err, null);
+                    callback("Error getting events", null);
                     return;
                 }
                 callback(null, events);

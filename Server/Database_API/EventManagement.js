@@ -41,7 +41,7 @@ function DeleteEvent(args, DB){
 function GetEvents(args, DB){
     return new Promise(async (resolve, reject) =>{
         userid = args[0];
-        DB.GetEvents(userid, (err, result) => {
+        DB.GetAllEvents(userid, (err, result) => {
             if(err){
                 console.log(err.message);
                 resolve("Error getting events");
