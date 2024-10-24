@@ -108,7 +108,7 @@ class Database{
                     }
                 
                     if(username.includes('@')){
-                        this.db.all(`SELECT * FROM users WHERE email = ${username};`, (err,user) => {
+                        this.db.all(`SELECT * FROM users WHERE email = "${username};"`, (err,user) => {
                             if(err){
                                 console.log(err.message);
                                 callback(err, null);
@@ -119,7 +119,7 @@ class Database{
                             //console.log(user);
                         });
                     }else{
-                        this.db.all(`SELECT * FROM users WHERE username = ${username};`, (err,user) => {
+                        this.db.all(`SELECT * FROM users WHERE username = "${username}";`, (err,user) => {
                             if(err){
                                 console.log(err.message);
                                 callback(err, null);
