@@ -34,7 +34,7 @@ function GetUserInfo(args, DB){
                 resolve('User not found');
                 return;
             }else{
-                if(result.length >0){
+                if(result.length > 0){
                     resolve(result[0].id + "," + result[0].username + "," + result[0].email + "," + result[0].friends + "\n");
                 }else{
                     resolve("User not found");
@@ -72,7 +72,6 @@ function AddFriend(args, DB){
                 });
             }
         });
-
     });        
 }
 module.exports = {CreateUser, DeleteUser, GetUserInfo, AddFriend};
