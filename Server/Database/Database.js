@@ -177,7 +177,7 @@ class Database{
         }
     // events Table
         CreateEvent(userid, title, date, startTime, endTime, publicityType, invitees, details, callback){
-            this.db.run(`INSERT INTO events (userID, title, date, startTime, endTime, publicityType, invitees, details) VALUES (${userid}, ${title}, ${date}, ${startTime}, ${endTime}, ${publicityType}, ${invitees}, ${details});`, (err) => {
+            this.db.run(`INSERT INTO events (userID, title, date, startTime, endTime, publicityType, invitees, details) VALUES (${userid}, "${title}", "${date}", "${startTime}", "${endTime}", "${publicityType}", "${invitees}", "${details}");`, (err) => {
                 if(err){
                     console.log(err.message);
                     callback(err, null);
@@ -191,7 +191,7 @@ class Database{
                             callback(err, null);
                             return;
                         }
-                        newestEvent = 0;
+                        let newestEvent = 0;
                         for(let i = 0; i < events.length; i++){
                             if(events[i].eventid > newestEvent){
                                 newestEvent = events[i].eventid;
@@ -238,7 +238,7 @@ class Database{
             });
         }
         GetAllEvents(userid, callback){
-            this.db.all(`SELECT * FROM events WHERE userid="${userid};`, (err, events) =>{
+            this.db.all(`SELECT * FROM events WHERE userid=${userid};`, (err, events) =>{
                 if(err){
                     console.log(err.message);
                     callback(err, null);

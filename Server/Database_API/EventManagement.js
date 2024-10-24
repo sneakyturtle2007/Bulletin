@@ -6,10 +6,10 @@ function CreateEvent(args, DB){
         date = args[2];
         startTime = args[3];
         endTime = args[4];
-        publicityType = args[6];
-        invitees = args[7];
-        details = args[8];
-
+        publicityType = args[5];
+        invitees = args[6];
+        details = args[7];
+        console.log(userid + title + date + startTime + endTime + publicityType + invitees + details);
         DB.CreateEvent(userid, title, date, startTime, endTime, publicityType, invitees, details, (err, result) => {
             if(err){
                 console.log(err);
