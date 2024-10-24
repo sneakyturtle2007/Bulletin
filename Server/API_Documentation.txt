@@ -8,7 +8,7 @@ API_Commands and their returns-
    deleteuser <username>
       - returns "User deleted" if user is deleted successfully. If error, then returns error message
    
-   getuserinfo <username>
+   getuserinfo <username or email or userid>
       - returns id, username, email, and friends of user, "User not found" if error or user not found
    
    addfriend <username> <friend username>

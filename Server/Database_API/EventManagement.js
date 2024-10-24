@@ -59,7 +59,7 @@ function GetEventInfo(args, DB){
                 console.log(err);
                 reject(err);
             }else{
-                resolve(result[0]);
+                resolve(result[0].title + "," + result[0].details + ",(" + result[0].date + ")," + result[0].startTime + "," + result[0].endTime + "," + result[0].publicityType + "," + result[0].invitees + "," + result[0].userid);
             }
         });
 

@@ -27,20 +27,39 @@ function DeleteUser(args, DB){
 }
 function GetUserInfo(args, DB){
     return new Promise(async (resolve, reject) => {
-        username = args[0];
-        DB.GetUserInfo(username, (err, result) => {
-            if(err){
-                //console.log(err.message);
-                resolve('User not found');
-                return;
-            }else{
-                if(result.length > 0){
-                    resolve(result[0].id + "," + result[0].username + "," + result[0].email + ",(" + result[0].friends + "),(" + result[0].invited + ")");
+        try{
+            Number(args[0]);
+            userid = args[0];
+            DB.GetUserInfo(userid, (err, result) => {
+                if(err){
+                    //console.log(err.message);
+                    resolve('User not found');
+                    return;
                 }else{
-                    resolve("User not found");
+                    if(result.length > 0){
+                        resolve(result[0].id + "," + result[0].username + "," + result[0].email + ",(" + result[0].friends + "),(" + result[0].invited + ")");
+                    }else{
+                        resolve("User not found");
+                    }
                 }
-            }
-        });
+            });
+        }catch(err){
+            username = args[0];
+            DB.GetUserInfo(username, (err, result) => {
+                if(err){
+                    //console.log(err.message);
+                    resolve('User not found');
+                    return;
+                }else{
+                    if(result.length > 0){
+                        resolve(result[0].id + "," + result[0].username + "," + result[0].email + ",(" + result[0].friends + "),(" + result[0].invited + ")");
+                    }else{
+                        resolve("User not found");
+                    }
+                }
+            });
+        }   
+        
     });
 }
 function AddFriend(args, DB){
