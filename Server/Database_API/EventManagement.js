@@ -51,7 +51,20 @@ function GetEvents(args, DB){
         });
     });
 }
+function GetEventInfo(args, DB){
+    return new Promise(async (resolve, reject) =>{
+        eventid = args[0];
+        DB.GetEventInfo(eventid, (err, result) => {
+            if(err){
+                console.log(err);
+                reject(err);
+            }else{
+                resolve(result[0]);
+            }
+        });
 
+    });
+}
 function AddInvitee(args, DB){
     return new Promise(async (resolve, reject) => {
         eventid = args[0];
@@ -87,4 +100,4 @@ function AddInvitee(args, DB){
     });
 }
 
-module.exports = {CreateEvent, DeleteEvent, GetEvents, AddInvitee};
+module.exports = {CreateEvent, DeleteEvent, GetEvents, AddInvitee, GetEventInfo};
