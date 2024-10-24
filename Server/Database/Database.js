@@ -114,6 +114,8 @@ class Database{
                         callback(null,user);
                         //console.log(user);
                     });    
+                }else{
+                    callback('No username or email provided', null);
                 }
                 
             });

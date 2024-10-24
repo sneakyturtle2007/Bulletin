@@ -81,7 +81,9 @@ function RemoveFriend(args, DB){
         
         DB.GetUserInfo(username, (err, user) => {
             if(err){
-                reject(err);
+                console.log(err.message);
+                resolve(err);
+                return;
             }else{
                 friends = user[0].friends.toString();
                 if(friends == "NONE"){
