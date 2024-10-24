@@ -106,4 +106,4 @@ function RemoveFriend(args, DB){
         });
     });
 }
-module.exports = {CreateUser, DeleteUser, GetUserInfo, AddFriend};
+module.exports = {CreateUser, DeleteUser, GetUserInfo, AddFriend, RemoveFriend};
