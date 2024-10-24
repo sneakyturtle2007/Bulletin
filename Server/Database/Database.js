@@ -197,25 +197,41 @@ class Database{
                                 newestEvent = events[i].eventid;
                             }
                         }
+
                         invitees = invitees.split(',');
-                        this.db.serialize(() =>{
-                            for(let i = 0; i < invitees.Length; i++){
-                                this.db.GetUserInfo(invitees[i], (err, user) => {
+                        console.log(invitees);
+                        this.db.serialize( () => {
+                            console.log("testing");
+                            console.log(invitees.length);
+                            for(let i = 0; i < invitees.length; i++){
+                                console.log("testing1");
+                                // testing
+                                console.log(invitees);
+                                console.log(invitees[i]);
+                                console.log(err);
+                                //console.log(user);
+                                // testing
+                                this.GetUserInfo(invitees[i], (err, user) => {
                                     if(err){
                                         console.log(err.message);
                                         callback(err, null);
                                         return;
                                     }
-                                    if(user[0].invited == "NONE"){
-                                        user[0].invited = `${newestEvent}`;
-                                    }else if(!user[0].invited.includes(newestEvent)){
-                                        user[0].invited = `${user[0].invited},${newestEvent}`;
-                                    }else{
-                                        console.log("User already invited");
-                                        callback(null, "User already invited");
-                                        return;
+                                    console.log( user);
+                                    if(user[0]){
+                                        console.log(user[0].invitees);
+                                        if(user[0].invited == "NONE"){
+                                            user[0].invited = `${newestEvent}`;
+                                        }else if(!user[0].invited.includes(newestEvent)){
+                                            user[0].invited = `${user[0].invited},${newestEvent}`;
+                                        }else{
+                                            console.log("User already invited");
+                                            callback(null, "User already invited");
+                                            return;
+                                        }
+                                        console.log(user[0].invited);
+                                        this.UpdateTable('users', `invited=${user[0].invited}`, `id=${user[0].id}`);
                                     }
-                                    this.UpdateTable('users', `invited=${user[0].invited}`, `id=${user[0].id}`);
                                 });
                             }
                         });
