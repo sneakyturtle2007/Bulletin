@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
                     response = await Director.ProcessData(data, db, socket);
                     console.log('Response: ' + response);
 
-                    socket.write(response.toString());
+                    socket.write(response.toString() + '\n');
                 }catch(err){
                     console.log('Error: ' + err);
                     socket.write('Error: ' + err);
