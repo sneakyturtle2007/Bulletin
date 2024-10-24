@@ -109,7 +109,7 @@ function RemoveFriend(args, DB){
                     resolve("Friend not found");
                     return;
                 }else if(friends.includes(friend)){
-                    friends = friends.replace(friend, "");
+                    friends = friends.replace(friend + ",", "");
                 }else{
                     resolve("Friend not found");
                     return;
