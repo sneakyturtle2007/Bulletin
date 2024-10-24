@@ -176,8 +176,8 @@ class Database{
             this.DeleteFromTable('users', `username="${username}"`);
         }
     // events Table
-        CreateEvent(userid, title, date, startTime, endTime, location, publicityType, invitees, details, callback){
-            this.db.run(`INSERT INTO events (userID, title, date, startTime, endTime, location, publicityType, invitees, details) VALUES (${userid}, ${title}, ${date}, ${startTime}, ${endTime}, ${location}, ${publicityType}, ${invitees}, ${details});`, (err) => {
+        CreateEvent(userid, title, date, startTime, endTime, publicityType, invitees, details, callback){
+            this.db.run(`INSERT INTO events (userID, title, date, startTime, endTime, publicityType, invitees, details) VALUES (${userid}, ${title}, ${date}, ${startTime}, ${endTime}, ${publicityType}, ${invitees}, ${details});`, (err) => {
                 if(err){
                     console.log(err.message);
                     callback(err, null);

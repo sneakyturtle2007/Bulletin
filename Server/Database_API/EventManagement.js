@@ -6,15 +6,14 @@ function CreateEvent(args, DB){
         date = args[2];
         startTime = args[3];
         endTime = args[4];
-        location = args[5];
         publicityType = args[6];
         invitees = args[7];
         details = args[8];
 
-        DB.CreateEvent(userid, title, date, startTime, endTime, location, publicityType, invitees, details, (err, result) => {
+        DB.CreateEvent(userid, title, date, startTime, endTime, publicityType, invitees, details, (err, result) => {
             if(err){
                 console.log(err);
-                reject(err);
+                resolve(err);
                 return;
             }else{
                 resolve(result);
@@ -31,7 +30,8 @@ function DeleteEvent(args, DB){
         try{
             DB.DeleteFromTable('events', eventTitle + "AND userid=" + userid);
         }catch(err){
-            reject(err);
+            console.log(err.message);
+            resolve("Error deleting event");
             return;
         }  
         resolve("Event deleted");
@@ -43,8 +43,9 @@ function GetEvents(args, DB){
         userid = args[0];
         DB.GetEvents(userid, (err, result) => {
             if(err){
-                console.log(err);
-                reject(err);
+                console.log(err.message);
+                resolve("Error getting events");
+                return;
             }else{
                 resolve(result);
             }
@@ -56,8 +57,9 @@ function GetEventInfo(args, DB){
         eventid = args[0];
         DB.GetEventInfo(eventid, (err, result) => {
             if(err){
-                console.log(err);
-                reject(err);
+                console.log(err.message);
+                resolve("Error getting event info");
+                return;
             }else{
                 resolve(result[0].title + "," + result[0].details + ",(" + result[0].date + ")," + result[0].startTime + "," + result[0].endTime + "," + result[0].publicityType + "," + result[0].invitees + "," + result[0].userid);
             }
