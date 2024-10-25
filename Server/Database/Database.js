@@ -201,16 +201,10 @@ class Database{
                         invitees = invitees.split(',');
                         console.log(invitees);
                         this.db.serialize( () => {
-                            console.log("testing");
+                            
                             console.log(invitees.length);
                             for(let i = 0; i < invitees.length; i++){
-                                console.log("testing1");
-                                // testing
-                                console.log(invitees);
-                                console.log(invitees[i]);
-                                console.log(err);
-                                //console.log(user);
-                                // testing
+                                
                                 this.GetUserInfo(invitees[i], (err, user) => {
                                     if(err){
                                         console.log(err.message);

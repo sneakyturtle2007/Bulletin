@@ -66,13 +66,14 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
                 response = data.toString().trim();
                 
                 try{
-                    value = Number(response.split(',')[0])
+                    value = Number(response.split(',')[7])
                 }catch(err){
                     console.log(err);
                 }
-                
-
+                console.log("test" + value);
+                console.log(response.split(',')[9]);
                 if(response == 'Event created'){
+
                     client.write(`geteventinfo 1`); 
 
                 }else if(value >= 0){
@@ -92,6 +93,21 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
     });
         
 }
+/*function GetEventID(userid, client){
+    return new Promise(async (resolve, reject) => {
+        try{
+            client.write(`getevents ${userid}`);
+            client.on('data', async (data) => {
+                response = data.toString().trim();
+                console.log(response);
+                for()
+                resolve(response);
+            });
+        }catch(err){
+            reject(err);
+        }
+    })
+}*/
 const {Socket} = require('net');
 const client = new Socket();
 
