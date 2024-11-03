@@ -1,6 +1,1 @@
-function test(){
-    var test = document.getElementById("test");
-    test.innerHTML = "Hello World!";
-}
-
-test();
+/annex/objects/SHA256E-s112--eee42cbd2f875394198ec4b1e23388cb87f44590adea2004fa9e689a93daf985.js
