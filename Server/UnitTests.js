@@ -1,4 +1,5 @@
 var currentTest = 0;
+var eventID;
 async function UserTest(username, email, password, client){
     return new Promise(async (resolve, reject) => {
         try{
@@ -58,32 +59,33 @@ async function UserTest(username, email, password, client){
 async function EventTest(userid, title, date, startTime, endTime, publicityType, invitees, details, client){
     return new Promise(async (resolve, reject) => {
         try{
-            client.write(`createevent ${userid} ${title} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${details}`);
-            client.on('data', async (data) => {
 
+            client.write(`createevent ${userid} ${title} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${details}`);
+            
+            client.on('data', async (data) => {
                 value = -1;
 
-                response = data.toString().trim();
-                
-                try{
-                    value = Number(response.split(',')[7])
-                }catch(err){
-                    console.log(err);
-                }
-                console.log("test" + value);
-                console.log(response.split(',')[9]);
-                if(response == 'Event created'){
+                let response = data.toString().trim();
 
-                    client.write(`geteventinfo 1`); 
-
-                }else if(value >= 0){
-                    resolve("Event Test" + ' \u2713')
-
+                //console.log(response);
+                if(response.includes('Event created')){
+                    eventID = response.split(" ")[2];
+                    client.write(`geteventinfo ${eventID}`); 
                 }else{
-                    err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
-                    reject(err);
 
+                    response = DealingWithParenthesis(response);
+                    response = response.split(",");
+                    if(response[7] == userid){
+                        client.write(`deleteevent ${eventID}`);
+                        
+                    }else if(response == 'Event deleted'){
+                        resolve("Event Test" + ' \u2713')
+                    }else{
+                        err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
+                        reject(err);
+                    }
                 }
+                
             });
         }catch(err){
             err = "Event Test" + ' \u2717' + "\n" + err.toString().trim();
@@ -92,6 +94,15 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
             
     });
         
+}
+function DealingWithParenthesis(source){
+    let result;
+    let date = source.substring(source.indexOf("("),source.indexOf(")") + 1);
+    result = source.replace(date, "");
+    let invitees = result.substring(result.indexOf("("),(result.indexOf(")") + 1));
+    result = result.replace(invitees, "");
+
+    return result;
 }
 /*function GetEventID(userid, client){
     return new Promise(async (resolve, reject) => {
@@ -118,6 +129,7 @@ client.connect(22,'127.0.0.1' ,async () => {
     try{
         usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
         console.log(usertest);
+        //client.write('wipeallevents');
         eventtest = await EventTest('1', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'john,aba', 'NONE', client);
         console.log(eventtest);
     }catch(err){

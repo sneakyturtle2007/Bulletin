@@ -25,16 +25,26 @@ function CreateEvent(args, DB){
 
 function DeleteEvent(args, DB){
     return new Promise(async (resolve, reject) =>{
-        userid = args[0];
-        eventTitle = args[1];
+        let eventID = args[0];
         try{
-            DB.DeleteFromTable('events', eventTitle + "AND userid=" + userid);
+            DB.DeleteFromTable('events', `eventid=${eventID}`);
         }catch(err){
             console.log(err.message);
             resolve("Error deleting event");
             return;
         }  
         resolve("Event deleted");
+    });
+}
+function WipeAllEvents(DB){
+    return new Promise(async (resolve, reject) =>{
+        try{
+            DB.WipeAllEvents();
+            resolve("Events wiped");
+        }catch{
+            resolve("Error wiping events");
+            return;
+        }
     });
 }
 
@@ -102,4 +112,4 @@ function AddInvitee(args, DB){
     });
 }
 
-module.exports = {CreateEvent, DeleteEvent, GetEvents, AddInvitee, GetEventInfo};
+module.exports = {CreateEvent, DeleteEvent, GetEvents, AddInvitee, GetEventInfo, WipeAllEvents};

@@ -13,81 +13,101 @@ class Database{
     }
     // Database Management
     CloseDatabase(){
-        this.db.close((err) => {
-            if (err) {
-                console.log('Error closing the database connection');
-                throw err;
-            }
-            //console.log('Successfully closed the database connection.');
+        this.db.serialize(() => {
+            this.db.close((err) => {
+                if (err) {
+                    console.log('Error closing the database connection');
+                    throw err;
+                }
+                //console.log('Successfully closed the database connection.');
+            });
         });
+        
     }
     // Table Management
         DescribeTable(name, callback){
-            this.db.all(`PRAGMA table_info(${name});`, (err,table) => {
-                if(err){
-                    callback(err, null);
-                }
-                callback(null, table);
+            this.db.serialize(() => {
+                this.db.all(`PRAGMA table_info(${name});`, (err,table) => {
+                    if(err){
+                        callback(err, null);
+                    }
+                    callback(null, table);
+                });
             });
+            
         }
 
         ShowTables(){
-            this.db.all('SELECT name FROM sqlite_master WHERE type="table";', (err,tables) => {
-                if(err){
-                    throw err;
-                }
-                console.log(tables);
+            this.db.serialize(() => {
+                this.db.all('SELECT name FROM sqlite_master WHERE type="table";', (err,tables) => {
+                    if(err){
+                        throw err;
+                    }
+                    console.log(tables);
+                });
             });
+            
             return true;
         }
         CreateTable(name, listofparams){
-            this.db.run(`CREATE TABLE ${name} (${listofparams});`, (err) => {
-                if(err){
-                    throw err;
-                }
-                //console.log(`${name} Table created`);
+            this.db.serialize(() => {
+                this.db.run(`CREATE TABLE ${name} (${listofparams});`, (err) => {
+                    if(err){
+                        throw err;
+                    }
+                    //console.log(`${name} Table created`);
+                });
             });
+                
             return true;
         }
         DropTable(name){
-            this.db.run(`DROP TABLE ${name};`, (err) => {
-                if(err){
-                    throw err;
-                }
-                //console.log(`${name} Table dropped`);
+            this.db.serialize(() => {
+                this.db.run(`DROP TABLE ${name};`, (err) => {
+                    if(err){
+                        throw err;
+                    }
+                    //console.log(`${name} Table dropped`);
+                });
             });
+                
             return true;
         }
     // Information Management
         DisplayTableContents(name, callback){
-            
-            this.db.all(`SELECT * FROM ${name};`, (err,rows) => {
-                if(err){
-                    callback(err, null);
-                    return;
-                }
-                //console.log(rows);
-                callback(null,rows);
+            this.db.serialize(() => {
+                this.db.all(`SELECT * FROM ${name};`, (err,rows) => {
+                    if(err){
+                        callback(err, null);
+                        return;
+                    }
+                    //console.log(rows);
+                    callback(null,rows);
+                });
             });
+            
         }
         DeleteFromTable(name, condition){
-            
-            this.db.run(`DELETE FROM ${name} WHERE ${condition};`, (err) => {
-                if(err){
-                    throw err;
-                }
-                //console.log(`Deleted ${condition} from ${name}`);
+            this.db.serialize(() => {
+                this.db.run(`DELETE FROM ${name} WHERE ${condition};`, (err) => {
+                    if(err){
+                        throw err;
+                    }
+                    //console.log(`Deleted ${condition} from ${name}`);
+                });
             });
-            
+        
         }
         UpdateTable(table, values, condition){
-            
-            this.db.run(`UPDATE ${table} SET ${values} WHERE ${condition};`, (err) => {
-                if(err){
-                    throw err;
-                }
-                //console.log(`Updated ${name}`);
+            this.db.serialize(() => {
+                this.db.run(`UPDATE ${table} SET ${values} WHERE ${condition};`, (err) => {
+                    if(err){
+                        throw err;
+                    }
+                    //console.log(`Updated ${name}`);
+                });
             });
+            
         }
 
     // users Table
@@ -176,85 +196,122 @@ class Database{
             this.DeleteFromTable('users', `username="${username}"`);
         }
     // events Table
+        WipeAllEvents(){
+            this.db.serialize(()=>{
+                this.db.all("SELECT * FROM events", (err, res) => {
+                    for(let i = 0; i < res.length; i++){
+                        this.DeleteFromTable('events', `eventid=${res[i].eventid}`);
+                    }
+                });
+            });
+        }
         CreateEvent(userid, title, date, startTime, endTime, publicityType, invitees, details, callback){
-            this.db.run(`INSERT INTO events (userID, title, date, startTime, endTime, publicityType, invitees, details) VALUES (${userid}, "${title}", "${date}", "${startTime}", "${endTime}", "${publicityType}", "${invitees}", "${details}");`, (err) => {
-                if(err){
-                    console.log(err.message);
-                    callback("Error creating event", null);
-                    return false;
-                }
-                console.log(`Inserted ${title} into events`);
-                this.db.serialize(() => {
-                    this.GetAllEvents(userid, (err, events) => {
-                        if(err){
-                            console.log(err.message);
-                            callback("Error getting events", null);
-                            return;
-                        }
-                        let newestEvent = 0;
-                        for(let i = 0; i < events.length; i++){
-                            if(events[i].eventid > newestEvent){
-                                newestEvent = events[i].eventid;
+            this.db.serialize(() => {
+                this.db.run(`INSERT INTO events (userID, title, date, startTime, endTime, publicityType, invitees, details) VALUES (${userid}, "${title}", "${date}", "${startTime}", "${endTime}", "${publicityType}", "${invitees}", "${details}");`, (err) => {
+                    if(err){
+                        console.log(err.message);
+                        callback("Error creating event", null);
+                        return;
+                    }
+                    let eventID = 0;
+                    console.log(`Inserted ${title} into events`);
+                    this.db.serialize(() => {
+                        this.GetAllEvents(userid, (err, events) => {
+                            if(err){
+                                console.log("Error when getting events in CreateEvent function " +err.message);
+                                callback("Error getting events", null);
+                                return;
                             }
-                        }
-
-                        invitees = invitees.split(',');
-                        console.log(invitees);
-                        this.db.serialize( () => {
+                            let currentEvent;
+                            for(let i = 0; i < events.length; i++){
+                                if(events[i].eventid > eventID){
+                                    eventID = events[i].eventid;
+                                    currentEvent = events[i];
+                                }
+                            }
                             
-                            console.log(invitees.length);
-                            for(let i = 0; i < invitees.length; i++){
-                                
-                                this.GetUserInfo(invitees[i], (err, user) => {
-                                    if(err){
-                                        console.log(err.message);
-                                        callback(err, null);
-                                        return;
-                                    }
-                                    console.log( user);
-                                    if(user[0]){
-                                        console.log(user[0].invitees);
-                                        if(user[0].invited == "NONE"){
-                                            user[0].invited = `${newestEvent}`;
-                                        }else if(!user[0].invited.includes(newestEvent)){
-                                            user[0].invited = `${user[0].invited},${newestEvent}`;
-                                        }else{
-                                            console.log("User already invited");
-                                            callback(null, "User already invited");
-                                            return;
-                                        }
-                                        console.log(user[0].invited);
-                                        this.UpdateTable('users', `invited=${user[0].invited}`, `id=${user[0].id}`);
-                                    }
-                                });
+                            this.InviteInvitees(eventID, currentEvent.invitees, (err, res) => {
+                                if(err){
+                                    console.log("Error in InviteInvitees function");
+                                }
+                                callback(err, null);
+                                return;                
+                            });
+                            callback(null, `Event created ${eventID}` );
+                            return;
+                        });
+                    });
+                    
+                });
+            });
+            
+        }
+        InviteInvitees(eventid, invitees, callback){
+            this.db.serialize(() => {
+                this.GetEventInfo(eventid, (err, event) => {
+                    if(err){
+                        console.log(err.message);
+                        callback("Error inviting invitees", null);
+                        return;
+                    }
+                    invitees = invitees.split(',');
+                    console.log(invitees.length);
+                    for(let i = 0; i < invitees.length; i++){
+                        this.GetUserInfo(invitees[i], (err, user) => {
+                            if(err){
+                                console.log(err.message);
+                                callback(err, null);
+                                return;
+                            }
+                            console.log( user);
+                            if(user[0]){
+                                console.log(user[0].invitees);
+                                if(user[0].invited == "NONE"){
+                                    user[0].invited = `${eventid}`;
+                                }else if(!user[0].invited.includes(eventid)){
+                                    user[0].invited = `${user[0].invited},${eventid}`;
+                                }else{
+                                    console.log("User already invited");
+                                }
+                                console.log(user[0].invited);
+                                this.UpdateTable('users', `invited=${user[0].invited}`, `id=${user[0].id}`);
                             }
                         });
-                        
-                    });
+                    }
+                    //this.UpdateTable('users', `invited=${user[0].invited}`, `id=${user[0].id}`);
+                    callback(null, "Invitees added");
                 });
-                callback(null, "Event created");
-                return true;
             });
         }
+
         GetEventInfo(eventid, callback){
-            this.db.all(`SELECT * FROM events WHERE eventid = ${eventid};`, (err,event) => {
-                if(err){
-                    console.log(err.message);
-                    callback(err, null);
-                    return;
-                }
-                callback(null, event);
-                //console.log(event);
+            this.db.serialize(() => {
+                this.db.all(`SELECT * FROM events WHERE eventid = ${eventid};`, (err,event) => {
+                    if(err){
+                        console.log(err.message);
+                        callback(err, null);
+                        return;
+                    }
+                    if(!event.length == 0){
+                        callback(null, event);
+                    }else{
+                        callback("Event not found", null);
+                    }
+                    //console.log(event);
+                });
             });
+            
         }
         GetAllEvents(userid, callback){
-            this.db.all(`SELECT * FROM events WHERE userid=${userid};`, (err, events) =>{
-                if(err){
-                    console.log(err.message);
-                    callback("Error getting events", null);
-                    return;
-                }
-                callback(null, events);
+            this.db.serialize(() =>{
+                this.db.all(`SELECT * FROM events WHERE userid=${userid};`, (err, events) =>{
+                    if(err){
+                        console.log(err.message);
+                        callback("Error getting events", null);
+                        return;
+                    }
+                    callback(null, events);
+                });
             });
         }
     // Testing

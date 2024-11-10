@@ -53,6 +53,10 @@ async function ProcessData(data, db, socket){
                 result = await eventmanagement.DeleteEvent(args, db);
                 return result;
                 break;
+            case 'wipeallevents':
+                result = await eventmanagement.WipeAllEvents(db);
+                return result;
+                break;
             case 'exit':
                 socket.end();
                 break;

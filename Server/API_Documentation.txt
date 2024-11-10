@@ -1,4 +1,5 @@
 API_Commands and their returns-
+
    login <username or email> <password> 
       - returns "User logged in" if login is successful, "Incorrect login" or "User not found" if login is unsuccessful
    
@@ -18,7 +19,7 @@ API_Commands and their returns-
       - returns "Friend removed" if friend is removed successfully, "Friend not found" if friend doesn't exist, or "Error removing friend" if error
 
    createevent <userid> <title> <date> <startTime> <endTime> <publicityType> <invitees> <details>
-      - returns "Event created" if event is created successfully, "User already added" if eventid is already in invitees invited list,If error, then returns error message
+      - returns "Event created" and the event ID of the event, if event is created successfully, "User already added" if eventid is already in invitees invited list,and if there is an error, then it returns the error message
 
    addinvitee <eventid> <username of invitee>
       - returns "Invitee added" if invitee is added successfully, "Invitee already added" if the invitee was already added, and "Unable to add invitee" if error.
@@ -27,7 +28,7 @@ API_Commands and their returns-
       - returns all events associated with the user
    
    geteventinfo <eventid> 
-      - returns title, details, date(MM/DD/YYYY(start date), MM/DD/YYYY(end date) ), startTime, endTime, publicityType, invitees of the event, and the userid of the creator of the event. If error, then returns error message
+      - returns title, details, date(MM/DD/YYYY(start date), MM/DD/YYYY(end date)), startTime, endTime, publicityType, invitees of the event, and the userid of the creator of the event. If error, then returns error message
    
-   deleteevent <userid> <title>
+   deleteevent <eventid>
       - returns "Event deleted" if event is deleted successfully. If error, then returns error message
