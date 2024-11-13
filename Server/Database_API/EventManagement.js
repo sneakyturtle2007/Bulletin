@@ -39,7 +39,6 @@ function DeleteEvent(args, DB){
                 DB.db.serialize(() => {
                     invitees = event[0].invitees.toString().split(',');
                     if(invitees.length > 0){
-                        console.log("EventManagement.js: Deleting invitees");
                         for(let i = 0; i < invitees.length; i++){
                             DB.GetUserInfo(invitees[i], (err, user) => {
                                 if(err){
@@ -48,16 +47,29 @@ function DeleteEvent(args, DB){
                                     resolve(err);
                                 }
                                 let invited = user[0].invited.toString().split(',');
-                                invited.splice(1, invited.indexOf(event[0].eventid));
-                                let result = "";
-                                for(let i = 0; i < invited.length; i++){
-                                    if(i == invited.length - 1){
-                                        result += invited[i];
-                                        break;
+
+                                //console.log("\nInvited List: " + invited); DEBUG STATEMENT
+
+                                invited.splice(invited.indexOf(event[0].eventid.toString()), 1);
+
+                                //console.log("\nInvited List After: " + invited); DEBUG STATEMENT
+
+                                let invitedEdited= "";
+                                if(invited.length > 0){
+                                    for(let i = 0; i < invited.length; i++){
+                                        if(i == invited.length - 1){
+                                            invitedEdited += invited[i];
+                                            break;
+                                        }
+                                        invitedEdited += invited[i] + ",";
                                     }
-                                    result += invited[i] + ",";
+                                }else{
+                                    invitedEdited = "NONE"
                                 }
-                                DB.UpdateTable("users", `invited="'${result}'"`, `username="${invitees[i]}"`);
+                                
+                                //console.log("Trying to delete event from invited list: " + invitedEdited); DEBUG STATEMENT
+
+                                DB.UpdateTable("users", `invited="${invitedEdited}"`, `username="${invitees[i]}"`);
                             });
                             
                         }

@@ -67,18 +67,19 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
 
                 let response = data.toString().trim();
 
-                console.log(response);
+                console.log(`Response: ${response}\n`);
                 if(response.includes('Event created')){
                     eventID = response.split(" ")[2];
+                    console.log(`Sent: geteventinfo ${eventID}`);
                     client.write(`geteventinfo ${eventID}`); 
                 }else{
                     try{
-                        console.log("Testing");
                         response = DealingWithParenthesis(response);
                         response = response.split(",");
                         if(response[7] == userid){
-                            //client.write(`deleteevent ${eventID}`);
-                            console.log("Deleting event");
+                            console.log(`Sent: deleteevent ${eventID}`);
+                            client.write(`deleteevent ${eventID}`);
+                            
                         }else if(response == 'Event deleted'){
                             resolve("Event Test" + ' \u2713')
                         }else{
