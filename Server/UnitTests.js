@@ -72,17 +72,19 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
                     eventID = response.split(" ")[2];
                     client.write(`geteventinfo ${eventID}`); 
                 }else{
-
-                    response = DealingWithParenthesis(response);
-                    response = response.split(",");
-                    if(response[7] == userid){
-                        client.write(`deleteevent ${eventID}`);
-                        
-                    }else if(response == 'Event deleted'){
-                        resolve("Event Test" + ' \u2713')
-                    }else{
-                        err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
-                        reject(err);
+                    try{
+                        response = DealingWithParenthesis(response);
+                        response = response.split(",");
+                    }catch(err){
+                        if(response[7] == userid){
+                            client.write(`deleteevent ${eventID}`);
+                            
+                        }else if(response == 'Event deleted'){
+                            resolve("Event Test" + ' \u2713')
+                        }else{
+                            err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
+                            reject(err);
+                        }
                     }
                 }
                 
@@ -97,11 +99,14 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
 }
 function DealingWithParenthesis(source){
     let result;
-    let date = source.substring(source.indexOf("("),source.indexOf(")") + 1);
-    result = source.replace(date, "");
-    let invitees = result.substring(result.indexOf("("),(result.indexOf(")") + 1));
-    result = result.replace(invitees, "");
-
+    try{
+        let date = source.substring(source.indexOf("("),source.indexOf(")") + 1);
+        result = source.replace(date, "");
+        let invitees = result.substring(result.indexOf("("),(result.indexOf(")") + 1));
+        result = result.replace(invitees, "");
+    }catch(err){
+        throw err;
+    }
     return result;
 }
 /*function GetEventID(userid, client){
