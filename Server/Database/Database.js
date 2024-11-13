@@ -102,6 +102,9 @@ class Database{
             this.db.serialize(() => {
                 this.db.run(`UPDATE ${table} SET ${values} WHERE ${condition};`, (err) => {
                     if(err){
+
+                        console.log("Update Table Error: " + err.message);
+                        console.log("Entered Command: " + `UPDATE ${table} SET ${values} WHERE ${condition};`);
                         throw err;
                     }
                     //console.log(`Updated ${name}`);
@@ -128,12 +131,14 @@ class Database{
                     }
                 
                     if(username.includes('@')){
-                        this.db.all(`SELECT * FROM users WHERE email = "${username};"`, (err,user) => {
+                        this.db.all(`SELECT * FROM users WHERE email="${username}";`, (err,user) => {
                             if(err){
                                 console.log(err.message);
                                 callback("Error getting user", null);
                                 return;
                             }
+                            console.log("\n retrieved users: " + user);
+                            console.log("\n used username: " +username);
                             callback(null, user);
                             
                             //console.log(user);
@@ -175,10 +180,13 @@ class Database{
                                 return;
                             }
                             if(rows.length > 0 ){
-                                //console.log("Email taken");
+                                console.log("Email taken");
+
                                 callback(null, "Email taken");
                                 return;
                             }
+                            console.log(email);
+                            console.log("Creating user");
                             this.db.run('INSERT INTO users (username, email, password) VALUES (?, ?, ?);',[username, email, password], (err) => {
                                 if(err){
                                     callback(err, null);
@@ -259,13 +267,13 @@ class Database{
                     for(let i = 0; i < invitees.length; i++){
                         this.GetUserInfo(invitees[i], (err, user) => {
                             if(err){
-                                console.log(err.message);
+                                console.log("testingtesting" + err.message);
                                 callback(err, null);
                                 return;
                             }
-                            console.log( user);
+                            //console.log( user);
                             if(user[0]){
-                                console.log(user[0].invitees);
+                                //console.log(user[0].invitees);
                                 if(user[0].invited == "NONE"){
                                     user[0].invited = `${eventid}`;
                                 }else if(!user[0].invited.includes(eventid)){
@@ -286,8 +294,9 @@ class Database{
 
         GetEventInfo(eventid, callback){
             this.db.serialize(() => {
-                this.db.all(`SELECT * FROM events WHERE eventid = ${eventid};`, (err,event) => {
+                this.db.all(`SELECT * FROM events WHERE eventid=${eventid};`, (err,event) => {
                     if(err){
+                        console.log("debug");
                         console.log(err.message);
                         callback("Error getting event", null);
                         return;

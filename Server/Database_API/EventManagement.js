@@ -26,11 +26,12 @@ function CreateEvent(args, DB){
 function DeleteEvent(args, DB){
     return new Promise(async (resolve, reject) =>{
         let eventID = args[0];
-        
+        console.log("EventManagement.js: Deleting event");
         DB.db.serialize(() => {
             let invitees;
-            DB.db.GetEventInfo(eventID, (err, event) => {
+            DB.GetEventInfo(eventID, (err, event) => {
                 if(err){
+                    console.log("EventManagement.js: Error getting event info");
                     console.log(err.message);
                     resolve(err);
                     return;
@@ -42,10 +43,21 @@ function DeleteEvent(args, DB){
                         for(let i = 0; i < invitees.length; i++){
                             DB.GetUserInfo(invitees[i], (err, user) => {
                                 if(err){
+                                    console.log("EventManagement.js: Error getting user info");
                                     console.log(err.message);
                                     resolve(err);
                                 }
-                                DB.UpdateTable("users", `invited=${user[0].invited.splice(1, user[0].invited.indexOf(event[0].eventid))}`, `username="${invitees[i]}"`);
+                                let invited = user[0].invited.toString().split(',');
+                                invited.splice(1, invited.indexOf(event[0].eventid));
+                                let result = "";
+                                for(let i = 0; i < invited.length; i++){
+                                    if(i == invited.length - 1){
+                                        result += invited[i];
+                                        break;
+                                    }
+                                    result += invited[i] + ",";
+                                }
+                                DB.UpdateTable("users", `invited="'${result}'"`, `username="${invitees[i]}"`);
                             });
                             
                         }
@@ -82,6 +94,7 @@ function GetEvents(args, DB){
         userid = args[0];
         DB.GetAllEvents(userid, (err, result) => {
             if(err){
+                console.log("Error getting events");
                 console.log(err.message);
                 resolve("Error getting events");
                 return;
@@ -96,6 +109,7 @@ function GetEventInfo(args, DB){
         eventid = args[0];
         DB.GetEventInfo(eventid, (err, result) => {
             if(err){
+                console.log("Error getting event info");
                 console.log(err.message);
                 resolve("Error getting event info");
                 return;

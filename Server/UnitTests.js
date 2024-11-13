@@ -77,7 +77,8 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
                         response = DealingWithParenthesis(response);
                         response = response.split(",");
                         if(response[7] == userid){
-                            client.write(`deleteevent ${eventID}`);
+                            //client.write(`deleteevent ${eventID}`);
+                            console.log("Deleting event");
                         }else if(response == 'Event deleted'){
                             resolve("Event Test" + ' \u2713')
                         }else{
@@ -110,21 +111,7 @@ function DealingWithParenthesis(source){
     }
     return result;
 }
-/*function GetEventID(userid, client){
-    return new Promise(async (resolve, reject) => {
-        try{
-            client.write(`getevents ${userid}`);
-            client.on('data', async (data) => {
-                response = data.toString().trim();
-                console.log(response);
-                for()
-                resolve(response);
-            });
-        }catch(err){
-            reject(err);
-        }
-    })
-}*/
+
 const {Socket} = require('net');
 const client = new Socket();
 
@@ -135,7 +122,7 @@ client.connect(22,'127.0.0.1' ,async () => {
     try{
         usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
         console.log(usertest);
-        client.write('wipeallevents');
+        //client.write('wipeallevents');
         eventtest = await EventTest('1', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
         console.log(eventtest);
     }catch(err){

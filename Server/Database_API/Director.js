@@ -8,6 +8,7 @@ async function ProcessData(data, db, socket){
         var command = message.split(' ')[0];
         var args = message.split(' ').slice(1);
         let result;
+        console.log(command);
         switch(command){
             case 'login':
                 result = await login.Login(args, db);
