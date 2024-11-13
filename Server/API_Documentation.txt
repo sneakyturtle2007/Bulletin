@@ -31,4 +31,4 @@ API_Commands and their returns-
       - returns title, details, date(MM/DD/YYYY(start date), MM/DD/YYYY(end date)), startTime, endTime, publicityType, invitees of the event, and the userid of the creator of the event. If error, then returns error message
    
    deleteevent <eventid>
-      - returns "Event deleted" if event is deleted successfully. If error, then returns error message
+      - returns "Event deleted" if event is deleted successfully. If error, then returns either "Error getting event" or "Error deleting event", or "Event not found" if no event is found message

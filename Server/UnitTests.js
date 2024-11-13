@@ -67,24 +67,25 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
 
                 let response = data.toString().trim();
 
-                //console.log(response);
+                console.log(response);
                 if(response.includes('Event created')){
                     eventID = response.split(" ")[2];
                     client.write(`geteventinfo ${eventID}`); 
                 }else{
                     try{
+                        console.log("Testing");
                         response = DealingWithParenthesis(response);
                         response = response.split(",");
-                    }catch(err){
                         if(response[7] == userid){
                             client.write(`deleteevent ${eventID}`);
-                            
                         }else if(response == 'Event deleted'){
                             resolve("Event Test" + ' \u2713')
                         }else{
                             err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
                             reject(err);
                         }
+                    }catch(err){
+                        console.log(err);
                     }
                 }
                 
@@ -134,8 +135,8 @@ client.connect(22,'127.0.0.1' ,async () => {
     try{
         usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
         console.log(usertest);
-        //client.write('wipeallevents');
-        eventtest = await EventTest('1', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'john,aba', 'NONE', client);
+        client.write('wipeallevents');
+        eventtest = await EventTest('1', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
         console.log(eventtest);
     }catch(err){
         console.log(err);

@@ -26,13 +26,42 @@ function CreateEvent(args, DB){
 function DeleteEvent(args, DB){
     return new Promise(async (resolve, reject) =>{
         let eventID = args[0];
-        try{
-            DB.DeleteFromTable('events', `eventid=${eventID}`);
-        }catch(err){
-            console.log(err.message);
-            resolve("Error deleting event");
-            return;
-        }  
+        
+        DB.db.serialize(() => {
+            let invitees;
+            DB.db.GetEventInfo(eventID, (err, event) => {
+                if(err){
+                    console.log(err.message);
+                    resolve(err);
+                    return;
+                }
+                DB.db.serialize(() => {
+                    invitees = event[0].invitees.toString().split(',');
+                    if(invitees.length > 0){
+                        console.log("EventManagement.js: Deleting invitees");
+                        for(let i = 0; i < invitees.length; i++){
+                            DB.GetUserInfo(invitees[i], (err, user) => {
+                                if(err){
+                                    console.log(err.message);
+                                    resolve(err);
+                                }
+                                DB.UpdateTable("users", `invited=${user[0].invited.splice(1, user[0].invited.indexOf(event[0].eventid))}`, `username="${invitees[i]}"`);
+                            });
+                            
+                        }
+                    }
+                    
+                    try{
+                        DB.DeleteEvent(eventID);
+                    }catch(err){
+                        console.log(err.message);
+                        resolve("Error deleting event");
+                        return;
+                    }  
+                });
+                
+            });
+        });
         resolve("Event deleted");
     });
 }

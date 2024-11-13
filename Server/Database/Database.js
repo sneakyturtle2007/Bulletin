@@ -118,7 +118,7 @@ class Database{
                         this.db.all(`SELECT * FROM users WHERE id = ${username};`, (err,user) => {
                             if(err){
                                 console.log(err.message);
-                                callback(err, null);
+                                callback("Error getting user", null);
                                 return;
                             }
                             callback(null, user);
@@ -131,7 +131,7 @@ class Database{
                         this.db.all(`SELECT * FROM users WHERE email = "${username};"`, (err,user) => {
                             if(err){
                                 console.log(err.message);
-                                callback(err, null);
+                                callback("Error getting user", null);
                                 return;
                             }
                             callback(null, user);
@@ -142,7 +142,7 @@ class Database{
                         this.db.all(`SELECT * FROM users WHERE username = "${username}";`, (err,user) => {
                             if(err){
                                 console.log(err.message);
-                                callback(err, null);
+                                callback("Error getting user", null);
                                 return;
                             }
                             callback(null,user);
@@ -289,7 +289,7 @@ class Database{
                 this.db.all(`SELECT * FROM events WHERE eventid = ${eventid};`, (err,event) => {
                     if(err){
                         console.log(err.message);
-                        callback(err, null);
+                        callback("Error getting event", null);
                         return;
                     }
                     if(!event.length == 0){
@@ -313,6 +313,9 @@ class Database{
                     callback(null, events);
                 });
             });
+        }
+        DeleteEvent(eventid){
+            this.DeleteFromTable('events', `eventid=${eventid}`);
         }
     // Testing
         UnitTests(){
