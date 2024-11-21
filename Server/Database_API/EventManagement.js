@@ -1,14 +1,14 @@
 
 function CreateEvent(args, DB){
     return new Promise(async (resolve, reject) =>{
-        userid = args[0];
-        title = args[1];
-        date = args[2];
-        startTime = args[3];
-        endTime = args[4];
-        publicityType = args[5];
-        invitees = args[6];
-        details = args[7];
+        let userid = args[0];
+        let title = args[1];
+        let date = args[2];
+        let startTime = args[3];
+        let endTime = args[4];
+        let publicityType = args[5];
+        let invitees = args[6];
+        let details = args[7];
         console.log(userid + title + date + startTime + endTime + publicityType + invitees + details);
         DB.CreateEvent(userid, title, date, startTime, endTime, publicityType, invitees, details, (err, result) => {
             if(err){
@@ -27,65 +27,65 @@ function DeleteEvent(args, DB){
     return new Promise(async (resolve, reject) =>{
         let eventID = args[0];
         console.log("EventManagement.js: Deleting event");
-        DB.db.serialize(() => {
-            let invitees;
-            DB.GetEventInfo(eventID, (err, event) => {
-                if(err){
-                    console.log("EventManagement.js: Error getting event info");
-                    console.log(err.message);
-                    resolve(err);
-                    return;
-                }
-                DB.db.serialize(() => {
-                    invitees = event[0].invitees.toString().split(',');
-                    if(invitees.length > 0){
-                        for(let i = 0; i < invitees.length; i++){
-                            DB.GetUserInfo(invitees[i], (err, user) => {
-                                if(err){
-                                    console.log("EventManagement.js: Error getting user info");
-                                    console.log(err.message);
-                                    resolve(err);
-                                }
-                                let invited = user[0].invited.toString().split(',');
+        
+        let invitees;
+        DB.GetEventInfo(eventID, (err, event) => {
+            if(err){
+                console.log("EventManagement.js: Error getting event info");
+                console.log(err.message);
+                resolve(err);
+                return;
+            }
+            DB.db.serialize(() => {
+                invitees = event[0].invitees.toString().split(',');
+                if(invitees.length > 0){
+                    for(let i = 0; i < invitees.length; i++){
+                        DB.GetUserInfo(invitees[i], (err, user) => {
+                            if(err){
+                                console.log("EventManagement.js: Error getting user info");
+                                console.log(err.message);
+                                resolve(err);
+                            }
+                            let invited = user[0].invited.toString().split(',');
 
-                                //console.log("\nInvited List: " + invited); DEBUG STATEMENT
+                            //console.log("\nInvited List: " + invited); DEBUG STATEMENT
 
-                                invited.splice(invited.indexOf(event[0].eventid.toString()), 1);
+                            invited.splice(invited.indexOf(event[0].eventid.toString()), 1);
 
-                                //console.log("\nInvited List After: " + invited); DEBUG STATEMENT
+                            //console.log("\nInvited List After: " + invited); DEBUG STATEMENT
 
-                                let invitedEdited= "";
-                                if(invited.length > 0){
-                                    for(let i = 0; i < invited.length; i++){
-                                        if(i == invited.length - 1){
-                                            invitedEdited += invited[i];
-                                            break;
-                                        }
-                                        invitedEdited += invited[i] + ",";
+                            let invitedEdited= "";
+                            if(invited.length > 0){
+                                for(let i = 0; i < invited.length; i++){
+                                    if(i == invited.length - 1){
+                                        invitedEdited += invited[i];
+                                        break;
                                     }
-                                }else{
-                                    invitedEdited = "NONE"
+                                    invitedEdited += invited[i] + ",";
                                 }
-                                
-                                //console.log("Trying to delete event from invited list: " + invitedEdited); DEBUG STATEMENT
-
-                                DB.UpdateTable("users", `invited="${invitedEdited}"`, `username="${invitees[i]}"`);
-                            });
+                            }else{
+                                invitedEdited = "NONE"
+                            }
                             
-                        }
+                            //console.log("Trying to delete event from invited list: " + invitedEdited); DEBUG STATEMENT
+
+                            DB.UpdateTable("users", `invited="${invitedEdited}"`, `username="${invitees[i]}"`);
+                        });
+                        
                     }
-                    
-                    try{
-                        DB.DeleteEvent(eventID);
-                    }catch(err){
-                        console.log(err.message);
-                        resolve("Error deleting event");
-                        return;
-                    }  
-                });
+                }
                 
+                try{
+                    DB.DeleteEvent(eventID);
+                }catch(err){
+                    console.log(err.message);
+                    resolve("Error deleting event");
+                    return;
+                }  
             });
+            
         });
+    
         resolve("Event deleted");
     });
 }
@@ -103,7 +103,7 @@ function WipeAllEvents(DB){
 
 function GetEvents(args, DB){
     return new Promise(async (resolve, reject) =>{
-        userid = args[0];
+        let userid = args[0];
         DB.GetAllEvents(userid, (err, result) => {
             if(err){
                 console.log("Error getting events");
@@ -118,7 +118,7 @@ function GetEvents(args, DB){
 }
 function GetEventInfo(args, DB){
     return new Promise(async (resolve, reject) =>{
-        eventid = args[0];
+        let eventid = args[0];
         DB.GetEventInfo(eventid, (err, result) => {
             if(err){
                 console.log("Error getting event info");
@@ -134,10 +134,10 @@ function GetEventInfo(args, DB){
 }
 function AddInvitee(args, DB){
     return new Promise(async (resolve, reject) => {
-        eventid = args[0];
-        invitee = args[1];
+        let eventID = args[0];
+        let invitee = args[1];
 
-        DB.GetEventInfo(eventid, (err, event) => {
+        DB.GetEventInfo(eventID, (err, event) => {
             if(err){
                 console.log(err.message);
                 resolve('Event not found');
@@ -154,7 +154,8 @@ function AddInvitee(args, DB){
             }  
             DB.db.serialize(()=>{
                 try{
-                    DB.UpdateTable('events', `invitees="${invitees}"`, `id=${event[0].id}`);
+                    DB.UpdateTable('events', `invitees="${invitees}"`, `eventid=${event[0].eventid}`);
+                    
                     resolve("Invitee added");
                     return;
                 }catch(err){
@@ -162,9 +163,53 @@ function AddInvitee(args, DB){
                     return;
                 }
             });
-
-        })
+        });
     });
 }
 
-module.exports = {CreateEvent, DeleteEvent, GetEvents, AddInvitee, GetEventInfo, WipeAllEvents};
+function RemoveInvitee(args, DB){
+    return new Promise(async (resolve, reject) => {
+        let eventID = args[0];
+        let invitee = args[1];
+        DB.GetEventInfo(eventID, (err, event) => {
+            if(err){
+                console.log(err.message);
+                resolve('Event not found');
+                return;
+            }
+            let invitees = event[0].invitees.toString();
+            let result = "";
+            if(invitees == "NONE"){
+                resolve("No invitees to remove");
+                return;
+            }else if(!invitees.includes(invitee)){
+                resolve("Invitees not found");
+                return;
+            }else{
+                invitees = invitees.split(",");
+                //invitees = invitees.slice(0,invitees.indexOf(invitee)-1) + invitees.slice(invitees.indexOf(invitee)+1, invitees.Count);
+                invitees = invitees.splice(invitees.indexOf(invitee),1);
+                for(let i = 0; i < invitees.length; i++){
+                    if(i == invitees.length -1){
+                        result += invitees[i];
+                        break;
+                    }
+                    result += invitees[i] + ",";
+                }
+            }  
+            DB.db.serialize(()=>{
+                try{
+                    DB.UpdateTable('events', `invitees="${result}"`, `eventid=${event[0].eventid}`);
+                    resolve("Invitee removed");
+                    return;
+                }catch(err){
+                    resolve('Error removing invitee');
+                    return;
+                }
+            });
+        });
+    });
+}
+
+
+module.exports = {CreateEvent, DeleteEvent, GetEvents, AddInvitee,RemoveInvitee, GetEventInfo, WipeAllEvents};

@@ -7,6 +7,8 @@ async function ProcessData(data, db, socket){
         var message = data.toString().trim();
         var command = message.split(' ')[0];
         var args = message.split(' ').slice(1);
+        console.log("Command: " + command);
+        console.log("Arguments: " + args);
         let result;
         switch(command){
             case 'login':
@@ -39,6 +41,10 @@ async function ProcessData(data, db, socket){
                 break;
             case 'addinvitee':
                 result = await eventmanagement.AddInvitee(args, db);
+                return result;
+                break;
+            case 'removeinvitee':
+                result = await eventmanagement.RemoveInvitee(args, db);
                 return result;
                 break;
             case 'getevents':

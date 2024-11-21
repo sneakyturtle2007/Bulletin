@@ -76,18 +76,25 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
                     try{
                         response = DealingWithParenthesis(response);
                         response = response.split(",");
-                        if(response[7] == userid){
-                            console.log(`Sent: deleteevent ${eventID}`);
-                            client.write(`deleteevent ${eventID}`);
-                            
-                        }else if(response == 'Event deleted'){
-                            resolve("Event Test" + ' \u2713')
-                        }else{
-                            err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
-                            reject(err);
-                        }
                     }catch(err){
                         console.log(err);
+                    }
+                    if(response[7] == userid){
+                        console.log(`Sent: addinvitee ${eventID} test`);
+                        client.write(`addinvitee ${eventID} test`);
+                    }else if(response == "Invitee added"){
+                        console.log(`Sent: removeinvitee ${eventID} test`);
+                        client.write(`removeinvitee ${eventID} test`);
+                        
+                    }else if(response == "Invitee removed"){
+                        console.log(`Sent: deleteevent ${eventID}`);
+                        client.write(`deleteevent ${eventID}`);
+                        
+                    }else if(response == 'Event deleted'){
+                        resolve("Event Test" + ' \u2713')
+                    }else{
+                        err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
+                        reject(err);
                     }
                 }
                 
@@ -132,15 +139,4 @@ client.connect(22,'127.0.0.1' ,async () => {
     
     
 });
-/*
-client.write(`createevent 1 test 2021/2/24,2023/5/3 1500 1600 private john,aba NONE`);
-    client.on('data', ( data) =>{
 
-        console.log(data.toString().trim());
-    });
-
-*/
-
-/*
-
-*/

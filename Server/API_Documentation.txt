@@ -23,7 +23,12 @@ API_Commands and their returns-
 
    addinvitee <eventid> <username of invitee>
       - returns "Invitee added" if invitee is added successfully, "Invitee already added" if the invitee was already added, and "Unable to add invitee" if error.
-
+   
+   removeinvitee <eventid> <username of invitee>
+      - returns "Invitee removed" if invitee is removed successfully, "Error removing invitee" if there is an error removing the invitee, 
+      "No invitees to remove" if the event doesn't have any invitees, "Invitee not found" if the invitee doesn't exist in the invitees 
+      list of the event, and "Event not found" if the event cannot be found.
+   
    getevents <userid>
       - returns all events associated with the user
    
