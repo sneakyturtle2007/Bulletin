@@ -67,7 +67,7 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
 
                 let response = data.toString().trim();
 
-                console.log(`Response: ${response}\n`);
+                //console.log(`Response: ${response}\n`);
                 if(response.includes('Event created')){
                     eventID = response.split(" ")[2];
                     console.log(`Sent: geteventinfo ${eventID}`);

@@ -226,7 +226,7 @@ class Database{
                     this.db.serialize(() => {
                         this.GetAllEvents(userid, (err, events) => {
                             if(err){
-                                console.log("Error when getting events in CreateEvent function " +err.message);
+                                console.log("Error when getting events in CreateEvent function " + err.message);
                                 callback("Error getting events", null);
                                 return;
                             }
