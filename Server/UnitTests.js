@@ -71,7 +71,8 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
                 if(response.includes('Event created')){
                     eventID = response.split(" ")[2];
                     console.log(`Sent: geteventinfo ${eventID}`);
-                    client.write(`geteventinfo ${eventID}`); 
+                    client.write(`geteventinfo ${eventID}`);
+                     
                 }else{
                     try{
                         response = DealingWithParenthesis(response);
@@ -82,16 +83,30 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
                     if(response[7] == userid){
                         console.log(`Sent: addinvitee ${eventID} test`);
                         client.write(`addinvitee ${eventID} test`);
+
                     }else if(response == "Invitee added"){
+                        console.log(`Sent: addinvitee ${eventID} test`);
+                        client.write(`addinvitee ${eventID} test`);
+
+                    }else if(response == "Invitee already added"){
                         console.log(`Sent: removeinvitee ${eventID} test`);
                         client.write(`removeinvitee ${eventID} test`);
-                        
+
                     }else if(response == "Invitee removed"){
+                        console.log(`Sent: removeinvitee ${eventID} test`);
+                        client.write(`removeinvitee ${eventID} test`);
+
+                    }else if(response == "Invitee not found"){
                         console.log(`Sent: deleteevent ${eventID}`);
                         client.write(`deleteevent ${eventID}`);
                         
                     }else if(response == 'Event deleted'){
+                        console.log(`Sent: deleteevent ${eventID}`);
+                        client.write(`deleteevent ${eventID}`);
+
+                    }else if(response == 'Event not found'){    
                         resolve("Event Test" + ' \u2713')
+
                     }else{
                         err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
                         reject(err);
