@@ -26,7 +26,7 @@ function CreateEvent(args, DB){
 function DeleteEvent(args, DB){
     return new Promise(async (resolve, reject) =>{
         let eventID = args[0];
-        console.log("EventManagement.js: Deleting event");
+        console.log("EventManagement.js/DeleteEvent: Deleting event");
         
         let invitees;
         DB.db.serialize(() => {
@@ -34,19 +34,19 @@ function DeleteEvent(args, DB){
             DB.GetEventInfo(eventID, async (err, event) => {
 
                 if(err){
-                    console.log("EventManagement.js: Error getting event info");
+                    console.log("EventManagement.js/DeleteEvent: Error getting event info");
                     console.log(err.message);
                     resolve(err);
                     return;
                 }
                 
                 invitees = event[0].invitees.toString().split(',');
-                console.log(`EventManagement.js: Invitees (eventID ${eventID}): ` + invitees);
+                console.log(`EventManagement.js/DeleteEvent: Invitees (eventID ${eventID}): ` + invitees);
             
                 try{
                     if(invitees.length > 0){
                         for(let i = 0; i < invitees.length; i++){
-                            console.log("EventManagement.js: Uninviting invitees");
+                            console.log("EventManagement.js/DeleteEvent: Uninviting invitees");
                             if(i == invitees.length - 1){
                                 DB.db.serialize(() => {
                                     Uninvite([invitees[i], eventID], DB);
@@ -104,7 +104,7 @@ function GetEventInfo(args, DB){
         let eventid = args[0];
         DB.GetEventInfo(eventid, (err, result) => {
             if(err){
-                console.log("Error getting event info");
+                console.log("EventManagement.js/GetEventInfo: Error getting event info");
                 console.log(err.message);
                 resolve("Error getting event info");
                 return;
