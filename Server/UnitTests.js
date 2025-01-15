@@ -1,13 +1,12 @@
-var currentTest = 0;
-var eventID;
+let eventID;
 async function UserTest(username, email, password, client){
     return new Promise(async (resolve, reject) => {
         try{
             client.write(`createuser ${username} ${email} ${password}`);
             client.on('data', async (data) => {
-                value = -1;
+                let value = -1;
                 
-                response = data.toString().trim();
+                let response = data.toString().trim();
 
                 try{
                     value = Number(response.split(',')[0])
@@ -57,13 +56,12 @@ async function UserTest(username, email, password, client){
 }
 
 async function EventTest(userid, title, date, startTime, endTime, publicityType, invitees, details, client){
-    return new Promise(async (resolve, reject) => {
+    return new Promise( (resolve, reject) => {
         try{
 
             client.write(`createevent ${userid} ${title} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${details}`);
             
             client.on('data', async (data) => {
-                value = -1;
 
                 let response = data.toString().trim();
 

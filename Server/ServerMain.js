@@ -19,9 +19,19 @@ app.use(express.static(path.join(__dirname, "../Website")));
 app.use(express.json());
 
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Website/Main/Main.html'));
+app.get('/' , (req, res) => { // Sets what URL, after the base URL,the server will listen to and initializes the function that will be executed. 
+    res.sendFile(path.join(__dirname, '../Website/Main/Main.html'));/* Sends the corresponding HTML file to the client. 
+    __dirname is used because express required the full path, and this just makes it more compatible.*/
 });
+/* To add another URL to listen to, just repeat the function above with the desired URL 
+in the single quotes in the app.get(), and the desired HTML file's path in the single quotes 
+in the res.send(path.join()).
+
+Example:
+app.get('/example', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Website/Example/Example.html'));
+}
+*/
 
 
 

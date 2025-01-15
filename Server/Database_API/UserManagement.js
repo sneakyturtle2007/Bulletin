@@ -1,8 +1,8 @@
 function CreateUser(args, DB){
-    return new Promise(async (resolve, reject) => {
-        var username = args[0];
-        var email = args[1];
-        var password = args[2];
+    return new Promise( (resolve, reject) => {
+        let username = args[0];
+        let email = args[1];
+        let password = args[2];
         
         DB.CreateUser(username, email, password , (err, result) => {
             if(err){
@@ -14,8 +14,8 @@ function CreateUser(args, DB){
     });
 }
 function DeleteUser(args, DB){
-    return new Promise(async (resolve, reject) => {
-        username = args[0];
+    return new Promise( (resolve, reject) => {
+        let username = args[0];
         try{
             DB.DeleteUser(username);
             resolve("User deleted");
@@ -26,15 +26,14 @@ function DeleteUser(args, DB){
     });
 }
 function GetUserInfo(args, DB){
-    return new Promise(async (resolve, reject) => {
+    return new Promise( (resolve, reject) => {
         try{
             Number(args[0]);
-            userid = args[0];
+            let userid = args[0];
             DB.GetUserInfo(userid, (err, result) => {
                 if(err){
                     //console.log(err.message);
                     resolve('User not found');
-                    return;
                 }else{
                     if(result.length > 0){
                         resolve(result[0].id + "," + result[0].username + "," + result[0].email + ",(" + result[0].friends + "),(" + result[0].invited + ")");
