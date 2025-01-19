@@ -43,7 +43,7 @@ function GetUserInfo(args, DB){
                 }
             });
         }catch(err){
-            username = args[0];
+            let username = args[0];
             DB.GetUserInfo(username, (err, result) => {
                 if(err){
                     //console.log(err.message);
@@ -62,9 +62,9 @@ function GetUserInfo(args, DB){
     });
 }
 function AddFriend(args, DB){
-    return new Promise(async (resolve, reject) => {
-        username = args[0];
-        friend = args[1];
+    return new Promise( (resolve, reject) => {
+        let username = args[0];
+        let friend = args[1];
         
         DB.GetUserInfo(username, (err, user) => {
             if(err){
@@ -93,9 +93,9 @@ function AddFriend(args, DB){
     });        
 }
 function RemoveFriend(args, DB){
-    return new Promise(async (resolve, reject) => {
-        username = args[0];
-        friend = args[1];
+    return new Promise( (resolve, reject) => {
+        let username = args[0];
+        let friend = args[1];
         
         DB.GetUserInfo(username, (err, user) => {
             if(err){

@@ -24,7 +24,7 @@ function CreateEvent(args, DB){
 }   
 
 function DeleteEvent(args, DB){
-    return new Promise(async (resolve, reject) =>{
+    return new Promise( (resolve, reject) =>{
         let eventID = args[0];
         console.log("EventManagement.js/DeleteEvent: Deleting event");
         
@@ -73,7 +73,7 @@ function DeleteEvent(args, DB){
     });
 }
 function WipeAllEvents(DB){
-    return new Promise(async (resolve, reject) =>{
+    return new Promise( (resolve, reject) =>{
         try{
             DB.WipeAllEvents();
             resolve("Events wiped");
@@ -83,18 +83,17 @@ function WipeAllEvents(DB){
         }
     });
 }
-
+// JUST SENDS OBJECTS. FIX TO SEND STRINGS INSTEAD
 function GetEvents(args, DB){
-    return new Promise(async (resolve, reject) =>{
+    return new Promise( (resolve, reject) =>{
         let userid = args[0];
         DB.GetAllEvents(userid, (err, result) => {
             if(err){
                 console.log("Error getting events");
                 console.log(err.message);
                 resolve("Error getting events");
-                return;
             }else{
-                resolve(result);
+                resolve(JSON.stringify(result));
             }
         });
     });

@@ -13,13 +13,16 @@ API_Commands and their returns-
       - returns id, username, email, and friends of user, "User not found" if error or user not found
    
    addfriend <username> <friend username>
-      - returns "Friend added" if friend is added successfully, "Friend already added" if friend already exists or an error message if error. Can add friends that don't exist.
+      - returns "Friend added" if friend is added successfully, "Friend already added" if friend already exists or an error message if error.
+        Can add friends that don't exist.
 
    removefriend <username> <friend username>
-      - returns "Friend removed" if friend is removed successfully, "Friend not found" if friend doesn't exist, or "Error removing friend" if error
+      - returns "Friend removed" if friend is successfully removed, "Friend not found" if friend doesn't exist, or "Error removing friend"
+        if there is an error when removing friend.
 
    createevent <userid> <title> <date> <startTime> <endTime> <publicityType> <invitees> <details>
-      - returns "Event created" and the event ID of the event, if event is created successfully, "User already added" if eventid is already in invitees invited list,and if there is an error, then it returns the error message
+      - returns "Event created" and the event ID of the event, if event is created successfully, "User already added" if eventid is already in invitees invited list,
+        and if there is an error, then it returns the error message stating the error.
 
    addinvitee <eventid> <username of invitee>
       - returns "Invitee added" if invitee is added successfully, "Invitee already added" if the invitee was already added, and "Unable to add invitee" if error.
@@ -33,7 +36,12 @@ API_Commands and their returns-
       - returns all events associated with the user
    
    geteventinfo <eventid> 
-      - returns title, details, date(MM/DD/YYYY(start date), MM/DD/YYYY(end date)), startTime, endTime, publicityType, invitees of the event, and the userid of the creator of the event. If error, then returns error message
+      - returns title, details, date(MM/DD/YYYY(start date), MM/DD/YYYY(end date)), startTime, endTime, publicityType, invitees of the event, and the userid of the creator of the event.
+        If error, then returns error message stating error.
    
    deleteevent <eventid>
-      - returns "Event deleted" if event is deleted successfully. If error, then returns either "Error getting event" or "Error deleting event", or "Event not found" if no event is found message
+      - returns "Event deleted" if event is deleted successfully. If error, then returns either "Error getting event" or "Error deleting event", or "Event not found" if no event is found.
+
+   getmonthevents <userid> <year> <month>
+      - returns all events of the specified user from the given month of the specificied year. If no events can be found, returns "No events found". 
+        If there is an error when retrieving the events from the database, then returns "Error getting events".   

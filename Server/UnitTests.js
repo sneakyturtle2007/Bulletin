@@ -55,11 +55,11 @@ async function UserTest(username, email, password, client){
    
 }
 
-async function EventTest(userid, title, date, startTime, endTime, publicityType, invitees, details, client){
+async function EventTest(userID, title, date, startTime, endTime, publicityType, invitees, details, client){
     return new Promise( (resolve, reject) => {
         try{
 
-            client.write(`createevent ${userid} ${title} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${details}`);
+            client.write(`createevent ${userID} ${title} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${details}`);
             
             client.on('data', async (data) => {
 
@@ -78,7 +78,8 @@ async function EventTest(userid, title, date, startTime, endTime, publicityType,
                     }catch(err){
                         console.log(err);
                     }
-                    if(response[7] == userid){
+                    if(response[7] == userID){
+                        console.log(response[7]);
                         console.log(`Sent: addinvitee ${eventID} test`);
                         client.write(`addinvitee ${eventID} test`);
 
@@ -133,6 +134,28 @@ function DealingWithParenthesis(source){
     return result;
 }
 
+async function CalendarTest(userID,year, month, client){
+    return new Promise((resolve, reject) => {
+        try{
+            client.write('getmonthevents '+ userID + ' ' + year + ' ' + month);
+            client.on('data', async (data) => {
+               
+                let response = data.toString().trim();
+                if(response == 'Error getting events'){
+                    reject("Calendar Test" + ' \u2717' + "\n" + response);
+                }else{
+                    let temp = JSON.parse(data);
+                    console.log(temp);
+                    resolve("Calendar Test" + ' \u2713');
+                }
+            });
+        }catch(e){
+            err = "Calendar Test" + ' \u2717' + "\n" + e.toString().trim();
+            reject(err);
+        }
+    })
+}
+const { Console } = require('console');
 const {Socket} = require('net');
 const client = new Socket();
 
@@ -141,11 +164,13 @@ client.connect(22,'127.0.0.1' ,async () => {
     console.log('Connected');
     
     try{
-        usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
+        let usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
         console.log(usertest);
         //client.write('wipeallevents');
-        eventtest = await EventTest('1', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
+        let eventtest = await EventTest('1', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
         console.log(eventtest);
+        let calendartest = await CalendarTest('1', '2021', '3', client);
+        console.log(calendartest);
     }catch(err){
         console.log(err);
     }

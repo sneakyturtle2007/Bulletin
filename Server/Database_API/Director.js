@@ -1,7 +1,7 @@
 const login = require('./Login.js');
 const usermanagement = require('./UserManagement.js');
 const eventmanagement = require('./EventManagement.js');
-
+const calendarmanagement = require('./CalendarManagement.js');
 async function ProcessData(data, db, socket){
     if(data){
         var message = data.toString().trim();
@@ -61,6 +61,10 @@ async function ProcessData(data, db, socket){
                 break;
             case 'wipeallevents':
                 result = await eventmanagement.WipeAllEvents(db);
+                return result;
+                break;
+            case 'getmonthevents':
+                result = await calendarmanagement.GetMonthEvents(args, db);
                 return result;
                 break;
             case 'exit':
