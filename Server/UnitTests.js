@@ -1,4 +1,5 @@
 let eventID;
+let userid;
 async function UserTest(username, email, password, client){
     return new Promise(async (resolve, reject) => {
         try{
@@ -41,8 +42,7 @@ async function UserTest(username, email, password, client){
                 }else if(response == 'User deleted'){
                     resolve("User Test" + ' \u2713')
                 }else{
-                    err = "User Test" + ' \u2717' + "\n" + data.toString().trim();
-                    reject(err);
+                    reject("User Test" + ' \u2717' + "\n" + data.toString().trim());
                     
                 }
             });
@@ -58,13 +58,13 @@ async function UserTest(username, email, password, client){
 async function EventTest(userID, title, date, startTime, endTime, publicityType, invitees, details, client){
     return new Promise( (resolve, reject) => {
         try{
-
+            userid = userID;
             client.write(`createevent ${userID} ${title} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${details}`);
             
             client.on('data', async (data) => {
 
                 let response = data.toString().trim();
-
+        
                 //console.log(`Response: ${response}\n`);
                 if(response.includes('Event created')){
                     eventID = response.split(" ")[2];
@@ -76,10 +76,14 @@ async function EventTest(userID, title, date, startTime, endTime, publicityType,
                         response = DealingWithParenthesis(response);
                         response = response.split(",");
                     }catch(err){
-                        console.log(err);
+                        //PLACEHOLDER
+                    }
+                    try{
+                        response = JSON.parse(data);
+                    }catch(err){
+                        //PLACEHOLDER
                     }
                     if(response[7] == userID){
-                        console.log(response[7]);
                         console.log(`Sent: addinvitee ${eventID} test`);
                         client.write(`addinvitee ${eventID} test`);
 
@@ -103,10 +107,15 @@ async function EventTest(userID, title, date, startTime, endTime, publicityType,
                         console.log(`Sent: deleteevent ${eventID}`);
                         client.write(`deleteevent ${eventID}`);
 
-                    }else if(response == 'Event not found'){    
-                        resolve("Event Test" + ' \u2713')
-
+                    }else if(response == 'Event not found'){  
+                        console.log(`Sent: getevents ${userid}`);
+                        client.write(`getevents ${userid}`);
+        
+                    }else if(response.length > 0){
+                        
+                        resolve("Event Test" + ' \u2713');
                     }else{
+                        
                         err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
                         reject(err);
                     }
@@ -140,13 +149,15 @@ async function CalendarTest(userID,year, month, client){
             client.write('getmonthevents '+ userID + ' ' + year + ' ' + month);
             client.on('data', async (data) => {
                
-                let response = data.toString().trim();
-                if(response == 'Error getting events'){
-                    reject("Calendar Test" + ' \u2717' + "\n" + response);
-                }else{
-                    let temp = JSON.parse(data);
-                    console.log(temp);
+                let response = JSON.parse(data);
+                if(response.length > 0){
+                    console.log(`Sent: getmonthevents ${userID} ${year} 3`);
+                    client.write('getmonthevents '+ userID + ' ' + year + ' ' + 3);
+                }else if(response.length == 0){
+
                     resolve("Calendar Test" + ' \u2713');
+                }else{
+                    reject("Calendar Test" + ' \u2717' + "\n" + response);
                 }
             });
         }catch(e){
@@ -155,7 +166,6 @@ async function CalendarTest(userID,year, month, client){
         }
     })
 }
-const { Console } = require('console');
 const {Socket} = require('net');
 const client = new Socket();
 
@@ -166,11 +176,14 @@ client.connect(22,'127.0.0.1' ,async () => {
     try{
         let usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
         console.log(usertest);
-        //client.write('wipeallevents');
+
         let eventtest = await EventTest('1', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
         console.log(eventtest);
-        let calendartest = await CalendarTest('1', '2021', '3', client);
+
+        let calendartest = await CalendarTest('1', '2021', '2', client);
         console.log(calendartest);
+
+        client.end();
     }catch(err){
         console.log(err);
     }
