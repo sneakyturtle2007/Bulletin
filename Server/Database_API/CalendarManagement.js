@@ -15,6 +15,7 @@ function GetMonthEvents(args, DB){
                     resolve("Error getting events");
                 }else{
                     let events = result;
+                    console.log("Amount of events: " + events.length);
                     if(events.length != 0){
                         let monthEvents = [];
                         let eventDates;
@@ -26,10 +27,14 @@ function GetMonthEvents(args, DB){
                                 monthEvents.push(event);
                             }
                         }
-                        resolve(JSON.stringify(monthEvents));
-                    }else{
-                        resolve("No events found");
+                        if(monthEvents.length != 0){
+                            resolve(JSON.stringify(monthEvents));
+                        }else{
+                            resolve("No events found");
+                        }
                     }
+                        
+                        
                         
                 }
             });

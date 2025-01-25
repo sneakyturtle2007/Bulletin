@@ -33,7 +33,7 @@ API_Commands and their returns-
       list of the event, and "Event not found" if the event cannot be found.
    
    getevents <userid>
-      - returns all events(JSON serialized) associated with the user
+      - returns all events(JSON stringified) associated with the user
    
    geteventinfo <eventid> 
       - returns title, details, date(MM/DD/YYYY(start date), MM/DD/YYYY(end date)), startTime, endTime, publicityType, invitees of the event, and the userid of the creator of the event.
@@ -43,5 +43,5 @@ API_Commands and their returns-
       - returns "Event deleted" if event is deleted successfully. If error, then returns either "Error getting event" or "Error deleting event", or "Event not found" if no event is found.
 
    getmonthevents <userid> <year> <month>
-      - returns all events(JSON serialized) of the specified user from the given month of the specificied year. If no events can be found, returns "No events found". 
+      - returns all events(JSON stringified) of the specified user from the given month of the specificied year. If no events can be found, returns "No events found". 
         If there is an error when retrieving the events from the database, then returns "Error getting events".   
