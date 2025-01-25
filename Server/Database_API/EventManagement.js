@@ -93,7 +93,11 @@ function GetEvents(args, DB){
                 console.log(err.message);
                 resolve("Error getting events");
             }else{
-                resolve(JSON.stringify(result));
+                if(result.length > 0){
+                    resolve(JSON.stringify(result));
+                    return;
+                }
+                resolve("No events found");
             }
         });
     });

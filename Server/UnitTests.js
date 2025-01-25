@@ -112,7 +112,7 @@ async function EventTest(userID, title, date, startTime, endTime, publicityType,
                         client.write(`getevents ${userid}`);
         
                     }else if(response.length > 0){
-                        
+                        //console.log("testing");
                         resolve("Event Test" + ' \u2713');
                     }else{
                         
@@ -148,14 +148,20 @@ async function CalendarTest(userID,year, month, client){
         try{
             client.write('getmonthevents '+ userID + ' ' + year + ' ' + month);
             client.on('data', async (data) => {
-               
-                let response = JSON.parse(data);
-                if(response.length > 0){
+                let response = data.toString().trim();
+                try{
+                    response = JSON.parse(data);
+                }catch(e){
+                    // PLACEHOLDER
+                }
+                console.log(response.length);
+                if(response.length > 0 && response != "No events found"){
                     console.log(`Sent: getmonthevents ${userID} ${year} 3`);
                     client.write('getmonthevents '+ userID + ' ' + year + ' ' + 3);
-                }else if(response.length == 0){
-
+                }else if(response == "No events found"){        
+                    
                     resolve("Calendar Test" + ' \u2713');
+                    
                 }else{
                     reject("Calendar Test" + ' \u2717' + "\n" + response);
                 }
@@ -168,8 +174,9 @@ async function CalendarTest(userID,year, month, client){
 }
 const {Socket} = require('net');
 const client = new Socket();
+const ip = '100.103.6.83';
 
-client.connect(22,'100.103.6.83' ,async () => {
+client.connect(22,ip,async () => {
     
     console.log('Connected');
     
@@ -177,10 +184,10 @@ client.connect(22,'100.103.6.83' ,async () => {
         let usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
         console.log(usertest);
 
-        let eventtest = await EventTest('1', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
+        let eventtest = await EventTest('2', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
         console.log(eventtest);
 
-        let calendartest = await CalendarTest('1', '2021', '2', client);
+        let calendartest = await CalendarTest('2', '2021', '2', client);
         console.log(calendartest);
 
         client.end();
