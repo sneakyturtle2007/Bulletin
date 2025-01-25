@@ -37,7 +37,7 @@ app.get('/example', (req, res) => {
 
 // Connection Info/Create Server
     const Port_TCP = 22;
-    const host = "127.0.0.1";
+    const host = "0.0.0.0";
     const server = net.createServer();
 
 // TCP Server
