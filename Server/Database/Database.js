@@ -230,29 +230,42 @@ class Database{
                                 callback("Error getting events", null);
                                 return;
                             }
-                            let currentEvent;
-                            for(let i = 0; i < events.length; i++){
+                            let currentEvent = this.GetLatestEvent(userid,(err,event) =>{
+                                if(err){
+                                    console.log("Database.js/CreateEvent: " + err.message);
+                                    callback(err);
+                                }
+                                this.InviteInvitees(event.eventid, event.invitees, (err, res) => {
+                                    if(err){
+                                        console.log("Error in InviteInvitees function");
+                                    }
+                                    callback("Error inviting invitees", null);
+                                });
+                                callback(null, `Event created ${event.eventid}` );
+                            });
+                            /*for(let i = 0; i < events.length; i++){
                                 if(events[i].eventid > eventID){
                                     eventID = events[i].eventid;
                                     currentEvent = events[i];
                                 }
-                            }
-                            
-                            this.InviteInvitees(eventID, currentEvent.invitees, (err, res) => {
-                                if(err){
-                                    console.log("Error in InviteInvitees function");
-                                }
-                                callback(err, null);
-                                return;                
-                            });
-                            callback(null, `Event created ${eventID}` );
-                            return;
+                            }*/
                         });
                     });
                     
                 });
             });
             
+        }
+        GetLatestEvent(userID, callback){
+            this.db.serialize(() =>{
+                this.db.get(`SELECT * FROM events WHERE eventid=(SELECT max(eventid) FROM events WHERE userid=${userID})`, (err, event) =>{
+                    if(err){
+                        console.log("Database.js/GetLatestEvent: " + err.message);
+                        callback("Error getting event", null);
+                    }
+                    callback(null, event);
+                });
+            });
         }
         InviteInvitees(eventid, invitees, callback){
             this.db.serialize(() => {
