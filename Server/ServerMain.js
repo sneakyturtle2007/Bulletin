@@ -13,8 +13,9 @@
 // Starting Database & API Director
 const db = new Database('./Database/database.db');
 
-// Starting Express
+// Starting Express 
 const app = express();
+const webserver = https.createServer(app);
 app.use(express.static(path.join(__dirname, "../Website")));
 app.use(express.json());
 
@@ -36,7 +37,7 @@ app.get('/example', (req, res) => {
 
 
 // Connection Info/Create Server
-    const Port_TCP = 22;
+    const Port_TCP = 8000;
     const host = "0.0.0.0";
     const server = net.createServer();
 
@@ -78,7 +79,11 @@ app.get('/example', (req, res) => {
     server.listen(Port_TCP, host, () => {
         console.log('TCP Server is running on port ' + Port_TCP + '.');
     });
-
+    webserver.listen(443, () => {
+        console.log('HTTPS Server is running on port 443.');
+    }).on('error', (err) => {
+        console.lot('Error: ', err);    
+    });
 
     //MIGHT BE USED FOR REMOVING THE BUGS FROM YOUR SKIN
     server.on('error', (err) => {

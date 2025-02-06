@@ -176,7 +176,7 @@ const {Socket} = require('net');
 const client = new Socket();
 const ip = '100.103.6.83';
 
-client.connect(22,ip,async () => {
+client.connect(8000,ip,async () => {
     
     console.log('Connected');
     
