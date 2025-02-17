@@ -87,10 +87,12 @@ class Database{
             });
             
         }
-        DeleteFromTable(name, condition){
+        DeleteFromTable(table, condition){
             this.db.serialize(() => {
-                this.db.run(`DELETE FROM ${name} WHERE ${condition};`, (err) => {
+                this.db.run(`DELETE FROM ${table} WHERE ${condition};`, (err) => {
                     if(err){
+                        console.log(`Database.js/DeleteFromTable: ${err}`);
+                        console.log(`Entered Command: DELETE FROM ${table} WHERE ${condition};`);
                         throw err;
                     }
                     //console.log(`Deleted ${condition} from ${name}`);
@@ -110,9 +112,21 @@ class Database{
                     //console.log(`Updated ${name}`);
                 });
             });
-            
         }
-
+        /*
+            If you are inputing text as a value, enter it with quotations.
+            Example: this.InsertIntoTable("users", "username, email, password", `"${username}", "${email}", "${password}"`);
+        */
+        InsertIntoTable(table, variables, values){
+            this.db.serialize(()=>{
+                this.db.run(`INSERT INTO ${table} (${variables}) VALUES (${values})`, (err)=>{
+                    if(err){
+                        console.log(`Database.js/InsertIntoTable: ${err}`);
+                        throw err;
+                    }
+                });
+            });
+        }
     // users Table
         GetUserInfo(username, callback){
             this.db.serialize(() => {
@@ -162,55 +176,47 @@ class Database{
         }
 
         CreateUser(username, email, password, callback){
-                this.GetUserInfo(username, (err, rows) => {
-                    if(err){
-                        //console.log("Error in getting user info");
-                        callback(err, "Error in getting user info");
-                        return;
-                    }
-                    if(rows.length > 0 ){
-                        //console.log("Username taken");
-                        callback(null, "Username taken");
-                        return;
-                    }else{
-                        this.GetUserInfo(email, (err, rows) => {
-                            if(err){
-                                //console.log("Error in getting user info");
-                                callback(err, "Error in getting user info");
-                                return;
-                            }
-                            if(rows.length > 0 ){
-                                console.log("Email taken");
+            this.GetUserInfo(username, (err, rows) => {
+                if(err){
+                    //console.log("Error in getting user info");
+                    callback(err, "Error in getting user info");
+                    return;
+                }
+                if(rows.length > 0 ){
+                    //console.log("Username taken");
+                    callback(null, "Username taken");
+                    return;
+                }else{
+                    this.GetUserInfo(email, (err, rows) => {
+                        if(err){
+                            //console.log("Error in getting user info");
+                            callback(err, "Error in getting user info");
+                            return;
+                        }
+                        if(rows.length > 0 ){
+                            console.log("Email taken");
 
-                                callback(null, "Email taken");
-                                return;
-                            }
-                            console.log(email);
-                            console.log("Creating user");
-                            this.db.run('INSERT INTO users (username, email, password) VALUES (?, ?, ?);',[username, email, password], (err) => {
-                                if(err){
-                                    callback(err, null);
-                                    throw err;
-                                }
-                                //console.log(`Inserted ${username} into users`);
-                            });
-                            callback(null, "User created");
+                            callback(null, "Email taken");
+                            return;
+                        }
+                        console.log(email);
+                        console.log("Creating user");
+                        this.InsertIntoTable("users", "username, email, password", `"${username}", "${email}", "${password}"`);
+                        callback(null, "User created");
 
-                        });
-                    }
-                });
+                    });
+                }
+            });
         }  
         DeleteUser(username){
             this.DeleteFromTable('users', `username="${username}"`);
         }
     // events Table
         WipeAllEvents(){
-            this.db.serialize(()=>{
-                this.db.all("SELECT * FROM events", (err, res) => {
-                    for(let i = 0; i < res.length; i++){
-                        this.DeleteFromTable('events', `eventid=${res[i].eventid}`);
-                    }
-                });
+            this.db.all("SELECT * FROM events", (err, res) => {
+                for(let i = 0; i < res.length; i++){
+                    this.DeleteFromTable('events', `eventid=${res[i].eventid}`);
+                }
             });
         }
         CreateEvent(userid, title, date, startTime, endTime, publicityType, invitees, details, callback){
@@ -223,48 +229,60 @@ class Database{
                     }
                     let eventID = 0;
                     console.log(`Inserted ${title} into events`);
-                    this.db.serialize(() => {
-                        this.GetAllEvents(userid, (err, events) => {
-                            if(err){
-                                console.log("Error when getting events in CreateEvent function " + err.message);
-                                callback("Error getting events", null);
-                                return;
-                            }
-                            let currentEvent = this.GetLatestEvent(userid,(err,event) =>{
-                                if(err){
-                                    console.log("Database.js/CreateEvent: " + err.message);
-                                    callback(err);
-                                }
-                                this.InviteInvitees(event.eventid, event.invitees, (err, res) => {
-                                    if(err){
-                                        console.log("Error in InviteInvitees function");
-                                    }
-                                    callback("Error inviting invitees", null);
-                                });
-                                callback(null, `Event created ${event.eventid}` );
-                            });
-                            /*for(let i = 0; i < events.length; i++){
-                                if(events[i].eventid > eventID){
-                                    eventID = events[i].eventid;
-                                    currentEvent = events[i];
-                                }
-                            }*/
-                        });
-                    });
                     
+                    this.GetLatestEvent(userid,(err,event) =>{
+                        if(err){
+                            console.log("Database.js/CreateEvent: " + err.message);
+                            callback(err);
+                        }
+                        this.InviteInvitees(event.eventid, event.invitees, (err, res) => {
+                            if(err){
+                                console.log("Error in InviteInvitees function");
+                            }
+                            callback("Error inviting invitees", null);
+                        });
+                        callback(null, `Event created ${event.eventid}` );
+                    });
                 });
             });
             
         }
-        GetLatestEvent(userID, callback){
-            this.db.serialize(() =>{
-                this.db.get(`SELECT * FROM events WHERE eventid=(SELECT max(eventid) FROM events WHERE userid=${userID})`, (err, event) =>{
-                    if(err){
-                        console.log("Database.js/GetLatestEvent: " + err.message);
-                        callback("Error getting event", null);
-                    }
+        DeleteEvent(eventid){
+            this.DeleteFromTable('events', `eventid=${eventid}`);
+        }
+        GetEventInfo(eventid, callback){
+            this.db.all(`SELECT * FROM events WHERE eventid=${eventid};`, (err,event) => {
+                if(err){
+                    console.log("debug");
+                    console.log(err.message);
+                    callback("Error getting event", null);
+                    return;
+                }
+                if(!event.length == 0){
                     callback(null, event);
-                });
+                }else{
+                    callback("Event not found", null);
+                }
+                //console.log(event);
+            });
+        }
+        GetAllEvents(userid, callback){
+            this.db.all(`SELECT * FROM events WHERE userid=${userid};`, (err, events) =>{
+                if(err){
+                    console.log(err.message);
+                    callback("Error getting events", null);
+                    return;
+                }
+                callback(null, events);
+            });
+        }
+        GetLatestEvent(userID, callback){
+            this.db.get(`SELECT * FROM events WHERE eventid=(SELECT max(eventid) FROM events WHERE userid=${userID})`, (err, event) =>{
+                if(err){
+                    console.log("Database.js/GetLatestEvent: " + err.message);
+                    callback("Error getting event", null);
+                }
+                callback(null, event);
             });
         }
         InviteInvitees(eventid, invitees, callback){
@@ -302,151 +320,14 @@ class Database{
                     callback(null, "Invitees added");
                 });
             });
-        }
-
-        GetEventInfo(eventid, callback){
-            this.db.serialize(() => {
-                this.db.all(`SELECT * FROM events WHERE eventid=${eventid};`, (err,event) => {
-                    if(err){
-                        console.log("debug");
-                        console.log(err.message);
-                        callback("Error getting event", null);
-                        return;
-                    }
-                    if(!event.length == 0){
-                        callback(null, event);
-                    }else{
-                        callback("Event not found", null);
-                    }
-                    //console.log(event);
-                });
-            });
-            
-        }
-        GetAllEvents(userid, callback){
-            this.db.serialize(() =>{
-                this.db.all(`SELECT * FROM events WHERE userid=${userid};`, (err, events) =>{
-                    if(err){
-                        console.log(err.message);
-                        callback("Error getting events", null);
-                        return;
-                    }
-                    callback(null, events);
-                });
-            });
-        }
-        DeleteEvent(eventid){
-            this.DeleteFromTable('events', `eventid=${eventid}`);
-        }
-    // Testing
-        UnitTests(){
-            this.db.serialize(() => {
-
-                try{
-                    this.CreateTable('test', 'id INTEGER PRIMARY KEY, name TEXT');
-                    console.log("Creating Table Test" + ' \u2713');
-                }catch(err){
-                    console.log("Creating Table Test" + ' \u2717');
-                    console.log(err.message);
-                }
-                try{
-                    this.DropTable('test');
-                    console.log("Dropping Table Test" + ' \u2713');
-                }catch(err){
-                    console.log("Dropping Table Test" + ' \u2717');
-                    console.log(err.message);
-                }
-
-                try{
-                    this.CreateUser("admin","admin@gmail.com", "admin", (err, message) => {
-                        if(err){
-                            throw err;
-                        }
-                        this.db.serialize(() =>{
-                            try{
-                                this.db.serialize(() =>{ 
-                                    this.CreateUser("test2","admin@gmail.com", "admin", (err, message) => {
-                                            if(err){
-                                                throw err;
-                                            }
-                                        });
-                                        this.GetUserInfo('admin', (err, rows) => {
-                                            if(err){
-                                                throw err;
-                                            }
-                                            if(rows.length > 1){
-                                                console.log("ese");
-                                                throw new Error("Too many users with the same username");
-                                            }
-                                        });
-                                });  
-                            }catch(err){
-                                throw err;
-                            }
-                            try{
-                                this.DeleteUser('test2');
-                                console.log("Deleting User Test" + ' \u2713');
-                            }catch(err){
-                                console.log("Deleting User Test" + ' \u2717');
-                                console.log(err.message);
-                            }
-                        });
-                    });
-                    console.log("Creating User Test" + ' \u2713');
-                }catch(err){
-                    console.log("Creating User Test" + ' \u2717');
-                    console.log(err.message);
-                }
-
-                try{
-                    this.DisplayTableContents('users', (err, rows) => {
-                        if(err){
-                            throw err;
-                        }
-                    });
-                    console.log("Displaying Users Test" + ' \u2713');
-                }catch(err){
-                    console.log("Displaying Users Test" + ' \u2717');
-                    console.log(err.message);
-                }
-
-                try{
-                    this.DescribeTable('users', (err, table) => {
-                        if(err){
-                            throw err;
-                        }
-                    });
-                    console.log("Describing Users Test" + ' \u2713');
-                }catch(err){
-                    console.log("Describing Users Test" + ' \u2717');
-                    console.log(err.message);
-                } 
-
-                try{
-                    this.CreateEvent(1, 'test', '2021/03/03', '12:00', '13:00', 'test', 'public', 'test', 'test', (err, message) => {
-                        if(err){
-                            throw err;
-                        }else{
-                            console.log("Creating Event Test" + ' \u2713');
-                        } 
-                        this.db.serialize(() =>{
-                            try{
-                                this.DeleteEvent('test');
-                                console.log("Dropping Event Test" + ' \u2713');
-                            }catch(err){
-                                console.log("Dropping Event Test" + ' \u2717');
-                                console.log(err.message);
-                            }
-                        });
-                    });
-                }catch(err){
-                    console.log("Creating Event Test" + ' \u2717');
-                    console.log(err.message);
-                }
-            
-            });
-        }
+        } 
 }
-//db = new Database('database.db');
-//db.UnitTests();
+/*db = new Database('database.db');
+db.GetMonthEvents(2, "2021 + 2",(err, events) =>{
+    if(err){
+        console.log(err);
+        return;
+    }
+    console.log(events);
+});*/
 module.exports = Database;

@@ -174,9 +174,9 @@ async function CalendarTest(userID,year, month, client){
 }
 const {Socket} = require('net');
 const client = new Socket();
-const ip = '100.103.6.83';
+const IP = '100.103.6.83';
 
-client.connect(8000,ip,async () => {
+client.connect(8000,IP,async () => {
     
     console.log('Connected');
     

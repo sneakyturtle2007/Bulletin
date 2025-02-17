@@ -1,13 +1,10 @@
 // Gets the required modules for the website
     const net = require('net');
     const https = require('https');
-    const sql = require('sqlite3').verbose();
-    const fs = require('fs');
     const express = require('express');
     const path = require('path');
 // importing local files
     const Director = require('./Database_API/Director.js');
-    const Login = require('./Database_API/Login.js');
     const Database = require('./Database/Database.js');
 
 // Starting Database & API Director
