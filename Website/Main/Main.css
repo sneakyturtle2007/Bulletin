@@ -1,0 +1,43 @@
+.note {
+    position: absolute;
+    bottom: 5;
+    right: 5;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    background-image: url("../Images/stickynote.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.login {
+    margin-top: 150;
+    margin-left: 60;
+    width: auto;
+    height: 600px;
+    background-image: url("../Images/login.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.signup {
+    margin-top: 50;
+    margin-left: 40;
+    width: auto;
+    height: 600px;
+    background-image: url("../Images/signup.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.bluepin {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+
+#pin {
+    width: auto;
+    height: 50;
+    user-select: none;
+}
