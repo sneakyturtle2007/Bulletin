@@ -67,6 +67,8 @@ async function ProcessData(data, db, socket){
                 result = await calendarmanagement.GetMonthEvents(args, db);
                 return result;
                 break;
+            case 'getbusytimeinmonth':
+                result = await calendarmanagement.GetBusyTimeInMonth(args, db);
             case 'exit':
                 socket.end();
                 break;

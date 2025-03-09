@@ -8,7 +8,7 @@ function CreateEvent(args, DB){
         let endTime = args[4];
         let publicityType = args[5];
         let invitees = args[6];
-        let details = args[7];
+        let details = args[7];// HANDLE SPACES IN DETAILS FOR EVENT CREATION
         console.log(userid + title + date + startTime + endTime + publicityType + invitees + details);
         DB.CreateEvent(userid, title, date, startTime, endTime, publicityType, invitees, details, (err, result) => {
             if(err){

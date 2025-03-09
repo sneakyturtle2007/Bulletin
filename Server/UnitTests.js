@@ -112,7 +112,7 @@ async function EventTest(userID, title, date, startTime, endTime, publicityType,
                         client.write(`getevents ${userid}`);
         
                     }else if(response.length > 0){
-                        //console.log("testing");
+                        console.log(response);
                         resolve("Event Test" + ' \u2713');
                     }else{
                         
@@ -130,6 +130,42 @@ async function EventTest(userID, title, date, startTime, endTime, publicityType,
     });
         
 }
+
+async function CalendarTest(userID,year, month, client){
+    return new Promise((resolve, reject) => {
+        try{
+            console.log(`Sent: getmonthevents ${userID} ${year} ${month}`);
+            client.write('getmonthevents '+ userID + ' ' + year + ' ' + month);
+            client.on('data', async (data) => {
+                let response = data.toString().trim();
+                try{
+                    response = JSON.parse(data);
+                }catch(e){
+                    // PLACEHOLDER
+                }
+                console.log(response.length);
+                if(response.length > 0 && response != "No events found"){
+                    console.log(`Sent: getmonthevents ${userID} ${year} 3`);
+                    client.write('getmonthevents '+ userID + ' ' + year + ' ' + 3);
+                }else if(response == "No events found"){      
+                    resolve("Calendar Test" + ' \u2713');
+                    
+                    //console.log(`Sent: getbusytimeinmonth ${userID} admin 2021 2`);  
+                    //client.write(`getbusytimeinmonth ${userID} admin 2021 2`);
+                    console.log(`Sent: getmonthevents ${userID} ${year} 3`);
+                    //client.write('getmonthevents '+ userID + ' ' + year + ' ' + 3);
+                }else if(response){
+                    
+                }else{
+                    reject("Calendar Test" + ' \u2717' + "\n" + response);
+                }
+            });
+        }catch(e){
+            err = "Calendar Test" + ' \u2717' + "\n" + e.toString().trim();
+            reject(err);
+        }
+    })
+}
 function DealingWithParenthesis(source){
     let result;
     try{
@@ -143,38 +179,9 @@ function DealingWithParenthesis(source){
     return result;
 }
 
-async function CalendarTest(userID,year, month, client){
-    return new Promise((resolve, reject) => {
-        try{
-            client.write('getmonthevents '+ userID + ' ' + year + ' ' + month);
-            client.on('data', async (data) => {
-                let response = data.toString().trim();
-                try{
-                    response = JSON.parse(data);
-                }catch(e){
-                    // PLACEHOLDER
-                }
-                console.log(response.length);
-                if(response.length > 0 && response != "No events found"){
-                    console.log(`Sent: getmonthevents ${userID} ${year} 3`);
-                    client.write('getmonthevents '+ userID + ' ' + year + ' ' + 3);
-                }else if(response == "No events found"){        
-                    
-                    resolve("Calendar Test" + ' \u2713');
-                    
-                }else{
-                    reject("Calendar Test" + ' \u2717' + "\n" + response);
-                }
-            });
-        }catch(e){
-            err = "Calendar Test" + ' \u2717' + "\n" + e.toString().trim();
-            reject(err);
-        }
-    })
-}
 const {Socket} = require('net');
 const client = new Socket();
-const IP = '100.103.6.83';
+const IP = '0.0.0.0';
 
 client.connect(8000,IP,async () => {
     

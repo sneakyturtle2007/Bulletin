@@ -61,7 +61,7 @@ app.get('/example', (req, res) => {
                     socket.write(response.toString() + '\n');
                 }catch(err){
                     console.log('Error: ' + err);
-                    socket.write('Error: ' + err);
+                    socket.write(err);
                 }
                 
             }
