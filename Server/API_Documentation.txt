@@ -36,7 +36,7 @@ API_Commands and their returns-
       - returns all events(JSON stringified) associated with the user
    
    geteventinfo <eventid> 
-      - returns title, details, date(MM/DD/YYYY(start date), MM/DD/YYYY(end date)), startTime, endTime, publicityType, invitees of the event, and the userid of the creator of the event.
+      - returns title, details, date(M/D/YYYY(start date), M/D/YYYY(end date)), startTime, endTime, publicityType, invitees of the event, and the userid of the creator of the event.
         If error, then returns error message stating error.
    
    deleteevent <eventid>
