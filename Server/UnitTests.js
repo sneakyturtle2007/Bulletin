@@ -4,7 +4,7 @@ async function UserTest(username, email, password, client){
     return new Promise(async (resolve, reject) => {
         try{
             client.write(`createuser ${username} ${email} ${password}`);
-            client.on('data', async (data) => {
+            let onData = async (data) => {
                 let value = -1;
                 
                 let response = data.toString().trim();
@@ -16,36 +16,47 @@ async function UserTest(username, email, password, client){
                 }
                 
                 if(response == 'User created'){
+                    console.log(`Sent: createuser example ${email} ${password}`);
                     client.write(`createuser example ${email} ${password}`);
 
                 }else if(response == 'Email taken'){
+                    console.log(`Sent: createuser ${username} example@gmail.com ${password}`);
                     client.write(`createuser ${username} example@gmail.com ${password}`);
 
                 }else if(response == 'Username taken'){
+                    console.log(`Sent: createuser ${email} ${password}`);
                     client.write(`login ${email} ${password}`);
                 
                 }else if(response == 'User logged in'){
+                    console.log(`Sent: getuserinfo ${username}`);
                     client.write(`getuserinfo ${username}`);
                 
                 }else if(value >= 0){
+                    console.log(`Sent: getuserinfo a`);
                     client.write(`getuserinfo a`);
                     
                 }else if(response == 'User not found'){
+                    console.log(`Sent: addfriend ${username} example`);
                     client.write(`addfriend ${username} example`);
                 
                 }else if(response == 'Friend added'){
+                    console.log(`Sent: addfriend ${username} example`);
                     client.write(`addfriend ${username} example`);
                 
                 }else if(response == 'Friend already added'){
+                    console.log(`Sent: deleteuser ${username}`);
                     client.write(`deleteuser ${username}`);
                 
                 }else if(response == 'User deleted'){
+                    client.removeListener('data', onData);
                     resolve("User Test" + ' \u2713')
                 }else{
+                    client.removeListener('data', onData);
                     reject("User Test" + ' \u2717' + "\n" + data.toString().trim());
                     
                 }
-            });
+            };
+            client.on('data', onData);
         }catch(err){
             err = "User Test" + ' \u2717' + "\n" + err.toString().trim();
             reject(err);
@@ -60,17 +71,13 @@ async function EventTest(userID, title, date, startTime, endTime, publicityType,
         try{
             userid = userID;
             client.write(`createevent ${userID} ${title} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${details}`);
-            
-            client.on('data', async (data) => {
-
+            let onData = async (data) => {
                 let response = data.toString().trim();
-        
                 //console.log(`Response: ${response}\n`);
                 if(response.includes('Event created')){
                     eventID = response.split(" ")[2];
                     console.log(`Sent: geteventinfo ${eventID}`);
                     client.write(`geteventinfo ${eventID}`);
-                     
                 }else{
                     try{
                         response = DealingWithParenthesis(response);
@@ -112,16 +119,17 @@ async function EventTest(userID, title, date, startTime, endTime, publicityType,
                         client.write(`getevents ${userid}`);
         
                     }else if(response.length > 0){
-                        console.log(response);
+                        client.removeListener('data', onData);
                         resolve("Event Test" + ' \u2713');
                     }else{
                         
                         err = "Event Test" + ' \u2717' + "\n" + data.toString().trim();
+                        client.removeListener('data', onData);
                         reject(err);
                     }
                 }
-                
-            });
+            };
+            client.on('data', onData);
         }catch(err){
             err = "Event Test" + ' \u2717' + "\n" + err.toString().trim();
             reject(err);
@@ -131,40 +139,44 @@ async function EventTest(userID, title, date, startTime, endTime, publicityType,
         
 }
 
-async function CalendarTest(userID,year, month, client){
+async function CalendarTest(userID, year, month, client){
     return new Promise((resolve, reject) => {
         try{
             console.log(`Sent: getmonthevents ${userID} ${year} ${month}`);
             client.write('getmonthevents '+ userID + ' ' + year + ' ' + month);
-            client.on('data', async (data) => {
+
+            let onData = async (data) => {
                 let response = data.toString().trim();
                 try{
                     response = JSON.parse(data);
                 }catch(e){
                     // PLACEHOLDER
                 }
-                console.log(response.length);
-                if(response.length > 0 && response != "No events found"){
+                if(response[0].title == "Backend"){
                     console.log(`Sent: getmonthevents ${userID} ${year} 3`);
                     client.write('getmonthevents '+ userID + ' ' + year + ' ' + 3);
+
                 }else if(response == "No events found"){      
+                    console.log(`Sent: getbusytimeinmonth ${userID} admin 2021 1`);  
+                    client.write('getbusytimeinmonth ' + userID + ' admin 2021 1');
+
+                }else if(response[0].length > 0){
+                    client.removeListener('data', onData);
                     resolve("Calendar Test" + ' \u2713');
-                    
-                    //console.log(`Sent: getbusytimeinmonth ${userID} admin 2021 2`);  
-                    //client.write(`getbusytimeinmonth ${userID} admin 2021 2`);
-                    console.log(`Sent: getmonthevents ${userID} ${year} 3`);
-                    //client.write('getmonthevents '+ userID + ' ' + year + ' ' + 3);
-                }else if(response){
-                    
+
                 }else{
+                    client.removeListener('data', onData);
                     reject("Calendar Test" + ' \u2717' + "\n" + response);
+                    
                 }
-            });
+            };
+
+            client.on('data', onData);
         }catch(e){
             err = "Calendar Test" + ' \u2717' + "\n" + e.toString().trim();
             reject(err);
         }
-    })
+    });
 }
 function DealingWithParenthesis(source){
     let result;
@@ -188,18 +200,20 @@ client.connect(8000,IP,async () => {
     console.log('Connected');
     
     try{
-        let usertest = await UserTest('testing', 'example@gmail.com', 'testing', client);
+        let usertest = await UserTest('testing', 'testing@gmail.com', 'testing', client);
         console.log(usertest);
 
-        let eventtest = await EventTest('2', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
+        let eventtest = await EventTest('4', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
         console.log(eventtest);
 
-        let calendartest = await CalendarTest('2', '2021', '2', client);
+        let calendartest = await CalendarTest('4', '2021', '2', client);
         console.log(calendartest);
-
-        client.end();
+        
     }catch(err){
         console.log(err);
+    }finally{
+        console.log('Closing connection');
+        client.end();
     }
     
     

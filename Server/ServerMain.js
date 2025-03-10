@@ -57,11 +57,11 @@ app.get('/example', (req, res) => {
                 try{
                     response = await Director.ProcessData(data, db, socket);
                     console.log('Response: ' + response);
-
+                    
                     socket.write(response.toString() + '\n');
                 }catch(err){
                     console.log('Error: ' + err);
-                    socket.write(err);
+                    socket.write(err.message);
                 }
                 
             }

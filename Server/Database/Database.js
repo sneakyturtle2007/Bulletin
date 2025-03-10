@@ -130,47 +130,52 @@ class Database{
     // users Table
         GetUserInfo(username, callback){
             this.db.serialize(() => {
-                if(username){
-                    if(!isNaN(Number(username))){
-                        this.db.all(`SELECT * FROM users WHERE id = ${username};`, (err,user) => {
-                            if(err){
-                                console.log(err.message);
-                                callback("Error getting user", null);
+                try{
+                    if(username){
+                        if(!isNaN(Number(username))){
+                            this.db.all(`SELECT * FROM users WHERE id = ${username};`, (err,user) => {
+                                if(err){
+                                    console.log(err.message);
+                                    callback("Error getting user", null);
+                                    return;
+                                }
+                                callback(null, user);
                                 return;
-                            }
-                            callback(null, user);
-                            return;
-                            //console.log(user);
-                        });
-                    }
-                
-                    if(username.includes('@')){
-                        this.db.all(`SELECT * FROM users WHERE email="${username}";`, (err,user) => {
-                            if(err){
-                                console.log(err.message);
-                                callback("Error getting user", null);
-                                return;
-                            }
-                            console.log("\n retrieved users: " + user);
-                            console.log("\n used username: " +username);
-                            callback(null, user);
-                            
-                            //console.log(user);
-                        });
+                                //console.log(user);
+                            });
+                        }
+                    
+                        if(username.includes('@')){
+                            this.db.all(`SELECT * FROM users WHERE email="${username}";`, (err,user) => {
+                                if(err){
+                                    console.log(err.message);
+                                    callback("Error getting user", null);
+                                    return;
+                                }
+                                console.log("\n retrieved users: " + user);
+                                console.log("\n used username: " +username);
+                                callback(null, user);
+                                
+                                //console.log(user);
+                            });
+                        }else{
+                            this.db.all(`SELECT * FROM users WHERE username = "${username}";`, (err,user) => {
+                                if(err){
+                                    console.log(err.message);
+                                    callback("Error getting user", null);
+                                    return;
+                                }
+                                callback(null,user);
+                                //console.log(user);
+                            });    
+                        }
+                    
                     }else{
-                        this.db.all(`SELECT * FROM users WHERE username = "${username}";`, (err,user) => {
-                            if(err){
-                                console.log(err.message);
-                                callback("Error getting user", null);
-                                return;
-                            }
-                            callback(null,user);
-                            //console.log(user);
-                        });    
+                        callback('No username or email provided', null);
                     }
-                
-                }else{
-                    callback('No username or email provided', null);
+                }catch(err){
+                    console.log("Database.js/GetUserInfo: " + err);
+                    callback('Error getting user', null);
                 }
             });
         }
