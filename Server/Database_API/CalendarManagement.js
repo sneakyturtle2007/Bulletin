@@ -1,9 +1,19 @@
 
+
 function GetMonthEvents(args, DB){
     let userID = args[0];
     let year = args[1];
     let month = args[2];
     return new Promise( (resolve, reject) =>{
+        if(isNaN(Number(userID))){
+            DB.GetUserInfo(userID, (err, result) => {
+                if(err){
+                    console.log("CalendarManagement.js/GetMonthEvents: Error getting user info");
+                    reject("Error getting user info");
+                }
+                userID = result[0].id;
+            });
+        }
         console.log("CalendarManagement.js: Getting events for month: " + month + " and year: " + year + " for user: " + userID);
         DB.GetAllEvents(userID, async (err, result) => {
             if(err){
@@ -19,8 +29,9 @@ function GetMonthEvents(args, DB){
 
                     for (let event of events) {
                         eventDates = event.date.split(",");
-                        eventDates = eventDates[0].split("/");
-                        if (eventDates[0] == year && eventDates[1] == month) {
+                        eventStart = eventDates[0].split("/");
+                        eventEnd = eventDates[1].split("/");
+                        if (eventStart[0] == year && eventStart[1] == month || eventEnd[0] == year && eventEnd[1] == month) {
                             console.log("Found event for month: ", event);
                             monthEvents.push(event);
                         }
@@ -37,12 +48,13 @@ function GetMonthEvents(args, DB){
 }
 
 function GetBusyTimeInMonth(args, DB){
-    let daysInMonth = [31,[28,29],31,30,31,30,31,31,30,31,30,31];
+    
     let userID = args[0];
     let user2_Name = args[1];
     let user2_ID;
     let year = args[2];
     let month = args[3];
+    let daysInMonth = [31,[28,29],31,30,31,30,31,31,30,31,30,31];
     let lastDigitOfYear = parseInt(year)%10;
     if(lastDigitOfYear % 2 != 0){
         daysInMonth[1] = daysInMonth[1][1];
@@ -56,9 +68,6 @@ function GetBusyTimeInMonth(args, DB){
     let user1Month;
     let user2Month;
     return new Promise( async (resolve, reject) => {
-        
-
-        
         DB.GetUserInfo(user2_Name, (err, result) => {
             if(err){
                 console.log("CalendarManagement.js/GetBusyTimeInMonth: Error getting user2 ID");
@@ -80,15 +89,15 @@ function GetBusyTimeInMonth(args, DB){
         }else{
             user2Month = JSON.parse(user2Month);
         }
-        busyTime = GetBusyTime(user1Month, busyTime);
-        busyTime = GetBusyTime(user2Month, busyTime);
+        busyTime = GetBusyTime(user1Month, busyTime, parseInt(month));
+        busyTime = GetBusyTime(user2Month, busyTime, parseInt(month));
         console.log(JSON.stringify(busyTime));
         resolve(JSON.stringify(busyTime));
     });
 }
-function GetBusyTime(month, busyTime){
+function GetBusyTime(monthEvents, busyTime, month){
     let date;
-    month.forEach(event => {
+    monthEvents.forEach(event => {
         date = event.date.split(",");
         date[0] = date[0].split("/");
         date[1] = date[1].split("/");
@@ -96,9 +105,11 @@ function GetBusyTime(month, busyTime){
         let endDay = parseInt(date[1][2]);
         let startMonth = parseInt(date[0][1]);
         let endMonth = parseInt(date[1][1]);
-        if(startMonth < endMonth){
+        if(month < endMonth){
             endDay = busyTime.length;
-        }    
+        }else if(month > startMonth){
+            startDay = 0;
+        }
         for(let i = startDay -1; i < endDay; i++){
             eventStart = event.startTime;
             eventEnd = event.endTime;

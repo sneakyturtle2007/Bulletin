@@ -26,46 +26,27 @@ function DeleteUser(args, DB){
     });
 }
 function GetUserInfo(args, DB){
+    let userID = args[0];
     return new Promise( (resolve, reject) => {
-        try{
-            Number(args[0]);
-            let userid = args[0];
-            DB.GetUserInfo(userid, (err, result) => {
-                if(err){
-                    //console.log(err.message);
-                    resolve('User not found');
+        DB.GetUserInfo(userID, (err, result) => {
+            if(err){
+                //console.log(err.message);
+                resolve('User not found');
+            }else{
+                if(result.length > 0){
+                    resolve(result[0].id + "," + result[0].username + "," + result[0].email + ",(" + result[0].friends + "),(" + result[0].invited + ")");
                 }else{
-                    if(result.length > 0){
-                        resolve(result[0].id + "," + result[0].username + "," + result[0].email + ",(" + result[0].friends + "),(" + result[0].invited + ")");
-                    }else{
-                        resolve("User not found");
-                    }
+                    resolve("User not found");
                 }
-            });
-        }catch(err){
-            let username = args[0];
-            DB.GetUserInfo(username, (err, result) => {
-                if(err){
-                    //console.log(err.message);
-                    resolve('User not found');
-                    return;
-                }else{
-                    if(result.length > 0){
-                        resolve(result[0].id + "," + result[0].username + "," + result[0].email + ",(" + result[0].friends + "),(" + result[0].invited + ")");
-                    }else{
-                        resolve("User not found");
-                    }
-                }
-            });
-        }   
-        
+            }
+        });
     });
 }
 function AddFriend(args, DB){
+    let username = args[0];
+    let friend = args[1];
+
     return new Promise( (resolve, reject) => {
-        let username = args[0];
-        let friend = args[1];
-        
         DB.GetUserInfo(username, (err, user) => {
             if(err){
                 reject(err);

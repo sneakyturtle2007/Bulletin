@@ -1,4 +1,3 @@
-
 function CreateEvent(args, DB){
     return new Promise(async (resolve, reject) =>{
         let userid = args[0];
@@ -8,7 +7,7 @@ function CreateEvent(args, DB){
         let endTime = args[4];
         let publicityType = args[5];
         let invitees = args[6];
-        let details = args[7];// HANDLE SPACES IN DETAILS FOR EVENT CREATION
+        let details = args[7];
         console.log(userid + title + date + startTime + endTime + publicityType + invitees + details);
         DB.CreateEvent(userid, title, date, startTime, endTime, publicityType, invitees, details, (err, result) => {
             if(err){
@@ -83,7 +82,6 @@ function WipeAllEvents(DB){
         }
     });
 }
-// JUST SENDS OBJECTS. FIX TO SEND STRINGS INSTEAD
 function GetEvents(args, DB){
     return new Promise( (resolve, reject) =>{
         let userid = args[0];

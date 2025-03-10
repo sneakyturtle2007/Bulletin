@@ -3,7 +3,7 @@ let userid;
 async function UserTest(username, email, password, client){
     return new Promise(async (resolve, reject) => {
         try{
-            client.write(`createuser ${username} ${email} ${password}`);
+            client.write(`createuser|${username}|${email}|${password}`);
             let onData = async (data) => {
                 let value = -1;
                 
@@ -16,36 +16,36 @@ async function UserTest(username, email, password, client){
                 }
                 
                 if(response == 'User created'){
-                    console.log(`Sent: createuser example ${email} ${password}`);
-                    client.write(`createuser example ${email} ${password}`);
+                    console.log(`Sent: createuser|example|${email}|${password}`);
+                    client.write(`createuser|example|${email}|${password}`);
 
                 }else if(response == 'Email taken'){
-                    console.log(`Sent: createuser ${username} example@gmail.com ${password}`);
-                    client.write(`createuser ${username} example@gmail.com ${password}`);
+                    console.log(`Sent: createuser|${username}|example@gmail.com|${password}`);
+                    client.write(`createuser|${username}|example@gmail.com|${password}`);
 
                 }else if(response == 'Username taken'){
-                    console.log(`Sent: createuser ${email} ${password}`);
-                    client.write(`login ${email} ${password}`);
+                    console.log(`Sent: login|${email}|${password}`);
+                    client.write(`login|${email}|${password}`);
                 
                 }else if(response == 'User logged in'){
-                    console.log(`Sent: getuserinfo ${username}`);
-                    client.write(`getuserinfo ${username}`);
+                    console.log(`Sent: getuserinfo|${username}`);
+                    client.write(`getuserinfo|${username}`);
                 
                 }else if(value >= 0){
-                    console.log(`Sent: getuserinfo a`);
-                    client.write(`getuserinfo a`);
+                    console.log(`Sent: getuserinfo|a`);
+                    client.write(`getuserinfo|a`);
                     
                 }else if(response == 'User not found'){
-                    console.log(`Sent: addfriend ${username} example`);
-                    client.write(`addfriend ${username} example`);
+                    console.log(`Sent: addfriend|${username}|example`);
+                    client.write(`addfriend|${username}|example`);
                 
                 }else if(response == 'Friend added'){
-                    console.log(`Sent: addfriend ${username} example`);
-                    client.write(`addfriend ${username} example`);
+                    console.log(`Sent: addfriend|${username}|example`);
+                    client.write(`addfriend|${username}|example`);
                 
                 }else if(response == 'Friend already added'){
-                    console.log(`Sent: deleteuser ${username}`);
-                    client.write(`deleteuser ${username}`);
+                    console.log(`Sent: deleteuser|${username}`);
+                    client.write(`deleteuser|${username}`);
                 
                 }else if(response == 'User deleted'){
                     client.removeListener('data', onData);
@@ -61,27 +61,27 @@ async function UserTest(username, email, password, client){
             err = "User Test" + ' \u2717' + "\n" + err.toString().trim();
             reject(err);
         }
-        
     });
-   
 }
 
 async function EventTest(userID, title, date, startTime, endTime, publicityType, invitees, details, client){
     return new Promise( (resolve, reject) => {
         try{
             userid = userID;
-            client.write(`createevent ${userID} ${title} ${date} ${startTime} ${endTime} ${publicityType} ${invitees} ${details}`);
+            client.write(`createevent|${userID}|${title}|${date}|${startTime}|${endTime}|${publicityType}|${invitees}|${details}`);
             let onData = async (data) => {
                 let response = data.toString().trim();
-                //console.log(`Response: ${response}\n`);
+
                 if(response.includes('Event created')){
                     eventID = response.split(" ")[2];
-                    console.log(`Sent: geteventinfo ${eventID}`);
-                    client.write(`geteventinfo ${eventID}`);
+                    console.log(`Sent: geteventinfo|${eventID}`);
+                    client.write(`geteventinfo|${eventID}`);
+
                 }else{
                     try{
                         response = DealingWithParenthesis(response);
                         response = response.split(",");
+
                     }catch(err){
                         //PLACEHOLDER
                     }
@@ -91,32 +91,32 @@ async function EventTest(userID, title, date, startTime, endTime, publicityType,
                         //PLACEHOLDER
                     }
                     if(response[7] == userID){
-                        console.log(`Sent: addinvitee ${eventID} test`);
-                        client.write(`addinvitee ${eventID} test`);
+                        console.log(`Sent: addinvitee|${eventID}|test`);
+                        client.write(`addinvitee|${eventID}|test`);
 
                     }else if(response == "Invitee added"){
-                        console.log(`Sent: addinvitee ${eventID} test`);
-                        client.write(`addinvitee ${eventID} test`);
+                        console.log(`Sent: addinvitee|${eventID}|test`);
+                        client.write(`addinvitee|${eventID}|test`);
 
                     }else if(response == "Invitee already added"){
-                        console.log(`Sent: removeinvitee ${eventID} test`);
-                        client.write(`removeinvitee ${eventID} test`);
+                        console.log(`Sent: removeinvitee|${eventID}|test`);
+                        client.write(`removeinvitee|${eventID}|test`);
 
                     }else if(response == "Invitee removed"){
-                        console.log(`Sent: removeinvitee ${eventID} test`);
-                        client.write(`removeinvitee ${eventID} test`);
+                        console.log(`Sent: removeinvitee|${eventID}|test`);
+                        client.write(`removeinvitee|${eventID}|test`);
 
                     }else if(response == "Invitee not found"){
-                        console.log(`Sent: deleteevent ${eventID}`);
-                        client.write(`deleteevent ${eventID}`);
+                        console.log(`Sent: deleteevent|${eventID}`);
+                        client.write(`deleteevent|${eventID}`);
                         
                     }else if(response == 'Event deleted'){
-                        console.log(`Sent: deleteevent ${eventID}`);
-                        client.write(`deleteevent ${eventID}`);
+                        console.log(`Sent: deleteevent|${eventID}`);
+                        client.write(`deleteevent|${eventID}`);
 
                     }else if(response == 'Event not found'){  
-                        console.log(`Sent: getevents ${userid}`);
-                        client.write(`getevents ${userid}`);
+                        console.log(`Sent: getevents|${userid}`);
+                        client.write(`getevents|${userid}`);
         
                     }else if(response.length > 0){
                         client.removeListener('data', onData);
@@ -143,7 +143,7 @@ async function CalendarTest(userID, year, month, client){
     return new Promise((resolve, reject) => {
         try{
             console.log(`Sent: getmonthevents ${userID} ${year} ${month}`);
-            client.write('getmonthevents '+ userID + ' ' + year + ' ' + month);
+            client.write(`getmonthevents|${userID}|${year}|${month}`);
 
             let onData = async (data) => {
                 let response = data.toString().trim();
@@ -152,13 +152,15 @@ async function CalendarTest(userID, year, month, client){
                 }catch(e){
                     // PLACEHOLDER
                 }
-                if(response[0].title == "Backend"){
-                    console.log(`Sent: getmonthevents ${userID} ${year} 3`);
-                    client.write('getmonthevents '+ userID + ' ' + year + ' ' + 3);
+                console.log(response);
+                
+                if(response[0].title == "backend"){
+                    console.log(`Sent: getmonthevents|${userID}|${year}|3`);
+                    client.write(`getmonthevents|${userID}|${year}|3`);
 
                 }else if(response == "No events found"){      
-                    console.log(`Sent: getbusytimeinmonth ${userID} admin 2021 1`);  
-                    client.write('getbusytimeinmonth ' + userID + ' admin 2021 1');
+                    console.log(`Sent: getbusytimeinmonth|${userID}|admin|2021|1`);  
+                    client.write(`getbusytimeinmonth|${userID}|admin|2021|1`);
 
                 }else if(response[0].length > 0){
                     client.removeListener('data', onData);
@@ -167,14 +169,14 @@ async function CalendarTest(userID, year, month, client){
                 }else{
                     client.removeListener('data', onData);
                     reject("Calendar Test" + ' \u2717' + "\n" + response);
-                    
+
                 }
             };
 
             client.on('data', onData);
         }catch(e){
-            err = "Calendar Test" + ' \u2717' + "\n" + e.toString().trim();
-            reject(err);
+            err = "Calendar Test" + ' \u2717' + "\n" + e.message.trim();
+            reject(e.message.toString().trim());
         }
     });
 }
@@ -215,7 +217,5 @@ client.connect(8000,IP,async () => {
         console.log('Closing connection');
         client.end();
     }
-    
-    
 });
 
