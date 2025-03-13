@@ -1,0 +1,47 @@
+.signup-container {
+    background-image: url('../Images/blankpaper.png');
+    background-size: contain;
+    background-repeat; no-repeat;
+    width: 30%;
+    height: 600px;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 2%;
+}
+
+.input-container {
+    width: 100%;
+    margin-top: 5%;
+    align-items: center;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.input {
+    background: transparent;
+    width: auto;
+    color: #575757;
+}
+
+form.table {
+    display: table;
+    width: 85%;
+    margin-left: 15%;
+}
+
+p.table {
+    display: table-row;
+}
+
+label.table {
+    display: table-cell;
+    align: left;
+}
+
+input.table {
+    display: table-cell;
+    align: right;
+}

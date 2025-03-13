@@ -2,47 +2,60 @@
 <html>
 <head>
     <title>Bulletin</title>
+    <link rel="stylesheet" type="text/css" href="../common.css">
     <link rel="stylesheet" type="text/css" href="Main.css">
 </head>
-
-<style>
-    body {
-        background-image: url('../Images/Bulletin.jpg');
-        background-size: cover;
-    }
-</style>
-
 <body>
     <div>
         <img src="../Images/title.png" style="width:30%; height:auto; margin-left: 35%; margin-right:35%;">
     </div>
-    <div class="content" width="100%">
+    <div width="100%">
         <table cellspacing="0" cellpadding="0" border="0" style="width: 100%">
             <tbody>
               <tr width="100%">
                 <td style="width:10%;"></td>
-                <td style="width: 30%;">
+                <td style="width: 27%;">
+		    <!--this paper is currently a static image. Later in development we intend to revisit this to recomprise this section, as well as signup, to be made entirely of html/css elements with only the blank paper still being an image. However, this was deemed to be too low a priority to implement at this stage of development.-->
                     <div class="login">
                         <div class="bluepin">
                             <img id="pin" src="../Images/bluepin.png">
                         </div>
+			<div class="loginInput">
+			    <input class="loginInput" id="user" type="text" placeholder="username or email">
+			    <input class="loginInput" id="pass" type="password" placeholder="password">
+			</div>
+			<div class="loginButton">
+			    <button class="loginButton" onclick="OnClickLogin()">Login</button> 
+			</div>
+			<div>
+			    <p id="error" style="margin: 0"></p>
+			</div>
                     </div>
                 </td>
-                <td style="width:10%;"></td>
+                <td style="width:13%;"></td>
                 <td style="width: 25%;">
                     <div class="signup">
                         <div>
                             <img id="pin" src="../Images/pinkpin.png">
                             <img id="pin" src="../Images/pinkpin.png" align="right">
                         </div>
+			<div class="buttons">
+			    <button class="signupButton" onclick="OnClickSignup()"></button>
+			    <button class="signupButton" id="gap1" onclick="OnClickSignup()"></button>
+			    <button class="signupButton" onclick="OnClickSignup()"></button>
+			    <button class="signupButton" id="gap1" onclick="OnClickSignup()"></button>
+			    <button class="signupButton" onclick="OnClickSignup()"></button>
+			    <button class="signupButton" id="gap2" onclick="OnClickSignup()"></button>
+			</div>
                     </div>
                 </td>
                 <td style="width:5%;"></td>
                 <td style="width: 20%;">
                     <div class="note">
                         <div style="margin-top:100px; transform: rotate(3deg)">
-                            <strong><a href="../About/About.html">About Us</a></strong>
-                            <strong><p>Applewood Softworks &copy;2025</p></strong>
+			    <!-- Link made for formatting purposes. "About" page currently does not exist in any production-ready way.
+                            <strong><a href="../About/About.html">About Us</a></strong>-->
+                            <strong><p>Applewood Softworks</p><p>2025</p></strong>
                         </div>
                     </div>
                 </td>

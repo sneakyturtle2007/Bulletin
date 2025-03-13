@@ -1,0 +1,39 @@
+@font-face {
+    font-family: pencil;
+    src: url('Fonts/pencilant.ttf');
+}
+
+* {
+    font-family: pencil;
+    font-size: 1.1rem;
+}
+
+body {
+    background-image: url('Images/Bulletin.jpg');
+    background-size: cover;
+}
+
+.note {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 12%;
+    height: 25%;
+    text-align: center;
+    background-image: url('Images/stickynote.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#error {
+    text-align: center;
+    font-family: pencil;
+    color: #FD0E35;
+    font-size: 1.25em;
+}
+
+#pin {
+    width: auto;
+    height: 50;
+    user-select: none;
+}

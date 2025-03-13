@@ -1,0 +1,66 @@
+.calendar {
+    width: 64.55%;
+}
+
+.monthdisplay {
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    border: 5px solid;
+    width: 30%;
+    height: 10%;
+    margin-bottom: 0.4%;
+}
+
+.eventviewer {
+    border: 5px solid;
+    background-color: white;
+    width: 30%;
+    height: 70%;
+    float: right;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    height: 80%;
+    border-collapse: collapse;
+    margin-left: 
+}
+
+tr {
+    width: 100%;
+    border: 5px solid;
+}
+
+td {
+    width: 14%;
+    height: auto;
+    background-color: white;
+    border: 5px solid;
+    text-align: right;
+    vertical-align: 2%;
+}
+
+th {
+    height: 1rem;
+    background-color: lightgrey;
+}
+
+.navbutton {
+    display: inline-block;
+    border: 0;
+    background-color: transparent;
+    height: 100%;
+    width: 10%;
+    font-size: 3rem;
+}
+
+.datenumber {
+
+}
+
+#rightbutton {
+    position: absolute;
+    right: 0;
+}
