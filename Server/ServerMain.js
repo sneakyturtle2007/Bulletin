@@ -11,13 +11,13 @@
 const db = new Database('./Database/database.db');
 
 // Starting Express 
-const app = express();
-const webserver = https.createServer(app);
-app.use(express.static(path.join(__dirname, "../Website")));
-app.use(express.json());
+const webserver = express();
+
+webserver.use(express.static(path.join(__dirname, "../Website")));
+webserver.use(express.json());
 
 
-app.get('/' , (req, res) => { // Sets what URL, after the base URL,the server will listen to and initializes the function that will be executed. 
+webserver.get('/' , (req, res) => { // Sets what URL, after the base URL,the server will listen to and initializes the function that will be executed. 
     res.sendFile(path.join(__dirname, '../Website/Main/Main.html'));/* Sends the corresponding HTML file to the client. 
     __dirname is used because express required the full path, and this just makes it more compatible.*/
 });
