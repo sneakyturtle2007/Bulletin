@@ -1,17 +1,9 @@
-function CancelCreation() {
+async function CancelCreation() {
     window.location.href = "../Main/Main.html";
 }
 
-function CreateAccount() {
-    //Get all 4 input fields
-	//check if username is taken
-	//if yes: throw error
-	//check if account has already been created with that email
-	//if yes: throw error
-	//check if passwords match
-	//if no: throw error
-	//if yes: create account
-    var error = document.getElementById("error");
+async function CreateAccount() {
+	var error = document.getElementById("error");
     var user = document.getElementById("user").value.trim();
     var email = document.getElementById("email").value.trim();
     var pass1 = document.getElementById("pass1").value.trim();
@@ -24,10 +16,17 @@ function CreateAccount() {
     } else if (pass1 !== pass2) {
         error.textContent = "passwords must match";
     } else {
-        // try "createuser|user|email|pass2"
-            window.location.href = "../Home/Home.html";
-        // catch user already exists
-            // error.textContent = "that username or email is taken";
+        var createuser = await fetch("/signup?username=" + user + "&email=" + email + "&password=" + pass2).then(res => res.json());
+        if (createuser !== undefined) {
+            if (createuser.includes("Username taken")) {
+                error.textContent = createuser;
+            } else if (createuser.includes("ERROR: ")){
+                error.textContent = creatuser.substring(7);
+            } else {
+                document.cookie = "user=" + user + "; path=/";
+                window.location.href = "../Home/Home.html";
+            }
+        }
     }
 }
 

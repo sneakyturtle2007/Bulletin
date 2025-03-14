@@ -2,10 +2,10 @@
     background-image: url('../Images/blankpaper.png');
     background-size: contain;
     background-repeat; no-repeat;
-    width: 30%;
-    height: 600px;
-    margin-left: 35%;
-    margin-right: 35%;
+    width: 25%;
+    height: 800px;
+    margin-left: 37.5%;
+    margin-right: 37.5%;
     margin-top: 2%;
 }
 
@@ -44,4 +44,8 @@ label.table {
 input.table {
     display: table-cell;
     align: right;
+}
+
+* {
+    font-size: 1.2rem;
 }

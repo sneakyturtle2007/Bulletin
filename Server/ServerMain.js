@@ -83,7 +83,7 @@ webserver.get('/signup', async (req, res) => {
     webserver.listen(443, () => {
         console.log('HTTPS Server is running on port 443.');
     }).on('error', (err) => {
-        console.lot('Error: ', err);    
+        console.log('Error: ', err);    
     });
 
     //MIGHT BE USED FOR REMOVING THE BUGS FROM YOUR SKIN
