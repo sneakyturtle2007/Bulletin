@@ -72,22 +72,18 @@ function UpdateCalendar() {
     }
 }
 
-//broken atm
 async function GetUserId() {
     var user = document.cookie.substring(5);
     var info = await fetch("/getuserinfo?username=" + user).then(res => res.json());
-    var id = info.substring(0,info.indexOf(","));
+    var id = Number(info.substring(0,info.indexOf(",")));
     console.log(id);
     return id;
 }
 
-//relies on getuserid
 async function GetEvents(calendarbox) {
-    var user = GetUserId();
-    /*var events = await fetch("/getevents?userid=" + user + "year=" + year + "month=" + month).then(res => res.json());
-    document.getElementById("eventViewerTitle").textContent = events;
+    var user = await GetUserId();
+    var events = await fetch("/getmonthevents?userid=" + user + "&year=" + year + "&month=" + month).then(res => res.json());
     console.log(events);
-    */
     // add events that are on the day chosen to a list
     // display each event to 
 }

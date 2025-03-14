@@ -1,7 +1,7 @@
 
 
-function GetMonthEvents(args, DB){
-    let userID = args[0];
+async function GetMonthEvents(args, DB){
+    let userID = await args[0];
     let year = args[1];
     let month = args[2];
     return new Promise( (resolve, reject) =>{
@@ -10,6 +10,7 @@ function GetMonthEvents(args, DB){
                 if(err){
                     console.log("CalendarManagement.js/GetMonthEvents: Error getting user info");
                     reject(err.message);
+                    return;
                 }
                 userID = result[0].id;
             });

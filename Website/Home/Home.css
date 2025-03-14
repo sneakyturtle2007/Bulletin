@@ -21,6 +21,10 @@
     overflow-y: auto;
 }
 
+#eventviewertitle {
+    font-size: 36px;
+}
+
 table {
     width: 100%;
     height: 80%;
