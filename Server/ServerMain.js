@@ -36,6 +36,12 @@ webserver.get('/login', async (req, res) => {
 webserver.get('/signup', async (req, res) => {
     res.json(await Director.ProcessData(`createuser|${req.query.username}|${req.query.email}|${req.query.password}`, db));
 });
+webserver.get('/getmonthevents', async (req, res) => {
+    res.json(await Director.ProcessData(`getmonthevents|${req.query.userid}|${req.query.year}|${req.query.month}`, db));
+}); 
+webserver.get('/getuserinfo', async (req, res) => {
+    res.json(await Director.ProcessData(`getuserinfo|${req.query.username}`, db));
+});
 
 // Connection Info/Create Server
     const Port_TCP = 8000;
