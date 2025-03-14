@@ -1,62 +1,94 @@
 
+/*GetMonthEvents receives the userID, year, and month as arguments and returns a promise that resolves to a json stringified array of the events
+  for the month. It first checks if the userID is a string, if it is, it gets the userID from the database. It then calls GetAllEvents
+  to get all the events for the user. Then loops through the events and checks if the start or end date of the event matches the year and month
+  and returns the events that match as a json stringified array.
 
+    @param args - The array of arguments that contains the userID, year, and month
+    @param DB - The database object
+    @returns monthEvents - The json stringified array of the events for the month
+    @returns "No events found" - If there are no events for the month
+    @returns err.message - If there was an error
+*/
 async function GetMonthEvents(args, DB){
     let userID = await args[0];
     let year = args[1];
     let month = args[2];
     return new Promise( (resolve, reject) =>{
-        if(isNaN(Number(userID))){
-            DB.GetUserInfo(userID, (err, result) => {
-                if(err){
-                    console.log("CalendarManagement.js/GetMonthEvents: Error getting user info");
-                    reject(err.message);
-                    return;
-                }
-                userID = result[0].id;
-            });
-        }
-        console.log("CalendarManagement.js: Getting events for month: " + month + " and year: " + year + " for user: " + userID);
-        DB.GetAllEvents(userID, async (err, result) => {
-            if(err){
-                console.log("CalendarManagment.js/GetMonthEvents: Error getting events");
-                console.log(err.message);
-                reject(err.message);
-            }else{
-                let events = result;
-                console.log("Amount of events: " + events.length);
-                if(events.length != 0){
-                    let monthEvents = [];
-                    let eventDates;
-
-                    for (let event of events) {
-                        eventDates = event.date.split(",");
-                        eventStart = eventDates[0].split("/");
-                        eventEnd = eventDates[1].split("/");
-                        if (eventStart[0] == year && eventStart[1] == month || eventEnd[0] == year && eventEnd[1] == month) {
-                            console.log("Found event for month: ", event);
-                            monthEvents.push(event);
-                        }
+        try{
+            if(isNaN(Number(userID))){
+                DB.GetUserInfo(userID, (err, result) => {
+                    if(err){
+                        console.log("CalendarManagement.js/GetMonthEvents: Error getting user info");
+                        reject(err.message);
+                        return;
                     }
-                    if(monthEvents.length != 0){
-                        resolve(JSON.stringify(monthEvents));
-                    }else{
-                        resolve("No events found");
-                    }
-                }   
+                    userID = result[0].id;
+                });
             }
-        });
+            DB.GetAllEvents(userID, async (err, result) => {
+                if(err){
+                    console.log("CalendarManagment.js/GetMonthEvents: Error getting events");
+                    console.log(err.message);
+                    reject(err.message);
+                }else{
+                    let events = result;
+                    if(events.length != 0){
+                        let monthEvents = [];
+                        let eventDates;
+
+                        for (let event of events) {
+                            eventDates = event.date.split(",");
+                            eventStart = eventDates[0].split("/");
+                            eventEnd = eventDates[1].split("/");
+                            if (eventStart[0] == year && eventStart[1] == month || eventEnd[0] == year && eventEnd[1] == month) {
+                                monthEvents.push(event);
+                            }
+                        }
+                        if(monthEvents.length != 0){
+                            resolve(JSON.stringify(monthEvents));
+                        }else{
+                            resolve("No events found");
+                        }
+                    }   
+                }
+            });
+        }catch(e){
+            console.log("CalendarManagement.js/GetMonthEvents: Error getting month events");
+            console.log(e.message);
+            reject(e.message);
+        }
+        
     });
 }
+/*GetBusyTimeInMonth is the main function that is called to get the busy times of the month for two users. It first gets the user2 ID
+  then calls GetMonthEvents for both users. It then checks if the monthEvents are empty, if they are, it returns an empty array.
+  If they are not, it calls GetBusyTime to get the busy times of the month for both users. Finally, it
+  returns a json stringified version of the busyTime array.
 
+    @param args - The array of arguments that contains the userID, user2 name, year, and month
+    @param DB - The database object
+    @returns busyTime - The json stringified array of the busy times of the month
+    @returns err.message - If there was an error
+*/
 function GetBusyTimeInMonth(args, DB){
     
     let userID = args[0];
     let user2_Name = args[1];
     let user2_ID;
-    let year = args[2];
-    let month = parseInt(args[3]);
+    let year = 0;
+    let month = 0;
     let daysInMonth = [31,[28,29],31,30,31,30,31,31,30,31,30,31];
-    let lastDigitOfYear = parseInt(year)%10;
+    let lastDigitOfYear = 0;
+    try{
+        year = parseInt(args[2]);
+        month = parseInt(args[3]);
+        lastDigitOfYear = year%10;
+    }catch(e){
+        console.log("CalendarManagement.js/GetBusyTimeInMonth: Error getting month events");
+        console.log(e.message);
+        throw(e);
+    }
     if(lastDigitOfYear % 2 != 0){
         daysInMonth[1] = daysInMonth[1][1];
     }else{
@@ -91,12 +123,20 @@ function GetBusyTimeInMonth(args, DB){
             user2Month = JSON.parse(user2Month);
         }
         busyTime = GetBusyTime(user1Month, busyTime, month);
-        console.log(busyTime);
         busyTime = GetBusyTime(user2Month, busyTime, month);
-        console.log(JSON.stringify(busyTime));
         resolve(JSON.stringify(busyTime));
     });
 }
+/* GetBusyTime goes through the provided array of events and finds the start and end day and month of each event
+   Then it caps the start or end day to be confined within the days of the month. Finally, it loops through the days
+   of the month and calls CalculateBusyTime if there are existing times in the day, or pushes a new array with the 
+   start and end time of the event if there are no existing times.
+
+    @param monthEvents - The array of events for the month
+    @param busyTime - The array of the month with the busy times
+    @param month - The month of the events
+    @returns busyTime - The updated array of the month with the busy times
+*/
 function GetBusyTime(monthEvents, busyTime, month){
     let date;
     monthEvents.forEach(event => {
@@ -121,13 +161,9 @@ function GetBusyTime(monthEvents, busyTime, month){
                 eventStart = event.startTime;
                 eventEnd = event.endTime;
                 if(busyTime[i].length == 0){
-                    console.log(busyTime);
-                    console.log(busyTime[i]);
                     busyTime[i].push([eventStart, eventEnd]);
-                    console.log("Adding an array: " , busyTime[i]);
                 }else{
-                    console.log("calculating busy time: ", busyTime[i], " array start: ", eventStart, " array end: ", eventEnd);
-                    busyTime[i] = CalculatebusyTime(busyTime[i], eventStart, eventEnd);
+                    busyTime[i] = CalculateBusyTime(busyTime[i], eventStart, eventEnd);
                 }
             }
         }
@@ -135,7 +171,19 @@ function GetBusyTime(monthEvents, busyTime, month){
     
     return busyTime;
 }
-function CalculatebusyTime(time, eventStart, eventEnd){
+/* CalculaterBusyTime cycles through the main array of the day (time variable) and finds the index of where an existing time
+   is greater than the event start(repeats this process for the event end, starting after the index of eventStart).
+   Once the indexes are found, the function will remove all imbetween arrays as long as the fractional index doesn't 
+   lie in the array being deleted, then the function will check to see if the indexes are fractional, if they are, it will 
+   check what event index is fractional and combine the arrays accordingly, if not, then it will create a new array with 
+   the event start time and end time at the eventStartIndex.
+
+    @param time - The array of the day that contains the busy times
+    @param eventStart - The start time of the event
+    @param eventEnd - The end time of the event
+    @returns time - The updated array of the day with the event times added
+*/
+function CalculateBusyTime(time, eventStart, eventEnd){
     let eventStartIndex = 0;
     let eventEndIndex = 0;
     let busyTimeLength = time.length;
@@ -146,6 +194,9 @@ function CalculatebusyTime(time, eventStart, eventEnd){
             if(time[i][k] && eventStart <= time[i][k]){
                 eventStartIndex = k > 0 ? eventStartIndex += 0.5 : i;
                 i = time.length;
+                break;
+            }else if(i + 1 == busyTimeLength){
+                eventStartIndex ++;
                 break;
             }
         }

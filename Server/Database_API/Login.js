@@ -2,36 +2,23 @@ function Login(args, db){
     return new Promise((resolve, reject) => {
         var username = args[0];
         var password = args[1];
-        CheckLogin(username, password, db, (err, result) => {
+        db.GetUserInfo(username, (err, user) => {
             if(err){
-                console.log(err);
-                reject(err);
+                console.log(err.message);
+                reject(err.message);
+                return;
             }
-            if(result){
-                resolve(result);
+            if(user.length == 0){
+                resolve("User not found");
+            }else if(user[0].password == password){
+                resolve("User logged in");
             }else{
-                resolve(result);
-            }
+                resolve("Incorrect login");
+            } 
         });
+
     });
 }
-function CheckLogin(username, password, db,  callback){
-    db.GetUserInfo(username, (err, user) => {
-        if(err){
-            console.log(err);
-            callback(err, "Error: + " + err.ToString());
-        }
-        if(user.length == 0){
-            //console.log("User not found");
-            callback(null, "User not found");
-        }else if(user[0].password == password){
-            //console.log("User logged in");
-            callback(null, "User logged in");
-        }else{
-            //console.log("Incorrect login");
-            callback(null, "Incorrect login");
-        } 
-    });
-}
+
 
 module.exports = {Login};

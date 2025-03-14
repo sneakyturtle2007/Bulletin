@@ -3,7 +3,7 @@ const sql = require('sqlite3').verbose();
 class Database{
 
     constructor(databaseFile){
-        this.db = new sql.Database(databaseFile,  (err) => {//'database.db''./Database/database.db'
+        this.db = new sql.Database(databaseFile,  (err) => {
             if (err) {
                 throw err;
             }else{
@@ -19,7 +19,6 @@ class Database{
                     console.log('Error closing the database connection');
                     throw err;
                 }
-                //console.log('Successfully closed the database connection.');
             });
         });
         
@@ -55,7 +54,6 @@ class Database{
                     if(err){
                         throw err;
                     }
-                    //console.log(`${name} Table created`);
                 });
             });
                 
@@ -182,19 +180,18 @@ class Database{
         CreateUser(username, email, password, callback){
             this.GetUserInfo(username, (err, rows) => {
                 if(err){
-                    //console.log("Error in getting user info");
-                    callback(err, "Error in getting user info");
+                    console.log(err.message);
+                    callback("Error in getting user info", null);
                     return;
                 }
                 if(rows.length > 0 ){
-                    //console.log("Username taken");
                     callback(null, "Username taken");
                     return;
                 }else{
                     this.GetUserInfo(email, (err, rows) => {
                         if(err){
-                            //console.log("Error in getting user info");
-                            callback(err, "Error in getting user info");
+                            console.log(err.message);
+                            callback("Error in getting user info", null);
                             return;
                         }
                         if(rows.length > 0 ){
