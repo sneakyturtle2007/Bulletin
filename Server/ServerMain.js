@@ -13,7 +13,7 @@ const db = new Database('./Database/database.db');
 // Starting Express 
 const webserver = express();
 
-webserver.use(express.static(path.join(__dirname, "../Website")));
+webserver.use(express.static(path.join(__dirname, "../Website/")));
 webserver.use(express.json());
 
 
@@ -61,7 +61,7 @@ app.get('/example', (req, res) => {
                     socket.write(response.toString() + '\n');
                 }catch(err){
                     console.log('Error: ' + err);
-                    socket.write(err.message);
+                    socket.write('Error: ' + err.message + '\n');
                 }
                 
             }

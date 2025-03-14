@@ -9,7 +9,7 @@ function GetMonthEvents(args, DB){
             DB.GetUserInfo(userID, (err, result) => {
                 if(err){
                     console.log("CalendarManagement.js/GetMonthEvents: Error getting user info");
-                    reject("Error getting user info");
+                    reject(err.message);
                 }
                 userID = result[0].id;
             });
@@ -19,7 +19,7 @@ function GetMonthEvents(args, DB){
             if(err){
                 console.log("CalendarManagment.js/GetMonthEvents: Error getting events");
                 console.log(err.message);
-                reject("Error getting events");
+                reject(err.message);
             }else{
                 let events = result;
                 console.log("Amount of events: " + events.length);
@@ -71,7 +71,7 @@ function GetBusyTimeInMonth(args, DB){
         DB.GetUserInfo(user2_Name, (err, result) => {
             if(err){
                 console.log("CalendarManagement.js/GetBusyTimeInMonth: Error getting user2 ID");
-                reject(err);
+                reject(err.message);
             }
             user2_ID = result[0].id;
         });
@@ -98,28 +98,33 @@ function GetBusyTimeInMonth(args, DB){
 function GetBusyTime(monthEvents, busyTime, month){
     let date;
     monthEvents.forEach(event => {
-        date = event.date.split(",");
-        date[0] = date[0].split("/");
-        date[1] = date[1].split("/");
-        let startDay = parseInt(date[0][2]);
-        let endDay = parseInt(date[1][2]);
-        let startMonth = parseInt(date[0][1]);
-        let endMonth = parseInt(date[1][1]);
-        if(month < endMonth){
+        let startDay = 0;
+        let endDay = 0;
+        let startMonth = 0;
+        let endMonth = 0;       
+        if(monthEvents.length != 0){
+            date = event.date.split(",");
+            date[0] = date[0].split("/");
+            date[1] = date[1].split("/");
+            startDay = parseInt(date[0][2]);
+            endDay = parseInt(date[1][2]);
+            startMonth = parseInt(date[0][1]);
+            endMonth = parseInt(date[1][1]);
+            if(month < endMonth){
             endDay = busyTime.length;
-        }else if(month > startMonth){
-            startDay = 0;
-        }
-        for(let i = startDay -1; i < endDay; i++){
-            eventStart = event.startTime;
-            eventEnd = event.endTime;
-            if(busyTime[i].length == 0){
-                busyTime[i].push([eventStart, eventEnd]);
-            }else{
-                busyTime[i] = CalculatebusyTime(busyTime[i], eventStart, eventEnd);
+            }else if(month > startMonth){
+                startDay = 0;
+            }
+            for(let i = startDay -1; i < endDay; i++){
+                eventStart = event.startTime;
+                eventEnd = event.endTime;
+                if(busyTime[i].length == 0){
+                    busyTime[i].push([eventStart, eventEnd]);
+                }else{
+                    busyTime[i] = CalculatebusyTime(busyTime[i], eventStart, eventEnd);
+                }
             }
         }
-        
     });
     
     return busyTime;
@@ -127,24 +132,24 @@ function GetBusyTime(monthEvents, busyTime, month){
 function CalculatebusyTime(time, eventStart, eventEnd){
     let eventStartIndex = 0;
     let eventEndIndex = 0;
-
-    for(let i = 0; i < time.length ; i++){
+    let busyTimeLength = time.length;
+    for(let i = 0; i < busyTimeLength ; i++){
         eventStartIndex = i;
 
         for(let k = 0; k < 2; k++){
-            if(eventStart <= time[i][k]){
-                eventStartIndex = k > 0 ? i += 0.5 : i;
+            if(time[i][k] && eventStart <= time[i][k]){
+                eventStartIndex = k > 0 ? eventStartIndex += 0.5 : i;
                 i = time.length;
                 break;
             }
         }
 
     }
-    for(let i = eventStartIndex; i < time.length; i++){
+    for(let i = parseInt(eventStartIndex); i < busyTimeLength; i++){
         eventEndIndex = i;
         for(let k = 0; k < 2; k++){
-            if(eventEnd <= time[i][k]){
-                eventEndIndex = k > 0 ? i += 0.5 : i;
+            if(time[i][k] && eventEnd <= time[i][k]){
+                eventEndIndex = k > 0 ? eventEndIndex += 0.5 : i;
                 i = time.length; 
                 break;
             }

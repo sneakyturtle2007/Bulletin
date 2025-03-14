@@ -120,7 +120,14 @@ function AddInvitee(args, DB){
     return new Promise(async (resolve, reject) => {
         let eventID = args[0];
         let invitee = args[1];
-
+        
+        DB.GetUserInfo(invitee, (err, user) => {
+            if(err){
+                console.log(err.message);
+                reject('User not found');
+                return;
+            }
+        });
         DB.GetEventInfo(eventID, (err, event) => {
             if(err){
                 console.log(err.message);
@@ -149,6 +156,7 @@ function AddInvitee(args, DB){
                 }
             });
         });
+    
     });
 }
 
@@ -202,7 +210,7 @@ function Uninvite(args, DB){
             if(err){
                 console.log('\n' + 'Error in Uninvite: Error getting user info');
                 console.log(err.message);
-                resolve('Error getting user info');
+                reject(err.message);
             }
             let invites;
 
@@ -227,7 +235,7 @@ function Uninvite(args, DB){
                     resolve("User uninvited");
                 }catch(err){
                     console.log("Error uninviting user: " + err.message);
-                    resolve("Error uninviting user");
+                    reject(err.message);
                 }
             });
         });

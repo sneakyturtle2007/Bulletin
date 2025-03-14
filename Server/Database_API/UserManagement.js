@@ -47,6 +47,13 @@ function AddFriend(args, DB){
     let friend = args[1];
 
     return new Promise( (resolve, reject) => {
+        
+        DB.GetUserInfo(friend, (err, user) =>{
+            if(err){
+                resolve("Friend not found");
+                return;
+            }
+        });
         DB.GetUserInfo(username, (err, user) => {
             if(err){
                 reject(err);
@@ -71,6 +78,8 @@ function AddFriend(args, DB){
                 });
             }
         });
+        
+        
     });        
 }
 function RemoveFriend(args, DB){
@@ -81,7 +90,7 @@ function RemoveFriend(args, DB){
         DB.GetUserInfo(username, (err, user) => {
             if(err){
                 console.log(err.message);
-                resolve(err);
+                reject(err);
                 return;
             }else{
                 friends = user[0].friends.toString();
@@ -100,7 +109,7 @@ function RemoveFriend(args, DB){
                         DB.UpdateTable("users", `friends="${friends}"`, `id=${user[0].id}`);
                         resolve("Friend removed");
                     }catch(err){
-                        resolve("Error removing friend");
+                        reject(err.message);
                     }
                 });
             }

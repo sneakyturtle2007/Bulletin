@@ -1,49 +1,51 @@
 API_Commands and their returns-
 
    login|<username or email>|<password> 
-      - returns "User logged in" if login is successful, "Incorrect login" or "User not found" if login is unsuccessful
+      - returns "User logged in" if login is successful, "Incorrect login" if login is unsuccessful, "User not found" if there is no user found, or "Error: <Error message here>" if there is an error.
    
    createuser|<username>|<email>|<password> 
-      - returns "User created" if user is created successfully, "User already exists" if user already exists
+      - returns "User created" if user is created successfully, "User already exists" if user already exists, or "Error: <Error message here>" if there is an error.
 
    deleteuser|<username>
-      - returns "User deleted" if user is deleted successfully. If error, then returns error message
+      - returns "User deleted" if user is deleted successfully, "User not found" if user doesn't exist, or "Error: <Error message here>" if there is an error.
    
    getuserinfo|<username or email or userid>
-      - returns id, username, email, and friends of user, "User not found" if error or user not found
+      - returns "<userID>,<username>,<user email>,(<user friends>)(Comma separated)" , "User not found" if user doesn't exist, or "Error: <Error message here>" if there is an error.
    
    addfriend|<username>|<friend username>
-      - returns "Friend added" if friend is added successfully, "Friend already added" if friend already exists or an error message if error.
-        Can add friends that don't exist.
+      - returns "Friend added" if friend is added successfully, "Friend already added" if the user already has the person as a friend,
+       "Friend does not exist" if user to be friended doesn't exist, or "Error: <Error message here>" if there is an error.
 
    removefriend|<username>|<friend username>
-      - returns "Friend removed" if friend is successfully removed, "Friend not found" if friend doesn't exist, or "Error removing friend"
-        if there is an error when removing friend.
+      - returns "Friend removed" if friend is successfully removed, "Friend not found" if the friend doesn't exist, or "Error: <Error message here>" if there is an error.
 
    createevent|<userid>|<title>|<date>|<startTime>|<endTime>|<publicityType>|<invitees>|<details>
-      - returns "Event created" and the event ID of the event if event is created successfully, if there is an error it returns one of the following error messages,
-       "Error inviting invitees", "Error getting events", or "Error creating event.
+      - returns "Event created <eventID>" if the event is created successfully. "Error: <Error message here>" if there is an error.
 
    addinvitee|<eventid>|<username of invitee>
-      - returns "Invitee added" if invitee is added successfully, "Invitee already added" if the invitee was already added, and "Unable to add invitee" if error.
+      - returns "Invitee added" if invitee is added successfully, "Invitee already added" if the invitee was already added, or "Error: <Error message here>".
    
    removeinvitee|<eventid>|<username of invitee>
-      - returns "Invitee removed" if invitee is removed successfully, "Error removing invitee" if there is an error removing the invitee, 
-      "No invitees to remove" if the event doesn't have any invitees, "Invitee not found" if the invitee doesn't exist in the invitees 
-      list of the event, and "Event not found" if the event cannot be found.
+      - returns "Invitee removed" if invitee is removed successfully, "No invitees to remove" if the event doesn't have any invitees, "Invitee not found" if the invitee doesn't exist in the invitees 
+      list of the event, or "Error: <Error message here>" if there is an error .
    
    getevents|<userid>
-      - returns all events(JSON stringified) associated with the user
+      - returns all events(JSON stringified) associated with the user, or "Error: <Error message here>" if there is an error. 
+        JSON format: {userid: <userid> int, title: <eventitle> string, date: <start and end date> string, startTime: <start time in military time> int, endTime: <end time in military time> int, location: <location> string, publicityType: <publicity type> string, invitees: <all users invited> string, details: <event details> string, eventid: <eventID>}
    
    geteventinfo|<eventid> 
-      - returns title, details, date(YYYY/M/D(start date), YYYY/M/D(end date)), startTime, endTime, publicityType, invitees of the event, and the userid of the creator of the event.
-        If error, then returns error message stating error.
+      - returns "<event title>,(<event details>), <YYYY/M/D(start date), YYYY/M/D(end date)>,<startTime>,<endTime>,<publicityType>,(<invitees of the event>),<userID of event creator>".
+        If error, returns "Error: <Error message here>".
    
-   deleteevent|<eventid>
-      - returns "Event deleted" if event is deleted successfully. If error, then returns either "Error getting event" or "Error deleting event", or "Event not found" if no event is found.
+   deleteevent|<eventid
+      - returns "Event deleted" if event is deleted successfully. If error, returns "Error: <Error message here>".
 
    getmonthevents|<userid>|<year>|<month>
-      - returns all events(JSON stringified) of the specified user from the given month of the specificied year. If no events can be found, returns "No events found". 
-        If there is an error when retrieving the events from the database, then returns "Error getting events".   
+      - returns all events(JSON stringified) of the specified user from the given month of the specificied year. If no events can be found, returns "No events found".
+        If error, returns "Error: <Error message here>".  
+        JSON format: {userid: <userid> int, title: <eventitle> string, date: <start and end date> string, startTime: <start time in military time> int, endTime: <end time in military time> int, location: <location> string, publicityType: <publicity type> string, invitees: <all users invited> string, details: <event details> string, eventid: <eventID>}
+
    getbusytimeinmonth|<userid>|<other user username>|<year>|<month>
       - returns the time(JSON stringified) for each day in the specified month in which an event already occupies.
+         If error, returns "Error: <Error message here>".
+         JSON format: A nested array of strings.

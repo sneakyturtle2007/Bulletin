@@ -109,7 +109,6 @@ class Database{
                         console.log("Entered Command: " + `UPDATE ${table} SET ${values} WHERE ${condition};`);
                         throw err;
                     }
-                    //console.log(`Updated ${name}`);
                 });
             });
         }
