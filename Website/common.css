@@ -1,6 +1,6 @@
 @font-face {
     font-family: pencil;
-    src: url('Fonts/pencilant.ttf');
+    src: url('../Fonts/pencilant.ttf');
 }
 
 * {
@@ -9,7 +9,7 @@
 }
 
 body {
-    background-image: url('Images/Bulletin.jpg');
+    background-image: url('../Images/Bulletin.jpg');
     background-size: cover;
 }
 
@@ -20,7 +20,7 @@ body {
     width: 12%;
     height: 25%;
     text-align: center;
-    background-image: url('Images/stickynote.png');
+    background-image: url('../Images/stickynote.png');
     background-size: contain;
     background-repeat: no-repeat;
 }

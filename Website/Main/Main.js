@@ -1,3 +1,7 @@
+function OnLoad(){
+    
+}
+
 function OnClickSignup() {
     window.location.href = "../Signup/Signup.html";
 }
