@@ -159,8 +159,8 @@ async function CalendarTest(userID, year, month, client){
                     client.write(`getmonthevents|${userID}|${year}|3`);
 
                 }else if(response == "No events found"){      
-                    console.log(`Sent: getbusytimeinmonth|${userID}|admin|2021|1`);  
-                    client.write(`getbusytimeinmonth|${userID}|admin|2021|1`);
+                    console.log(`Sent: getbusytimeinmonth|${userID}|test|2021|1`);  
+                    client.write(`getbusytimeinmonth|${userID}|test|2021|1`);
 
                 }else if(response[0].length > 0){
                     client.removeListener('data', onData);
@@ -208,7 +208,7 @@ client.connect(8000,IP,async () => {
         let eventtest = await EventTest('4', 'test', '2021/2/24,2023/5/3', '1500', '1600', 'private', 'admin,friend', 'NONE', client);
         console.log(eventtest);
 
-        let calendartest = await CalendarTest('4', '2021', '2', client);
+        let calendartest = await CalendarTest('3', '2021', '2', client);
         console.log(calendartest);
         
     }catch(err){

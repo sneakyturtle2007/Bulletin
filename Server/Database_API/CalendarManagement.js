@@ -53,7 +53,7 @@ function GetBusyTimeInMonth(args, DB){
     let user2_Name = args[1];
     let user2_ID;
     let year = args[2];
-    let month = args[3];
+    let month = parseInt(args[3]) + 1;
     let daysInMonth = [31,[28,29],31,30,31,30,31,31,30,31,30,31];
     let lastDigitOfYear = parseInt(year)%10;
     if(lastDigitOfYear % 2 != 0){
@@ -89,8 +89,8 @@ function GetBusyTimeInMonth(args, DB){
         }else{
             user2Month = JSON.parse(user2Month);
         }
-        busyTime = GetBusyTime(user1Month, busyTime, parseInt(month));
-        busyTime = GetBusyTime(user2Month, busyTime, parseInt(month));
+        busyTime = GetBusyTime(user1Month, busyTime, month);
+        busyTime = GetBusyTime(user2Month, busyTime, month);
         console.log(JSON.stringify(busyTime));
         resolve(JSON.stringify(busyTime));
     });
