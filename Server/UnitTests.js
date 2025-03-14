@@ -147,6 +147,7 @@ async function CalendarTest(userID, year, month, client){
 
             let onData = async (data) => {
                 let response = data.toString().trim();
+                console.log("Before parsing: " + response);
                 try{
                     response = JSON.parse(data);
                 }catch(e){
@@ -154,13 +155,13 @@ async function CalendarTest(userID, year, month, client){
                 }
                 console.log(response);
                 
-                if(response[0].title == "backend"){
-                    console.log(`Sent: getmonthevents|${userID}|${year}|3`);
-                    client.write(`getmonthevents|${userID}|${year}|3`);
+                if(response[0].title == "Birthday"){
+                    console.log(`Sent: getmonthevents|${userID}|${year}|5`);
+                    client.write(`getmonthevents|${userID}|${year}|5`);
 
                 }else if(response == "No events found"){      
-                    console.log(`Sent: getbusytimeinmonth|${userID}|test|2021|1`);  
-                    client.write(`getbusytimeinmonth|${userID}|test|2021|1`);
+                    console.log(`Sent: getbusytimeinmonth|${userID}|test|2025|3`);  
+                    client.write(`getbusytimeinmonth|${userID}|test|2025|3`);
 
                 }else if(response[0].length > 0){
                     client.removeListener('data', onData);

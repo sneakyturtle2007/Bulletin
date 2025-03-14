@@ -53,7 +53,7 @@ function GetBusyTimeInMonth(args, DB){
     let user2_Name = args[1];
     let user2_ID;
     let year = args[2];
-    let month = parseInt(args[3]) + 1;
+    let month = parseInt(args[3]);
     let daysInMonth = [31,[28,29],31,30,31,30,31,31,30,31,30,31];
     let lastDigitOfYear = parseInt(year)%10;
     if(lastDigitOfYear % 2 != 0){
@@ -61,7 +61,7 @@ function GetBusyTimeInMonth(args, DB){
     }else{
         daysInMonth[1] = daysInMonth[1][0];
     }
-    let busyTime = new Array(daysInMonth[parseInt(month)]);
+    let busyTime = new Array(daysInMonth[month +1]);
     for(let i = 0; i < busyTime.length; i++){
         busyTime[i] = [];
     }
@@ -90,6 +90,7 @@ function GetBusyTimeInMonth(args, DB){
             user2Month = JSON.parse(user2Month);
         }
         busyTime = GetBusyTime(user1Month, busyTime, month);
+        console.log(busyTime);
         busyTime = GetBusyTime(user2Month, busyTime, month);
         console.log(JSON.stringify(busyTime));
         resolve(JSON.stringify(busyTime));
@@ -119,8 +120,12 @@ function GetBusyTime(monthEvents, busyTime, month){
                 eventStart = event.startTime;
                 eventEnd = event.endTime;
                 if(busyTime[i].length == 0){
+                    console.log(busyTime);
+                    console.log(busyTime[i]);
                     busyTime[i].push([eventStart, eventEnd]);
+                    console.log("Adding an array: " , busyTime[i]);
                 }else{
+                    console.log("calculating busy time: ", busyTime[i], " array start: ", eventStart, " array end: ", eventEnd);
                     busyTime[i] = CalculatebusyTime(busyTime[i], eventStart, eventEnd);
                 }
             }
@@ -151,6 +156,9 @@ function CalculatebusyTime(time, eventStart, eventEnd){
             if(time[i][k] && eventEnd <= time[i][k]){
                 eventEndIndex = k > 0 ? eventEndIndex += 0.5 : i;
                 i = time.length; 
+                break;
+            }else if(i + 1 == busyTimeLength){
+                eventEndIndex ++;
                 break;
             }
         }
