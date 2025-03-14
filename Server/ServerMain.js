@@ -30,8 +30,12 @@ app.get('/example', (req, res) => {
     res.sendFile(path.join(__dirname, '../Website/Example/Example.html'));
 }
 */
-
-
+webserver.get('/login', async (req, res) => {
+    res.json(await Director.ProcessData(`login|${req.query.username}|${req.query.password}`, db));
+});
+webserver.get('/signup', async (req, res) => {
+    res.json(await Director.ProcessData(`createuser|${req.query.username}|${req.query.email}|${req.query.password}`, db));
+});
 
 // Connection Info/Create Server
     const Port_TCP = 8000;
