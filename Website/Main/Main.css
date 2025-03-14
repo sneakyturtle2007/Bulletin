@@ -2,7 +2,7 @@
     margin-top: 150;
     margin-left: 60;
     width: auto;
-    height: 600px;
+    height: 750px;
     background-image: url("../Images/login.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -12,7 +12,7 @@
     margin-top: 50;
     margin-left: 40;
     width: auto;
-    height: 600px;
+    height: 750px;
     background-image: url("../Images/signup.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -22,18 +22,18 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 10%;
+    width: 1%;
 }
 
 input.loginInput {
     background: transparent;
     border: none;
-    line-height: 1.8em;
-    width: 49.3%;
+    line-height: 2.65rem;
+    width: 49.45%;
 }
 
 div.loginInput {
-    margin-top: 230px;
+    margin-top: 310px;
     margin-left: 9.5%;
     margin-right: 9.5%;
     width: auto;
@@ -46,21 +46,20 @@ button.loginButton {
 }
 
 div.loginButton {
-    margin-top: 45%;
+    margin-top: 48%;
     margin-bottom: 0;
     position: relative;
     text-align: center;
 }
 
 .signupButton {
-    padding: 54px 4.5%;
+    padding: 66px 4.75555555%;
     background: transparent;
-    position: relative;    
 }
 
 .buttons {
    font-size: 0px;
-   margin-top: 400px;
+   margin-top: 530px;
    float: left;
    width: 100%;
 }
