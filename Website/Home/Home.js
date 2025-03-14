@@ -76,14 +76,18 @@ async function GetUserId() {
     var user = document.cookie.substring(5);
     var info = await fetch("/getuserinfo?username=" + user).then(res => res.json());
     var id = Number(info.substring(0,info.indexOf(",")));
-    console.log(id);
     return id;
 }
 
 async function GetEvents(calendarbox) {
     var user = await GetUserId();
-    var events = await fetch("/getmonthevents?userid=" + user + "&year=" + year + "&month=" + month).then(res => res.json());
-    console.log(events);
+    var eventsjsonned = await fetch("/getmonthevents?userid=" + user + "&year=" + year + "&month=" + (month+1)).then(res => res.json());
     // add events that are on the day chosen to a list
     // display each event to 
+    var events = await JSON.parse(eventsjsonned);
+    console.log(events);
+}
+
+function DisplayEvents() {
+    
 }
