@@ -163,7 +163,7 @@ async function CalendarTest(userID, year, month, client){
                     console.log(`Sent: getbusytimeinmonth|${userID}|test|2025|3`);  
                     client.write(`getbusytimeinmonth|${userID}|test|2025|3`);
 
-                }else if(response[0].length > 0){
+                }else if(response[24].length > 0){
                     client.removeListener('data', onData);
                     resolve("Calendar Test" + ' \u2713');
 
