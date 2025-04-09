@@ -74,8 +74,8 @@ async function GetMonthEvents(args, DB){
 function GetBusyTimeInMonth(args, DB){
     
     let userID = args[0];
-    let user2_Name = args[1];
-    let user2_ID;
+    let otherUsers = args[1].split(",");
+    let otherUserID;
     let year = 0;
     let month = 0;
     let daysInMonth = [31,[28,29],31,30,31,30,31,31,30,31,30,31];
@@ -99,31 +99,47 @@ function GetBusyTimeInMonth(args, DB){
         busyTime[i] = [];
     }
     let user1Month;
-    let user2Month;
+    let otherUserMonths = [];
     return new Promise( async (resolve, reject) => {
-        DB.GetUserInfo(user2_Name, (err, result) => {
-            if(err){
-                console.log("CalendarManagement.js/GetBusyTimeInMonth: Error getting user2 ID");
-                reject(err.message);
-            }
-            user2_ID = result[0].id;
-        });
-        
+
         user1Month = await GetMonthEvents([userID, year, month], DB);
-        user2Month = await GetMonthEvents([user2_ID, year, month], DB);
+        try{
+            for(let i = 0 ; i < otherUsers.length; i++){
+                otherUsers[i] = otherUsers[i].trim();
+                console.log(i);
+                DB.GetUserInfo(otherUsers[i], async (err, result) => {
+                    if(err){
+                        console.log("CalendarManagement.js/GetBusyTimeInMonth: Error getting user2 ID");
+                        throw(err.message);
+                    }
+                    otherUserID = result[0].id;
+                    otherUserMonths.push(await GetMonthEvents([otherUserID, year, month], DB));
+                });
+                
+            }
+            if(user1Month == "No events found"){
+                user1Month = [];
+            }else{
+                user1Month = JSON.parse(user1Month);
+            }
+            for(let i = 0; i < otherUserMonths.length; i++){
+                if(otherUserMonths[i] == "No events found"){
+                    otherUserMonths[i] = [];
+                }else{
+                    otherUserMonths[i] = JSON.parse(otherUserMonths[i]);
+                }
+            }
             
-        if(user1Month == "No events found"){
-            user1Month = [];
-        }else{
-            user1Month = JSON.parse(user1Month);
+            busyTime = GetBusyTime(user1Month, busyTime, month);
+            for(let i = 0; i < otherUserMonths.length; i++){
+                busyTime = GetBusyTime(otherUserMonths[i], busyTime, month);
+            }
+        }catch(e){
+            console.log("CalendarManagement.js/GetBusyTimeInMonth: Error getting month events");
+            console.log(e);
+            reject(e);
+            return;
         }
-        if(user2Month == "No events found"){
-            user2Month = [];
-        }else{
-            user2Month = JSON.parse(user2Month);
-        }
-        busyTime = GetBusyTime(user1Month, busyTime, month);
-        busyTime = GetBusyTime(user2Month, busyTime, month);
         resolve(JSON.stringify(busyTime));
     });
 }
@@ -187,13 +203,16 @@ function CalculateBusyTime(time, eventStart, eventEnd){
     let eventStartIndex = 0;
     let eventEndIndex = 0;
     let busyTimeLength = time.length;
+    if(time.length == 1 && time[0][0] == eventStart && time[0][1] == eventEnd){
+        return time;
+    }
     for(let i = 0; i < busyTimeLength ; i++){
         eventStartIndex = i;
-
+        console.log(`eventStartIndex: ${eventStartIndex}`);
         for(let k = 0; k < 2; k++){
             if(time[i][k] && eventStart <= time[i][k]){
                 eventStartIndex = k > 0 ? eventStartIndex += 0.5 : i;
-                i = time.length;
+                i = busyTimeLength;
                 break;
             }else if(i + 1 == busyTimeLength){
                 eventStartIndex ++;
@@ -203,11 +222,11 @@ function CalculateBusyTime(time, eventStart, eventEnd){
 
     }
     for(let i = parseInt(eventStartIndex); i < busyTimeLength; i++){
-        eventEndIndex = i;
+        eventEndIndex = i
         for(let k = 0; k < 2; k++){
             if(time[i][k] && eventEnd <= time[i][k]){
                 eventEndIndex = k > 0 ? eventEndIndex += 0.5 : i;
-                i = time.length; 
+                i = busyTimeLength; 
                 break;
             }else if(i + 1 == busyTimeLength){
                 eventEndIndex ++;
@@ -215,6 +234,7 @@ function CalculateBusyTime(time, eventStart, eventEnd){
             }
         }
     }
+
     time.splice(parseInt(eventStartIndex+0.5), parseInt(eventEndIndex) - parseInt(eventStartIndex + 0.5));
     if(eventStartIndex % 1 == 0){
         eventEndIndex % 1 == 0 ? time.splice(eventStartIndex,0,[eventStart, eventEnd]) : time[parseInt(eventEndIndex)][0] = eventStart;    

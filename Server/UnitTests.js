@@ -160,8 +160,8 @@ async function CalendarTest(userID, year, month, client){
                     client.write(`getmonthevents|${userID}|${year}|5`);
 
                 }else if(response == "No events found"){      
-                    console.log(`Sent: getbusytimeinmonth|${userID}|test|2025|3`);  
-                    client.write(`getbusytimeinmonth|${userID}|test|2025|3`);
+                    console.log(`Sent: getbusytimeinmonth|${userID}|test,Backend|2025|3`);  
+                    client.write(`getbusytimeinmonth|${userID}|test,Backend|2025|3`);
 
                 }else if(response[24].length > 0){
                     client.removeListener('data', onData);
