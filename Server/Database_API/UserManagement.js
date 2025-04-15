@@ -86,34 +86,41 @@ function AddFriend(args, DB){
         
         DB.GetUserInfo(friend, (err, user) =>{
             if(err){
+                console.log(err.message);
+                reject(err);
+                return;
+            }else if(user.length > 0){
+
+                DB.GetUserInfo(username, (err, user) => {
+                    if(err){
+                        reject(err.message);
+                    }else{
+                        friends = user[0].friends.toString();
+                        if(friends == "NONE"){
+                            friends = `${friend}`;
+                        }else if(!friends.includes(friend)){
+                            friends = `${friends}`+ `,${friend}`;
+                        }else{
+                            resolve("Friend already added");
+                            return;
+                        }
+                        
+                        DB.db.serialize(()=>{
+                            try{
+                                DB.UpdateTable("users", `friends="${friends}"`, `id=${user[0].id}`);
+                                resolve("Friend added");
+                            }catch(err){
+                                reject(err.message);
+                            }
+                        });
+                    }
+                });
+            }else{
                 resolve("Friend not found");
                 return;
             }
         });
-        DB.GetUserInfo(username, (err, user) => {
-            if(err){
-                reject(err.message);
-            }else{
-                friends = user[0].friends.toString();
-                if(friends == "NONE"){
-                    friends = `${friend}`;
-                }else if(!friends.includes(friend)){
-                    friends = `${friends}`+ `,${friend}`;
-                }else{
-                    resolve("Friend already added");
-                    return;
-                }
-                
-                DB.db.serialize(()=>{
-                    try{
-                        DB.UpdateTable("users", `friends="${friends}"`, `id=${user[0].id}`);
-                        resolve("Friend added");
-                    }catch(err){
-                        reject(err.message);
-                    }
-                });
-            }
-        });
+        
         
         
     });        

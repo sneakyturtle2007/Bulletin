@@ -36,17 +36,25 @@ async function UserTest(username, email, password, client){
                     client.write(`getuserinfo|a`);
                     
                 }else if(response == 'User not found'){
-                    console.log(`Sent: addfriend|${username}|example`);
-                    client.write(`addfriend|${username}|example`);
+                    console.log(`Sent: addfriend|${username}|admin`);
+                    client.write(`addfriend|${username}|admin`);
                 
                 }else if(response == 'Friend added'){
-                    console.log(`Sent: addfriend|${username}|example`);
-                    client.write(`addfriend|${username}|example`);
-                
+                    console.log(`Sent: addfriend|${username}|admin`);
+                    client.write(`addfriend|${username}|admin`);
+
                 }else if(response == 'Friend already added'){
+                    console.log(`Sent: removefriend|${username}|admin`);
+                    client.write(`removefriend|${username}|admin`);
+
+                }else if(response == 'Friend removed'){
+                    console.log(`Sent: addfriend|${username}|ashioet`);
+                    client.write(`addfriend|${username}|ashioet`);
+
+                }else if(response == 'Friend not found'){
                     console.log(`Sent: deleteuser|${username}`);
                     client.write(`deleteuser|${username}`);
-                
+
                 }else if(response == 'User deleted'){
                     client.removeListener('data', onData);
                     resolve("User Test" + ' \u2713')
@@ -147,13 +155,11 @@ async function CalendarTest(userID, year, month, client){
 
             let onData = async (data) => {
                 let response = data.toString().trim();
-                console.log("Before parsing: " + response);
                 try{
                     response = JSON.parse(data);
                 }catch(e){
                     // PLACEHOLDER
                 }
-                console.log(response);
                 
                 if(response[0].title == "Birthday"){
                     console.log(`Sent: getmonthevents|${userID}|${year}|5`);
@@ -163,7 +169,7 @@ async function CalendarTest(userID, year, month, client){
                     console.log(`Sent: getbusytimeinmonth|${userID}|test,Backend|2025|3`);  
                     client.write(`getbusytimeinmonth|${userID}|test,Backend|2025|3`);
 
-                }else if(response[24].length > 0){
+                }else if(response[13].length == 1){
                     client.removeListener('data', onData);
                     resolve("Calendar Test" + ' \u2713');
 

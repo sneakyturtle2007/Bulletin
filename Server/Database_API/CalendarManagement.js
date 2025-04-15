@@ -110,7 +110,7 @@ function GetBusyTimeInMonth(args, DB){
                 DB.GetUserInfo(otherUsers[i], async (err, result) => {
                     if(err){
                         console.log("CalendarManagement.js/GetBusyTimeInMonth: Error getting user2 ID");
-                        throw(err.message);
+                        throw(err);
                     }
                     otherUserID = result[0].id;
                     otherUserMonths.push(await GetMonthEvents([otherUserID, year, month], DB));
