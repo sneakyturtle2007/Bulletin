@@ -56,23 +56,21 @@ int main(){
     ssize_t valread = 0;
     while((valread == read(server.newSocket, server.buffer, sizeof(server.buffer))) > 0 || !quit){
       printf("Client: %s\n", server.buffer);
-      switch (server.buffer) {
-        case "test":
+    
+        if(strcmp(server.buffer, "test")){
           printf("testing\n");
           char message[] = "terminate";
           write(server.newSocket, message, sizeof(message));
           break;
-        case "terminate":
+        }else if(strcmp(server.buffer, "terminate")){
           printf("terminating connection....\n");
           memset(server.buffer, 0, sizeof(server.buffer));
           break;
-        case "password":
+        }else if(strcmp(server.buffer, "password")){
           printf("shutting down server.....\n");
           close(server.newSocket);
           quit = true;
-        default:
-          break;
-      }
+        }
       memset(server.buffer, 0, sizeof(server.buffer));
     }
     printf("closing connection\n\n");
