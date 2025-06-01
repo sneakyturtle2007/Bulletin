@@ -47,32 +47,40 @@ int main(){
  
   while(true){
     if( (server.newSocket = accept(server.serverfd, (struct sockaddr*) &(server.address), (socklen_t*) &(server.addrlen) )) < 0 ){
-      perror("Filaed to accept new connection\n");
+      perror("Failed to accept new connection\n");
       exit(EXIT_FAILURE);
     }
 
     printf("Connection Accepted\n");
     bool quit = false;
     ssize_t valread = 0;
-    while((valread == read(server.newSocket, server.buffer, sizeof(server.buffer))) > 0 || quit == false){
+    while((valread == read(server.newSocket, server.buffer, sizeof(server.buffer))) > 0 || !quit){
       printf("Client: %s\n", server.buffer);
-
-      if(strcmp(server.buffer, "test") == 0){
-        printf("testing\n");
-        char message[] = "terminate";
-        write(server.newSocket, message, sizeof(message));
-    
-      }else if(strcmp(server.buffer, "terminate") == 0){
-        printf("Terminating\n\n");
-        memset(server.buffer, 0, sizeof(server.buffer));
-        break;
+      switch (server.buffer) {
+        case "test":
+          printf("testing\n");
+          char message[] = "terminate";
+          write(server.newSocket, message, sizeof(message));
+          break;
+        case "terminate":
+          printf("terminating connection....\n");
+          memset(server.buffer, 0, sizeof(server.buffer));
+          break;
+        case "password":
+          printf("shutting down server.....\n");
+          close(server.newSocket);
+          quit = true;
+        default:
+          break;
       }
       memset(server.buffer, 0, sizeof(server.buffer));
     }
+    printf("closing connection\n\n");
     close(server.newSocket);
   }
 
   close(server.serverfd);
+
   return 0;
 }
 
