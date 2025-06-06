@@ -13,4 +13,8 @@ include_directories(src/ProgramFiles)
 add_executable(C_remake
         src/HeaderFiles/sqlite3.h
         src/ProgramFiles/sqlite3.c
-        src/ProgramFiles/main.c)
+        src/ProgramFiles/main.c
+        src/ProgramFiles/user_management.c
+        src/HeaderFiles/user_management.h
+        src/ProgramFiles/director.c
+        src/HeaderFiles/director.h)

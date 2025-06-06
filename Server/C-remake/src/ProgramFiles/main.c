@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <sqlite3.h>
+#include "../HeaderFiles/director.h"
 
 #if defined(__linux__) || defined(__APPLE__)
   #include <unistd.h>
@@ -46,9 +47,19 @@
 int main(){
   //Setting up database
 
+  sqlite3 *db;
+  const int rc = sqlite3_open("test.db", &db);
+  if(rc){
+    printf("error opening database\n");
+    sqlite3_close(db);
+    exit(EXIT_FAILURE);
+  }
+  printf("opened database\n");
+
+
   // Setting up server
 
-  #ifdef __Linux__
+  #ifdef __linux__
     Server server = {
       .serverfd = 0,
       .newSocket = 0,
@@ -73,7 +84,7 @@ int main(){
 
         printf("Client: %s\n", server.buffer);
 
-          if(strcmp(server.buffer, "test") != 0){
+          if(strcmp(server.buffer, "createuser") != 0){
             printf("testing\n");
             char message[] = "terminate";
             write(server.newSocket, message, sizeof(message));
@@ -83,9 +94,15 @@ int main(){
             memset(server.buffer, 0, sizeof(server.buffer));
             break;
           }else if(strcmp(server.buffer, "password") != 0){
+            memset(server.buffer, 0, sizeof(server.buffer));
             printf("shutting down server.....\n");
             close(server.newSocket);
             quit = true;
+          }else {
+            char* response = input_handler(server.buffer);
+            write(server.newSocket, response, sizeof(response));
+            memset(server.buffer, 0, sizeof(server.buffer));
+            printf("server response: %s\n", response);
           }
         memset(server.buffer, 0, sizeof(server.buffer));
       }

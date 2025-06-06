@@ -5,21 +5,19 @@ const PORT = '8080';
 
 client.connect(PORT, IP, async () =>{
   console.log("connected");
-
+  client.write("createuser");
   client.on('data', (data) =>{
     let info = data.toString().trim();
     
-    console.log("Recieved: ", info);
+    console.log("Recieved: " + info);
 
     if(info === "terminate\0"){
       client.write("terminate");
-      console.log("Terminating...");
+      console.log("Terminating...\n");
       client.end();
     }else{
       console.log("incorrect response");
     }
 
   });
-
-  client.write('test');
 });
