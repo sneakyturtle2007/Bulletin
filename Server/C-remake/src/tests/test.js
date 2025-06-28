@@ -12,7 +12,7 @@ client.connect(PORT, IP, async () =>{
     console.log("Recieved: " + info);
 
     if(info === "terminate\0"){
-      client.write("terminate");
+      client.write("password");
       console.log("Terminating...\n");
       client.end();
     }else{

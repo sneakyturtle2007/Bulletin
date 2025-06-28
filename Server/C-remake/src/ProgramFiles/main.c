@@ -4,11 +4,15 @@
 #include <stdbool.h>
 #include <sqlite3.h>
 #include "../HeaderFiles/director.h"
+#include "../HeaderFiles/database.h"
+
+#define BUFFER 1024
+#define PORT 8080
 
 #if defined(__linux__) || defined(__APPLE__)
   #include <unistd.h>
   #include <arpa/inet.h>
-  #define BUFFER 1024
+
   typedef struct{
     int serverfd;
     int newSocket;
@@ -25,7 +29,6 @@
 
   #pragma comment(lib, "Ws2_32.lib")
 
-  #define BUFFER 1024
   typedef struct {
     SOCKET sSocket;
     SOCKET cSocket;
@@ -37,25 +40,13 @@
   void setupServerW(Server *server);
 #endif
 
-#define PORT 8080
-
-
-
-
-
 
 int main(){
   //Setting up database
 
   sqlite3 *db;
-  const int rc = sqlite3_open("test.db", &db);
-  if(rc){
-    printf("error opening database\n");
-    sqlite3_close(db);
-    exit(EXIT_FAILURE);
-  }
-  printf("opened database\n");
 
+  open_database(&db);
 
   // Setting up server
 
@@ -98,6 +89,7 @@ int main(){
             printf("shutting down server.....\n");
             close(server.newSocket);
             quit = true;
+            break;
           }else {
             char* response = input_handler(server.buffer);
             write(server.newSocket, response, sizeof(response));
@@ -216,16 +208,6 @@ int main(){
     server->address.sin_family = AF_INET;
     server->address.sin_addr.s_addr = INADDR_ANY;
     server->address.sin_port = htons(PORT);
-    /*
-    if(bind(server->sSocket, (struct sockaddr*) &(server->address), sizeof(server->address)) < 0){
-      perror("Binding failed\n");
-      exit(EXIT_FAILURE);
-    }
-
-    if(listen(server->sSocket, 5) < 0){
-      perror("Failed to listen\n");
-      exit(EXIT_FAILURE);
-    }*/
 
     printf("Server listening on port %d\n", PORT);
   }
