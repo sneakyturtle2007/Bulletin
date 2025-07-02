@@ -3,6 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct{
+  char ***data;
+  int row;
+  int cols;
+  int capacity;
+} Table_String;
+
 void open_database(sqlite3 **db){
   const int rc = sqlite3_open("database.db", db);
   if(rc){
@@ -30,6 +37,29 @@ int describe_table(char *name, char **description){
 }
 
 int callback(void *data, int numCol, char **colValues, char **colNames ){
-  char **result = (char **)data;
-
+   
 }
+
+int convert_to_string_table(void *data, int numCol, char **colValues, char **colNames){
+  Table_String *table = (*Table_String) data;
+
+  if(table->row == 0){
+    table->cols = numCols;
+  }
+
+  if(table->row >= table->capacity){
+    int new_capacity = table->capacity * 2;
+    table->data = realloc(table->data, new_capacity * sizeof(char**));
+    table->capacity = new_capacity;
+  }
+
+  table->data[table->row] = malloc(numCol * sizeof(char**));
+  
+  for(int i = 0; i < table->cols; i++){
+    table->data[table->row][i] = colValues[i];
+  }
+
+  table->row ++;
+  return 0;
+}
+
