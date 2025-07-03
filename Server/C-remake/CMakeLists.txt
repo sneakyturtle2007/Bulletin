@@ -1,20 +1,16 @@
-cmake_minimum_required(VERSION 3.31)
-project(C_remake)
+cmake_minimum_required(VERSION 3.18)
+project(MyCProject C)
 
-set(CMAKE_CXX_STANDARD 14)
+# Set the C standard
+set(CMAKE_C_STANDARD 23)
+set(CMAKE_C_STANDARD_REQUIRED True)
 
-include_directories(.)
-include_directories(external)
-include_directories(included)
-include_directories(src)
-include_directories(src/HeaderFiles)
-include_directories(src/ProgramFiles)
+# Include header directory
+include_directories(include)
 
-add_executable(C_remake
-        src/HeaderFiles/sqlite3.h
-        src/ProgramFiles/sqlite3.c
-        src/ProgramFiles/main.c
-        src/ProgramFiles/user_management.c
-        src/HeaderFiles/user_management.h
-        src/ProgramFiles/director.c
-        src/HeaderFiles/director.h)
+# Recursively collect all .c files in src/
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.c")
+
+# Define the executable
+add_executable(my_program ${SOURCES})
+

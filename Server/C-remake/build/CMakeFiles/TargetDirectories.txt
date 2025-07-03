@@ -1,0 +1,3 @@
+/home/luis/github/Bulletin/Server/C-remake/build/CMakeFiles/my_program.dir
+/home/luis/github/Bulletin/Server/C-remake/build/CMakeFiles/edit_cache.dir
+/home/luis/github/Bulletin/Server/C-remake/build/CMakeFiles/rebuild_cache.dir

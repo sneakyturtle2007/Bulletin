@@ -1,0 +1,12 @@
+ERROR: Failed to open database
+ERROR: Failed to get tables
+ERROR: Table pointer is null
+ERROR: Inconsistent column count
+ERROR: Failed to reallocate more memory for table data
+ERROR: Failed to allocate memory for new table row
+ERROR: Failed to convert table to string (failed to concatenate separator symbol to column)
+ERROR: Failed to convert table to string (failed to concatenate column to row)
+ERROR: Failed to convert table to string (failed to concatenate new line character onto end of row)
+ERROR: Invalid command
+ERROR: Failed to convert table to string (failed to concatenate terminating character)
+ERROR: Failed to concatenate terminating symbol on input
