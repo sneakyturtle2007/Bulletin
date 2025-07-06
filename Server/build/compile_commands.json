@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/luis/Bulletin/Server/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -g -std=gnu2x -o CMakeFiles/my_program.dir/src/database/database.c.o -c /home/luis/Bulletin/Server/C-remake/src/database/database.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/database/database.c",
+  "output": "CMakeFiles/my_program.dir/src/database/database.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -g -std=gnu2x -o CMakeFiles/my_program.dir/src/director.c.o -c /home/luis/Bulletin/Server/C-remake/src/director.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/director.c",
+  "output": "CMakeFiles/my_program.dir/src/director.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -g -std=gnu2x -o CMakeFiles/my_program.dir/src/main.c.o -c /home/luis/Bulletin/Server/C-remake/src/main.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/main.c",
+  "output": "CMakeFiles/my_program.dir/src/main.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -g -std=gnu2x -o CMakeFiles/my_program.dir/src/sqlite3.c.o -c /home/luis/Bulletin/Server/C-remake/src/sqlite3.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/sqlite3.c",
+  "output": "CMakeFiles/my_program.dir/src/sqlite3.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -g -std=gnu2x -o CMakeFiles/my_program.dir/src/user_management.c.o -c /home/luis/Bulletin/Server/C-remake/src/user_management.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/user_management.c",
+  "output": "CMakeFiles/my_program.dir/src/user_management.c.o"
+}
+]

@@ -2,13 +2,8 @@
 // Created by luis on 5/28/25
 //
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
-#include "sqlite3.h"
+
 #include "director.h"
-#include "database.h"
 
 #define BUFFER 1024
 #define PORT 8080
@@ -16,6 +11,7 @@
 #if defined(__linux__) || defined(__APPLE__)
   #include <unistd.h>
   #include <arpa/inet.h>
+  #include <stdbool.h>
 
   typedef struct{
     int serverfd;
@@ -32,6 +28,7 @@
   #include <winsock2.h>
   #include <ws2tcpip.h>
   #include <windows.h>
+  #include <stdbool.h>
 
   #pragma comment(lib, "Ws2_32.lib")
 
@@ -52,8 +49,12 @@
 int main(){
   //Setting up database
     sqlite3 *db;
-    open_database(&db);
-  
+    //open_database(&db);
+    int status = open_database(&db);
+    if(status != 0){
+      fprintf(stderr, "ERROR: Failed to open database with error code %d\n", status);
+      return 1;
+    }
   // Setting up error handling
     // PLACEHOLDER
   // Setting up server
@@ -102,22 +103,32 @@ int main(){
         
           break;
         }else{
-          char* response;
+          String response = {
+            .data = malloc(256 * sizeof(char)),
+            .length = 0,
+            .capacity = 256
+          };
+
           int status = input_handler(&db, server.buffer, &response);
           if(status != 0){
             fprintf(stderr, 
               "ERROR: An error has occurred with the error code %d\n", status);
+            free(response.data);
+            memset(server.buffer, 0, sizeof(server.buffer));
+            close(server.serverfd);
+            close(server.newSocket);
             return 1;
           }
-          write(server.newSocket, response, sizeof(response));
-          memset(server.buffer, 0, sizeof(server.buffer));
-          printf("server response: %s\n", response);
+
+          write(server.newSocket, response.data, response.length);
+          free(response.data);
+          //memset(server.buffer, 0, sizeof(server.buffer));
+          printf("server response: %s\n", response.data);
         }
         memset(server.buffer, 0, sizeof(server.buffer));
       }
       server.newSocket = 0;
       printf("closing connection\n\n");
-      
     }
     close(server.newSocket);
     close(server.serverfd);

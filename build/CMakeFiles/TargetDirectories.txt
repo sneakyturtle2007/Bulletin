@@ -1,0 +1,3 @@
+C:/Users/Luis Blake/Desktop/GitHub/Bulletin/build/CMakeFiles/C_remake.dir
+C:/Users/Luis Blake/Desktop/GitHub/Bulletin/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Luis Blake/Desktop/GitHub/Bulletin/build/CMakeFiles/ZERO_CHECK.dir

@@ -1,8 +1,9 @@
-#include "database.h"
-#include "sqlite3.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "sqlite3.h"
+#include "database.h"
 
 
 int open_database(sqlite3 **db){
@@ -13,6 +14,7 @@ int open_database(sqlite3 **db){
     return 1;
   }
   printf("Database opened\n");
+  return 0;
 }
 
 int get_tables(sqlite3 **db, Table_String *tables){
@@ -24,6 +26,8 @@ int get_tables(sqlite3 **db, Table_String *tables){
   int status = sqlite3_exec(*db, command, convert_to_string_table, tables, &errmsg);
   if(status != SQLITE_OK){
     fprintf(stderr, "ERROR: Failed to get tables\n%s", errmsg);
+    sqlite3_free(errmsg);
+    free_table(tables);
     return 2; 
   }
   return SQLITE_OK;
@@ -31,65 +35,89 @@ int get_tables(sqlite3 **db, Table_String *tables){
 
 // Table Management
 int describe_table(sqlite3 **db, char *name, Table_String *description){
-  
   char command[64];
   
-  sprintf(command, "PRAGMA table_info(%s);\n", name);
+  sprintf(command, "PRAGMA table_info(%s);", name);
   
   printf("%s\n", command);
 
   char *errmsg;
-
   int state = sqlite3_exec(*db, command, convert_to_string_table, description, &errmsg);
-  
-  printf("state code %d\n", state);
-  
-  if(state != SQLITE_OK){
+
+  if(state != 0){
     fprintf(stderr, "ERROR: Failed to describe table");
+    free_table(description);
+    sqlite3_free(errmsg);
     return state;
   }
-  return SQLITE_OK;
-}
-
-
-int convert_to_string_table(void *data, int numCols, char **colValues, char **colNames){
-  Table_String *table = (Table_String*) data;
-
-  printf("Number of columns %d\n", numCols);
-  if(table == NULL){
-    fprintf(stderr, "ERROR: Table pointer is null\n");
-    return 3;
-  }
-  if(table->rows == 0){
-    table->cols = numCols;
-  }else if(table->cols != numCols){
-    fprintf(stderr, "ERROR: Inconsistent column count (expected %d, got %d).\n", table->cols, numCols);
-    return 4;
-  }
-  if(table->rows >= table->capacity){
-    int new_capacity = table->capacity * 2;
-    char ***data_adjusted = realloc(table->data, new_capacity * sizeof(char**));
-    if(data_adjusted == NULL){
-      fprintf(stderr, "ERROR: Failed to reallocate more memory for table data\n");
-      return 5;
-    }
-    table->data = data_adjusted;
-    table->capacity = new_capacity;
-    free(data_adjusted);
-  }
-  char **data_adjusted = malloc(numCols * sizeof(char**));
-  if(data_adjusted == NULL){
-    fprintf(stderr, "ERROR: Failed to allocated memory for row %d\n", table->rows);
-    return 6;
-  }
-  table->data[table->rows] = data_adjusted;
-  for(int i = 0; i < table->cols; i++){
-    table->data[table->rows][i] = strndup(colValues[i], strlen(colValues[i])); 
-    printf("column value %s\n", table->data[table->rows][i]);
-
-  }
-  table->rows++;
-  free(data_adjusted);
   return 0;
 }
 
+int free_table(Table_String *table){
+  if(table == NULL || table->data == NULL) {
+    return 0; // Nothing to free
+  }
+
+  for(int i = 0; i < table->rows; i++){
+    if(table->data[i] != NULL) {
+      for(int j = 0; j < table->cols; j++){
+        free(table->data[i][j].data); // Free string data
+      }
+      free(table->data[i]); // Free row of String structs
+    }
+  }
+  free(table->data);
+
+  return 0;
+}
+
+int convert_to_string_table(void *data, int numCols, char **colValues, char **colNames){
+  Table_String *table = (Table_String *)data;
+
+  for(int i = 0; i < numCols; i++){
+    if(colValues[i] == NULL){
+      colValues[i] = "NULL"; // Handle NULL values
+    }
+  }
+
+  table->data[table->rows] = malloc(numCols * sizeof(String));
+
+  if(!table->data[table->rows]) {
+    fprintf(stderr, "Memory allocation failed\n");
+    return 1; // Memory allocation error
+  }
+
+  table->cols = numCols;
+
+  for(int i = 0; i < numCols; i++){
+    String temp_string = {.data = malloc(strlen(colValues[i]) + 1), .length = strlen(colValues[i]) + 1,
+                          .capacity = strlen(colValues[i]) + 1};
+    void *status = strncpy(temp_string.data, colValues[i], temp_string.length);
+    
+    if(status == NULL){
+      fprintf(stderr, "ERROR: strncpy failed (function convert_to_string_table)\n");
+      free(temp_string.data); // Free allocated memory before returning
+      return 1; // Memory allocation error
+    }
+    table->data[table->rows][i] = temp_string;
+    free(temp_string.data); // Free the temporary string data after copying
+    /*status = memcpy(&table->data[table->rows][i], &temp_string, sizeof(temp_string));
+    if(status == NULL){
+      fprintf(stderr, "ERROR: memcpy failed (function convert_to_string_table)\n");
+      return 1; // Memory allocation error
+    }*/
+
+  } 
+
+  table->rows++;
+  
+  if(table->rows >= table->table_capacity) {
+    table->table_capacity *= 2;
+    table->data = realloc(table->data, table->table_capacity * sizeof(String*));
+    if(!table->data) {
+      fprintf(stderr, "Memory allocation failed\n");
+      return 1; // Memory allocation error
+    }
+  }
+  return 0;
+}
