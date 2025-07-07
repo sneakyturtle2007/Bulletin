@@ -49,7 +49,6 @@
 int main(){
   //Setting up database
     sqlite3 *db;
-    //open_database(&db);
     int status = open_database(&db);
     if(status != 0){
       fprintf(stderr, "ERROR: Failed to open database with error code %d\n", status);
@@ -106,10 +105,11 @@ int main(){
           String response = {
             .data = malloc(256 * sizeof(char)),
             .length = 0,
-            .capacity = 256
+            .capacity = 256 * sizeof(char)
           };
 
           int status = input_handler(&db, server.buffer, &response);
+
           if(status != 0){
             fprintf(stderr, 
               "ERROR: An error has occurred with the error code %d\n", status);
@@ -119,13 +119,15 @@ int main(){
             close(server.newSocket);
             return 1;
           }
-
-          write(server.newSocket, response.data, response.length);
-          free(response.data);
-          //memset(server.buffer, 0, sizeof(server.buffer));
+          
           printf("server response: %s\n", response.data);
+          write(server.newSocket, response.data, response.length);
+
+          free(response.data);
+        
         }
         memset(server.buffer, 0, sizeof(server.buffer));
+
       }
       server.newSocket = 0;
       printf("closing connection\n\n");

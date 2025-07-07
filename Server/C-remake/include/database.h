@@ -24,13 +24,33 @@ typedef struct{
 } Table_String;
 
 
-
+// Database Management
+  /**
+   * Opens the database and returns a pointer to the database connection.
+   * @param db Pointer to a sqlite3 pointer that will hold the database connection.
+   * @return 0 on success, non-zero error code on failure.
+   */
 int open_database(sqlite3 **db);
 
-int describe_table(sqlite3 **db, char *name, Table_String *description);
+// Table Management
+  int get_tables(sqlite3 **db, Table_String *tables);
 
-int free_table(Table_String *table);
+  int describe_table(sqlite3 **db, char *name, Table_String *description);
 
-int convert_to_string_table(void *data, int numCol, char **colValues, char **colNames);
+  int create_table(sqlite3 **db, char *name, char *columns);
+
+  int drop_table(sqlite3 **db, char *name);
+
+  // Data Management
+    int delete_from_table(sqlite3 **db, char *name, char *condition);
+
+    int insert_into_table(sqlite3 **db, char *name, char *variables, char *values);
+
+    int update_table_info(sqlite3 **db, char *name, char *variables, char *values);
+
+// Utility Functions
+  int free_table(Table_String *table);
+
+  int convert_to_string_table(void *data, int numCol, char **colValues, char **colNames);
 
 #endif 
