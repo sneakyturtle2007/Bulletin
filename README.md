@@ -38,6 +38,12 @@ npm install net https express path sqlite3
 node ServerMain.js // Elevated privileges may be required to setup the server TCP & HTTPS Port. 
 ```
 
-## License
+## License and Copyright
 
-[GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/#)
+© 2025 Luis Blake (sneakyturtle2007), Lai Sengvilay (Laiknight), NoraBorealis10288, Colten Roberts (johnAppDev), and contributors.  
+This project is licensed under the GNU Affero General Public License v3.0 or later,  
+with additional terms specified in the [LICENSE](./LICENSE) file.
+
+[View the GNU AGPL v3.0 License on ChooseALicense](https://choosealicense.com/licenses/agpl-3.0/)
+
+
