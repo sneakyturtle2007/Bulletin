@@ -664,12 +664,12 @@ For more information on this, and how to apply and follow the GNU AGPL, see
 
 Additional Terms under Section 7 of the GNU Affero General Public License v3.0
 
-These additional terms are applied by the original author under Section 7 of the GNU AGPLv3:
+These additional terms are applied by the original authors under Section 7 of the GNU AGPLv3:
 
 Copyright (C) 2025 Luis Blake (sneakyturtle2007), Lai Sengvilay (Laiknight), NoraBorealis10288, Colten Roberts (johnAppDev), and contributers.
 
 1. **Trademark Restriction**
-   You may not use the name of the Project or its contributors for trademark or promotional purposes without prior written permission.
+   You may not use the name of the Project, its authors, or its contributors for trademark or promotional purposes without prior written permission.
 
 2. **Commercial Redistribution Restriction**
    You may not sell this software, or substantially similar versions of it, without significant modifications, or unless it is included as part of a substantially larger system or service that adds significant value beyond this software.
@@ -678,7 +678,7 @@ Copyright (C) 2025 Luis Blake (sneakyturtle2007), Lai Sengvilay (Laiknight), Nor
   Any modified versions of this software must:
    - Clearly state what changes were made and when;
    - Retain this license in full, including this section of additional terms;
-   - Provide attribution to the original author in the source code and associated documentation.
+   - Provide attribution to the original authors in the source code and associated documentation.
 
 These additional terms do not alter any of the freedoms granted by the AGPLv3, but clarify specific conditions regarding branding, monetization, and attribution.
 
