@@ -1,3 +1,0 @@
-/home/luis/Bulletin/Server/build/CMakeFiles/my_program.dir
-/home/luis/Bulletin/Server/build/CMakeFiles/edit_cache.dir
-/home/luis/Bulletin/Server/build/CMakeFiles/rebuild_cache.dir
