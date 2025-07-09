@@ -16,3 +16,4 @@ ERROR: Failed to drop table
 ERROR: Failed to delete from table
 ERROR: Failed to insert info into table
 ERROR: Failed to update table info
+ERROR: Failed to get from table

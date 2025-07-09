@@ -7,21 +7,22 @@
 
 
 
-int open_database(sqlite3 **db){
+Error open_database(sqlite3 **db){
   const int rc = sqlite3_open("database.db", db);
   if(rc){
     printf("ERROR: Failed to open database\n");
     sqlite3_close(*db);
-    return 1;
+    return (Error) {DATABASE_ERROR, 
+                        "database.c/open_database/ERROR: Failed to open database.\n" };
   }
   printf("Database opened\n");
-  return 0;
+  return (Error) {OK, "Database opened successfully"};
 }
 
 
 // Table Management
 
-  int get_tables(sqlite3 **db, Table_String *tables){
+  Error get_tables(sqlite3 **db, Table_String *tables){
     char *command = "SELECT name FROM sqlite_master WHERE type=table";
     char *errmsg; 
     int status = sqlite3_exec(*db, command, convert_to_string_table, tables, &errmsg);
@@ -29,12 +30,13 @@ int open_database(sqlite3 **db){
       fprintf(stderr, "ERROR: Failed to get tables\n%s", errmsg);
       sqlite3_free(errmsg);
       free_table(tables);
-      return 2; 
+      return (Error) {DATABASE_ERROR, 
+                        "database.c/get_tables/ERROR: Failed to get tables.\n" };
     }
-    return SQLITE_OK;
+    return (Error) {OK, "Success"};
   }
 
-  int describe_table(sqlite3 **db, char *name, Table_String *description){
+  Error describe_table(sqlite3 **db, char *name, Table_String *description){
     char command[64];
     sprintf(command, "PRAGMA table_info(%s);", name);
     char *errmsg;
@@ -43,12 +45,13 @@ int open_database(sqlite3 **db){
       fprintf(stderr, "ERROR: Failed to describe table");
       free_table(description);
       sqlite3_free(errmsg);
-      return state;
+      return (Error) {DATABASE_ERROR, 
+                        "database.c/describe_table/ERROR: Failed to describe table.\n"};
     }
-    return 0;
+    return (Error) {OK, "Success"};
   }
 
-  int create_table(sqlite3 **db, char *name, char *columns){
+  Error create_table(sqlite3 **db, char *name, char *columns){
     char command[512];
     sprintf(command, "CREATE TABLE IF NOT EXISTS %s (%s);", name, columns);
     printf("%s\n", command);
@@ -57,12 +60,13 @@ int open_database(sqlite3 **db){
     if(state != SQLITE_OK){
       fprintf(stderr, "ERROR: Failed to create table %s\n%s", name, errmsg);
       sqlite3_free(errmsg);
-      return 14; 
+      return (Error) {DATABASE_ERROR, 
+                        "database.c/create_table/ERROR: Failed to create table.\n"}; 
     }
-    return 0; 
+    return (Error) {OK, "Success"}; 
   }
 
-  int drop_table(sqlite3 **db, char *name){
+  Error drop_table(sqlite3 **db, char *name){
     char command[128];
     sprintf(command, "DROP TABLE IF EXISTS %s;", name);
     printf("%s\n", command);
@@ -71,13 +75,28 @@ int open_database(sqlite3 **db){
     if(state != SQLITE_OK){
       fprintf(stderr, "ERROR: Failed to drop table %s\n%s", name, errmsg);
       sqlite3_free(errmsg);
-      return 15; 
+      return (Error) {DATABASE_ERROR, 
+                        "database.c/drop_table/ERROR: Failed to drop table.\n" };
     }
-    return 0;
+    return (Error) {OK, "Success"};
   }
 
   // Info Management
-    int delete_from_table(sqlite3 **db, char *name, char *condition){
+    Error get_from_table(sqlite3 **db, char *name, char *condition, Table_String *result){
+      char command[512];
+      sprintf(command, "SELECT * FROM %s WHERE %s;", name, condition);
+      char *errmsg;
+      int state = sqlite3_exec(*db, command, convert_to_string_table, result, &errmsg);
+      if(state != SQLITE_OK){
+        fprintf(stderr, "ERROR: Failed to get from table %s\n%s", name, errmsg);
+        sqlite3_free(errmsg);
+        return (Error) {DATABASE_ERROR, 
+                        "database.c/get_from_table/ERROR: Failed to get from table.\n" }; 
+      }
+      return (Error) {OK, "Success"};
+    }
+
+    Error delete_from_table(sqlite3 **db, char *name, char *condition){
       char command[512];
       sprintf(command, "DELETE FROM %s WHERE %s;", name, condition);
       char *errmsg;
@@ -85,12 +104,13 @@ int open_database(sqlite3 **db){
       if(state != SQLITE_OK){
         fprintf(stderr, "ERROR: Failed to delete from table %s\n%s", name, errmsg);
         sqlite3_free(errmsg);
-        return 16;
+        return (Error){DATABASE_ERROR, 
+                        "database.c/delete_from_table/ERROR: Failed to delete from table.\n"};
       }
-      return 0;
+      return (Error) {OK, "Success"};
     }
 
-    int insert_into_table(sqlite3 **db, char *name, char *variables, char *values){
+    Error insert_into_table(sqlite3 **db, char *name, char *variables, char *values){
       char command[512];
       sprintf(command, "INSERT INTO %s (%s) VALUES (%s);", name, variables, values);
       printf("%s\n", command);
@@ -99,12 +119,13 @@ int open_database(sqlite3 **db){
       if(state != SQLITE_OK){
         fprintf(stderr, "ERROR: Failed to insert into table %s\n%s", name, errmsg);
         sqlite3_free(errmsg);
-        return 17; 
+        return (Error) {DATABASE_ERROR, 
+                        "database.c/insert_into_table/ERROR: Failed to insert into table.\n" }; 
       }
-      return 0;
+      return (Error) {OK, "Success"};
     }
 
-    int update_table_info(sqlite3 **db, char *name, char *variables, char *values){
+    Error update_table_info(sqlite3 **db, char *name, char *variables, char *values){
       char command[1024];
       sprintf(command, "UPDATE %s SET %s WHERE %s;", name, variables, values);
       printf("%s\n", command);
@@ -113,13 +134,15 @@ int open_database(sqlite3 **db){
       if(state != SQLITE_OK){
         fprintf(stderr, "ERROR: Failed to update table %s\n%s", name, errmsg);
         sqlite3_free(errmsg);
-        return 18; 
+        return (Error) {DATABASE_ERROR, 
+                        "database.c/update_table_info/ERROR: Failed to update table information.\n"}; 
       }
+      return (Error) {OK, "Success"};
     }
 // Utility Functions
-  int free_table(Table_String *table){
+  Error free_table(Table_String *table){
     if(table == NULL || table->data == NULL) {
-      return 0;
+      return (Error) {OK, "Nothing to free\n"};
     }
     for(int i = 0; i < table->rows; i++){
       if(table->data[i] != NULL) {
@@ -130,7 +153,10 @@ int open_database(sqlite3 **db){
       }
     }
     free(table->data);
-    return 0;
+    table->rows = 0;
+    table->cols = 0;
+    table->table_capacity = 0;
+    return (Error) {OK, "Memory freed\n"};
   }
 
   int convert_to_string_table(void *data, int numCols, char **colValues, char **colNames){
@@ -146,7 +172,7 @@ int open_database(sqlite3 **db){
 
     if(!table->data[table->rows]) {
       fprintf(stderr, "Memory allocation failed\n");
-      return 1; // Memory allocation error
+      return 1;
     }
 
     table->cols = numCols;
@@ -154,19 +180,16 @@ int open_database(sqlite3 **db){
     for(int i = 0; i < numCols; i++){
       String temp_string = {.data = malloc(strlen(colValues[i]) + 1), .length = strlen(colValues[i]) + 1,
                             .capacity = strlen(colValues[i]) + 1};
+
       void *status = strncpy(temp_string.data, colValues[i], temp_string.length);
-      
       if(status == NULL){
         fprintf(stderr, "ERROR: strncpy failed (function convert_to_string_table)\n");
-        free(temp_string.data); // Free allocated memory before returning
-        return 1; // Memory allocation error
+        free(temp_string.data); 
+        return 1; 
       }
 
-      status = memcpy(&table->data[table->rows][i], &temp_string, sizeof(temp_string));
-      if(status == NULL){
-        fprintf(stderr, "ERROR: memcpy failed (function convert_to_string_table)\n");
-        return 1; // Memory allocation error
-      }
+      //status = memcpy(&table->data[table->rows][i], &temp_string, sizeof(temp_string));
+      table->data[table->rows][i] = temp_string;
 
     } 
 
@@ -180,5 +203,5 @@ int open_database(sqlite3 **db){
         return 1; // Memory allocation error
       }
     }
-    return 0;
+    return 0; // Success
   }

@@ -54,4 +54,6 @@ CMakeFiles/my_program.dir/src/database/database.c.o: \
  /usr/include/strings.h \
  /home/luis/Bulletin/Server/C-remake/include/sqlite3.h \
  /home/luis/Bulletin/Server/C-remake/include/database.h \
- /home/luis/Bulletin/Server/C-remake/include/sqlite3.h
+ /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \
+ /home/luis/Bulletin/Server/C-remake/include/sqlite3.h \
+ /home/luis/Bulletin/Server/C-remake/include/error_handling.h

@@ -72,24 +72,10 @@ include CMakeFiles/my_program.dir/flags.make
 CMakeFiles/my_program.dir/codegen:
 .PHONY : CMakeFiles/my_program.dir/codegen
 
-CMakeFiles/my_program.dir/src/api/director.c.o: CMakeFiles/my_program.dir/flags.make
-CMakeFiles/my_program.dir/src/api/director.c.o: /home/luis/Bulletin/Server/C-remake/src/api/director.c
-CMakeFiles/my_program.dir/src/api/director.c.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/Bulletin/Server/C-remake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/my_program.dir/src/api/director.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/api/director.c.o -MF CMakeFiles/my_program.dir/src/api/director.c.o.d -o CMakeFiles/my_program.dir/src/api/director.c.o -c /home/luis/Bulletin/Server/C-remake/src/api/director.c
-
-CMakeFiles/my_program.dir/src/api/director.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_program.dir/src/api/director.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/Bulletin/Server/C-remake/src/api/director.c > CMakeFiles/my_program.dir/src/api/director.c.i
-
-CMakeFiles/my_program.dir/src/api/director.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_program.dir/src/api/director.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/Bulletin/Server/C-remake/src/api/director.c -o CMakeFiles/my_program.dir/src/api/director.c.s
-
 CMakeFiles/my_program.dir/src/api/user_management.c.o: CMakeFiles/my_program.dir/flags.make
 CMakeFiles/my_program.dir/src/api/user_management.c.o: /home/luis/Bulletin/Server/C-remake/src/api/user_management.c
 CMakeFiles/my_program.dir/src/api/user_management.c.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/Bulletin/Server/C-remake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_program.dir/src/api/user_management.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/Bulletin/Server/C-remake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/my_program.dir/src/api/user_management.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/api/user_management.c.o -MF CMakeFiles/my_program.dir/src/api/user_management.c.o.d -o CMakeFiles/my_program.dir/src/api/user_management.c.o -c /home/luis/Bulletin/Server/C-remake/src/api/user_management.c
 
 CMakeFiles/my_program.dir/src/api/user_management.c.i: cmake_force
@@ -103,7 +89,7 @@ CMakeFiles/my_program.dir/src/api/user_management.c.s: cmake_force
 CMakeFiles/my_program.dir/src/database/database.c.o: CMakeFiles/my_program.dir/flags.make
 CMakeFiles/my_program.dir/src/database/database.c.o: /home/luis/Bulletin/Server/C-remake/src/database/database.c
 CMakeFiles/my_program.dir/src/database/database.c.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/Bulletin/Server/C-remake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/my_program.dir/src/database/database.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/Bulletin/Server/C-remake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/my_program.dir/src/database/database.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/database/database.c.o -MF CMakeFiles/my_program.dir/src/database/database.c.o.d -o CMakeFiles/my_program.dir/src/database/database.c.o -c /home/luis/Bulletin/Server/C-remake/src/database/database.c
 
 CMakeFiles/my_program.dir/src/database/database.c.i: cmake_force
@@ -117,7 +103,7 @@ CMakeFiles/my_program.dir/src/database/database.c.s: cmake_force
 CMakeFiles/my_program.dir/src/database/sqlite3.c.o: CMakeFiles/my_program.dir/flags.make
 CMakeFiles/my_program.dir/src/database/sqlite3.c.o: /home/luis/Bulletin/Server/C-remake/src/database/sqlite3.c
 CMakeFiles/my_program.dir/src/database/sqlite3.c.o: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/Bulletin/Server/C-remake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/my_program.dir/src/database/sqlite3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/Bulletin/Server/C-remake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/my_program.dir/src/database/sqlite3.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/database/sqlite3.c.o -MF CMakeFiles/my_program.dir/src/database/sqlite3.c.o.d -o CMakeFiles/my_program.dir/src/database/sqlite3.c.o -c /home/luis/Bulletin/Server/C-remake/src/database/sqlite3.c
 
 CMakeFiles/my_program.dir/src/database/sqlite3.c.i: cmake_force
@@ -127,6 +113,20 @@ CMakeFiles/my_program.dir/src/database/sqlite3.c.i: cmake_force
 CMakeFiles/my_program.dir/src/database/sqlite3.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_program.dir/src/database/sqlite3.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/Bulletin/Server/C-remake/src/database/sqlite3.c -o CMakeFiles/my_program.dir/src/database/sqlite3.c.s
+
+CMakeFiles/my_program.dir/src/director.c.o: CMakeFiles/my_program.dir/flags.make
+CMakeFiles/my_program.dir/src/director.c.o: /home/luis/Bulletin/Server/C-remake/src/director.c
+CMakeFiles/my_program.dir/src/director.c.o: CMakeFiles/my_program.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/Bulletin/Server/C-remake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/my_program.dir/src/director.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_program.dir/src/director.c.o -MF CMakeFiles/my_program.dir/src/director.c.o.d -o CMakeFiles/my_program.dir/src/director.c.o -c /home/luis/Bulletin/Server/C-remake/src/director.c
+
+CMakeFiles/my_program.dir/src/director.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_program.dir/src/director.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/Bulletin/Server/C-remake/src/director.c > CMakeFiles/my_program.dir/src/director.c.i
+
+CMakeFiles/my_program.dir/src/director.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_program.dir/src/director.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/Bulletin/Server/C-remake/src/director.c -o CMakeFiles/my_program.dir/src/director.c.s
 
 CMakeFiles/my_program.dir/src/main.c.o: CMakeFiles/my_program.dir/flags.make
 CMakeFiles/my_program.dir/src/main.c.o: /home/luis/Bulletin/Server/C-remake/src/main.c
@@ -144,19 +144,19 @@ CMakeFiles/my_program.dir/src/main.c.s: cmake_force
 
 # Object files for target my_program
 my_program_OBJECTS = \
-"CMakeFiles/my_program.dir/src/api/director.c.o" \
 "CMakeFiles/my_program.dir/src/api/user_management.c.o" \
 "CMakeFiles/my_program.dir/src/database/database.c.o" \
 "CMakeFiles/my_program.dir/src/database/sqlite3.c.o" \
+"CMakeFiles/my_program.dir/src/director.c.o" \
 "CMakeFiles/my_program.dir/src/main.c.o"
 
 # External object files for target my_program
 my_program_EXTERNAL_OBJECTS =
 
-my_program: CMakeFiles/my_program.dir/src/api/director.c.o
 my_program: CMakeFiles/my_program.dir/src/api/user_management.c.o
 my_program: CMakeFiles/my_program.dir/src/database/database.c.o
 my_program: CMakeFiles/my_program.dir/src/database/sqlite3.c.o
+my_program: CMakeFiles/my_program.dir/src/director.c.o
 my_program: CMakeFiles/my_program.dir/src/main.c.o
 my_program: CMakeFiles/my_program.dir/build.make
 my_program: CMakeFiles/my_program.dir/compiler_depend.ts

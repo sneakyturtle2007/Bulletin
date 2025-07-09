@@ -2,10 +2,10 @@ my_program: \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o \
-  CMakeFiles/my_program.dir/src/api/director.c.o \
   CMakeFiles/my_program.dir/src/api/user_management.c.o \
   CMakeFiles/my_program.dir/src/database/database.c.o \
   CMakeFiles/my_program.dir/src/database/sqlite3.c.o \
+  CMakeFiles/my_program.dir/src/director.c.o \
   CMakeFiles/my_program.dir/src/main.c.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a \
   /usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so \
@@ -35,13 +35,13 @@ my_program: \
 
 /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o:
 
-CMakeFiles/my_program.dir/src/api/director.c.o:
-
 CMakeFiles/my_program.dir/src/api/user_management.c.o:
 
 CMakeFiles/my_program.dir/src/database/database.c.o:
 
 CMakeFiles/my_program.dir/src/database/sqlite3.c.o:
+
+CMakeFiles/my_program.dir/src/director.c.o:
 
 CMakeFiles/my_program.dir/src/main.c.o:
 

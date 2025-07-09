@@ -5,10 +5,10 @@ cmake_policy(SET CMP0009 NEW)
 # SOURCES at CMakeLists.txt:12 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/luis/Bulletin/Server/C-remake/src/*.c")
 set(OLD_GLOB
-  "/home/luis/Bulletin/Server/C-remake/src/api/director.c"
   "/home/luis/Bulletin/Server/C-remake/src/api/user_management.c"
   "/home/luis/Bulletin/Server/C-remake/src/database/database.c"
   "/home/luis/Bulletin/Server/C-remake/src/database/sqlite3.c"
+  "/home/luis/Bulletin/Server/C-remake/src/director.c"
   "/home/luis/Bulletin/Server/C-remake/src/main.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

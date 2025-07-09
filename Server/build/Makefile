@@ -130,6 +130,54 @@ my_program/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/build
 .PHONY : my_program/fast
 
+src/api/director.o: src/api/director.c.o
+.PHONY : src/api/director.o
+
+# target to build an object file
+src/api/director.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/director.c.o
+.PHONY : src/api/director.c.o
+
+src/api/director.i: src/api/director.c.i
+.PHONY : src/api/director.i
+
+# target to preprocess a source file
+src/api/director.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/director.c.i
+.PHONY : src/api/director.c.i
+
+src/api/director.s: src/api/director.c.s
+.PHONY : src/api/director.s
+
+# target to generate assembly for a file
+src/api/director.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/director.c.s
+.PHONY : src/api/director.c.s
+
+src/api/user_management.o: src/api/user_management.c.o
+.PHONY : src/api/user_management.o
+
+# target to build an object file
+src/api/user_management.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/user_management.c.o
+.PHONY : src/api/user_management.c.o
+
+src/api/user_management.i: src/api/user_management.c.i
+.PHONY : src/api/user_management.i
+
+# target to preprocess a source file
+src/api/user_management.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/user_management.c.i
+.PHONY : src/api/user_management.c.i
+
+src/api/user_management.s: src/api/user_management.c.s
+.PHONY : src/api/user_management.s
+
+# target to generate assembly for a file
+src/api/user_management.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/user_management.c.s
+.PHONY : src/api/user_management.c.s
+
 src/database/database.o: src/database/database.c.o
 .PHONY : src/database/database.o
 
@@ -154,29 +202,29 @@ src/database/database.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/database/database.c.s
 .PHONY : src/database/database.c.s
 
-src/director.o: src/director.c.o
-.PHONY : src/director.o
+src/database/sqlite3.o: src/database/sqlite3.c.o
+.PHONY : src/database/sqlite3.o
 
 # target to build an object file
-src/director.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/director.c.o
-.PHONY : src/director.c.o
+src/database/sqlite3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/database/sqlite3.c.o
+.PHONY : src/database/sqlite3.c.o
 
-src/director.i: src/director.c.i
-.PHONY : src/director.i
+src/database/sqlite3.i: src/database/sqlite3.c.i
+.PHONY : src/database/sqlite3.i
 
 # target to preprocess a source file
-src/director.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/director.c.i
-.PHONY : src/director.c.i
+src/database/sqlite3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/database/sqlite3.c.i
+.PHONY : src/database/sqlite3.c.i
 
-src/director.s: src/director.c.s
-.PHONY : src/director.s
+src/database/sqlite3.s: src/database/sqlite3.c.s
+.PHONY : src/database/sqlite3.s
 
 # target to generate assembly for a file
-src/director.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/director.c.s
-.PHONY : src/director.c.s
+src/database/sqlite3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/database/sqlite3.c.s
+.PHONY : src/database/sqlite3.c.s
 
 src/main.o: src/main.c.o
 .PHONY : src/main.o
@@ -202,54 +250,6 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/main.c.s
 .PHONY : src/main.c.s
 
-src/sqlite3.o: src/sqlite3.c.o
-.PHONY : src/sqlite3.o
-
-# target to build an object file
-src/sqlite3.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/sqlite3.c.o
-.PHONY : src/sqlite3.c.o
-
-src/sqlite3.i: src/sqlite3.c.i
-.PHONY : src/sqlite3.i
-
-# target to preprocess a source file
-src/sqlite3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/sqlite3.c.i
-.PHONY : src/sqlite3.c.i
-
-src/sqlite3.s: src/sqlite3.c.s
-.PHONY : src/sqlite3.s
-
-# target to generate assembly for a file
-src/sqlite3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/sqlite3.c.s
-.PHONY : src/sqlite3.c.s
-
-src/user_management.o: src/user_management.c.o
-.PHONY : src/user_management.o
-
-# target to build an object file
-src/user_management.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/user_management.c.o
-.PHONY : src/user_management.c.o
-
-src/user_management.i: src/user_management.c.i
-.PHONY : src/user_management.i
-
-# target to preprocess a source file
-src/user_management.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/user_management.c.i
-.PHONY : src/user_management.c.i
-
-src/user_management.s: src/user_management.c.s
-.PHONY : src/user_management.s
-
-# target to generate assembly for a file
-src/user_management.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/user_management.c.s
-.PHONY : src/user_management.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -259,21 +259,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... my_program"
+	@echo "... src/api/director.o"
+	@echo "... src/api/director.i"
+	@echo "... src/api/director.s"
+	@echo "... src/api/user_management.o"
+	@echo "... src/api/user_management.i"
+	@echo "... src/api/user_management.s"
 	@echo "... src/database/database.o"
 	@echo "... src/database/database.i"
 	@echo "... src/database/database.s"
-	@echo "... src/director.o"
-	@echo "... src/director.i"
-	@echo "... src/director.s"
+	@echo "... src/database/sqlite3.o"
+	@echo "... src/database/sqlite3.i"
+	@echo "... src/database/sqlite3.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/sqlite3.o"
-	@echo "... src/sqlite3.i"
-	@echo "... src/sqlite3.s"
-	@echo "... src/user_management.o"
-	@echo "... src/user_management.i"
-	@echo "... src/user_management.s"
 .PHONY : help
 
 

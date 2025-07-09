@@ -49,13 +49,12 @@
 int main(){
   //Setting up database
     sqlite3 *db;
-    int status = open_database(&db);
-    if(status != 0){
-      fprintf(stderr, "ERROR: Failed to open database with error code %d\n", status);
+    Error status = open_database(&db);
+    if(status.code != OK){
+      fprintf(stderr, "%s\n", status.message);
       return 1;
     }
-  // Setting up error handling
-    // PLACEHOLDER
+
   // Setting up server
 
   #ifdef __linux__
@@ -107,14 +106,15 @@ int main(){
             .length = 0,
             .capacity = 256 * sizeof(char)
           };
+          response.data[response.length] = '\0'; // zero initializing the string
+          Error status = input_handler(&db, server.buffer, &response);
 
-          int status = input_handler(&db, server.buffer, &response);
-
-          if(status != 0){
+          if(status.code != OK){
             fprintf(stderr, 
-              "ERROR: An error has occurred with the error code %d\n", status);
+              "%s\n", status.message);
             free(response.data);
             memset(server.buffer, 0, sizeof(server.buffer));
+            write(server.newSocket, status.message, strlen(status.message));
             close(server.serverfd);
             close(server.newSocket);
             return 1;

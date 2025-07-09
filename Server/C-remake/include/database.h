@@ -3,9 +3,11 @@
 //
 
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 #include "sqlite3.h"
+#include "error_handling.h"
 
 #ifndef DATABASE_H
 #define DATABASE_H
@@ -30,26 +32,29 @@ typedef struct{
    * @param db Pointer to a sqlite3 pointer that will hold the database connection.
    * @return 0 on success, non-zero error code on failure.
    */
-int open_database(sqlite3 **db);
+
+Error open_database(sqlite3 **db);
 
 // Table Management
-  int get_tables(sqlite3 **db, Table_String *tables);
+  Error get_tables(sqlite3 **db, Table_String *tables);
 
-  int describe_table(sqlite3 **db, char *name, Table_String *description);
+  Error describe_table(sqlite3 **db, char *name, Table_String *description);
 
-  int create_table(sqlite3 **db, char *name, char *columns);
+  Error create_table(sqlite3 **db, char *name, char *columns);
 
-  int drop_table(sqlite3 **db, char *name);
+  Error drop_table(sqlite3 **db, char *name);
 
   // Data Management
-    int delete_from_table(sqlite3 **db, char *name, char *condition);
+    Error get_from_table(sqlite3 **db, char *name, char *condition, Table_String *result);
 
-    int insert_into_table(sqlite3 **db, char *name, char *variables, char *values);
+    Error delete_from_table(sqlite3 **db, char *name, char *condition);
 
-    int update_table_info(sqlite3 **db, char *name, char *variables, char *values);
+    Error insert_into_table(sqlite3 **db, char *name, char *variables, char *values);
+
+    Error update_table_info(sqlite3 **db, char *name, char *variables, char *values);
 
 // Utility Functions
-  int free_table(Table_String *table);
+  Error free_table(Table_String *table);
 
   int convert_to_string_table(void *data, int numCol, char **colValues, char **colNames);
 
