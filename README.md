@@ -1,4 +1,4 @@
-# <center>Bulletin</center>
+<h1 align="center">Bulletin</h1>
 
 <p align="center">
     <img alt="Static Badge" src="https://img.shields.io/badge/License-GNU%20AGPL%20v3.0%20%2B%20CopyRight-blue?&link=https%3A%2F%2Fgithub.com%2Fsneakyturtle2007%2FBulletin%2Fblob%2Fmain%2FLICENSE">
