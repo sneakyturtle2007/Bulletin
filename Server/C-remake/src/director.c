@@ -2,7 +2,9 @@
 // Created by luis on 6/4/25.
 //
 
+
 #include "database.h"
+#include "user_management.h"
 
 Error convert_table_to_string(Table_String *table, String *result);
 
@@ -16,23 +18,56 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
   }
   if (strcmp(inputToken, "createuser") == 0) {
     printf("%s\n", inputToken);
-    strcpy(output->data, "CreateUser");
+    char *username = strtok(NULL, "|");
+    char *email = strtok(NULL, "|");
+    char *password = strtok(NULL, "|");
+    if(username == NULL || email == NULL || password == NULL) {
+      fprintf(stderr, "ERROR: Missing parameters for createuser command\n");
+      return (Error) {INVALID_ARGUMENT, 
+                      "director.c/input_handler/ERROR: Missing parameters for createuser command.\n"};
+    }
+    Error status = create_user(db, username, email, password);
+    if(status.code != OK){
+      fprintf(stderr, "ERROR: Failed to create user\n");
+      return status;
+    }
+    strcpy(output->data, "Success");
     output->length = strlen(output->data); 
     output->data[output->length] = '\0';
-    return (Error) {OK, "Success.\n"};
-
-  }else if (strcmp(inputToken, "login") == 0) {
-    strcpy(output->data, "Login");
-    output->length = strlen(output->data);
-    output->data[output->length] = '\0';
-    return (Error) {OK, "Success.\n"};
+    return status;
 
   }else if(strcmp(inputToken, "deleteuser") == 0) {
-    strcpy(output->data, "DeleteUser");
+    printf("%s\n", inputToken);
+    char *userID = strtok(NULL, "|");
+    if(userID == NULL) {
+      fprintf(stderr, "ERROR: Missing userID for deleteuser command\n");
+      return (Error) {INVALID_ARGUMENT, 
+                      "director.c/input_handler/ERROR: Missing userID for deleteuser command.\n"};
+    }
+    Error status = delete_user(db, userID);
+    if(status.code != OK){
+      fprintf(stderr, "ERROR: Failed to delete user\n");
+    }
+    strcpy(output->data, "Success");
     output->length = strlen(output->data);
     output->data[output->length] = '\0';
-    return (Error) {OK, "Success.\n"};
-    
+    return status;
+
+  }else if (strcmp(inputToken, "login") == 0) {
+    printf("%s\n", inputToken);
+    char *username = strtok(NULL, "|");
+    char *password = strtok(NULL, "|");
+    if(username == NULL || password == NULL) {
+      fprintf(stderr, "ERROR: Missing parameters for login command\n");
+      return (Error) {INVALID_ARGUMENT, 
+                      "director.c/input_handler/ERROR: Missing parameters for login command.\n"};
+    }
+    Error status = login(db, username, password, output);
+    if(status.code != OK){
+      fprintf(stderr, "ERROR: Failed to login user\n");
+    }
+    return status;
+
   }else if(strcmp(inputToken, "test") == 0){
 
     Table_String table = {.data = malloc(64 * sizeof(String*)), .rows = 0, .cols = 0, .table_capacity = 64};

@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/my_program.dir/link.d"
   "CMakeFiles/my_program.dir/src/api/user_management.c.o"
   "CMakeFiles/my_program.dir/src/api/user_management.c.o.d"
   "CMakeFiles/my_program.dir/src/database/database.c.o"

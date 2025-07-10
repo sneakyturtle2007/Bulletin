@@ -10,7 +10,7 @@ client.connect(PORT, IP, async () =>{
     info = info.substring(0, info.length -1);
     console.log("Recieved: " + info + "\n");
 
-    if(info != "Invalid Command\0"){
+    if(info != "Invalid credentials\0"){
       client.write("password");
       console.log("Terminating...\n");
       client.end();
@@ -19,5 +19,5 @@ client.connect(PORT, IP, async () =>{
     }
 
   });
-  client.write("test");
+  client.write("login|admin|admin");
 });

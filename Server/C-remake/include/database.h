@@ -2,15 +2,17 @@
 // Created by luis on 6/6/25
 //
 
+
+
+#ifndef DATABASE_H
+#define DATABASE_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include "sqlite3.h"
 #include "error_handling.h"
-
-#ifndef DATABASE_H
-#define DATABASE_H
 
 typedef struct{
   char *data;
@@ -24,7 +26,6 @@ typedef struct{
   size_t cols;
   size_t table_capacity;
 } Table_String;
-
 
 // Database Management
   /**

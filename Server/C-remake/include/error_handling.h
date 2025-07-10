@@ -1,4 +1,8 @@
 
+
+#ifndef ERROR_HANDLING_H
+#define ERROR_HANDLING_H 
+
 typedef enum {
     OK = 0,
     MEMORY_ALLOCATION_ERROR = 1,
@@ -11,3 +15,5 @@ typedef struct{
     ERROR_CODE code;
     const char *message;
 } Error;
+
+#endif
