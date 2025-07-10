@@ -1,6 +1,16 @@
-# Bulletin
+# <center>Bulletin</center>
+
+<p align="center">
+    <img alt="Static Badge" src="https://img.shields.io/badge/License-GNU%20AGPL%20v3.0%20%2B%20CopyRight-blue?&link=https%3A%2F%2Fgithub.com%2Fsneakyturtle2007%2FBulletin%2Fblob%2Fmain%2FLICENSE">
+    <img alt="Static Badge" src="https://img.shields.io/badge/Node.js%C2%AE-v22.17.0-green?logo=nodedotjs&link=https://nodejs.org/en/download">
+    <img alt="Static Badge" src="https://img.shields.io/badge/GCC-c23-%23283593?logo=c&link=https://gcc.gnu.org/">
+</p>
+
+## Summary 
+
 Bulletin is a calendar app meant to handle the troublesome task of organizing events with other people. It takes the cumbersome task of organizing free time and automates it. So you can focus on creating a schedule instead of planning to make one.
-## Usage
+
+## Quick Start
 ### Server -
 #### Linux - 
     
@@ -35,8 +45,36 @@ npm install net https express path sqlite3
 3. Run
 
 ```bash
-node ServerMain.js // Elevated privileges may be required to setup the server TCP & HTTPS Port. 
+node ServerMain.js // Elevated privileges may be required to setup the server TCP & HTTPS Port.
 ```
+
+### Server C-Edition (Work in progress) - 
+
+#### Linux -
+
+1. Install necessary packages
+    
+    Debian based systems - 
+    ```bash
+    sudo apt install gcc cmake make
+    ```
+
+    Arch based systems - 
+    ```bash 
+    sudo pacman -s gcc cmake make
+    ```
+2. Move the C-remake folder in the Server directory to its own folder
+
+
+3. Compile & run
+
+    a. Delete everything aside from the ```database.db``` file in the build directory.
+    
+    b. Run ```cmake -B ./build``` from the base C-remake directory.
+
+    c. Go the build directory and run ```make```, or ```make -d``` for debug.
+    
+    d. Run ```./my_program```.
 
 ## License and Copyright
 
@@ -45,5 +83,6 @@ This project is licensed under the GNU Affero General Public License v3.0 or lat
 with additional terms specified in the [LICENSE](./LICENSE) file.
 
 [View the GNU AGPL v3.0 License on ChooseALicense](https://choosealicense.com/licenses/agpl-3.0/)
+
 
 
