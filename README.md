@@ -1,7 +1,7 @@
 <h1 align="center">Bulletin</h1>
 
 <p align="center">
-    <a href="https%3A%2F%2Fgithub.com%2Fsneakyturtle2007%2FBulletin%2Fblob%2Fmain%2FLICENSE"><img alt="Static Badge" src="https://img.shields.io/badge/License-GNU%20AGPL%20v3.0%20%2B%20CopyRight-blue/"></a>
+    <a href="https://github.com/sneakyturtle2007/Bulletin/blob/main/LICENSE"><img alt="Static Badge" src="https://img.shields.io/badge/License-GNU%20AGPL%20v3.0%20%2B%20CopyRight-blue/"></a>
     <a href="https://nodejs.org/en/download"><img alt="Static Badge" src="https://img.shields.io/badge/Node.js%C2%AE-v22.17.0-green?logo=nodedotjs"></a>
     <a href="https://gcc.gnu.org/"><img alt="Static Badge" src="https://img.shields.io/badge/GCC-c23-%23283593?logo=c"></a>
 </p>
