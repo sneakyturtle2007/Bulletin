@@ -14,7 +14,7 @@
   #include <stdbool.h>
 
   typedef struct{
-    int serverfd;
+    int serverSocket;
     int newSocket;
     struct sockaddr_in address;
     int opt;
@@ -59,7 +59,7 @@ int main(){
 
   #ifdef __linux__
     Server server = {
-      .serverfd = 0,
+      .serverSocket = 0,
       .newSocket = 0,
       .opt = 1,
       .addrlen = sizeof(struct sockaddr_in),
@@ -69,7 +69,7 @@ int main(){
     setupServerL(&server);
 
     while(true){
-      if( (server.newSocket = accept(server.serverfd,
+      if( (server.newSocket = accept(server.serverSocket,
           (struct sockaddr*) &(server.address),
           (socklen_t*) &(server.addrlen))) < 0 ){
         perror("Failed to accept new connection\n");
@@ -85,20 +85,15 @@ int main(){
 
         printf("Client: %s\n", server.buffer);
 
-        if(strcmp(server.buffer, "createuser") == 0){
-          printf("testing\n");
-          char message[] = "terminate";
-          write(server.newSocket, message, sizeof(message));
-          break;
-        }else if(strcmp(server.buffer, "terminate") == 0){
+        if(strcmp(server.buffer, "terminate") == 0){
           printf("terminating connection....\n");
           memset(server.buffer, 0, sizeof(server.buffer));
+          close(server.newSocket);
           break;
         }else if(strcmp(server.buffer, "password") == 0){
           memset(server.buffer, 0, sizeof(server.buffer));
           printf("shutting down server.....\n");
           quit = true;
-        
           break;
         }else{
           String response = {
@@ -107,24 +102,20 @@ int main(){
             .capacity = 256 * sizeof(char)
           };
           response.data[response.length] = '\0'; // zero initializing the string
-          Error status = input_handler(&db, server.buffer, &response);
+          status = input_handler(&db, server.buffer, &response);
 
           if(status.code != OK){
             fprintf(stderr, 
               "%s\n", status.message);
             free(response.data);
             memset(server.buffer, 0, sizeof(server.buffer));
+            printf("server response: %s\n", status.message);
             write(server.newSocket, status.message, strlen(status.message));
-            close(server.serverfd);
-            close(server.newSocket);
-            return 1;
+          }else{
+            printf("server response: %s\n", response.data);
+            write(server.newSocket, response.data, response.length);
+            free(response.data);
           }
-          
-          printf("server response: %s\n", response.data);
-          write(server.newSocket, response.data, response.length);
-
-          free(response.data);
-        
         }
         memset(server.buffer, 0, sizeof(server.buffer));
 
@@ -133,7 +124,7 @@ int main(){
       printf("closing connection\n\n");
     }
     close(server.newSocket);
-    close(server.serverfd);
+    close(server.serverSocket);
 
   #else
 
@@ -199,12 +190,12 @@ int main(){
 #if defined(__linux__) || defined(__APPLE__)
   void setupServerL(Server *server){
 
-    if( (server->serverfd = socket(AF_INET, SOCK_STREAM, 0)) == 0){
+    if( (server->serverSocket = socket(AF_INET, SOCK_STREAM, 0)) == 0){
       perror("Failed to create socket\n");
       exit(EXIT_FAILURE);
     }
 
-    if(setsockopt(server->serverfd, SOL_SOCKET, SO_REUSEADDR, &(server->opt), 
+    if(setsockopt(server->serverSocket, SOL_SOCKET, SO_REUSEADDR, &(server->opt), 
           sizeof(server->opt))){
       perror("Failed to setsockopt\n");
       exit(EXIT_FAILURE);
@@ -214,13 +205,13 @@ int main(){
     server->address.sin_addr.s_addr = INADDR_ANY;
     server->address.sin_port = htons(PORT);
 
-    if(bind(server->serverfd, (struct sockaddr*) &(server->address), 
+    if(bind(server->serverSocket, (struct sockaddr*) &(server->address), 
           sizeof(server->address)) < 0){
       perror("Binding failed\n");
       exit(EXIT_FAILURE);
     }
 
-    if(listen(server->serverfd, 5) < 0){
+    if(listen(server->serverSocket, 5) < 0){
       perror("Failed to listen\n");
       exit(EXIT_FAILURE);
     }

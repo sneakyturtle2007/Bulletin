@@ -88,7 +88,7 @@ Error open_database(sqlite3 **db){
 
   // Info Management
     Error get_from_table(sqlite3 **db, char *table_name, char *condition, Table_String *result){
-      int command_length = strlen(table_name) + strlen(condition) + 64;
+      int command_length = strlen(table_name) + strlen(condition) + 64; // +64 overhead for formatting
       char *command = malloc(command_length * sizeof(char));
       sprintf(command, "SELECT * FROM %s WHERE %s;", table_name, condition);
       char *errmsg;
@@ -104,7 +104,7 @@ Error open_database(sqlite3 **db){
     }
 
     Error delete_from_table(sqlite3 **db, char *table_name, char *condition){
-      int command_length = strlen(table_name) + strlen(condition) + 64;
+      int command_length = strlen(table_name) + strlen(condition) + 64; // +64 overhead for formatting
       char *command = malloc(command_length * sizeof(char));
       sprintf(command, "DELETE FROM %s WHERE %s;", table_name, condition);
       char *errmsg;
@@ -113,7 +113,6 @@ Error open_database(sqlite3 **db){
       if(state != SQLITE_OK){
         fprintf(stderr, "ERROR: Failed to delete from table %s\n%s", table_name, errmsg);
         sqlite3_free(errmsg);
-        free(command);
         return (Error){DATABASE_ERROR, 
                         "database.c/delete_from_table/ERROR: Failed to delete from table.\n"};
       }

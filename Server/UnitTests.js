@@ -57,7 +57,7 @@ async function UserTest(username, email, password, client){
 
                 }else if(response == 'User deleted'){
                     client.removeListener('data', onData);
-                    resolve("User Test" + ' \u2713')
+                    resolve("User Test" + ' \u2713');
                 }else{
                     client.removeListener('data', onData);
                     reject("User Test" + ' \u2717' + "\n" + data.toString().trim());
