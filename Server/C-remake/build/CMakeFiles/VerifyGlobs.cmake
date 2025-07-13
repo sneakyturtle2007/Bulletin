@@ -5,11 +5,11 @@ cmake_policy(SET CMP0009 NEW)
 # SOURCES at CMakeLists.txt:12 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/mnt/c/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake/src/*.c")
 set(OLD_GLOB
+  "/mnt/c/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake/src/api/director.c"
   "/mnt/c/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake/src/api/user_management.c"
+  "/mnt/c/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake/src/backend/main.c"
   "/mnt/c/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake/src/database/database.c"
   "/mnt/c/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake/src/database/sqlite3.c"
-  "/mnt/c/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake/src/director.c"
-  "/mnt/c/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake/src/main.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
