@@ -1,0 +1,195 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>Bulletin</title>
+    <link rel="stylesheet" type="text/css" href="../common.css">
+    <link rel="stylesheet" type="text/css" href="../Home/Home.css">
+</head>
+<body>
+    <div>
+        <div class="monthdisplay">
+            <button class="navbutton" onclick="NavMonthBack()">&#x276E;</button>
+            <div style="display: inline-block; text-align: center; width: 60%; margin-left: 9%; margin-right: 9%;">
+                <label style="font-size: 3rem; " id="calendarDate">March 2025</label>
+            </div>
+            <button class="navbutton" id="rightbutton" onclick="NavMonthForward()">&#x276F;</button>
+        </div>
+        <img src="../Images/title.png" style="display: inline; width:30%; height: auto; margin-left: 4.1%; margin-right: auto;">
+        <div class="eventviewer">
+            <div class="viewerTitle">
+                <span id="eventviewertitle">Event Viewer</span>
+                <!--dropdown will eventually hold more functionality-->
+                <div class="menudropdown" style="float:right;">
+                    <span style="font-size: 2.2rem;">&#x22EE;</span>
+                    <div class="menudropdown-content">
+                        <ul>
+                            <li><button style="width: 80%;"onclick="Logout()">Logout</button></li>
+                        <ul>
+                    </div>
+                </div>
+            </div>
+            <ul id="eventslist">
+            </ul>
+        </div>
+    </div>
+    <div class="calendar">
+        <table>
+            <tr>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+            <tr>
+                <td><button class="datenumber" onclick="GetEvents(0)">
+                    <label class="calendarbox" id="calendarbox0"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(1)">
+                    <label class="calendarbox" id="calendarbox1"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(2)">
+                    <label class="calendarbox" id="calendarbox2"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(3)">
+                    <label class="calendarbox" id="calendarbox3"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(4)">
+                    <label class="calendarbox" id="calendarbox4"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(5)">
+                    <label class="calendarbox" id="calendarbox5"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(6)">
+                    <label class="calendarbox" id="calendarbox6"></label>
+                </button></td>
+            </tr>
+            <tr>
+                <td><button class="datenumber" onclick="GetEvents(7)">
+                    <label class="calendarbox" id="calendarbox7"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(8)">
+                    <label class="calendarbox" id="calendarbox8"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(9)">
+                    <label class="calendarbox" id="calendarbox9"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(10)">
+                    <label class="calendarbox" id="calendarbox10"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(11)">
+                    <label class="calendarbox" id="calendarbox11"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(12)">
+                    <label class="calendarbox" id="calendarbox12"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(13)">
+                    <label class="calendarbox" id="calendarbox13"></label>
+                </button></td>
+            </tr>
+            <tr>
+                <td><button class="datenumber" onclick="GetEvents(14)">
+                    <label class="calendarbox" id="calendarbox14"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(15)">
+                    <label class="calendarbox" id="calendarbox15"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(16)">
+                    <label class="calendarbox" id="calendarbox16"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(17)">
+                    <label class="calendarbox" id="calendarbox17"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(18)">
+                    <label class="calendarbox" id="calendarbox18"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(19)">
+                    <label class="calendarbox" id="calendarbox19"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(20)">
+                    <label class="calendarbox" id="calendarbox20"></label>
+                </button></td>
+            </tr>
+            <tr>
+                <td><button class="datenumber" onclick="GetEvents(21)">
+                    <label class="calendarbox" id="calendarbox21"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(22)">
+                    <label class="calendarbox" id="calendarbox22"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(23)">
+                    <label class="calendarbox" id="calendarbox23"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(24)">
+                    <label class="calendarbox" id="calendarbox24"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(25)">
+                    <label class="calendarbox" id="calendarbox25"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(26)">
+                    <label class="calendarbox" id="calendarbox26"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(27)">
+                    <label class="calendarbox" id="calendarbox27"></label>
+                </button></td>
+            </tr>
+            <tr>
+                <td><button class="datenumber" onclick="GetEvents(28)">
+                    <label class="calendarbox" id="calendarbox28"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(29)">
+                    <label class="calendarbox" id="calendarbox29"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(30)">
+                    <label class="calendarbox" id="calendarbox30"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(31)">
+                    <label class="calendarbox" id="calendarbox31"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(32)">
+                    <label class="calendarbox" id="calendarbox32"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(33)">
+                    <label class="calendarbox" id="calendarbox33"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(34)">
+                    <label class="calendarbox" id="calendarbox34"></label>
+                </button></td>
+            </tr>
+            <tr>
+                <td><button class="datenumber" onclick="GetEvents(35)">
+                    <label class="calendarbox" id="calendarbox35"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(36)">
+                    <label class="calendarbox" id="calendarbox36"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(37)">
+                    <label class="calendarbox" id="calendarbox37"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(38)">
+                    <label class="calendarbox" id="calendarbox38"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(39)">
+                    <label class="calendarbox" id="calendarbox39"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(40)">
+                    <label class="calendarbox" id="calendarbox40"></label>
+                </button></td>
+                <td><button class="datenumber" onclick="GetEvents(41)">
+                    <label class="calendarbox" id="calendarbox41"></label>
+                </button></td>
+            </tr>
+        </table> 
+    </div>
+    </div>
+    <div class="note">
+        <div style="margin-top: 100px; transform: rotate(3deg);">
+            <strong><p>Applewood Softworks</p><p>2025</p></strong>
+        </div>
+    </div>
+    <script src="../Home/Home.js"></script>
+    <script>UpdateCalendar();</script>
+</body>
+</html>
