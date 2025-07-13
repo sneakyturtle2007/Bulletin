@@ -1,0 +1,56 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>Bulletin Signup</title>
+    <link rel="stylesheet" type="text/css" href="../common.css">
+    <link rel="stylesheet" type="text/css" href="../Signup/Signup.css">
+</head>
+<body>
+    <div>
+	<img src="../Images/title.png" style="width: 30%; height:auto; margin-left: 35%; margin-right:35%;">
+    </div>
+    <div class="signup-container">
+	<div class="pins">
+	    <img id="pin" src="../Images/pinkpin.png">
+	    <img id="pin" src="../Images/pinkpin.png" style="float: right;">
+	</div>
+	<div>
+	    <div class="input-container">
+		<form class="table">
+		<p class="table">
+		    <label class="table">username: </label>
+		    <input class="input table" id="user"></input>
+		</p>
+		<p class="table">
+		    <label class="table">email: </label>
+		    <input class="input table" id="email" type="email" required></input>
+
+		</p>
+		<p class="table">
+		    <label class="table">password: </label>
+		    <input class="input table" id="pass1" type="password"></input>
+
+		</p>
+		<p class="table">
+		    <label class="table">confirm password: </label>
+		    <input class="input table" id="pass2" type="password"></input>
+		</p> 
+		</form>
+	    </div>
+	    <div class="button-container">
+		<button class="button" onclick="CancelCreation()">Cancel</button>
+	        <button class="button" onclick="CreateAccount()">Create Account</button>
+	    </div>
+        <div>
+		<p id="error" style="margin: 0;"></p>
+	    </div>
+	</div>
+    </div>
+    <div class="note">
+	<div style="margin-top:100px; transform: rotate(3deg)">
+        <strong><p>Applewood Softworks</p><p>2025</p></strong>
+	</div>
+    </div>
+    <script src="../Signup/Signup.js"></script>
+</body>
+</html>

@@ -183,18 +183,14 @@ Error open_database(sqlite3 **db){
     }
 
     table->data[table->rows] = malloc(numCols * sizeof(String));
-
     if(!table->data[table->rows]) {
       fprintf(stderr, "Memory allocation failed\n");
       return 1;
     }
-
     table->cols = numCols;
-
     for(int i = 0; i < numCols; i++){
       String temp_string = {.data = malloc(strlen(colValues[i]) + 1), .length = strlen(colValues[i]) + 1,
                             .capacity = strlen(colValues[i]) + 1};
-
       void *status = strncpy(temp_string.data, colValues[i], temp_string.length);
       if(status == NULL){
         fprintf(stderr, "ERROR: strncpy failed (function convert_to_string_table)\n");
