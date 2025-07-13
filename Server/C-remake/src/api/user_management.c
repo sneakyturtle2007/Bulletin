@@ -199,7 +199,7 @@ Error add_friend(sqlite3 **db, char *user_id, char *friend_username){
         return (Error) {MEMORY_ALLOCATION_ERROR, 
                         "user_management.c/add_friend/ERROR: Failed to allocate memory for condition string.\n"};
     }
-    snprintf(condition, strlen(user_id), "id = %s", user_id);
+    sprintf(condition, "id = %s", user_id);
     Table_String user = {.data = malloc(64 * sizeof(String*)), .rows = 0, .cols = 0, .table_capacity = 64};
     Error status = get_user_info(db, user_id, &user);
     if(status.code != OK) {
@@ -215,6 +215,19 @@ Error add_friend(sqlite3 **db, char *user_id, char *friend_username){
         return (Error){INVALID_ARGUMENT, "user_management.c/add_friend/ERROR: User does not exist.\n"};
     }
     String user_friends = user.data[0][4]; // user_info.data[0][4] is the friends list
+    printf("User friends: %s\n", user_friends.data); // DEBUG
+    if(strcmp(user_friends.data, "NONE\0") == 0){
+        char *state = strncpy(user_friends.data, "", 1);
+        user_friends.length = 1;
+        user_friends.data[0] = '\0'; // Erase "NONE" from
+        if(state == NULL){
+            fprintf(stderr, "ERROR: Failed to copy empty string to user friends list\n");
+            free(condition);
+            free_table(&user);
+            return (Error) {STRING_ERROR, 
+                            "user_management.c/add_friend/ERROR: Failed to erase 'NONE' from friends list.\n"};
+        }
+    }
     int friends_list_length = user_friends.length + strlen(friend_username) + 2; // +2 for comma and null terminator
     char *friends_list = malloc(friends_list_length * sizeof(char));
     if(friends_list == NULL){
@@ -225,7 +238,13 @@ Error add_friend(sqlite3 **db, char *user_id, char *friend_username){
         return (Error) {MEMORY_ALLOCATION_ERROR, 
                         "user_management.c/add_friend/ERROR: Failed to allocate memory for friends list string.\n"};
     }
-    sprintf(friends_list, "%s,%s", user_friends.data, friend_username);
+    if(user_friends.length < 2){
+        sprintf(friends_list, "%s", friend_username);
+        printf("Friends List: %s\n", friends_list); // DEBUG
+    }else{
+        sprintf(friends_list, "%s,%s", user_friends.data, friend_username);
+        printf("Friends List: %s\n", friends_list); // DEBUG
+    }
     int variables_and_values_length = strlen(friends_list) + 32; // +32 overhead for formatting
     char *variables_and_values = malloc(friends_list_length * sizeof(char));
     if(variables_and_values == NULL){
@@ -236,7 +255,8 @@ Error add_friend(sqlite3 **db, char *user_id, char *friend_username){
         return (Error) {MEMORY_ALLOCATION_ERROR, 
                         "user_management.c/add_friend/ERROR: Failed to allocate memory for variables and values string.\n"};
     }
-    sprintf(variables_and_values, "friends = '%s'", variables_and_values); 
+    printf("Friends list length: %d\n", strlen(friends_list));
+    sprintf(variables_and_values, "friends = '%s'", friends_list); 
     status = update_table_info(db, "users", variables_and_values, condition);
     free(condition);
     free(friends_list);

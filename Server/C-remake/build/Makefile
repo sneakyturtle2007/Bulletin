@@ -130,6 +130,30 @@ my_program/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/build
 .PHONY : my_program/fast
 
+src/api/director.o: src/api/director.c.o
+.PHONY : src/api/director.o
+
+# target to build an object file
+src/api/director.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/director.c.o
+.PHONY : src/api/director.c.o
+
+src/api/director.i: src/api/director.c.i
+.PHONY : src/api/director.i
+
+# target to preprocess a source file
+src/api/director.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/director.c.i
+.PHONY : src/api/director.c.i
+
+src/api/director.s: src/api/director.c.s
+.PHONY : src/api/director.s
+
+# target to generate assembly for a file
+src/api/director.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/director.c.s
+.PHONY : src/api/director.c.s
+
 src/api/user_management.o: src/api/user_management.c.o
 .PHONY : src/api/user_management.o
 
@@ -153,6 +177,30 @@ src/api/user_management.s: src/api/user_management.c.s
 src/api/user_management.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/api/user_management.c.s
 .PHONY : src/api/user_management.c.s
+
+src/backend/main.o: src/backend/main.c.o
+.PHONY : src/backend/main.o
+
+# target to build an object file
+src/backend/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/backend/main.c.o
+.PHONY : src/backend/main.c.o
+
+src/backend/main.i: src/backend/main.c.i
+.PHONY : src/backend/main.i
+
+# target to preprocess a source file
+src/backend/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/backend/main.c.i
+.PHONY : src/backend/main.c.i
+
+src/backend/main.s: src/backend/main.c.s
+.PHONY : src/backend/main.s
+
+# target to generate assembly for a file
+src/backend/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/backend/main.c.s
+.PHONY : src/backend/main.c.s
 
 src/database/database.o: src/database/database.c.o
 .PHONY : src/database/database.o
@@ -202,54 +250,6 @@ src/database/sqlite3.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/database/sqlite3.c.s
 .PHONY : src/database/sqlite3.c.s
 
-src/director.o: src/director.c.o
-.PHONY : src/director.o
-
-# target to build an object file
-src/director.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/director.c.o
-.PHONY : src/director.c.o
-
-src/director.i: src/director.c.i
-.PHONY : src/director.i
-
-# target to preprocess a source file
-src/director.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/director.c.i
-.PHONY : src/director.c.i
-
-src/director.s: src/director.c.s
-.PHONY : src/director.s
-
-# target to generate assembly for a file
-src/director.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/director.c.s
-.PHONY : src/director.c.s
-
-src/main.o: src/main.c.o
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/main.c.o
-.PHONY : src/main.c.o
-
-src/main.i: src/main.c.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/main.c.i
-.PHONY : src/main.c.i
-
-src/main.s: src/main.c.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/src/main.c.s
-.PHONY : src/main.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -259,21 +259,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... my_program"
+	@echo "... src/api/director.o"
+	@echo "... src/api/director.i"
+	@echo "... src/api/director.s"
 	@echo "... src/api/user_management.o"
 	@echo "... src/api/user_management.i"
 	@echo "... src/api/user_management.s"
+	@echo "... src/backend/main.o"
+	@echo "... src/backend/main.i"
+	@echo "... src/backend/main.s"
 	@echo "... src/database/database.o"
 	@echo "... src/database/database.i"
 	@echo "... src/database/database.s"
 	@echo "... src/database/sqlite3.o"
 	@echo "... src/database/sqlite3.i"
 	@echo "... src/database/sqlite3.s"
-	@echo "... src/director.o"
-	@echo "... src/director.i"
-	@echo "... src/director.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
 .PHONY : help
 
 
