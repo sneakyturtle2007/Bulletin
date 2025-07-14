@@ -71,7 +71,6 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
   }else if(strcmp(inputToken, "addfriend") == 0) {
     printf("%s\n", inputToken);
     char *user_id = strtok(NULL, "|");
-    printf("User ID: %s\n", user_id);
     char *friend_username = strtok(NULL, "|");
     if(user_id == NULL || friend_username == NULL){
       fprintf(stderr, "ERROR: Missing parameters for addfriend command.\n");
@@ -81,8 +80,10 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
     Error status = add_friend(db, user_id, friend_username);
     if(status.code != OK){
       fprintf(stderr, "ERROR: Failed to add friend.\n");
-      return status;
     }
+    strcpy(output->data, "Success");
+    output->length = strlen(output->data);
+    output->data[output->length] = '\0';
     return status;
 
   }else if (strcmp(inputToken, "removefriend") == 0){
@@ -97,8 +98,10 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
     Error status = remove_friend(db, user_id, friend_username);
     if(status.code != OK){
       fprintf(stderr, "ERROR: Failed to remove friend.\n");
-      return status;
     }
+    strcpy(output->data, "Success");
+    output->length = strlen(output->data);
+    output->data[output->length] = '\0';
     return status;
 
   }else if(strcmp(inputToken, "test") == 0){

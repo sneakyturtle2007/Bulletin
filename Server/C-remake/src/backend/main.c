@@ -129,8 +129,8 @@ int main(){
   #else
 
     WSADATA wsaData;
-    const int status = WSAStartup(MAKEWORD(2, 2), &wsaData);
-    if (status != 0) {
+    const int state = WSAStartup(MAKEWORD(2, 2), &wsaData);
+    if (state != OK) {
       printf("Failed to initialize Winsock\n");
       WSACleanup();
       exit(EXIT_FAILURE);
