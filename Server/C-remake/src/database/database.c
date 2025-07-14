@@ -150,6 +150,7 @@ Error open_database(sqlite3 **db){
         return (Error) {DATABASE_ERROR, 
                         "database.c/update_table_info/ERROR: Failed to update table information.\n"}; 
       }
+      printf("Table %s updated successfully\n", table_name);
       return (Error) {OK, "Success"};
     }
 
