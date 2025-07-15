@@ -80,10 +80,10 @@ Error open_database(sqlite3 **db){
   }
 
   // Info Management
-    Error get_from_table(sqlite3 **db, char *table_name, char *condition, Table_String *result){
+    Error get_from_table(sqlite3 **db, char *operation, char *table_name, char *condition, Table_String *result){
       int command_length = strlen(table_name) + strlen(condition) + 64; // +64 overhead for formatting
       char *command = malloc(command_length * sizeof(char));
-      sprintf(command, "SELECT * FROM %s WHERE %s;", table_name, condition);
+      sprintf(command, "SELECT %s FROM %s WHERE %s;", operation, table_name, condition);
       char *errmsg;
       int state = sqlite3_exec(*db, command, convert_to_string_table, result, &errmsg);
       free(command);

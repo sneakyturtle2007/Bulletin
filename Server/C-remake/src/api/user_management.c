@@ -19,7 +19,7 @@ Error create_user(sqlite3 **db, char *username, char *email, char *password) {
     }
     sprintf(condition, "username = '%s'", username);
     Table_String result = {.data = calloc(64, sizeof(String*)), .rows = 0, .cols = 0, .table_capacity = 64};
-    Error status = get_from_table(db, "users", condition, &result);
+    Error status = get_from_table(db, "*", "users", condition, &result);
     if(result.rows > 0){
         fprintf(stderr, "ERROR: User %s already exists\n", username);
         free_table(&result);
@@ -113,7 +113,7 @@ Error login(sqlite3 **db, char *username, char *password, String *output){
     }
     sprintf(condition, "username='%s'", username);
     Table_String result_table = {.data = calloc(64, sizeof(String*)), .rows = 0, .cols = 0, .table_capacity = 64};
-    Error status = get_from_table(db, "users", condition, &result_table);
+    Error status = get_from_table(db, "*", "users", condition, &result_table);
     if(status.code != OK) {
         fprintf(stderr, "ERROR: Failed to get user %s\n%s", username, status.message);
         free_table(&result_table);
@@ -350,7 +350,7 @@ Error get_user_info(sqlite3 **db, char *user_id, Table_String *result){
                         "user_management.c/get_user_info/ERROR: Failed to allocate memory for condition string.\n"};
     }
     sprintf(condition, "id = %s", user_id);
-    Error status = get_from_table(db, "users", condition, result);
+    Error status = get_from_table(db, "*", "users", condition, result);
     free(condition);
     if(status.code != OK) {
         fprintf(stderr, "ERROR: Failed to get user info for %s\n%s", user_id, status.message);
