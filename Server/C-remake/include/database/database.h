@@ -7,25 +7,15 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 #include "sqlite3.h"
 #include "error_handling.h"
+#include "string_utils.h"
+#include "table.h"
 
-typedef struct{
-  char *data;
-  size_t length;
-  size_t capacity;
-} String;
-
-typedef struct{
-  String **data;
-  size_t rows;
-  size_t cols;
-  size_t table_capacity;
-} Table_String;
 
 // Database Management
   /**
@@ -54,9 +44,5 @@ Error open_database(sqlite3 **db);
 
     Error update_table_info(sqlite3 **db, char *name, char *variables, char *values);
 
-// Utility Functions
-  Error free_table(Table_String *table);
-
-  int convert_to_string_table(void *data, int numCol, char **colValues, char **colNames);
 
 #endif 

@@ -8,7 +8,14 @@
 #ifndef USER_MANAGEMENT_H
 #define USER_MANAGEMENT_H
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "sqlite3.h"
+#include "error_handling.h"
 #include "database.h"
+#include "string_utils.h"
+#include "table.h"
 
 Error create_user(sqlite3 **db, char *username, char *email, char *password);
 

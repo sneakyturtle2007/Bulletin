@@ -1,11 +1,5 @@
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "sqlite3.h"
 #include "database.h"
-
-
 
 Error open_database(sqlite3 **db){
   const int rc = sqlite3_open("database.db", db);
@@ -18,7 +12,6 @@ Error open_database(sqlite3 **db){
   printf("Database opened\n");
   return (Error) {OK, "Database opened successfully"};
 }
-
 
 // Table Management
 
@@ -154,65 +147,3 @@ Error open_database(sqlite3 **db){
       return (Error) {OK, "Success"};
     }
 
-// Utility Functions
-  Error free_table(Table_String *table){
-    if(table == NULL || table->data == NULL) {
-      return (Error) {OK, "Nothing to free\n"};
-    }
-    for(int i = 0; i < table->rows; i++){
-      if(table->data[i] != NULL) {
-        for(int j = 0; j < table->cols; j++){
-          free(table->data[i][j].data); // Free string data
-        }
-        free(table->data[i]); // Free row of String structs
-      }
-    }
-    free(table->data);
-    table->rows = 0;
-    table->cols = 0;
-    table->table_capacity = 0;
-    return (Error) {OK, "Memory freed\n"};
-  }
-
-  int convert_to_string_table(void *data, int numCols, char **colValues, char **colNames){
-    Table_String *table = (Table_String *)data;
-
-    for(int i = 0; i < numCols; i++){
-      if(colValues[i] == NULL){
-        colValues[i] = "NULL"; // Handle NULL values
-      }
-    }
-
-    table->data[table->rows] = malloc(numCols * sizeof(String));
-    if(!table->data[table->rows]) {
-      fprintf(stderr, "Memory allocation failed\n");
-      return 1;
-    }
-    table->cols = numCols;
-    for(int i = 0; i < numCols; i++){
-      String temp_string = {.data = malloc(strlen(colValues[i]) + 1), .length = strlen(colValues[i]) + 1,
-                            .capacity = strlen(colValues[i]) + 1};
-      void *status = strncpy(temp_string.data, colValues[i], temp_string.length);
-      if(status == NULL){
-        fprintf(stderr, "ERROR: strncpy failed (function convert_to_string_table)\n");
-        free(temp_string.data); 
-        return 1; 
-      }
-
-      //status = memcpy(&table->data[table->rows][i], &temp_string, sizeof(temp_string));
-      table->data[table->rows][i] = temp_string;
-
-    } 
-
-    table->rows++;
-    
-    if(table->rows >= table->table_capacity) {
-      table->table_capacity *= 2;
-      table->data = realloc(table->data, table->table_capacity * sizeof(String*));
-      if(!table->data) {
-        fprintf(stderr, "Memory allocation failed\n");
-        return 1; // Memory allocation error
-      }
-    }
-    return 0; // Success
-  }
