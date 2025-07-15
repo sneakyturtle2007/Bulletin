@@ -1,6 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/my_program.dir/link.d"
   "CMakeFiles/my_program.dir/src/api/director.c.o"
   "CMakeFiles/my_program.dir/src/api/director.c.o.d"
+  "CMakeFiles/my_program.dir/src/api/event_management.c.o"
+  "CMakeFiles/my_program.dir/src/api/event_management.c.o.d"
   "CMakeFiles/my_program.dir/src/api/user_management.c.o"
   "CMakeFiles/my_program.dir/src/api/user_management.c.o.d"
   "CMakeFiles/my_program.dir/src/backend/main.c.o"
@@ -9,6 +12,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/my_program.dir/src/database/database.c.o.d"
   "CMakeFiles/my_program.dir/src/database/sqlite3.c.o"
   "CMakeFiles/my_program.dir/src/database/sqlite3.c.o.d"
+  "CMakeFiles/my_program.dir/src/lib/string_utils.c.o"
+  "CMakeFiles/my_program.dir/src/lib/string_utils.c.o.d"
+  "CMakeFiles/my_program.dir/src/lib/table.c.o"
+  "CMakeFiles/my_program.dir/src/lib/table.c.o.d"
   "my_program"
   "my_program.pdb"
 )

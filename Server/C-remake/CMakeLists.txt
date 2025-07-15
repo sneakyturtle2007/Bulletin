@@ -6,7 +6,7 @@ set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
 # Include header directory
-include_directories(include)
+include_directories(include include/api include/database include/lib)
 
 # Recursively collect all .c files in src/
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.c")
