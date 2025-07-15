@@ -36,7 +36,7 @@ Error open_database(sqlite3 **db);
   Error drop_table(sqlite3 **db, char *name);
 
   // Data Management
-    Error get_from_table(sqlite3 **db, char *name, char *condition, Table_String *result);
+    Error get_from_table(sqlite3 **db, char* operation, char *name, char *condition, Table_String *result);
 
     Error delete_from_table(sqlite3 **db, char *name, char *condition);
 

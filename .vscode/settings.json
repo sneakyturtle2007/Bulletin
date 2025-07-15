@@ -1,6 +1,7 @@
 {
     "cmake.sourceDirectory": "C:/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake",
     "files.associations": {
-        "database.h": "c"
+        "database.h": "c",
+        "string.h": "c"
     }
 }

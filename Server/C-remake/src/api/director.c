@@ -103,6 +103,29 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
     output->data[output->length] = '\0';
     return status;
 
+  }else if(strcmp(inputToken, "createevent") == 0){
+    char *user_id = strtok(NULL, "|");
+    char *title = strtok(NULL, "|");
+    char *date = strtok(NULL, "|");
+    char *start_time = strtok(NULL, "|");
+    char *end_time = strtok(NULL, "|");
+    char *location = strtok(NULL, "|");
+    char *publicity_type = strtok(NULL, "|");
+    char *invitees = strtok(NULL, "|");
+    char *details = strtok(NULL, "|");
+    if(user_id == NULL || title == NULL || date == NULL || start_time == NULL
+      || end_time == NULL || location == NULL || publicity_type == NULL || invitees == NULL || details == NULL){
+      fprintf(stderr, "ERROR: Invalid Arguments.\n");
+      return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for createevent command.\n"};
+    }
+    Event new_event = {.user_id = user_id, .title = title, .date = date, .start_time = start_time , 
+                  .end_time = end_time, .location = location, .publicity_type = publicity_type, .invitees = invitees, .details = details};
+    Error status = create_event(db, new_event, output);
+    if(status.code != OK){
+      fprintf(stderr, "ERROR: Failed to create event.\n");
+    }
+    return status;
+    
   }else if(strcmp(inputToken, "test") == 0){
 
     Table_String table = {.data = calloc(64, sizeof(String*)), .rows = 0, .cols = 0, .table_capacity = 64};
