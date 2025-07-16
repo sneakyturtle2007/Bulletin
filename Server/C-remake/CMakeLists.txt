@@ -14,3 +14,14 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.c")
 # Define the executable
 add_executable(my_program ${SOURCES})
 
+# Define compile modes
+  # Release build
+  if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    add_compile_options(-O3 -DNDEBUG)
+  endif()
+  # Debug build
+  if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    add_compile_options(-g -O0 -Wall -Wextra)
+  endif()
+
+

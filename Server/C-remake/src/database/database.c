@@ -84,6 +84,7 @@ Error open_database(sqlite3 **db){
       int command_length = strlen(table_name) + strlen(condition) + 64; // +64 overhead for formatting
       char *command = malloc(command_length * sizeof(char));
       sprintf(command, "SELECT %s FROM %s WHERE %s;", operation, table_name, condition);
+      printf("%s\n", command);
       char *errmsg;
       int state = sqlite3_exec(*db, command, convert_to_string_table, result, &errmsg);
       free(command);

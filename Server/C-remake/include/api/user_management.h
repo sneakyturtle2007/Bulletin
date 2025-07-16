@@ -29,4 +29,6 @@ Error add_friend(sqlite3 **db, char *user_id, char *friend_username);
 
 Error remove_friend(sqlite3 **db, char *user_id, char *friend_username);
 
+Error get_user_info(sqlite3 **db, char *user_id_or_username, Table_String *result, bool user_id);
+
 #endif //USER_MANAGEMENT_H

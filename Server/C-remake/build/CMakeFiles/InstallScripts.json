@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/luis/github/Bulletin/Server/C-remake/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

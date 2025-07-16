@@ -11,19 +11,24 @@
 #include "string_utils.h"
 #include "table.h"
 #include "database.h"
+#include "user_management.h"
 
 typedef struct{
-  char *user_id;
-  char *title;
-  char *date;
-  char *start_time;
-  char *end_time;
-  char *location;
-  char *publicity_type;
-  char *invitees;
-  char *details;
+  char *user_id; // 1
+  char *title; // 2
+  char *date; // 3
+  char *start_time; // 4
+  char *end_time; // 5
+  char *location; // 6
+  char *publicity_type; // 7
+  char *invitees; // 8
+  char *details; // 9
 } Event;
 
 Error create_event(sqlite3 **db, Event new_event, String *output);
+
+Error delete_event(sqlite3 **db, char *event_id);
+
+Error add_invitee(sqlite3 **db, char *event_id, char *invitee);
 
 #endif

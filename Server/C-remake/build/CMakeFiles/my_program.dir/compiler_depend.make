@@ -72,6 +72,7 @@ CMakeFiles/my_program.dir/src/api/director.c.o: /home/luis/github/Bulletin/Serve
 
 CMakeFiles/my_program.dir/src/api/event_management.c.o: /home/luis/github/Bulletin/Server/C-remake/src/api/event_management.c \
   /home/luis/github/Bulletin/Server/C-remake/include/api/event_management.h \
+  /home/luis/github/Bulletin/Server/C-remake/include/api/user_management.h \
   /home/luis/github/Bulletin/Server/C-remake/include/database/database.h \
   /home/luis/github/Bulletin/Server/C-remake/include/database/sqlite3.h \
   /home/luis/github/Bulletin/Server/C-remake/include/lib/error_handling.h \
