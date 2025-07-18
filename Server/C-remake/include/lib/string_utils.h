@@ -14,6 +14,6 @@ typedef struct{
   size_t capacity;
 } String;
 
-Error strncpy_exclude(char **dest, const char *src, size_t dest_size, const char *exclude);
+Error strncpy_exclude(String *dest, char *src,  const char *exclude);
 
 #endif

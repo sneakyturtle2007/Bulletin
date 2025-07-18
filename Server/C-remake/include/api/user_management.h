@@ -31,4 +31,6 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username);
 
 Error get_user_info(sqlite3 **db, char *user_id_or_username, Table_String *result, bool user_id);
 
+Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, bool remove, bool if_user_id);
+
 #endif //USER_MANAGEMENT_H
