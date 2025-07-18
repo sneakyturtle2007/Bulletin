@@ -3,7 +3,7 @@ const client = new Socket();
 const IP = '127.0.0.1';
 const PORT = '8080';
 let testindex = 0;
-let userID = "";
+
 
 client.connect(PORT, IP, async () =>{
   console.log("connected");
@@ -21,6 +21,7 @@ client.connect(PORT, IP, async () =>{
 });
 function user_functionality_test(){
   return new Promise((resolve, reject) => {
+    let userID = "";
     try{
       
       let onData = async (data) => {
@@ -69,12 +70,23 @@ function user_functionality_test(){
 
 function event_functionality(){
   return new Promise( (resolve, reject) => {
+    let event_id = "";
     try {
       
       let onData = async (data) => {
         let response = data.toString().trim();
         console.log(response + "\n");
-        if(!isNaN(Number(response.substring(0, response.length - 1)))){
+        if(!isNaN(Number(response.substring(0, response.length - 1))) && testindex == 5){
+          event_id = response.substring(0,response.length-1);
+          console.log(`addinvitee|${event_id}|admin`);
+          client.write(`addinvitee|${event_id}|admin`);
+          testindex ++;
+        }else if(response == "Success" && testindex == 6){
+          console.log(`deleteevent|${event_id}`);
+          client.write(`deleteevent|${event_id}`);
+          testindex ++;
+        }else if(response == "Success" && testindex == 7){
+          console.log("terminate");
           client.write("terminate");
           client.removeListener('data', onData);
           resolve("Event Test" + ' \u2713');

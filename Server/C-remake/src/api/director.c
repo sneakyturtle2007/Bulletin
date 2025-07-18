@@ -46,6 +46,7 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
     Error status = delete_user(db, userID);
     if(status.code != OK){
       fprintf(stderr, "ERROR: Failed to delete user\n");
+      return status;
     }
     strcpy(output->data, "Success");
     output->length = strlen(output->data);
@@ -79,6 +80,7 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
     Error status = add_friend(db, user_id, friend_username);
     if(status.code != OK){
       fprintf(stderr, "ERROR: Failed to add friend.\n");
+      return status;
     }
     strcpy(output->data, "Success");
     output->length = strlen(output->data);
@@ -97,6 +99,7 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
     Error status = remove_friend(db, user_id, friend_username);
     if(status.code != OK){
       fprintf(stderr, "ERROR: Failed to remove friend.\n");
+      return status;
     }
     strcpy(output->data, "Success");
     output->length = strlen(output->data);
@@ -104,6 +107,7 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
     return status;
 
   }else if(strcmp(inputToken, "createevent") == 0){
+
     char *user_id = strtok(NULL, "|");
     char *title = strtok(NULL, "|");
     char *date = strtok(NULL, "|");
@@ -125,7 +129,44 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
       fprintf(stderr, "ERROR: Failed to create event.\n");
     }
     return status;
-    
+
+  } else if(strcmp(inputToken, "deleteevent") == 0){
+
+    char *event_id = strtok(NULL, "|");
+    if(event_id == NULL){
+      fprintf(stderr, "ERROR: Invalid Argument.\n");
+      return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for deleteevent command.\n"};
+    }
+    Error status = delete_event(db, event_id);
+    if(status.code != OK){
+      fprintf(stderr, "ERROR: Failed to delete event.\n");
+      return status;
+    }
+    strcpy(output->data, "Success");
+    output->length = strlen(output->data);
+    output->data[output->length] = '\0';
+    return status;
+
+  }else if(strcmp(inputToken, "addinvitee") == 0){
+
+    char *event_id = strtok(NULL, "|");
+    char *invitee = strtok(NULL, "|");
+    printf("event_id: %s\n", event_id);
+    printf("invitee: %s\n",invitee );
+    if(event_id == NULL || invitee == NULL){
+      fprintf(stderr, "ERROR: Invalid arguments.\n");
+      return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for addinvitee command.\n"};
+    }
+    Error status = add_invitee(db, event_id, invitee);
+    if(status.code != OK){
+      fprintf(stderr, "ERROR: Failed to add invitee.\n");
+      return status;
+    }
+    strcpy(output->data, "Success");
+    output->length = strlen(output->data);
+    output->data[output->length] = '\0';
+    return status;
+
   }else if(strcmp(inputToken, "test") == 0){
 
     Table_String table = {.data = calloc(64, sizeof(String*)), .rows = 0, .cols = 0, .table_capacity = 64};

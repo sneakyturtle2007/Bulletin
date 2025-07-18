@@ -42,7 +42,7 @@ Error open_database(sqlite3 **db);
 
     Error insert_into_table(sqlite3 **db, char *name, char *variables, char *values);
 
-    Error update_table_info(sqlite3 **db, char *name, char *variables, char *values);
+    Error update_table_info(sqlite3 **db, char *name, char *variables_and_values, char *condition);
 
 
 #endif 

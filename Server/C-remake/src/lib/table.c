@@ -24,7 +24,7 @@ int convert_to_string_table(void *data, int numCols, char **colValues, char **co
 	Table_String *table = (Table_String *)data;
 	for(int i = 0; i < numCols; i++){
 		if(colValues[i] == NULL){
-			colValues[i] = "NULL"; // Handle NULL values
+			colValues[i] = "NONE"; // Handle NULL values
 		}
 	}
 	table->data[table->rows] = calloc(numCols, sizeof(String));
