@@ -31,4 +31,8 @@ Error delete_event(sqlite3 **db, char *event_id);
 
 Error add_invitee(sqlite3 **db, char *event_id, char *invitee);
 
+Error remove_invitee(sqlite3 **db, char *event_id, char *invitee);
+
+Error remove_multiple_invitees(sqlite3 **db, char *event_id, char *invitees_list, bool user_id);
+
 #endif

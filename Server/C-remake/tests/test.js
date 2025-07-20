@@ -80,12 +80,30 @@ function event_functionality(){
           event_id = response.substring(0,response.length-1);
           console.log(`addinvitee|${event_id}|admin`);
           client.write(`addinvitee|${event_id}|admin`);
+         
           testindex ++;
+        
         }else if(response == "Success" && testindex == 6){
+          console.log(`removeinvitee|${event_id}|admin`);
+          client.write(`removeinvitee|${event_id}|admin`);
+          testindex ++;
+        }else if(response == "Success" && testindex == 7){
+          console.log(`addinvitee|${event_id}|test`);
+          client.write(`addinvitee|${event_id}|test`);
+          testindex ++;
+        }else if(response == "Success" && testindex == 8){
+          console.log(`removeinvitee|${event_id}|friend`);
+          client.write(`removeinvitee|${event_id}|friend`);
+          testindex ++;
+        }else if(response == "Success" && testindex == 9){
+          console.log(`removemultipleinvitees|${event_id}|test,friend`);
+          client.write(`removemultipleinvitees|${event_id}|test,friend`);
+          testindex ++;
+        }else if(response == "Success" && testindex == 10){
           console.log(`deleteevent|${event_id}`);
           client.write(`deleteevent|${event_id}`);
           testindex ++;
-        }else if(response == "Success" && testindex == 7){
+        }else if(response == "Success" && testindex == 11){
           console.log("terminate");
           client.write("terminate");
           client.removeListener('data', onData);

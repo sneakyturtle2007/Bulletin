@@ -10,6 +10,9 @@ Error strncpy_exclude(String *dest, char *src, const char *exclude){
     return (Error) {OK, "Success"};
   }
   char *exclude_start= strstr(src, exclude);
+  if(exclude_start == NULL){
+    return (Error) {OK, "Success"};
+  }
   char *exclude_end = exclude_start + strlen(exclude);
   char *src_end = src + strlen(src);
   printf("\nstrncpy_exclude\nexclude_start: %s\nsrc: %s\n", exclude_start, src);

@@ -267,9 +267,9 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 	String friends_list = {.length = 0, .capacity = (user_friends.length - strlen(friend_username) - 1)};// -1 for comma
 	bool friends_list_empty = false;
 	if(friends_list.capacity < 2){
-		friends_list.capacity += strlen("NONE") + 1; // +1 for NULL terminating character;
+		friends_list.capacity = strlen("NONE") + 1; // +1 for NULL terminating character;
+		friends_list.data = calloc(friends_list.capacity, sizeof(char));
 		friends_list.length = friends_list.capacity;
-		friends_list.data = calloc(friends_list.length, sizeof(char));
 		friends_list_empty = true;
 	}else{
 		friends_list.data = calloc(friends_list.capacity, sizeof(char));
@@ -282,17 +282,21 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 	}
 	if(friends_list_empty){
 		snprintf(friends_list.data, friends_list.capacity, "%s", "NONE");
-		friends_list.length += strlen("NONE") + 1;
-		if(friends_list.data == NULL){
-			fprintf(stderr, "ERROR: Failed to copy 'NONE' to friends list.\n");
-			free(friends_list.data);
-			return (Error) {STRING_ERROR, 
-											"user_management.c/remove_friend/ERROR: Failed to copy 'NONE' to empty friends list.\n"};
-		}
 	}else{
+		String temp_string = { .data = calloc(strlen(friend_username) + 2, sizeof(char)), .length = 0, .capacity = strlen(friend_username) + 2}; // +2 for comma and null termination character
+		char *event_id_position = strstr(user_friends.data, friend_username);
+		if(event_id_position - user_friends.data == 0 ){
+			if(strlen(friend_username) +1 < user_friends.length){
+				snprintf(temp_string.data, temp_string.capacity, "%s,", friend_username);
+			}else{
+				snprintf(temp_string.data, temp_string.capacity, "%s", friend_username);
+			}
+			
+		}else{
+			snprintf(temp_string.data, temp_string.capacity, ",%s", friend_username);
+		}
 		status = strncpy_exclude(&friends_list, user_friends.data, friend_username);
 	}
-	
 	printf("Friend_list\n data: %s\n length: %d\n capacity: %d\n", friends_list.data,friends_list.length, friends_list.capacity); // DEBUG
 	free_table(&user_info); // free'd here because otherwise it would free the memory user_friends.data pointer points to
 	if(status.code != OK){
@@ -354,11 +358,11 @@ Error get_user_info(sqlite3 **db, char *user_id_or_username, Table_String *resul
 }
 
 // Utility functions
+
 Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, bool remove, bool if_user_id){
   Table_String invitee_info = {.data = calloc(1, sizeof(String*)), .rows = 0, .cols = 0, .table_capacity = 1};
   if(invitee_info.data == NULL){
     fprintf(stderr, "ERROR: Failed to allocate memory for invitee info.\n");
-    free_table(&invitee_info);
     return (Error) {MEMORY_ALLOCATION_ERROR, 
                     "event_management.c/add_invitee/ERROR: Failed to allocate memory for invitee info.\n"};
   }
@@ -373,12 +377,15 @@ Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, boo
   invited_list.data = calloc(invited_list.capacity, sizeof(char));
   if(invited_list.data == NULL){
     fprintf(stderr, "ERROR: Failed to allocate memory for invited_list.\n");
+		free_table(&invitee_info);
     return (Error) {MEMORY_ALLOCATION_ERROR, 
                     "event_management.c/update_invitees_invited_list/ERROR: Failed to allocate memory for invited_list.\n"};
   }
 	snprintf(invited_list.data, invited_list.capacity, "%s", invitee_info.data[0][5].data);
   if(strcmp(invited_list.data, "NONE") == 0){
     if(remove){
+			free(invited_list.data);
+			free_table(&invitee_info);
       return (Error) {OK, "Success"};
     }else{
       snprintf(invited_list.data, invited_list.capacity, "%s", event_id);
@@ -387,14 +394,32 @@ Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, boo
     if(!remove){
       snprintf(invited_list.data, invited_list.capacity, "%s,%s", invited_list.data, event_id);
     }else{
-			String temp_string = { .data = calloc(strlen(event_id) + 1, sizeof(char)), .length = 0, .capacity = strlen(event_id) + 1};
+			String temp_string = { .data = calloc(strlen(event_id) + 2, sizeof(char)), .length = 0, .capacity = strlen(event_id) + 2}; // +2 for comma and null termination character
 			char *event_id_position = strstr(invited_list.data, event_id);
-			if(event_id_position - invited_list.data == 0){
-				snprintf(temp_string.data, temp_string.capacity, "%s,", event_id);
+			if(event_id_position - invited_list.data == 0 ){
+				if(strlen(event_id) +1 < invited_list.length){
+					snprintf(temp_string.data, temp_string.capacity, "%s,", event_id);
+				}else{
+					snprintf(temp_string.data, temp_string.capacity, "%s", event_id);
+				}
+				
 			}else{
 				snprintf(temp_string.data, temp_string.capacity, ",%s", event_id);
 			}
-      status = strncpy_exclude(&invited_list, invited_list.data, temp_string.data);
+			String temp_invited_list = {.data = calloc(invited_list.capacity + 1, sizeof(char)), .length = 0, .capacity = invited_list.capacity}; // +1 for null-termination character
+			if(temp_invited_list.data == NULL){
+				fprintf(stderr, "ERROR: Failed to allocate memory for temp invited list.\n");
+				free(temp_string.data);
+				free(invited_list.data);
+				free_table(&invitee_info);
+				return (Error) {MEMORY_ALLOCATION_ERROR,
+												"user_management.c/update_users_invited_list/ERROR: Failed to allocate memory for temp invited list.\n"};
+			}
+			printf("update_users_invited_list\nevent_id: %s\n", event_id);
+			printf("invited_list: %s\nTemp_string: %s\n", invited_list.data, temp_string.data);
+      status = strncpy_exclude(&temp_invited_list, invited_list.data, temp_string.data);
+			snprintf(invited_list.data, invited_list.capacity, "%s", temp_invited_list.data);
+			free(temp_invited_list.data);
 			free(temp_string.data);
       if(status.code != OK){
         fprintf(stderr, "ERROR: Failed to remove event_id from invitees invited list.\n");
@@ -434,7 +459,6 @@ Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, boo
   free(condition.data);
   if(status.code != OK){
     fprintf(stderr, "ERROR: Failed to update invitees invited list.\n");
-    return status;
   }
-  return (Error) {OK, "Success"};
+  return status;
 }

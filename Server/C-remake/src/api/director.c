@@ -167,6 +167,44 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
     output->data[output->length] = '\0';
     return status;
 
+  }else if(strcmp(inputToken, "removeinvitee") == 0){
+
+    char *event_id = strtok(NULL, "|");
+    char *invitee = strtok(NULL, "|");
+    printf("event_id: %s\n", event_id);
+    printf("invitee: %s\n",invitee );
+    if(event_id == NULL || invitee == NULL){
+      fprintf(stderr, "ERROR: Invalid arguments.\n");
+      return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for removeinvitee command.\n"};
+    }
+    Error status = remove_invitee(db, event_id, invitee);
+    if(status.code != OK){
+      fprintf(stderr, "ERROR: Failed to remove invitee.\n");
+      return status;
+    }
+    strcpy(output->data, "Success");
+    output->length = strlen(output->data);
+    output->data[output->length] = '\0';
+    return status;
+
+  }else if(strcmp(inputToken, "removemultipleinvitees") == 0){
+
+    char *event_id = strtok(NULL, "|");
+    char *invitees = strtok(NULL, "|");
+    if(event_id == NULL || invitees == NULL){
+      fprintf(stderr, "ERROR: Invalid arguments.\n");
+      return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for removemultipleinvitees command.\n"};
+    }
+    Error status = remove_multiple_invitees(db, event_id, invitees, false);
+    if(status.code != OK){
+      fprintf(stderr, "ERROR: Failed to remove invitees.\n");
+      return status;
+    }
+    strcpy(output->data, "Success");
+    output->length = strlen(output->data);
+    output->data[output->length] = '\0';
+    return status;
+
   }else if(strcmp(inputToken, "test") == 0){
 
     Table_String table = {.data = calloc(64, sizeof(String*)), .rows = 0, .cols = 0, .table_capacity = 64};
