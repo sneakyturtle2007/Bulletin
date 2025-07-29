@@ -10,15 +10,17 @@
 				{
 					"includeDirectories" : 
 					[
-						"/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include",
+						"/usr/lib/gcc/x86_64-linux-gnu/14/include",
 						"/usr/local/include",
-						"/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed",
+						"/usr/include/x86_64-linux-gnu",
 						"/usr/include"
 					],
 					"linkDirectories" : 
 					[
-						"/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1",
+						"/usr/lib/gcc/x86_64-linux-gnu/14",
+						"/usr/lib/x86_64-linux-gnu",
 						"/usr/lib",
+						"/lib/x86_64-linux-gnu",
 						"/lib"
 					],
 					"linkFrameworkDirectories" : [],
@@ -31,8 +33,13 @@
 						"gcc_s"
 					]
 				},
+<<<<<<<< HEAD:build/.cmake/api/v1/reply/toolchains-v1-e2dfca8d7277ee810c49.json
 				"path" : "/sbin/gcc",
 				"version" : "15.1.1"
+========
+				"path" : "/usr/bin/gcc",
+				"version" : "14.2.0"
+>>>>>>>> 2c43848ae7d4912d9cb1c1653fa93e6b7f37fb7f:build/.cmake/api/v1/reply/toolchains-v1-fb251e0bb0260890760d.json
 			},
 			"language" : "C",
 			"sourceFileExtensions" : 

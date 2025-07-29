@@ -1,0 +1,50 @@
+[
+{
+  "directory": "/home/luis/Bulletin/Server/C-remake/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -I/home/luis/Bulletin/Server/C-remake/include/api -I/home/luis/Bulletin/Server/C-remake/include/database -I/home/luis/Bulletin/Server/C-remake/include/lib -g -std=gnu2x -o CMakeFiles/my_program.dir/src/api/director.c.o -c /home/luis/Bulletin/Server/C-remake/src/api/director.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/api/director.c",
+  "output": "CMakeFiles/my_program.dir/src/api/director.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/C-remake/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -I/home/luis/Bulletin/Server/C-remake/include/api -I/home/luis/Bulletin/Server/C-remake/include/database -I/home/luis/Bulletin/Server/C-remake/include/lib -g -std=gnu2x -o CMakeFiles/my_program.dir/src/api/event_management.c.o -c /home/luis/Bulletin/Server/C-remake/src/api/event_management.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/api/event_management.c",
+  "output": "CMakeFiles/my_program.dir/src/api/event_management.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/C-remake/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -I/home/luis/Bulletin/Server/C-remake/include/api -I/home/luis/Bulletin/Server/C-remake/include/database -I/home/luis/Bulletin/Server/C-remake/include/lib -g -std=gnu2x -o CMakeFiles/my_program.dir/src/api/user_management.c.o -c /home/luis/Bulletin/Server/C-remake/src/api/user_management.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/api/user_management.c",
+  "output": "CMakeFiles/my_program.dir/src/api/user_management.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/C-remake/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -I/home/luis/Bulletin/Server/C-remake/include/api -I/home/luis/Bulletin/Server/C-remake/include/database -I/home/luis/Bulletin/Server/C-remake/include/lib -g -std=gnu2x -o CMakeFiles/my_program.dir/src/backend/main.c.o -c /home/luis/Bulletin/Server/C-remake/src/backend/main.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/backend/main.c",
+  "output": "CMakeFiles/my_program.dir/src/backend/main.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/C-remake/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -I/home/luis/Bulletin/Server/C-remake/include/api -I/home/luis/Bulletin/Server/C-remake/include/database -I/home/luis/Bulletin/Server/C-remake/include/lib -g -std=gnu2x -o CMakeFiles/my_program.dir/src/database/database.c.o -c /home/luis/Bulletin/Server/C-remake/src/database/database.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/database/database.c",
+  "output": "CMakeFiles/my_program.dir/src/database/database.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/C-remake/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -I/home/luis/Bulletin/Server/C-remake/include/api -I/home/luis/Bulletin/Server/C-remake/include/database -I/home/luis/Bulletin/Server/C-remake/include/lib -g -std=gnu2x -o CMakeFiles/my_program.dir/src/database/sqlite3.c.o -c /home/luis/Bulletin/Server/C-remake/src/database/sqlite3.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/database/sqlite3.c",
+  "output": "CMakeFiles/my_program.dir/src/database/sqlite3.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/C-remake/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -I/home/luis/Bulletin/Server/C-remake/include/api -I/home/luis/Bulletin/Server/C-remake/include/database -I/home/luis/Bulletin/Server/C-remake/include/lib -g -std=gnu2x -o CMakeFiles/my_program.dir/src/lib/string_utils.c.o -c /home/luis/Bulletin/Server/C-remake/src/lib/string_utils.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/lib/string_utils.c",
+  "output": "CMakeFiles/my_program.dir/src/lib/string_utils.c.o"
+},
+{
+  "directory": "/home/luis/Bulletin/Server/C-remake/build",
+  "command": "/usr/bin/gcc  -I/home/luis/Bulletin/Server/C-remake/include -I/home/luis/Bulletin/Server/C-remake/include/api -I/home/luis/Bulletin/Server/C-remake/include/database -I/home/luis/Bulletin/Server/C-remake/include/lib -g -std=gnu2x -o CMakeFiles/my_program.dir/src/lib/table.c.o -c /home/luis/Bulletin/Server/C-remake/src/lib/table.c",
+  "file": "/home/luis/Bulletin/Server/C-remake/src/lib/table.c",
+  "output": "CMakeFiles/my_program.dir/src/lib/table.c.o"
+}
+]
