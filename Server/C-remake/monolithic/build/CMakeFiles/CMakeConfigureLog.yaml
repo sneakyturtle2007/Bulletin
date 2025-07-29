@@ -1,0 +1,2251 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 6.15.7-arch1-1 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /sbin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/4.0.3-dirty/CompilerIdC/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rLTGz2"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rLTGz2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rLTGz2'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_5a2d4/fast
+        /sbin/make  -f CMakeFiles/cmTC_5a2d4.dir/build.make CMakeFiles/cmTC_5a2d4.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rLTGz2'
+        Building C object CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o
+        /sbin/cc   -v -o CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/sbin/cc
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.1.1 20250425 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5a2d4.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_5a2d4.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccpYUMcV.s
+        GNU C23 (GCC) version 15.1.1 20250425 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 15.1.1 20250425, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include
+         /usr/local/include
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 335c205337bb594afdc1dd844ba56be5
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5a2d4.dir/'
+         as -v --64 -o CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o /tmp/ccpYUMcV.s
+        GNU assembler version 2.44.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.44.0
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_5a2d4
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_5a2d4.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/sbin/cc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.1.1 20250425 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5a2d4' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5a2d4.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccU35Vwc.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5a2d4 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
+        collect2 version 15.1.1 20250425
+        /sbin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccU35Vwc.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5a2d4 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
+        GNU ld (GNU Binutils) 2.44.0
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5a2d4' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5a2d4.'
+        /sbin/cc  -v -Wl,-v CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o -o cmTC_5a2d4
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rLTGz2'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include]
+          add: [/usr/local/include]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include;/usr/local/include;/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rLTGz2']
+        ignore line: []
+        ignore line: [Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_5a2d4/fast]
+        ignore line: [/sbin/make  -f CMakeFiles/cmTC_5a2d4.dir/build.make CMakeFiles/cmTC_5a2d4.dir/build]
+        ignore line: [make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rLTGz2']
+        ignore line: [Building C object CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/sbin/cc   -v -o CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/sbin/cc]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.1.1 20250425 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5a2d4.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_5a2d4.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccpYUMcV.s]
+        ignore line: [GNU C23 (GCC) version 15.1.1 20250425 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 15.1.1 20250425  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 335c205337bb594afdc1dd844ba56be5]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5a2d4.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o /tmp/ccpYUMcV.s]
+        ignore line: [GNU assembler version 2.44.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.44.0]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_5a2d4]
+        ignore line: [/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_5a2d4.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/sbin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.1.1 20250425 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5a2d4' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5a2d4.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccU35Vwc.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5a2d4 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccU35Vwc.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_5a2d4] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o]
+        ignore line: [collect2 version 15.1.1 20250425]
+        ignore line: [/sbin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccU35Vwc.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5a2d4 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5a2d4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o]
+        linker tool for 'C': /sbin/ld
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o] ==> [/usr/lib/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o;/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:270 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/sbin/ld" "-v"
+      GNU ld (GNU Binutils) 2.44.0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:98 (check_include_file)"
+    checks:
+      - "Looking for fcntl.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ZcNQra"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ZcNQra"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_FCNTL_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ZcNQra'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_90b00/fast
+        /sbin/make  -f CMakeFiles/cmTC_90b00.dir/build.make CMakeFiles/cmTC_90b00.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ZcNQra'
+        Building C object CMakeFiles/cmTC_90b00.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_90b00.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ZcNQra/CheckIncludeFile.c
+        Linking C executable cmTC_90b00
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_90b00.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_90b00.dir/CheckIncludeFile.c.o -o cmTC_90b00  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ZcNQra'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:99 (check_include_file)"
+    checks:
+      - "Looking for inttypes.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-5UML8s"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-5UML8s"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_INTTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-5UML8s'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_c5547/fast
+        /sbin/make  -f CMakeFiles/cmTC_c5547.dir/build.make CMakeFiles/cmTC_c5547.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-5UML8s'
+        Building C object CMakeFiles/cmTC_c5547.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_c5547.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-5UML8s/CheckIncludeFile.c
+        Linking C executable cmTC_c5547
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_c5547.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_c5547.dir/CheckIncludeFile.c.o -o cmTC_c5547  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-5UML8s'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:100 (check_include_file)"
+    checks:
+      - "Looking for stdarg.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-eJsTH6"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-eJsTH6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDARG_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-eJsTH6'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_b783f/fast
+        /sbin/make  -f CMakeFiles/cmTC_b783f.dir/build.make CMakeFiles/cmTC_b783f.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-eJsTH6'
+        Building C object CMakeFiles/cmTC_b783f.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b783f.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-eJsTH6/CheckIncludeFile.c
+        Linking C executable cmTC_b783f
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_b783f.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_b783f.dir/CheckIncludeFile.c.o -o cmTC_b783f  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-eJsTH6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:101 (check_include_file)"
+    checks:
+      - "Looking for strings.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ufiL9O"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ufiL9O"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRINGS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ufiL9O'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_85c2a/fast
+        /sbin/make  -f CMakeFiles/cmTC_85c2a.dir/build.make CMakeFiles/cmTC_85c2a.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ufiL9O'
+        Building C object CMakeFiles/cmTC_85c2a.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_85c2a.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ufiL9O/CheckIncludeFile.c
+        Linking C executable cmTC_85c2a
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_85c2a.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_85c2a.dir/CheckIncludeFile.c.o -o cmTC_85c2a  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ufiL9O'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:102 (check_include_file)"
+    checks:
+      - "Looking for string.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FWJO7K"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FWJO7K"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRING_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FWJO7K'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_bea63/fast
+        /sbin/make  -f CMakeFiles/cmTC_bea63.dir/build.make CMakeFiles/cmTC_bea63.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FWJO7K'
+        Building C object CMakeFiles/cmTC_bea63.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_bea63.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FWJO7K/CheckIncludeFile.c
+        Linking C executable cmTC_bea63
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_bea63.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_bea63.dir/CheckIncludeFile.c.o -o cmTC_bea63  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FWJO7K'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:103 (check_include_file)"
+    checks:
+      - "Looking for syslog.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-k85zG5"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-k85zG5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYSLOG_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-k85zG5'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_8a29f/fast
+        /sbin/make  -f CMakeFiles/cmTC_8a29f.dir/build.make CMakeFiles/cmTC_8a29f.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-k85zG5'
+        Building C object CMakeFiles/cmTC_8a29f.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_8a29f.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-k85zG5/CheckIncludeFile.c
+        Linking C executable cmTC_8a29f
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_8a29f.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_8a29f.dir/CheckIncludeFile.c.o -o cmTC_8a29f  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-k85zG5'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "external/json-c/CMakeLists.txt:106 (check_include_files)"
+    checks:
+      - "Looking for 4 include files stdlib.h, ..., float.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KGnuR5"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KGnuR5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "STDC_HEADERS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KGnuR5'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_d596c/fast
+        /sbin/make  -f CMakeFiles/cmTC_d596c.dir/build.make CMakeFiles/cmTC_d596c.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KGnuR5'
+        Building C object CMakeFiles/cmTC_d596c.dir/STDC_HEADERS.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_d596c.dir/STDC_HEADERS.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KGnuR5/STDC_HEADERS.c
+        Linking C executable cmTC_d596c
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_d596c.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_d596c.dir/STDC_HEADERS.c.o -o cmTC_d596c  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KGnuR5'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:108 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-QUHS4j"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-QUHS4j"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-QUHS4j'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_93214/fast
+        /sbin/make  -f CMakeFiles/cmTC_93214.dir/build.make CMakeFiles/cmTC_93214.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-QUHS4j'
+        Building C object CMakeFiles/cmTC_93214.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_93214.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-QUHS4j/CheckIncludeFile.c
+        Linking C executable cmTC_93214
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_93214.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_93214.dir/CheckIncludeFile.c.o -o cmTC_93214  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-QUHS4j'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:109 (check_include_file)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-wFbY9J"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-wFbY9J"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-wFbY9J'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_5de29/fast
+        /sbin/make  -f CMakeFiles/cmTC_5de29.dir/build.make CMakeFiles/cmTC_5de29.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-wFbY9J'
+        Building C object CMakeFiles/cmTC_5de29.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_5de29.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-wFbY9J/CheckIncludeFile.c
+        Linking C executable cmTC_5de29
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_5de29.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_5de29.dir/CheckIncludeFile.c.o -o cmTC_5de29  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-wFbY9J'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:110 (check_include_file)"
+    checks:
+      - "Looking for sys/resource.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JTuLH9"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JTuLH9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_RESOURCE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JTuLH9'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_545c0/fast
+        /sbin/make  -f CMakeFiles/cmTC_545c0.dir/build.make CMakeFiles/cmTC_545c0.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JTuLH9'
+        Building C object CMakeFiles/cmTC_545c0.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_545c0.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JTuLH9/CheckIncludeFile.c
+        Linking C executable cmTC_545c0
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_545c0.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_545c0.dir/CheckIncludeFile.c.o -o cmTC_545c0  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JTuLH9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:112 (check_include_file)"
+    checks:
+      - "Looking for dlfcn.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ESLvNU"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ESLvNU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DLFCN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ESLvNU'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_b2390/fast
+        /sbin/make  -f CMakeFiles/cmTC_b2390.dir/build.make CMakeFiles/cmTC_b2390.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ESLvNU'
+        Building C object CMakeFiles/cmTC_b2390.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b2390.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ESLvNU/CheckIncludeFile.c
+        Linking C executable cmTC_b2390
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_b2390.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_b2390.dir/CheckIncludeFile.c.o -o cmTC_b2390  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ESLvNU'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:113 (check_include_file)"
+    checks:
+      - "Looking for endian.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-VLrk6h"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-VLrk6h"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ENDIAN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-VLrk6h'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_2094c/fast
+        /sbin/make  -f CMakeFiles/cmTC_2094c.dir/build.make CMakeFiles/cmTC_2094c.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-VLrk6h'
+        Building C object CMakeFiles/cmTC_2094c.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_2094c.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-VLrk6h/CheckIncludeFile.c
+        Linking C executable cmTC_2094c
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_2094c.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_2094c.dir/CheckIncludeFile.c.o -o cmTC_2094c  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-VLrk6h'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:114 (check_include_file)"
+    checks:
+      - "Looking for limits.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ya0Ba1"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ya0Ba1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_LIMITS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ya0Ba1'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_6a9e1/fast
+        /sbin/make  -f CMakeFiles/cmTC_6a9e1.dir/build.make CMakeFiles/cmTC_6a9e1.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ya0Ba1'
+        Building C object CMakeFiles/cmTC_6a9e1.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_6a9e1.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ya0Ba1/CheckIncludeFile.c
+        Linking C executable cmTC_6a9e1
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_6a9e1.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_6a9e1.dir/CheckIncludeFile.c.o -o cmTC_6a9e1  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ya0Ba1'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:115 (check_include_file)"
+    checks:
+      - "Looking for locale.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hjWlEd"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hjWlEd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_LOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hjWlEd'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_55c0e/fast
+        /sbin/make  -f CMakeFiles/cmTC_55c0e.dir/build.make CMakeFiles/cmTC_55c0e.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hjWlEd'
+        Building C object CMakeFiles/cmTC_55c0e.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_55c0e.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hjWlEd/CheckIncludeFile.c
+        Linking C executable cmTC_55c0e
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_55c0e.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_55c0e.dir/CheckIncludeFile.c.o -o cmTC_55c0e  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hjWlEd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:116 (check_include_file)"
+    checks:
+      - "Looking for memory.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-sY0glm"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-sY0glm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_MEMORY_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-sY0glm'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_0a4ee/fast
+        /sbin/make  -f CMakeFiles/cmTC_0a4ee.dir/build.make CMakeFiles/cmTC_0a4ee.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-sY0glm'
+        Building C object CMakeFiles/cmTC_0a4ee.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_0a4ee.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-sY0glm/CheckIncludeFile.c
+        Linking C executable cmTC_0a4ee
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_0a4ee.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_0a4ee.dir/CheckIncludeFile.c.o -o cmTC_0a4ee  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-sY0glm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:118 (check_include_file)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-SwIfdt"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-SwIfdt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-SwIfdt'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_f74b4/fast
+        /sbin/make  -f CMakeFiles/cmTC_f74b4.dir/build.make CMakeFiles/cmTC_f74b4.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-SwIfdt'
+        Building C object CMakeFiles/cmTC_f74b4.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_f74b4.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-SwIfdt/CheckIncludeFile.c
+        Linking C executable cmTC_f74b4
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_f74b4.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_f74b4.dir/CheckIncludeFile.c.o -o cmTC_f74b4  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-SwIfdt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:119 (check_include_file)"
+    checks:
+      - "Looking for stdlib.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-EEdqFJ"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-EEdqFJ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-EEdqFJ'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_9ebc6/fast
+        /sbin/make  -f CMakeFiles/cmTC_9ebc6.dir/build.make CMakeFiles/cmTC_9ebc6.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-EEdqFJ'
+        Building C object CMakeFiles/cmTC_9ebc6.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_9ebc6.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-EEdqFJ/CheckIncludeFile.c
+        Linking C executable cmTC_9ebc6
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_9ebc6.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_9ebc6.dir/CheckIncludeFile.c.o -o cmTC_9ebc6  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-EEdqFJ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:120 (check_include_file)"
+    checks:
+      - "Looking for sys/cdefs.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nT4Cm9"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nT4Cm9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_CDEFS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nT4Cm9'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_5ac69/fast
+        /sbin/make  -f CMakeFiles/cmTC_5ac69.dir/build.make CMakeFiles/cmTC_5ac69.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nT4Cm9'
+        Building C object CMakeFiles/cmTC_5ac69.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_5ac69.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nT4Cm9/CheckIncludeFile.c
+        Linking C executable cmTC_5ac69
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_5ac69.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_5ac69.dir/CheckIncludeFile.c.o -o cmTC_5ac69  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nT4Cm9'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:121 (check_include_file)"
+    checks:
+      - "Looking for sys/param.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-PjKVT0"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-PjKVT0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_PARAM_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-PjKVT0'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_66105/fast
+        /sbin/make  -f CMakeFiles/cmTC_66105.dir/build.make CMakeFiles/cmTC_66105.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-PjKVT0'
+        Building C object CMakeFiles/cmTC_66105.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_66105.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-PjKVT0/CheckIncludeFile.c
+        Linking C executable cmTC_66105
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_66105.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_66105.dir/CheckIncludeFile.c.o -o cmTC_66105  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-PjKVT0'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:122 (check_include_file)"
+    checks:
+      - "Looking for sys/random.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-RSbjWP"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-RSbjWP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_RANDOM_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-RSbjWP'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_d0933/fast
+        /sbin/make  -f CMakeFiles/cmTC_d0933.dir/build.make CMakeFiles/cmTC_d0933.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-RSbjWP'
+        Building C object CMakeFiles/cmTC_d0933.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_d0933.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-RSbjWP/CheckIncludeFile.c
+        Linking C executable cmTC_d0933
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_d0933.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_d0933.dir/CheckIncludeFile.c.o -o cmTC_d0933  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-RSbjWP'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:123 (check_include_file)"
+    checks:
+      - "Looking for sys/stat.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jRNbl6"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jRNbl6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_STAT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jRNbl6'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_d21b2/fast
+        /sbin/make  -f CMakeFiles/cmTC_d21b2.dir/build.make CMakeFiles/cmTC_d21b2.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jRNbl6'
+        Building C object CMakeFiles/cmTC_d21b2.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_d21b2.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jRNbl6/CheckIncludeFile.c
+        Linking C executable cmTC_d21b2
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_d21b2.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_d21b2.dir/CheckIncludeFile.c.o -o cmTC_d21b2  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jRNbl6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:124 (check_include_file)"
+    checks:
+      - "Looking for xlocale.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-lmw0ew"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-lmw0ew"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_XLOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-lmw0ew'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_a13bc/fast
+        /sbin/make  -f CMakeFiles/cmTC_a13bc.dir/build.make CMakeFiles/cmTC_a13bc.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-lmw0ew'
+        Building C object CMakeFiles/cmTC_a13bc.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a13bc.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-lmw0ew/CheckIncludeFile.c
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-lmw0ew/CheckIncludeFile.c:1:10: fatal error: xlocale.h: No such file or directory
+            1 | #include <xlocale.h>
+              |          ^~~~~~~~~~~
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_a13bc.dir/build.make:81: CMakeFiles/cmTC_a13bc.dir/CheckIncludeFile.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-lmw0ew'
+        make: *** [Makefile:134: cmTC_a13bc/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:136 (check_symbol_exists)"
+    checks:
+      - "Looking for _isnan"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CwY4hl"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CwY4hl"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL__ISNAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CwY4hl'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_fb3b8/fast
+        /sbin/make  -f CMakeFiles/cmTC_fb3b8.dir/build.make CMakeFiles/cmTC_fb3b8.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CwY4hl'
+        Building C object CMakeFiles/cmTC_fb3b8.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_fb3b8.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CwY4hl/CheckSymbolExists.c
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CwY4hl/CheckSymbolExists.c: In function ‘main’:
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CwY4hl/CheckSymbolExists.c:8:19: error: ‘_isnan’ undeclared (first use in this function)
+            8 |   return ((int*)(&_isnan))[argc];
+              |                   ^~~~~~
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CwY4hl/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        make[1]: *** [CMakeFiles/cmTC_fb3b8.dir/build.make:81: CMakeFiles/cmTC_fb3b8.dir/CheckSymbolExists.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CwY4hl'
+        make: *** [Makefile:134: cmTC_fb3b8/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:137 (check_symbol_exists)"
+    checks:
+      - "Looking for _finite"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fFkKRU"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fFkKRU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL__FINITE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fFkKRU'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_b61a7/fast
+        /sbin/make  -f CMakeFiles/cmTC_b61a7.dir/build.make CMakeFiles/cmTC_b61a7.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fFkKRU'
+        Building C object CMakeFiles/cmTC_b61a7.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b61a7.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fFkKRU/CheckSymbolExists.c
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fFkKRU/CheckSymbolExists.c: In function ‘main’:
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fFkKRU/CheckSymbolExists.c:8:19: error: ‘_finite’ undeclared (first use in this function)
+            8 |   return ((int*)(&_finite))[argc];
+              |                   ^~~~~~~
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fFkKRU/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        make[1]: *** [CMakeFiles/cmTC_b61a7.dir/build.make:81: CMakeFiles/cmTC_b61a7.dir/CheckSymbolExists.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fFkKRU'
+        make: *** [Makefile:134: cmTC_b61a7/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:140 (check_symbol_exists)"
+    checks:
+      - "Looking for INFINITY"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CVMbwR"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CVMbwR"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_INFINITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CVMbwR'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_f2c00/fast
+        /sbin/make  -f CMakeFiles/cmTC_f2c00.dir/build.make CMakeFiles/cmTC_f2c00.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CVMbwR'
+        Building C object CMakeFiles/cmTC_f2c00.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_f2c00.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CVMbwR/CheckSymbolExists.c
+        Linking C executable cmTC_f2c00
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_f2c00.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_f2c00.dir/CheckSymbolExists.c.o -o cmTC_f2c00  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-CVMbwR'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:141 (check_symbol_exists)"
+    checks:
+      - "Looking for isinf"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Jyr5Wx"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Jyr5Wx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_ISINF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Jyr5Wx'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_5abc1/fast
+        /sbin/make  -f CMakeFiles/cmTC_5abc1.dir/build.make CMakeFiles/cmTC_5abc1.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Jyr5Wx'
+        Building C object CMakeFiles/cmTC_5abc1.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_5abc1.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Jyr5Wx/CheckSymbolExists.c
+        Linking C executable cmTC_5abc1
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_5abc1.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_5abc1.dir/CheckSymbolExists.c.o -o cmTC_5abc1  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Jyr5Wx'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:142 (check_symbol_exists)"
+    checks:
+      - "Looking for isnan"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-HjdwVG"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-HjdwVG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_ISNAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-HjdwVG'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_535c8/fast
+        /sbin/make  -f CMakeFiles/cmTC_535c8.dir/build.make CMakeFiles/cmTC_535c8.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-HjdwVG'
+        Building C object CMakeFiles/cmTC_535c8.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_535c8.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-HjdwVG/CheckSymbolExists.c
+        Linking C executable cmTC_535c8
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_535c8.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_535c8.dir/CheckSymbolExists.c.o -o cmTC_535c8  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-HjdwVG'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:143 (check_symbol_exists)"
+    checks:
+      - "Looking for nan"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FJwWmG"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FJwWmG"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_NAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FJwWmG'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_4da80/fast
+        /sbin/make  -f CMakeFiles/cmTC_4da80.dir/build.make CMakeFiles/cmTC_4da80.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FJwWmG'
+        Building C object CMakeFiles/cmTC_4da80.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_4da80.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FJwWmG/CheckSymbolExists.c
+        Linking C executable cmTC_4da80
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_4da80.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_4da80.dir/CheckSymbolExists.c.o -o cmTC_4da80  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-FJwWmG'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:146 (check_symbol_exists)"
+    checks:
+      - "Looking for _doprnt"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-bXxvNx"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-bXxvNx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DOPRNT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-bXxvNx'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_60032/fast
+        /sbin/make  -f CMakeFiles/cmTC_60032.dir/build.make CMakeFiles/cmTC_60032.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-bXxvNx'
+        Building C object CMakeFiles/cmTC_60032.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_60032.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-bXxvNx/CheckSymbolExists.c
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-bXxvNx/CheckSymbolExists.c: In function ‘main’:
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-bXxvNx/CheckSymbolExists.c:8:19: error: ‘_doprnt’ undeclared (first use in this function)
+            8 |   return ((int*)(&_doprnt))[argc];
+              |                   ^~~~~~~
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-bXxvNx/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        make[1]: *** [CMakeFiles/cmTC_60032.dir/build.make:81: CMakeFiles/cmTC_60032.dir/CheckSymbolExists.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-bXxvNx'
+        make: *** [Makefile:134: cmTC_60032/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:148 (check_symbol_exists)"
+    checks:
+      - "Looking for snprintf"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zfajr8"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zfajr8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zfajr8'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_1a3b0/fast
+        /sbin/make  -f CMakeFiles/cmTC_1a3b0.dir/build.make CMakeFiles/cmTC_1a3b0.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zfajr8'
+        Building C object CMakeFiles/cmTC_1a3b0.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_1a3b0.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zfajr8/CheckSymbolExists.c
+        Linking C executable cmTC_1a3b0
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_1a3b0.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_1a3b0.dir/CheckSymbolExists.c.o -o cmTC_1a3b0  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zfajr8'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:150 (check_symbol_exists)"
+    checks:
+      - "Looking for vasprintf"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-tx3Kri"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-tx3Kri"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VASPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-tx3Kri'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_4f797/fast
+        /sbin/make  -f CMakeFiles/cmTC_4f797.dir/build.make CMakeFiles/cmTC_4f797.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-tx3Kri'
+        Building C object CMakeFiles/cmTC_4f797.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_4f797.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-tx3Kri/CheckSymbolExists.c
+        Linking C executable cmTC_4f797
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_4f797.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_4f797.dir/CheckSymbolExists.c.o -o cmTC_4f797  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-tx3Kri'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:151 (check_symbol_exists)"
+    checks:
+      - "Looking for vsnprintf"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Y3ZB9i"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Y3ZB9i"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VSNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Y3ZB9i'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_ed357/fast
+        /sbin/make  -f CMakeFiles/cmTC_ed357.dir/build.make CMakeFiles/cmTC_ed357.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Y3ZB9i'
+        Building C object CMakeFiles/cmTC_ed357.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_ed357.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Y3ZB9i/CheckSymbolExists.c
+        Linking C executable cmTC_ed357
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_ed357.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_ed357.dir/CheckSymbolExists.c.o -o cmTC_ed357  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-Y3ZB9i'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:152 (check_symbol_exists)"
+    checks:
+      - "Looking for vprintf"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-905mNi"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-905mNi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-905mNi'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_e9dd5/fast
+        /sbin/make  -f CMakeFiles/cmTC_e9dd5.dir/build.make CMakeFiles/cmTC_e9dd5.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-905mNi'
+        Building C object CMakeFiles/cmTC_e9dd5.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e9dd5.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-905mNi/CheckSymbolExists.c
+        Linking C executable cmTC_e9dd5
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_e9dd5.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_e9dd5.dir/CheckSymbolExists.c.o -o cmTC_e9dd5  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-905mNi'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:154 (check_symbol_exists)"
+    checks:
+      - "Looking for arc4random"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M8OTTB"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M8OTTB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ARC4RANDOM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M8OTTB'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_b9e5f/fast
+        /sbin/make  -f CMakeFiles/cmTC_b9e5f.dir/build.make CMakeFiles/cmTC_b9e5f.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M8OTTB'
+        Building C object CMakeFiles/cmTC_b9e5f.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b9e5f.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M8OTTB/CheckSymbolExists.c
+        Linking C executable cmTC_b9e5f
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_b9e5f.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_b9e5f.dir/CheckSymbolExists.c.o -o cmTC_b9e5f  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M8OTTB'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:168 (check_symbol_exists)"
+    checks:
+      - "Looking for open"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jUEzXj"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jUEzXj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_OPEN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jUEzXj'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_71ca0/fast
+        /sbin/make  -f CMakeFiles/cmTC_71ca0.dir/build.make CMakeFiles/cmTC_71ca0.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jUEzXj'
+        Building C object CMakeFiles/cmTC_71ca0.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_71ca0.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jUEzXj/CheckSymbolExists.c
+        Linking C executable cmTC_71ca0
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_71ca0.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_71ca0.dir/CheckSymbolExists.c.o -o cmTC_71ca0  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-jUEzXj'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:171 (check_symbol_exists)"
+    checks:
+      - "Looking for realloc"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JdQLh8"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JdQLh8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_REALLOC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JdQLh8'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_4449b/fast
+        /sbin/make  -f CMakeFiles/cmTC_4449b.dir/build.make CMakeFiles/cmTC_4449b.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JdQLh8'
+        Building C object CMakeFiles/cmTC_4449b.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_4449b.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JdQLh8/CheckSymbolExists.c
+        Linking C executable cmTC_4449b
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_4449b.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_4449b.dir/CheckSymbolExists.c.o -o cmTC_4449b  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-JdQLh8'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:174 (check_symbol_exists)"
+    checks:
+      - "Looking for setlocale"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nztzoH"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nztzoH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SETLOCALE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nztzoH'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_df2bc/fast
+        /sbin/make  -f CMakeFiles/cmTC_df2bc.dir/build.make CMakeFiles/cmTC_df2bc.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nztzoH'
+        Building C object CMakeFiles/cmTC_df2bc.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_df2bc.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nztzoH/CheckSymbolExists.c
+        Linking C executable cmTC_df2bc
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_df2bc.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_df2bc.dir/CheckSymbolExists.c.o -o cmTC_df2bc  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-nztzoH'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:175 (check_symbol_exists)"
+    checks:
+      - "Looking for uselocale"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-IguEHg"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-IguEHg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_USELOCALE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-IguEHg'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_b69fe/fast
+        /sbin/make  -f CMakeFiles/cmTC_b69fe.dir/build.make CMakeFiles/cmTC_b69fe.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-IguEHg'
+        Building C object CMakeFiles/cmTC_b69fe.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b69fe.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-IguEHg/CheckSymbolExists.c
+        Linking C executable cmTC_b69fe
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_b69fe.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_b69fe.dir/CheckSymbolExists.c.o -o cmTC_b69fe  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-IguEHg'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:191 (check_symbol_exists)"
+    checks:
+      - "Looking for strcasecmp"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-l5CzSf"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-l5CzSf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-l5CzSf'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_51e5d/fast
+        /sbin/make  -f CMakeFiles/cmTC_51e5d.dir/build.make CMakeFiles/cmTC_51e5d.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-l5CzSf'
+        Building C object CMakeFiles/cmTC_51e5d.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_51e5d.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-l5CzSf/CheckSymbolExists.c
+        Linking C executable cmTC_51e5d
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_51e5d.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_51e5d.dir/CheckSymbolExists.c.o -o cmTC_51e5d  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-l5CzSf'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:192 (check_symbol_exists)"
+    checks:
+      - "Looking for strncasecmp"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M5TEze"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M5TEze"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRNCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M5TEze'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_a6f4d/fast
+        /sbin/make  -f CMakeFiles/cmTC_a6f4d.dir/build.make CMakeFiles/cmTC_a6f4d.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M5TEze'
+        Building C object CMakeFiles/cmTC_a6f4d.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a6f4d.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M5TEze/CheckSymbolExists.c
+        Linking C executable cmTC_a6f4d
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_a6f4d.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_a6f4d.dir/CheckSymbolExists.c.o -o cmTC_a6f4d  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-M5TEze'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:195 (check_symbol_exists)"
+    checks:
+      - "Looking for strdup"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-TPb4tt"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-TPb4tt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRDUP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-TPb4tt'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_6904b/fast
+        /sbin/make  -f CMakeFiles/cmTC_6904b.dir/build.make CMakeFiles/cmTC_6904b.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-TPb4tt'
+        Building C object CMakeFiles/cmTC_6904b.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_6904b.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-TPb4tt/CheckSymbolExists.c
+        Linking C executable cmTC_6904b
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_6904b.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_6904b.dir/CheckSymbolExists.c.o -o cmTC_6904b  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-TPb4tt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:196 (check_symbol_exists)"
+    checks:
+      - "Looking for strerror"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-GU1VXb"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-GU1VXb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRERROR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-GU1VXb'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_e5dd5/fast
+        /sbin/make  -f CMakeFiles/cmTC_e5dd5.dir/build.make CMakeFiles/cmTC_e5dd5.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-GU1VXb'
+        Building C object CMakeFiles/cmTC_e5dd5.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e5dd5.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-GU1VXb/CheckSymbolExists.c
+        Linking C executable cmTC_e5dd5
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_e5dd5.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_e5dd5.dir/CheckSymbolExists.c.o -o cmTC_e5dd5  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-GU1VXb'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:199 (check_symbol_exists)"
+    checks:
+      - "Looking for vsyslog"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-dZVngU"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-dZVngU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VSYSLOG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-dZVngU'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_a50d2/fast
+        /sbin/make  -f CMakeFiles/cmTC_a50d2.dir/build.make CMakeFiles/cmTC_a50d2.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-dZVngU'
+        Building C object CMakeFiles/cmTC_a50d2.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a50d2.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-dZVngU/CheckSymbolExists.c
+        Linking C executable cmTC_a50d2
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_a50d2.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_a50d2.dir/CheckSymbolExists.c.o -o cmTC_a50d2  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-dZVngU'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:202 (check_symbol_exists)"
+    checks:
+      - "Looking for getrandom"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-B7WotO"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-B7WotO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_GETRANDOM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-B7WotO'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_e2c42/fast
+        /sbin/make  -f CMakeFiles/cmTC_e2c42.dir/build.make CMakeFiles/cmTC_e2c42.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-B7WotO'
+        Building C object CMakeFiles/cmTC_e2c42.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e2c42.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-B7WotO/CheckSymbolExists.c
+        Linking C executable cmTC_e2c42
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_e2c42.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_e2c42.dir/CheckSymbolExists.c.o -o cmTC_e2c42  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-B7WotO'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:205 (check_symbol_exists)"
+    checks:
+      - "Looking for getrusage"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-By6NVp"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-By6NVp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_GETRUSAGE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-By6NVp'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_c6313/fast
+        /sbin/make  -f CMakeFiles/cmTC_c6313.dir/build.make CMakeFiles/cmTC_c6313.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-By6NVp'
+        Building C object CMakeFiles/cmTC_c6313.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_c6313.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-By6NVp/CheckSymbolExists.c
+        Linking C executable cmTC_c6313
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_c6313.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_c6313.dir/CheckSymbolExists.c.o -o cmTC_c6313  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-By6NVp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:208 (check_symbol_exists)"
+    checks:
+      - "Looking for strtoll"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-A8phBQ"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-A8phBQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRTOLL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-A8phBQ'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_a7c0d/fast
+        /sbin/make  -f CMakeFiles/cmTC_a7c0d.dir/build.make CMakeFiles/cmTC_a7c0d.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-A8phBQ'
+        Building C object CMakeFiles/cmTC_a7c0d.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a7c0d.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-A8phBQ/CheckSymbolExists.c
+        Linking C executable cmTC_a7c0d
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_a7c0d.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_a7c0d.dir/CheckSymbolExists.c.o -o cmTC_a7c0d  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-A8phBQ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:209 (check_symbol_exists)"
+    checks:
+      - "Looking for strtoull"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rh0vad"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rh0vad"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRTOULL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rh0vad'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_e33ac/fast
+        /sbin/make  -f CMakeFiles/cmTC_e33ac.dir/build.make CMakeFiles/cmTC_e33ac.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rh0vad'
+        Building C object CMakeFiles/cmTC_e33ac.dir/CheckSymbolExists.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e33ac.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rh0vad/CheckSymbolExists.c
+        Linking C executable cmTC_e33ac
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_e33ac.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_e33ac.dir/CheckSymbolExists.c.o -o cmTC_e33ac  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-rh0vad'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:320 (check_include_file)"
+      - "external/json-c/CMakeLists.txt:232 (check_type_size)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KHrBGF"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KHrBGF"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KHrBGF'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_103f4/fast
+        /sbin/make  -f CMakeFiles/cmTC_103f4.dir/build.make CMakeFiles/cmTC_103f4.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KHrBGF'
+        Building C object CMakeFiles/cmTC_103f4.dir/CheckIncludeFile.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_103f4.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KHrBGF/CheckIncludeFile.c
+        Linking C executable cmTC_103f4
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_103f4.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_103f4.dir/CheckIncludeFile.c.o -o cmTC_103f4  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-KHrBGF'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:232 (check_type_size)"
+    checks:
+      - "Check size of int"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fIjYQl"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fIjYQl"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fIjYQl'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_be3b6/fast
+        /sbin/make  -f CMakeFiles/cmTC_be3b6.dir/build.make CMakeFiles/cmTC_be3b6.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fIjYQl'
+        Building C object CMakeFiles/cmTC_be3b6.dir/SIZEOF_INT.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_be3b6.dir/SIZEOF_INT.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fIjYQl/SIZEOF_INT.c
+        Linking C executable cmTC_be3b6
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_be3b6.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_be3b6.dir/SIZEOF_INT.c.o -o cmTC_be3b6  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-fIjYQl'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:233 (check_type_size)"
+    checks:
+      - "Check size of int64_t"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-85SKSP"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-85SKSP"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT64_T"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-85SKSP'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_82710/fast
+        /sbin/make  -f CMakeFiles/cmTC_82710.dir/build.make CMakeFiles/cmTC_82710.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-85SKSP'
+        Building C object CMakeFiles/cmTC_82710.dir/SIZEOF_INT64_T.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_82710.dir/SIZEOF_INT64_T.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-85SKSP/SIZEOF_INT64_T.c
+        Linking C executable cmTC_82710
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_82710.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_82710.dir/SIZEOF_INT64_T.c.o -o cmTC_82710  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-85SKSP'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:234 (check_type_size)"
+    checks:
+      - "Check size of long"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-I9eBr4"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-I9eBr4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-I9eBr4'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_20253/fast
+        /sbin/make  -f CMakeFiles/cmTC_20253.dir/build.make CMakeFiles/cmTC_20253.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-I9eBr4'
+        Building C object CMakeFiles/cmTC_20253.dir/SIZEOF_LONG.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_20253.dir/SIZEOF_LONG.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-I9eBr4/SIZEOF_LONG.c
+        Linking C executable cmTC_20253
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_20253.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_20253.dir/SIZEOF_LONG.c.o -o cmTC_20253  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-I9eBr4'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:235 (check_type_size)"
+    checks:
+      - "Check size of long long"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hVCQwK"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hVCQwK"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hVCQwK'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_0877e/fast
+        /sbin/make  -f CMakeFiles/cmTC_0877e.dir/build.make CMakeFiles/cmTC_0877e.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hVCQwK'
+        Building C object CMakeFiles/cmTC_0877e.dir/SIZEOF_LONG_LONG.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_0877e.dir/SIZEOF_LONG_LONG.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hVCQwK/SIZEOF_LONG_LONG.c
+        Linking C executable cmTC_0877e
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_0877e.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_0877e.dir/SIZEOF_LONG_LONG.c.o -o cmTC_0877e  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hVCQwK'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:236 (check_type_size)"
+    checks:
+      - "Check size of size_t"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hrzpaa"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hrzpaa"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_SIZE_T"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hrzpaa'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_f6b55/fast
+        /sbin/make  -f CMakeFiles/cmTC_f6b55.dir/build.make CMakeFiles/cmTC_f6b55.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hrzpaa'
+        Building C object CMakeFiles/cmTC_f6b55.dir/SIZEOF_SIZE_T.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_f6b55.dir/SIZEOF_SIZE_T.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hrzpaa/SIZEOF_SIZE_T.c
+        Linking C executable cmTC_f6b55
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_f6b55.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_f6b55.dir/SIZEOF_SIZE_T.c.o -o cmTC_f6b55  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-hrzpaa'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:241 (check_type_size)"
+    checks:
+      - "Check size of ssize_t"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-j7ArXt"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-j7ArXt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_SSIZE_T"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-j7ArXt'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_1e48d/fast
+        /sbin/make  -f CMakeFiles/cmTC_1e48d.dir/build.make CMakeFiles/cmTC_1e48d.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-j7ArXt'
+        Building C object CMakeFiles/cmTC_1e48d.dir/SIZEOF_SSIZE_T.c.o
+        /sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_1e48d.dir/SIZEOF_SSIZE_T.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-j7ArXt/SIZEOF_SSIZE_T.c
+        Linking C executable cmTC_1e48d
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_1e48d.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_1e48d.dir/SIZEOF_SSIZE_T.c.o -o cmTC_1e48d  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-j7ArXt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:244 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAS_GNU_WARNING_LONG"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAS_GNU_WARNING_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_ee705/fast
+        /sbin/make  -f CMakeFiles/cmTC_ee705.dir/build.make CMakeFiles/cmTC_ee705.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A'
+        Building C object CMakeFiles/cmTC_ee705.dir/src.c.o
+        /sbin/cc -DHAS_GNU_WARNING_LONG -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_ee705.dir/src.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A/src.c
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A/src.c:3:9: warning: missing terminating " character
+            3 | __asm__(".section .gnu.json_object_get
+              |         ^
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A/src.c:3:9: error: missing terminating " character
+            3 | __asm__(".section .gnu.json_object_get
+              |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A/src.c:4:9: error: expected string literal before ‘.’ token
+            4 |         .ascii "Please link against libjson-c instead of libjson"
+              |         ^
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A/src.c:5:14: warning: missing terminating " character
+            5 |         .text");
+              |              ^
+        /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A/src.c:5:14: error: missing terminating " character
+            5 |         .text");
+              |              ^~~
+        make[1]: *** [CMakeFiles/cmTC_ee705.dir/build.make:81: CMakeFiles/cmTC_ee705.dir/src.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-ulB49A'
+        make: *** [Makefile:134: cmTC_ee705/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:252 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_ATOMIC_BUILTINS"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-8Ty2wB"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-8Ty2wB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ATOMIC_BUILTINS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-8Ty2wB'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_41e46/fast
+        /sbin/make  -f CMakeFiles/cmTC_41e46.dir/build.make CMakeFiles/cmTC_41e46.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-8Ty2wB'
+        Building C object CMakeFiles/cmTC_41e46.dir/src.c.o
+        /sbin/cc -DHAVE_ATOMIC_BUILTINS -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_41e46.dir/src.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-8Ty2wB/src.c
+        Linking C executable cmTC_41e46
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_41e46.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_41e46.dir/src.c.o -o cmTC_41e46  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-8Ty2wB'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:257 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE___THREAD"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zseqSt"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zseqSt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE___THREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zseqSt'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_6b90d/fast
+        /sbin/make  -f CMakeFiles/cmTC_6b90d.dir/build.make CMakeFiles/cmTC_6b90d.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zseqSt'
+        Building C object CMakeFiles/cmTC_6b90d.dir/src.c.o
+        /sbin/cc -DHAVE___THREAD -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_6b90d.dir/src.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zseqSt/src.c
+        Linking C executable cmTC_6b90d
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_6b90d.dir/link.txt --verbose=1
+        /sbin/cc CMakeFiles/cmTC_6b90d.dir/src.c.o -o cmTC_6b90d  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-zseqSt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:329 (check_c_source_compiles)"
+    checks:
+      - "Performing Test REENTRANT_WORKS"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-2C6HsW"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-2C6HsW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "REENTRANT_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-2C6HsW'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_bab0e/fast
+        /sbin/make  -f CMakeFiles/cmTC_bab0e.dir/build.make CMakeFiles/cmTC_bab0e.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-2C6HsW'
+        Building C object CMakeFiles/cmTC_bab0e.dir/src.c.o
+        /sbin/cc -DREENTRANT_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -std=gnu2x -fPIE -o CMakeFiles/cmTC_bab0e.dir/src.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-2C6HsW/src.c
+        Linking C executable cmTC_bab0e
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_bab0e.dir/link.txt --verbose=1
+        /sbin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_bab0e.dir/src.c.o -o cmTC_bab0e  -lm
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-2C6HsW'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:348 (check_c_source_compiles)"
+    checks:
+      - "Performing Test BSYMBOLIC_WORKS"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-7vBosc"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-7vBosc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "BSYMBOLIC_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-7vBosc'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_ee0c6/fast
+        /sbin/make  -f CMakeFiles/cmTC_ee0c6.dir/build.make CMakeFiles/cmTC_ee0c6.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-7vBosc'
+        Building C object CMakeFiles/cmTC_ee0c6.dir/src.c.o
+        /sbin/cc -DBSYMBOLIC_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -std=gnu2x -fPIE -o CMakeFiles/cmTC_ee0c6.dir/src.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-7vBosc/src.c
+        Linking C executable cmTC_ee0c6
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_ee0c6.dir/link.txt --verbose=1
+        /sbin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_ee0c6.dir/src.c.o -o cmTC_ee0c6  -lm -Wl,-Bsymbolic-functions
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-7vBosc'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:366 (check_c_source_compiles)"
+    checks:
+      - "Performing Test VERSION_SCRIPT_WORKS"
+    directories:
+      source: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-6zF7i9"
+      binary: "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-6zF7i9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "VERSION_SCRIPT_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-6zF7i9'
+        
+        Run Build Command(s): /sbin/cmake -E env VERBOSE=1 /sbin/make -f Makefile cmTC_65df2/fast
+        /sbin/make  -f CMakeFiles/cmTC_65df2.dir/build.make CMakeFiles/cmTC_65df2.dir/build
+        make[1]: Entering directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-6zF7i9'
+        Building C object CMakeFiles/cmTC_65df2.dir/src.c.o
+        /sbin/cc -DVERSION_SCRIPT_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -std=gnu2x -fPIE -o CMakeFiles/cmTC_65df2.dir/src.c.o -c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-6zF7i9/src.c
+        Linking C executable cmTC_65df2
+        /sbin/cmake -E cmake_link_script CMakeFiles/cmTC_65df2.dir/link.txt --verbose=1
+        /sbin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_65df2.dir/src.c.o -o cmTC_65df2  -lm -Wl,--version-script,/home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/check-version-script.sym
+        make[1]: Leaving directory '/home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/CMakeScratch/TryCompile-6zF7i9'
+        
+      exitCode: 0
+...

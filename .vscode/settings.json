@@ -1,7 +1,11 @@
 {
-    "cmake.sourceDirectory": "C:/Users/Luis Blake/Desktop/GitHub/Bulletin/Server/C-remake",
+    "cmake.sourceDirectory": "/home/luis/github/Bulletin/Server/C-remake/monolithic",
     "files.associations": {
         "database.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "cstdlib": "c",
+        "ranges": "c",
+        "chrono": "c",
+        "functional": "c"
     }
 }
