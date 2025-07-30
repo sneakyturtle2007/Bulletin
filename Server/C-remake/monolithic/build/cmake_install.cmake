@@ -1,8 +1,4 @@
-<<<<<<< HEAD:Server/C-remake/monolithic/build/cmake_install.cmake
 # Install script for directory: /home/luis/github/Bulletin/Server/C-remake/monolithic
-=======
-# Install script for directory: /home/luis/Bulletin/Server/C-remake
->>>>>>> 2c43848ae7d4912d9cb1c1653fa93e6b7f37fb7f:Server/C-remake/build/cmake_install.cmake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -16,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -33,7 +29,7 @@ endif()
 
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
+  set(CMAKE_INSTALL_SO_NO_EXE "0")
 endif()
 
 # Is this installation the result of a crosscompile?
@@ -43,7 +39,7 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/sbin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -54,11 +50,7 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-<<<<<<< HEAD:Server/C-remake/monolithic/build/cmake_install.cmake
   file(WRITE "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/install_local_manifest.txt"
-=======
-  file(WRITE "/home/luis/Bulletin/Server/C-remake/build/install_local_manifest.txt"
->>>>>>> 2c43848ae7d4912d9cb1c1653fa93e6b7f37fb7f:Server/C-remake/build/cmake_install.cmake
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -74,10 +66,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-<<<<<<< HEAD:Server/C-remake/monolithic/build/cmake_install.cmake
   file(WRITE "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/${CMAKE_INSTALL_MANIFEST}"
-=======
-  file(WRITE "/home/luis/Bulletin/Server/C-remake/build/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> 2c43848ae7d4912d9cb1c1653fa93e6b7f37fb7f:Server/C-remake/build/cmake_install.cmake
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

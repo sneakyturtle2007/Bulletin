@@ -1140,60 +1140,10 @@ external/json-c/CMakeFiles/json-c.dir/strerror_override.c.o: /home/luis/github/B
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h
 
-external/json-c/libjson-c.so: /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym \
-  /usr/lib/crti.o \
-  /usr/lib/crtn.o \
-  /usr/lib/libc.so \
-  /usr/lib/libgcc_s.so \
-  /usr/lib/libgcc_s.so.1 \
-  /usr/lib/libm.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a \
-  /usr/lib/ld-linux-x86-64.so.2 \
-  /usr/lib/libc.so.6 \
-  /usr/lib/libc_nonshared.a \
-  /usr/lib/libm.so.6 \
-  /usr/lib/libmvec.so.1 \
-  external/json-c/CMakeFiles/json-c.dir/arraylist.c.o \
-  external/json-c/CMakeFiles/json-c.dir/debug.c.o \
-  external/json-c/CMakeFiles/json-c.dir/json_c_version.c.o \
-  external/json-c/CMakeFiles/json-c.dir/json_object.c.o \
-  external/json-c/CMakeFiles/json-c.dir/json_object_iterator.c.o \
-  external/json-c/CMakeFiles/json-c.dir/json_patch.c.o \
-  external/json-c/CMakeFiles/json-c.dir/json_pointer.c.o \
-  external/json-c/CMakeFiles/json-c.dir/json_tokener.c.o \
-  external/json-c/CMakeFiles/json-c.dir/json_util.c.o \
-  external/json-c/CMakeFiles/json-c.dir/json_visit.c.o \
-  external/json-c/CMakeFiles/json-c.dir/linkhash.c.o \
-  external/json-c/CMakeFiles/json-c.dir/printbuf.c.o \
-  external/json-c/CMakeFiles/json-c.dir/random_seed.c.o \
-  external/json-c/CMakeFiles/json-c.dir/strerror_override.c.o
-
-
-external/json-c/CMakeFiles/json-c.dir/json_object_iterator.c.o:
-
-/usr/lib/libmvec.so.1:
-
-/usr/lib/libm.so.6:
-
-/usr/lib/libc.so.6:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
-
-/usr/lib/libm.so:
-
-/usr/lib/libgcc_s.so:
-
-/usr/lib/libc.so:
-
-external/json-c/CMakeFiles/json-c.dir/json_c_version.c.o:
 
 /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/random_seed.h:
 
 /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/linkhash.c:
-
-external/json-c/CMakeFiles/json-c.dir/linkhash.c.o:
 
 /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_visit.c:
 
@@ -1207,11 +1157,7 @@ external/json-c/CMakeFiles/json-c.dir/linkhash.c.o:
 
 /usr/include/bits/types/struct_statx_timestamp.h:
 
-external/json-c/CMakeFiles/json-c.dir/json_visit.c.o:
-
 /usr/include/bits/types/struct_statx.h:
-
-/home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym:
 
 /usr/include/bits/types/struct_iovec.h:
 
@@ -1222,8 +1168,6 @@ external/json-c/CMakeFiles/json-c.dir/json_visit.c.o:
 /usr/include/bits/fcntl.h:
 
 /usr/include/asm/types.h:
-
-external/json-c/CMakeFiles/json-c.dir/json_util.c.o:
 
 /usr/include/asm/posix_types_64.h:
 
@@ -1279,8 +1223,6 @@ external/json-c/json.h:
 
 /usr/include/bits/errno.h:
 
-/usr/lib/ld-linux-x86-64.so.2:
-
 /usr/include/bits/stat.h:
 
 /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_util.c:
@@ -1299,8 +1241,6 @@ external/json-c/json.h:
 
 /usr/include/sys/select.h:
 
-external/json-c/CMakeFiles/json-c.dir/json_tokener.c.o:
-
 /usr/include/bits/environments.h:
 
 /usr/include/bits/sigaction.h:
@@ -1313,15 +1253,9 @@ external/json-c/CMakeFiles/json-c.dir/json_tokener.c.o:
 
 /usr/include/bits/wordsize.h:
 
-external/json-c/CMakeFiles/json-c.dir/random_seed.c.o:
-
-/usr/lib/libc_nonshared.a:
-
 /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/debug.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
-
-external/json-c/CMakeFiles/json-c.dir/strerror_override.c.o:
 
 /usr/include/bits/uintn-identity.h:
 
@@ -1385,8 +1319,6 @@ external/json-c/json_config.h:
 
 /usr/include/features-time64.h:
 
-external/json-c/CMakeFiles/json-c.dir/json_patch.c.o:
-
 /usr/include/bits/select.h:
 
 /usr/include/gnu/stubs-64.h:
@@ -1401,25 +1333,17 @@ external/json-c/CMakeFiles/json-c.dir/json_patch.c.o:
 
 /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/snprintf_compat.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
-
 /usr/include/alloca.h:
 
 external/json-c/config.h:
-
-external/json-c/CMakeFiles/json-c.dir/debug.c.o:
 
 /usr/include/bits/sigthread.h:
 
 /usr/include/bits/local_lim.h:
 
-external/json-c/CMakeFiles/json-c.dir/arraylist.c.o:
-
 /usr/include/bits/stdio_lim.h:
 
 /usr/include/bits/types/__mbstate_t.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o:
 
 /usr/include/bits/waitflags.h:
 
@@ -1449,10 +1373,6 @@ external/json-c/CMakeFiles/json-c.dir/arraylist.c.o:
 
 /usr/include/bits/posix1_lim.h:
 
-external/json-c/CMakeFiles/json-c.dir/printbuf.c.o:
-
-external/json-c/CMakeFiles/json-c.dir/json_object.c.o:
-
 /usr/include/bits/mathcalls.h:
 
 /usr/include/bits/types/__fpos_t.h:
@@ -1478,8 +1398,6 @@ external/json-c/CMakeFiles/json-c.dir/json_object.c.o:
 /usr/include/stdc-predef.h:
 
 /usr/include/sys/param.h:
-
-/usr/lib/crtn.o:
 
 /usr/include/bits/sigstksz.h:
 
@@ -1509,8 +1427,6 @@ external/json-c/CMakeFiles/json-c.dir/json_object.c.o:
 
 /usr/include/asm-generic/param.h:
 
-/usr/lib/libgcc_s.so.1:
-
 /usr/include/bits/confname.h:
 
 /usr/include/bits/syslog-path.h:
@@ -1520,8 +1436,6 @@ external/json-c/CMakeFiles/json-c.dir/json_object.c.o:
 /usr/include/bits/getopt_posix.h:
 
 /usr/include/bits/param.h:
-
-external/json-c/CMakeFiles/json-c.dir/json_pointer.c.o:
 
 /usr/include/bits/atomic_wide_counter.h:
 
@@ -1548,8 +1462,6 @@ external/json-c/CMakeFiles/json-c.dir/json_pointer.c.o:
 /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_tokener.h:
 
 /usr/include/bits/types/__fpos64_t.h:
-
-/usr/lib/crti.o:
 
 /usr/include/bits/typesizes.h:
 

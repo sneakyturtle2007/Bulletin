@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/luis/github/Bulletin/Server/C-remake/monolithic/include -I/home/luis/github/Bulletin/Server/C-remake/monolithic/include/api -I/home/luis/github/Bulletin/Server/C-remake/monolithic/include/database -I/home/luis/github/Bulletin/Server/C-remake/monolithic/include/lib -I/home/luis/github/Bulletin/Server/C-remake/monolithic/external -I/home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/include -I/home/luis/github/Bulletin/Server/C-remake/monolithic/external/sqlite3 -I/home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c -I/home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c
 
-C_FLAGS = -g -std=gnu2x
+C_FLAGS = -std=gnu2x
 
