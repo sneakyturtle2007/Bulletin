@@ -34,13 +34,13 @@ CMAKE_AR:FILEPATH=/sbin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //C compiler
-CMAKE_C_COMPILER:FILEPATH=/sbin/cc
+CMAKE_C_COMPILER:STRING=/sbin/cc
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler

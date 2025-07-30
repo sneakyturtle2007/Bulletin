@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/luis/github/Bulletin/build/cmake_install.cmake",
-		"/home/luis/github/Bulletin/build/external/json-c/cmake_install.cmake",
-		"/home/luis/github/Bulletin/build/external/json-c/doc/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

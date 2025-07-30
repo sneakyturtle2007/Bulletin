@@ -32,5 +32,9 @@ Error get_month_events(sqlite3 **db, char *user_id, char *year, char *month, Eve
     fprintf(stderr, "ERROR: Failed to convert table to ilst of events.\n");
   }
   return status;
-  
 }
+
+Error get_month_schedule(sqlite3 **db, char *user_id, char *year, char *month, char *other_users, Event_Array *events){
+
+}
+

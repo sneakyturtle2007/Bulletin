@@ -1,11 +1,11 @@
 #----------------------------------------------------------------
-# Generated CMake target import file for configuration "Debug".
+# Generated CMake target import file for configuration "debug".
 #----------------------------------------------------------------
 
 # Commands may need to know the format version.
 set(CMAKE_IMPORT_FILE_VERSION 1)
 
-# Import target "json-c::json-c" for configuration "Debug"
+# Import target "json-c::json-c" for configuration "debug"
 set_property(TARGET json-c::json-c APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(json-c::json-c PROPERTIES
   IMPORTED_LOCATION_DEBUG "${_IMPORT_PREFIX}/lib/libjson-c.so.5.4.0"
@@ -15,7 +15,7 @@ set_target_properties(json-c::json-c PROPERTIES
 list(APPEND _cmake_import_check_targets json-c::json-c )
 list(APPEND _cmake_import_check_files_for_json-c::json-c "${_IMPORT_PREFIX}/lib/libjson-c.so.5.4.0" )
 
-# Import target "json-c::json-c-static" for configuration "Debug"
+# Import target "json-c::json-c-static" for configuration "debug"
 set_property(TARGET json-c::json-c-static APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(json-c::json-c-static PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "C"
