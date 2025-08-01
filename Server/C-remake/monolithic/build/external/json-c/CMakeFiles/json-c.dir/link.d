@@ -1,5 +1,5 @@
 libjson-c.so.5.4.0: \
-  /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym \
+  /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
   CMakeFiles/json-c.dir/arraylist.c.o \
@@ -42,7 +42,7 @@ libjson-c.so.5.4.0: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
 
-/home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym:
+/home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o:
 

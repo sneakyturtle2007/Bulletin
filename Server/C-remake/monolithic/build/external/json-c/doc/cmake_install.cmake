@@ -1,4 +1,4 @@
-# Install script for directory: /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/doc
+# Install script for directory: /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/doc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,6 +45,6 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/doc/install_local_manifest.txt"
+  file(WRITE "/home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/doc/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

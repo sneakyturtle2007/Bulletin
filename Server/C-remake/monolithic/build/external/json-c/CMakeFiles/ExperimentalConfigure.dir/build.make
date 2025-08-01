@@ -53,10 +53,10 @@ RM = /sbin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic
+CMAKE_SOURCE_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic/build
+CMAKE_BINARY_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build
 
 # Utility rule file for ExperimentalConfigure.
 
@@ -67,7 +67,7 @@ include external/json-c/CMakeFiles/ExperimentalConfigure.dir/compiler_depend.mak
 include external/json-c/CMakeFiles/ExperimentalConfigure.dir/progress.make
 
 external/json-c/CMakeFiles/ExperimentalConfigure:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && /sbin/ctest -D ExperimentalConfigure
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && /sbin/ctest -D ExperimentalConfigure
 
 external/json-c/CMakeFiles/ExperimentalConfigure.dir/codegen:
 .PHONY : external/json-c/CMakeFiles/ExperimentalConfigure.dir/codegen
@@ -81,10 +81,10 @@ external/json-c/CMakeFiles/ExperimentalConfigure.dir/build: ExperimentalConfigur
 .PHONY : external/json-c/CMakeFiles/ExperimentalConfigure.dir/build
 
 external/json-c/CMakeFiles/ExperimentalConfigure.dir/clean:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalConfigure.dir/cmake_clean.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && $(CMAKE_COMMAND) -P CMakeFiles/ExperimentalConfigure.dir/cmake_clean.cmake
 .PHONY : external/json-c/CMakeFiles/ExperimentalConfigure.dir/clean
 
 external/json-c/CMakeFiles/ExperimentalConfigure.dir/depend:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/github/Bulletin/Server/C-remake/monolithic /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c /home/luis/github/Bulletin/Server/C-remake/monolithic/build /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/CMakeFiles/ExperimentalConfigure.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/github/personal/Bulletin/Server/C-remake/monolithic /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/CMakeFiles/ExperimentalConfigure.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : external/json-c/CMakeFiles/ExperimentalConfigure.dir/depend
 

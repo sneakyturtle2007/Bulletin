@@ -53,10 +53,10 @@ RM = /sbin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic
+CMAKE_SOURCE_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic/build
+CMAKE_BINARY_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build
 
 # Utility rule file for NightlyStart.
 
@@ -67,7 +67,7 @@ include external/json-c/CMakeFiles/NightlyStart.dir/compiler_depend.make
 include external/json-c/CMakeFiles/NightlyStart.dir/progress.make
 
 external/json-c/CMakeFiles/NightlyStart:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && /sbin/ctest -D NightlyStart
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && /sbin/ctest -D NightlyStart
 
 external/json-c/CMakeFiles/NightlyStart.dir/codegen:
 .PHONY : external/json-c/CMakeFiles/NightlyStart.dir/codegen
@@ -81,10 +81,10 @@ external/json-c/CMakeFiles/NightlyStart.dir/build: NightlyStart
 .PHONY : external/json-c/CMakeFiles/NightlyStart.dir/build
 
 external/json-c/CMakeFiles/NightlyStart.dir/clean:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && $(CMAKE_COMMAND) -P CMakeFiles/NightlyStart.dir/cmake_clean.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && $(CMAKE_COMMAND) -P CMakeFiles/NightlyStart.dir/cmake_clean.cmake
 .PHONY : external/json-c/CMakeFiles/NightlyStart.dir/clean
 
 external/json-c/CMakeFiles/NightlyStart.dir/depend:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/github/Bulletin/Server/C-remake/monolithic /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c /home/luis/github/Bulletin/Server/C-remake/monolithic/build /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/CMakeFiles/NightlyStart.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/github/personal/Bulletin/Server/C-remake/monolithic /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/CMakeFiles/NightlyStart.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : external/json-c/CMakeFiles/NightlyStart.dir/depend
 

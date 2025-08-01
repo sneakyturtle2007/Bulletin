@@ -57,10 +57,10 @@ RM = /sbin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic
+CMAKE_SOURCE_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic/build
+CMAKE_BINARY_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && /sbin/cpack --config ./CPackConfig.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && /sbin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && /sbin/cpack --config ./CPackSourceConfig.cmake /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CPackSourceConfig.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && /sbin/cpack --config ./CPackSourceConfig.cmake /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,14 +152,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c//CMakeFiles/progress.marks
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles 0
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CMakeFiles /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c//CMakeFiles/progress.marks
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/clean
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/clean
 .PHONY : clean
 
 # The main clean target
@@ -168,23 +168,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/preinstall
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/preinstall
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -P /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -P /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 external/json-c/CMakeFiles/Experimental.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/Experimental.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/Experimental.dir/rule
 .PHONY : external/json-c/CMakeFiles/Experimental.dir/rule
 
 # Convenience name for target.
@@ -193,12 +193,12 @@ Experimental: external/json-c/CMakeFiles/Experimental.dir/rule
 
 # fast build rule for target.
 Experimental/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/Experimental.dir/build.make external/json-c/CMakeFiles/Experimental.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/Experimental.dir/build.make external/json-c/CMakeFiles/Experimental.dir/build
 .PHONY : Experimental/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/Nightly.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/Nightly.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/Nightly.dir/rule
 .PHONY : external/json-c/CMakeFiles/Nightly.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ Nightly: external/json-c/CMakeFiles/Nightly.dir/rule
 
 # fast build rule for target.
 Nightly/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/Nightly.dir/build.make external/json-c/CMakeFiles/Nightly.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/Nightly.dir/build.make external/json-c/CMakeFiles/Nightly.dir/build
 .PHONY : Nightly/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/Continuous.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/Continuous.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/Continuous.dir/rule
 .PHONY : external/json-c/CMakeFiles/Continuous.dir/rule
 
 # Convenience name for target.
@@ -221,12 +221,12 @@ Continuous: external/json-c/CMakeFiles/Continuous.dir/rule
 
 # fast build rule for target.
 Continuous/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/Continuous.dir/build.make external/json-c/CMakeFiles/Continuous.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/Continuous.dir/build.make external/json-c/CMakeFiles/Continuous.dir/build
 .PHONY : Continuous/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/NightlyMemoryCheck.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyMemoryCheck.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyMemoryCheck.dir/rule
 .PHONY : external/json-c/CMakeFiles/NightlyMemoryCheck.dir/rule
 
 # Convenience name for target.
@@ -235,12 +235,12 @@ NightlyMemoryCheck: external/json-c/CMakeFiles/NightlyMemoryCheck.dir/rule
 
 # fast build rule for target.
 NightlyMemoryCheck/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyMemoryCheck.dir/build.make external/json-c/CMakeFiles/NightlyMemoryCheck.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyMemoryCheck.dir/build.make external/json-c/CMakeFiles/NightlyMemoryCheck.dir/build
 .PHONY : NightlyMemoryCheck/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/NightlyStart.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyStart.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyStart.dir/rule
 .PHONY : external/json-c/CMakeFiles/NightlyStart.dir/rule
 
 # Convenience name for target.
@@ -249,12 +249,12 @@ NightlyStart: external/json-c/CMakeFiles/NightlyStart.dir/rule
 
 # fast build rule for target.
 NightlyStart/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyStart.dir/build.make external/json-c/CMakeFiles/NightlyStart.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyStart.dir/build.make external/json-c/CMakeFiles/NightlyStart.dir/build
 .PHONY : NightlyStart/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/NightlyUpdate.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyUpdate.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyUpdate.dir/rule
 .PHONY : external/json-c/CMakeFiles/NightlyUpdate.dir/rule
 
 # Convenience name for target.
@@ -263,12 +263,12 @@ NightlyUpdate: external/json-c/CMakeFiles/NightlyUpdate.dir/rule
 
 # fast build rule for target.
 NightlyUpdate/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyUpdate.dir/build.make external/json-c/CMakeFiles/NightlyUpdate.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyUpdate.dir/build.make external/json-c/CMakeFiles/NightlyUpdate.dir/build
 .PHONY : NightlyUpdate/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/NightlyConfigure.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyConfigure.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyConfigure.dir/rule
 .PHONY : external/json-c/CMakeFiles/NightlyConfigure.dir/rule
 
 # Convenience name for target.
@@ -277,12 +277,12 @@ NightlyConfigure: external/json-c/CMakeFiles/NightlyConfigure.dir/rule
 
 # fast build rule for target.
 NightlyConfigure/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyConfigure.dir/build.make external/json-c/CMakeFiles/NightlyConfigure.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyConfigure.dir/build.make external/json-c/CMakeFiles/NightlyConfigure.dir/build
 .PHONY : NightlyConfigure/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/NightlyBuild.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyBuild.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyBuild.dir/rule
 .PHONY : external/json-c/CMakeFiles/NightlyBuild.dir/rule
 
 # Convenience name for target.
@@ -291,12 +291,12 @@ NightlyBuild: external/json-c/CMakeFiles/NightlyBuild.dir/rule
 
 # fast build rule for target.
 NightlyBuild/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyBuild.dir/build.make external/json-c/CMakeFiles/NightlyBuild.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyBuild.dir/build.make external/json-c/CMakeFiles/NightlyBuild.dir/build
 .PHONY : NightlyBuild/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/NightlyTest.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyTest.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyTest.dir/rule
 .PHONY : external/json-c/CMakeFiles/NightlyTest.dir/rule
 
 # Convenience name for target.
@@ -305,12 +305,12 @@ NightlyTest: external/json-c/CMakeFiles/NightlyTest.dir/rule
 
 # fast build rule for target.
 NightlyTest/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyTest.dir/build.make external/json-c/CMakeFiles/NightlyTest.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyTest.dir/build.make external/json-c/CMakeFiles/NightlyTest.dir/build
 .PHONY : NightlyTest/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/NightlyCoverage.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyCoverage.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyCoverage.dir/rule
 .PHONY : external/json-c/CMakeFiles/NightlyCoverage.dir/rule
 
 # Convenience name for target.
@@ -319,12 +319,12 @@ NightlyCoverage: external/json-c/CMakeFiles/NightlyCoverage.dir/rule
 
 # fast build rule for target.
 NightlyCoverage/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyCoverage.dir/build.make external/json-c/CMakeFiles/NightlyCoverage.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyCoverage.dir/build.make external/json-c/CMakeFiles/NightlyCoverage.dir/build
 .PHONY : NightlyCoverage/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/NightlyMemCheck.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyMemCheck.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlyMemCheck.dir/rule
 .PHONY : external/json-c/CMakeFiles/NightlyMemCheck.dir/rule
 
 # Convenience name for target.
@@ -333,12 +333,12 @@ NightlyMemCheck: external/json-c/CMakeFiles/NightlyMemCheck.dir/rule
 
 # fast build rule for target.
 NightlyMemCheck/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyMemCheck.dir/build.make external/json-c/CMakeFiles/NightlyMemCheck.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlyMemCheck.dir/build.make external/json-c/CMakeFiles/NightlyMemCheck.dir/build
 .PHONY : NightlyMemCheck/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/NightlySubmit.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlySubmit.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/NightlySubmit.dir/rule
 .PHONY : external/json-c/CMakeFiles/NightlySubmit.dir/rule
 
 # Convenience name for target.
@@ -347,12 +347,12 @@ NightlySubmit: external/json-c/CMakeFiles/NightlySubmit.dir/rule
 
 # fast build rule for target.
 NightlySubmit/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlySubmit.dir/build.make external/json-c/CMakeFiles/NightlySubmit.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/NightlySubmit.dir/build.make external/json-c/CMakeFiles/NightlySubmit.dir/build
 .PHONY : NightlySubmit/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ExperimentalStart.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalStart.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalStart.dir/rule
 .PHONY : external/json-c/CMakeFiles/ExperimentalStart.dir/rule
 
 # Convenience name for target.
@@ -361,12 +361,12 @@ ExperimentalStart: external/json-c/CMakeFiles/ExperimentalStart.dir/rule
 
 # fast build rule for target.
 ExperimentalStart/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalStart.dir/build.make external/json-c/CMakeFiles/ExperimentalStart.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalStart.dir/build.make external/json-c/CMakeFiles/ExperimentalStart.dir/build
 .PHONY : ExperimentalStart/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ExperimentalUpdate.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalUpdate.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalUpdate.dir/rule
 .PHONY : external/json-c/CMakeFiles/ExperimentalUpdate.dir/rule
 
 # Convenience name for target.
@@ -375,12 +375,12 @@ ExperimentalUpdate: external/json-c/CMakeFiles/ExperimentalUpdate.dir/rule
 
 # fast build rule for target.
 ExperimentalUpdate/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalUpdate.dir/build.make external/json-c/CMakeFiles/ExperimentalUpdate.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalUpdate.dir/build.make external/json-c/CMakeFiles/ExperimentalUpdate.dir/build
 .PHONY : ExperimentalUpdate/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ExperimentalConfigure.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalConfigure.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalConfigure.dir/rule
 .PHONY : external/json-c/CMakeFiles/ExperimentalConfigure.dir/rule
 
 # Convenience name for target.
@@ -389,12 +389,12 @@ ExperimentalConfigure: external/json-c/CMakeFiles/ExperimentalConfigure.dir/rule
 
 # fast build rule for target.
 ExperimentalConfigure/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalConfigure.dir/build.make external/json-c/CMakeFiles/ExperimentalConfigure.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalConfigure.dir/build.make external/json-c/CMakeFiles/ExperimentalConfigure.dir/build
 .PHONY : ExperimentalConfigure/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ExperimentalBuild.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalBuild.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalBuild.dir/rule
 .PHONY : external/json-c/CMakeFiles/ExperimentalBuild.dir/rule
 
 # Convenience name for target.
@@ -403,12 +403,12 @@ ExperimentalBuild: external/json-c/CMakeFiles/ExperimentalBuild.dir/rule
 
 # fast build rule for target.
 ExperimentalBuild/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalBuild.dir/build.make external/json-c/CMakeFiles/ExperimentalBuild.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalBuild.dir/build.make external/json-c/CMakeFiles/ExperimentalBuild.dir/build
 .PHONY : ExperimentalBuild/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ExperimentalTest.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalTest.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalTest.dir/rule
 .PHONY : external/json-c/CMakeFiles/ExperimentalTest.dir/rule
 
 # Convenience name for target.
@@ -417,12 +417,12 @@ ExperimentalTest: external/json-c/CMakeFiles/ExperimentalTest.dir/rule
 
 # fast build rule for target.
 ExperimentalTest/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalTest.dir/build.make external/json-c/CMakeFiles/ExperimentalTest.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalTest.dir/build.make external/json-c/CMakeFiles/ExperimentalTest.dir/build
 .PHONY : ExperimentalTest/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ExperimentalCoverage.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalCoverage.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalCoverage.dir/rule
 .PHONY : external/json-c/CMakeFiles/ExperimentalCoverage.dir/rule
 
 # Convenience name for target.
@@ -431,12 +431,12 @@ ExperimentalCoverage: external/json-c/CMakeFiles/ExperimentalCoverage.dir/rule
 
 # fast build rule for target.
 ExperimentalCoverage/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalCoverage.dir/build.make external/json-c/CMakeFiles/ExperimentalCoverage.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalCoverage.dir/build.make external/json-c/CMakeFiles/ExperimentalCoverage.dir/build
 .PHONY : ExperimentalCoverage/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ExperimentalMemCheck.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalMemCheck.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalMemCheck.dir/rule
 .PHONY : external/json-c/CMakeFiles/ExperimentalMemCheck.dir/rule
 
 # Convenience name for target.
@@ -445,12 +445,12 @@ ExperimentalMemCheck: external/json-c/CMakeFiles/ExperimentalMemCheck.dir/rule
 
 # fast build rule for target.
 ExperimentalMemCheck/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalMemCheck.dir/build.make external/json-c/CMakeFiles/ExperimentalMemCheck.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalMemCheck.dir/build.make external/json-c/CMakeFiles/ExperimentalMemCheck.dir/build
 .PHONY : ExperimentalMemCheck/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ExperimentalSubmit.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalSubmit.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ExperimentalSubmit.dir/rule
 .PHONY : external/json-c/CMakeFiles/ExperimentalSubmit.dir/rule
 
 # Convenience name for target.
@@ -459,12 +459,12 @@ ExperimentalSubmit: external/json-c/CMakeFiles/ExperimentalSubmit.dir/rule
 
 # fast build rule for target.
 ExperimentalSubmit/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalSubmit.dir/build.make external/json-c/CMakeFiles/ExperimentalSubmit.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ExperimentalSubmit.dir/build.make external/json-c/CMakeFiles/ExperimentalSubmit.dir/build
 .PHONY : ExperimentalSubmit/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ContinuousStart.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousStart.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousStart.dir/rule
 .PHONY : external/json-c/CMakeFiles/ContinuousStart.dir/rule
 
 # Convenience name for target.
@@ -473,12 +473,12 @@ ContinuousStart: external/json-c/CMakeFiles/ContinuousStart.dir/rule
 
 # fast build rule for target.
 ContinuousStart/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousStart.dir/build.make external/json-c/CMakeFiles/ContinuousStart.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousStart.dir/build.make external/json-c/CMakeFiles/ContinuousStart.dir/build
 .PHONY : ContinuousStart/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ContinuousUpdate.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousUpdate.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousUpdate.dir/rule
 .PHONY : external/json-c/CMakeFiles/ContinuousUpdate.dir/rule
 
 # Convenience name for target.
@@ -487,12 +487,12 @@ ContinuousUpdate: external/json-c/CMakeFiles/ContinuousUpdate.dir/rule
 
 # fast build rule for target.
 ContinuousUpdate/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousUpdate.dir/build.make external/json-c/CMakeFiles/ContinuousUpdate.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousUpdate.dir/build.make external/json-c/CMakeFiles/ContinuousUpdate.dir/build
 .PHONY : ContinuousUpdate/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ContinuousConfigure.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousConfigure.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousConfigure.dir/rule
 .PHONY : external/json-c/CMakeFiles/ContinuousConfigure.dir/rule
 
 # Convenience name for target.
@@ -501,12 +501,12 @@ ContinuousConfigure: external/json-c/CMakeFiles/ContinuousConfigure.dir/rule
 
 # fast build rule for target.
 ContinuousConfigure/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousConfigure.dir/build.make external/json-c/CMakeFiles/ContinuousConfigure.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousConfigure.dir/build.make external/json-c/CMakeFiles/ContinuousConfigure.dir/build
 .PHONY : ContinuousConfigure/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ContinuousBuild.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousBuild.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousBuild.dir/rule
 .PHONY : external/json-c/CMakeFiles/ContinuousBuild.dir/rule
 
 # Convenience name for target.
@@ -515,12 +515,12 @@ ContinuousBuild: external/json-c/CMakeFiles/ContinuousBuild.dir/rule
 
 # fast build rule for target.
 ContinuousBuild/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousBuild.dir/build.make external/json-c/CMakeFiles/ContinuousBuild.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousBuild.dir/build.make external/json-c/CMakeFiles/ContinuousBuild.dir/build
 .PHONY : ContinuousBuild/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ContinuousTest.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousTest.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousTest.dir/rule
 .PHONY : external/json-c/CMakeFiles/ContinuousTest.dir/rule
 
 # Convenience name for target.
@@ -529,12 +529,12 @@ ContinuousTest: external/json-c/CMakeFiles/ContinuousTest.dir/rule
 
 # fast build rule for target.
 ContinuousTest/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousTest.dir/build.make external/json-c/CMakeFiles/ContinuousTest.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousTest.dir/build.make external/json-c/CMakeFiles/ContinuousTest.dir/build
 .PHONY : ContinuousTest/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ContinuousCoverage.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousCoverage.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousCoverage.dir/rule
 .PHONY : external/json-c/CMakeFiles/ContinuousCoverage.dir/rule
 
 # Convenience name for target.
@@ -543,12 +543,12 @@ ContinuousCoverage: external/json-c/CMakeFiles/ContinuousCoverage.dir/rule
 
 # fast build rule for target.
 ContinuousCoverage/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousCoverage.dir/build.make external/json-c/CMakeFiles/ContinuousCoverage.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousCoverage.dir/build.make external/json-c/CMakeFiles/ContinuousCoverage.dir/build
 .PHONY : ContinuousCoverage/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ContinuousMemCheck.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousMemCheck.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousMemCheck.dir/rule
 .PHONY : external/json-c/CMakeFiles/ContinuousMemCheck.dir/rule
 
 # Convenience name for target.
@@ -557,12 +557,12 @@ ContinuousMemCheck: external/json-c/CMakeFiles/ContinuousMemCheck.dir/rule
 
 # fast build rule for target.
 ContinuousMemCheck/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousMemCheck.dir/build.make external/json-c/CMakeFiles/ContinuousMemCheck.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousMemCheck.dir/build.make external/json-c/CMakeFiles/ContinuousMemCheck.dir/build
 .PHONY : ContinuousMemCheck/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/ContinuousSubmit.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousSubmit.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/ContinuousSubmit.dir/rule
 .PHONY : external/json-c/CMakeFiles/ContinuousSubmit.dir/rule
 
 # Convenience name for target.
@@ -571,12 +571,12 @@ ContinuousSubmit: external/json-c/CMakeFiles/ContinuousSubmit.dir/rule
 
 # fast build rule for target.
 ContinuousSubmit/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousSubmit.dir/build.make external/json-c/CMakeFiles/ContinuousSubmit.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/ContinuousSubmit.dir/build.make external/json-c/CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/distcheck.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/distcheck.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/distcheck.dir/rule
 .PHONY : external/json-c/CMakeFiles/distcheck.dir/rule
 
 # Convenience name for target.
@@ -585,12 +585,12 @@ distcheck: external/json-c/CMakeFiles/distcheck.dir/rule
 
 # fast build rule for target.
 distcheck/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/distcheck.dir/build.make external/json-c/CMakeFiles/distcheck.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/distcheck.dir/build.make external/json-c/CMakeFiles/distcheck.dir/build
 .PHONY : distcheck/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/uninstall.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/uninstall.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/uninstall.dir/rule
 .PHONY : external/json-c/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -599,12 +599,12 @@ uninstall: external/json-c/CMakeFiles/uninstall.dir/rule
 
 # fast build rule for target.
 uninstall/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/uninstall.dir/build.make external/json-c/CMakeFiles/uninstall.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/uninstall.dir/build.make external/json-c/CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/json-c.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/json-c.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/json-c.dir/rule
 .PHONY : external/json-c/CMakeFiles/json-c.dir/rule
 
 # Convenience name for target.
@@ -613,12 +613,12 @@ json-c: external/json-c/CMakeFiles/json-c.dir/rule
 
 # fast build rule for target.
 json-c/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/build
 .PHONY : json-c/fast
 
 # Convenience name for target.
 external/json-c/CMakeFiles/json-c-static.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/json-c-static.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/CMakeFiles/json-c-static.dir/rule
 .PHONY : external/json-c/CMakeFiles/json-c-static.dir/rule
 
 # Convenience name for target.
@@ -627,7 +627,7 @@ json-c-static: external/json-c/CMakeFiles/json-c-static.dir/rule
 
 # fast build rule for target.
 json-c-static/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/build
 .PHONY : json-c-static/fast
 
 arraylist.o: arraylist.c.o
@@ -635,8 +635,8 @@ arraylist.o: arraylist.c.o
 
 # target to build an object file
 arraylist.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/arraylist.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/arraylist.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/arraylist.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/arraylist.c.o
 .PHONY : arraylist.c.o
 
 arraylist.i: arraylist.c.i
@@ -644,8 +644,8 @@ arraylist.i: arraylist.c.i
 
 # target to preprocess a source file
 arraylist.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/arraylist.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/arraylist.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/arraylist.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/arraylist.c.i
 .PHONY : arraylist.c.i
 
 arraylist.s: arraylist.c.s
@@ -653,8 +653,8 @@ arraylist.s: arraylist.c.s
 
 # target to generate assembly for a file
 arraylist.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/arraylist.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/arraylist.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/arraylist.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/arraylist.c.s
 .PHONY : arraylist.c.s
 
 debug.o: debug.c.o
@@ -662,8 +662,8 @@ debug.o: debug.c.o
 
 # target to build an object file
 debug.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/debug.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/debug.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/debug.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/debug.c.o
 .PHONY : debug.c.o
 
 debug.i: debug.c.i
@@ -671,8 +671,8 @@ debug.i: debug.c.i
 
 # target to preprocess a source file
 debug.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/debug.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/debug.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/debug.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/debug.c.i
 .PHONY : debug.c.i
 
 debug.s: debug.c.s
@@ -680,8 +680,8 @@ debug.s: debug.c.s
 
 # target to generate assembly for a file
 debug.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/debug.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/debug.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/debug.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/debug.c.s
 .PHONY : debug.c.s
 
 json_c_version.o: json_c_version.c.o
@@ -689,8 +689,8 @@ json_c_version.o: json_c_version.c.o
 
 # target to build an object file
 json_c_version.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_c_version.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_c_version.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_c_version.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_c_version.c.o
 .PHONY : json_c_version.c.o
 
 json_c_version.i: json_c_version.c.i
@@ -698,8 +698,8 @@ json_c_version.i: json_c_version.c.i
 
 # target to preprocess a source file
 json_c_version.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_c_version.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_c_version.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_c_version.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_c_version.c.i
 .PHONY : json_c_version.c.i
 
 json_c_version.s: json_c_version.c.s
@@ -707,8 +707,8 @@ json_c_version.s: json_c_version.c.s
 
 # target to generate assembly for a file
 json_c_version.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_c_version.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_c_version.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_c_version.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_c_version.c.s
 .PHONY : json_c_version.c.s
 
 json_object.o: json_object.c.o
@@ -716,8 +716,8 @@ json_object.o: json_object.c.o
 
 # target to build an object file
 json_object.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object.c.o
 .PHONY : json_object.c.o
 
 json_object.i: json_object.c.i
@@ -725,8 +725,8 @@ json_object.i: json_object.c.i
 
 # target to preprocess a source file
 json_object.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object.c.i
 .PHONY : json_object.c.i
 
 json_object.s: json_object.c.s
@@ -734,8 +734,8 @@ json_object.s: json_object.c.s
 
 # target to generate assembly for a file
 json_object.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object.c.s
 .PHONY : json_object.c.s
 
 json_object_iterator.o: json_object_iterator.c.o
@@ -743,8 +743,8 @@ json_object_iterator.o: json_object_iterator.c.o
 
 # target to build an object file
 json_object_iterator.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object_iterator.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object_iterator.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object_iterator.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object_iterator.c.o
 .PHONY : json_object_iterator.c.o
 
 json_object_iterator.i: json_object_iterator.c.i
@@ -752,8 +752,8 @@ json_object_iterator.i: json_object_iterator.c.i
 
 # target to preprocess a source file
 json_object_iterator.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object_iterator.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object_iterator.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object_iterator.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object_iterator.c.i
 .PHONY : json_object_iterator.c.i
 
 json_object_iterator.s: json_object_iterator.c.s
@@ -761,8 +761,8 @@ json_object_iterator.s: json_object_iterator.c.s
 
 # target to generate assembly for a file
 json_object_iterator.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object_iterator.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object_iterator.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_object_iterator.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_object_iterator.c.s
 .PHONY : json_object_iterator.c.s
 
 json_patch.o: json_patch.c.o
@@ -770,8 +770,8 @@ json_patch.o: json_patch.c.o
 
 # target to build an object file
 json_patch.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_patch.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_patch.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_patch.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_patch.c.o
 .PHONY : json_patch.c.o
 
 json_patch.i: json_patch.c.i
@@ -779,8 +779,8 @@ json_patch.i: json_patch.c.i
 
 # target to preprocess a source file
 json_patch.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_patch.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_patch.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_patch.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_patch.c.i
 .PHONY : json_patch.c.i
 
 json_patch.s: json_patch.c.s
@@ -788,8 +788,8 @@ json_patch.s: json_patch.c.s
 
 # target to generate assembly for a file
 json_patch.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_patch.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_patch.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_patch.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_patch.c.s
 .PHONY : json_patch.c.s
 
 json_pointer.o: json_pointer.c.o
@@ -797,8 +797,8 @@ json_pointer.o: json_pointer.c.o
 
 # target to build an object file
 json_pointer.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_pointer.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_pointer.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_pointer.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_pointer.c.o
 .PHONY : json_pointer.c.o
 
 json_pointer.i: json_pointer.c.i
@@ -806,8 +806,8 @@ json_pointer.i: json_pointer.c.i
 
 # target to preprocess a source file
 json_pointer.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_pointer.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_pointer.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_pointer.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_pointer.c.i
 .PHONY : json_pointer.c.i
 
 json_pointer.s: json_pointer.c.s
@@ -815,8 +815,8 @@ json_pointer.s: json_pointer.c.s
 
 # target to generate assembly for a file
 json_pointer.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_pointer.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_pointer.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_pointer.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_pointer.c.s
 .PHONY : json_pointer.c.s
 
 json_tokener.o: json_tokener.c.o
@@ -824,8 +824,8 @@ json_tokener.o: json_tokener.c.o
 
 # target to build an object file
 json_tokener.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_tokener.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_tokener.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_tokener.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_tokener.c.o
 .PHONY : json_tokener.c.o
 
 json_tokener.i: json_tokener.c.i
@@ -833,8 +833,8 @@ json_tokener.i: json_tokener.c.i
 
 # target to preprocess a source file
 json_tokener.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_tokener.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_tokener.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_tokener.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_tokener.c.i
 .PHONY : json_tokener.c.i
 
 json_tokener.s: json_tokener.c.s
@@ -842,8 +842,8 @@ json_tokener.s: json_tokener.c.s
 
 # target to generate assembly for a file
 json_tokener.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_tokener.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_tokener.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_tokener.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_tokener.c.s
 .PHONY : json_tokener.c.s
 
 json_util.o: json_util.c.o
@@ -851,8 +851,8 @@ json_util.o: json_util.c.o
 
 # target to build an object file
 json_util.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_util.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_util.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_util.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_util.c.o
 .PHONY : json_util.c.o
 
 json_util.i: json_util.c.i
@@ -860,8 +860,8 @@ json_util.i: json_util.c.i
 
 # target to preprocess a source file
 json_util.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_util.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_util.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_util.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_util.c.i
 .PHONY : json_util.c.i
 
 json_util.s: json_util.c.s
@@ -869,8 +869,8 @@ json_util.s: json_util.c.s
 
 # target to generate assembly for a file
 json_util.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_util.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_util.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_util.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_util.c.s
 .PHONY : json_util.c.s
 
 json_visit.o: json_visit.c.o
@@ -878,8 +878,8 @@ json_visit.o: json_visit.c.o
 
 # target to build an object file
 json_visit.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_visit.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_visit.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_visit.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_visit.c.o
 .PHONY : json_visit.c.o
 
 json_visit.i: json_visit.c.i
@@ -887,8 +887,8 @@ json_visit.i: json_visit.c.i
 
 # target to preprocess a source file
 json_visit.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_visit.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_visit.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_visit.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_visit.c.i
 .PHONY : json_visit.c.i
 
 json_visit.s: json_visit.c.s
@@ -896,8 +896,8 @@ json_visit.s: json_visit.c.s
 
 # target to generate assembly for a file
 json_visit.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_visit.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_visit.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/json_visit.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/json_visit.c.s
 .PHONY : json_visit.c.s
 
 linkhash.o: linkhash.c.o
@@ -905,8 +905,8 @@ linkhash.o: linkhash.c.o
 
 # target to build an object file
 linkhash.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/linkhash.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/linkhash.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/linkhash.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/linkhash.c.o
 .PHONY : linkhash.c.o
 
 linkhash.i: linkhash.c.i
@@ -914,8 +914,8 @@ linkhash.i: linkhash.c.i
 
 # target to preprocess a source file
 linkhash.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/linkhash.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/linkhash.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/linkhash.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/linkhash.c.i
 .PHONY : linkhash.c.i
 
 linkhash.s: linkhash.c.s
@@ -923,8 +923,8 @@ linkhash.s: linkhash.c.s
 
 # target to generate assembly for a file
 linkhash.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/linkhash.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/linkhash.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/linkhash.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/linkhash.c.s
 .PHONY : linkhash.c.s
 
 printbuf.o: printbuf.c.o
@@ -932,8 +932,8 @@ printbuf.o: printbuf.c.o
 
 # target to build an object file
 printbuf.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/printbuf.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/printbuf.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/printbuf.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/printbuf.c.o
 .PHONY : printbuf.c.o
 
 printbuf.i: printbuf.c.i
@@ -941,8 +941,8 @@ printbuf.i: printbuf.c.i
 
 # target to preprocess a source file
 printbuf.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/printbuf.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/printbuf.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/printbuf.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/printbuf.c.i
 .PHONY : printbuf.c.i
 
 printbuf.s: printbuf.c.s
@@ -950,8 +950,8 @@ printbuf.s: printbuf.c.s
 
 # target to generate assembly for a file
 printbuf.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/printbuf.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/printbuf.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/printbuf.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/printbuf.c.s
 .PHONY : printbuf.c.s
 
 random_seed.o: random_seed.c.o
@@ -959,8 +959,8 @@ random_seed.o: random_seed.c.o
 
 # target to build an object file
 random_seed.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/random_seed.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/random_seed.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/random_seed.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/random_seed.c.o
 .PHONY : random_seed.c.o
 
 random_seed.i: random_seed.c.i
@@ -968,8 +968,8 @@ random_seed.i: random_seed.c.i
 
 # target to preprocess a source file
 random_seed.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/random_seed.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/random_seed.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/random_seed.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/random_seed.c.i
 .PHONY : random_seed.c.i
 
 random_seed.s: random_seed.c.s
@@ -977,8 +977,8 @@ random_seed.s: random_seed.c.s
 
 # target to generate assembly for a file
 random_seed.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/random_seed.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/random_seed.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/random_seed.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/random_seed.c.s
 .PHONY : random_seed.c.s
 
 strerror_override.o: strerror_override.c.o
@@ -986,8 +986,8 @@ strerror_override.o: strerror_override.c.o
 
 # target to build an object file
 strerror_override.c.o:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/strerror_override.c.o
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/strerror_override.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/strerror_override.c.o
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/strerror_override.c.o
 .PHONY : strerror_override.c.o
 
 strerror_override.i: strerror_override.c.i
@@ -995,8 +995,8 @@ strerror_override.i: strerror_override.c.i
 
 # target to preprocess a source file
 strerror_override.c.i:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/strerror_override.c.i
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/strerror_override.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/strerror_override.c.i
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/strerror_override.c.i
 .PHONY : strerror_override.c.i
 
 strerror_override.s: strerror_override.c.s
@@ -1004,8 +1004,8 @@ strerror_override.s: strerror_override.c.s
 
 # target to generate assembly for a file
 strerror_override.c.s:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/strerror_override.c.s
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/strerror_override.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/strerror_override.c.s
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/strerror_override.c.s
 .PHONY : strerror_override.c.s
 
 # Help Target
@@ -1107,7 +1107,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -P /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -P /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

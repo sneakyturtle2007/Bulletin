@@ -1,5 +1,5 @@
 CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.o: \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/sqlite3/sqlite3.c \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/sqlite3/sqlite3.c \
  /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
  /usr/include/stdio.h /usr/include/bits/libc-header-start.h \

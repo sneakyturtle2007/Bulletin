@@ -22,4 +22,7 @@
 
 Error input_handler(sqlite3 **db, char *input, String *output);
 
+Error error_to_json(Error status, String *output);
+
+
 #endif //DIRECTOR_H

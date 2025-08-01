@@ -25,12 +25,13 @@ typedef struct{
   char *publicity_type; // 8
   char *invitees; // 9
   char *details; // 10
+  char *groups;
 } Event;
 
 typedef struct{
   Event *data;
   size_t length;
-  size_t table_capacity;
+  size_t capacity;
 } Event_Array;
 
 Error create_event(sqlite3 **db, Event new_event, String *output);

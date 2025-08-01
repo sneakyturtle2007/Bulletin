@@ -57,10 +57,10 @@ RM = /sbin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic
+CMAKE_SOURCE_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic/build
+CMAKE_BINARY_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool..."
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && /sbin/cpack --config ./CPackConfig.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && /sbin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Run CPack packaging tool for source..."
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && /sbin/cpack --config ./CPackSourceConfig.cmake /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CPackSourceConfig.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && /sbin/cpack --config ./CPackSourceConfig.cmake /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,14 +152,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/doc//CMakeFiles/progress.marks
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles 0
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CMakeFiles /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/doc//CMakeFiles/progress.marks
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/clean
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/clean
 .PHONY : clean
 
 # The main clean target
@@ -168,23 +168,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/preinstall
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/preinstall
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -P /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -P /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 external/json-c/doc/CMakeFiles/doc.dir/rule:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/CMakeFiles/doc.dir/rule
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/CMakeFiles/doc.dir/rule
 .PHONY : external/json-c/doc/CMakeFiles/doc.dir/rule
 
 # Convenience name for target.
@@ -193,7 +193,7 @@ doc: external/json-c/doc/CMakeFiles/doc.dir/rule
 
 # fast build rule for target.
 doc/fast:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/doc/CMakeFiles/doc.dir/build.make external/json-c/doc/CMakeFiles/doc.dir/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(MAKE) $(MAKESILENT) -f external/json-c/doc/CMakeFiles/doc.dir/build.make external/json-c/doc/CMakeFiles/doc.dir/build
 .PHONY : doc/fast
 
 # Help Target
@@ -222,7 +222,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -P /home/luis/github/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/VerifyGlobs.cmake
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -P /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/CMakeFiles/VerifyGlobs.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

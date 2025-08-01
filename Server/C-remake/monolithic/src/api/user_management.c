@@ -122,9 +122,12 @@ Error login(sqlite3 **db, char *username, char *password, String *output){
 		}
 		return status;
 	}
-	// user_table.data[0][0] is the user_id, user_table.data[0][4] is the friends, and user_table.data[0][5] is the users list of events invited to
+	/*
+	user_table.data[0][0] is the user_id, user_table.data[0][4] is the friends, user_table.data[0][5] is the users list of events invited to,
+	and user_table.data[0][6] is the groups the user is a part of.
+	*/
 	String necessary_user_info = {.capacity =  user_table.data[0][0].length + user_table.data[0][4].length 
-											+ user_table.data[0][5].length + 1};// +1 for null terminator
+											+ user_table.data[0][5].length + user_table.data[0][6].length + 1};// +1 for null terminator
 	necessary_user_info.data = calloc(necessary_user_info.capacity, sizeof(char));
 	if(necessary_user_info.data == NULL) {
 		fprintf(stderr, "ERROR: Memory allocation failed for result string\n");
@@ -132,7 +135,8 @@ Error login(sqlite3 **db, char *username, char *password, String *output){
 		return (Error) {MEMORY_ALLOCATION_ERROR, 
 										"user_management.c/login/ERROR: Failed to allocate memory for result string.\n"};
 	}
-	snprintf(necessary_user_info.data, necessary_user_info.capacity, "%s|%s|%s", user_table.data[0][0].data, user_table.data[0][4].data, user_table.data[0][5].data);
+	snprintf(necessary_user_info.data, necessary_user_info.capacity, "%s|%s|%s|%s", 
+					user_table.data[0][0].data, user_table.data[0][4].data, user_table.data[0][5].data, user_table.data[0][6].data);
 	status = strcpy_dynamic(output, necessary_user_info.data);
 	free(necessary_user_info.data);
 	free_table(&user_table);

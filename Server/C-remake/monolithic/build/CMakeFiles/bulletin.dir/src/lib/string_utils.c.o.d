@@ -1,7 +1,7 @@
 CMakeFiles/bulletin.dir/src/lib/string_utils.c.o: \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/src/lib/string_utils.c \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/src/lib/string_utils.c \
  /usr/include/stdc-predef.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/lib/string_utils.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/lib/string_utils.h \
  /usr/include/stdlib.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
@@ -34,4 +34,4 @@ CMakeFiles/bulletin.dir/src/lib/string_utils.c.o: \
  /usr/include/bits/stdio_lim.h /usr/include/string.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/lib/error_handling.h
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/lib/error_handling.h

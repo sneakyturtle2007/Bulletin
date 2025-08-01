@@ -338,9 +338,9 @@ Error convert_table_to_list_of_events(Table_String table, Event_Array *event_arr
                       "event_management.c/convert_table_to_event/ERROR: Failed to allocate memory for event_variables.\n"};
     }
   } 
-  if(event_array->table_capacity < table.rows){
-    event_array->table_capacity = table.rows;
-    Event *new_data = realloc(event_array->data, event_array->table_capacity);
+  if(event_array->capacity < table.rows){
+    event_array->capacity = table.rows;
+    Event *new_data = realloc(event_array->data, event_array->capacity * sizeof(Event));
     if(new_data == NULL){
       fprintf(stderr, "ERROR: Failed to reallocate memory for event_array.\n");
       return (Error) {MEMORY_ALLOCATION_ERROR,
@@ -349,25 +349,104 @@ Error convert_table_to_list_of_events(Table_String table, Event_Array *event_arr
     event_array->data = new_data;
   }
   for(int i = 0; i < table.rows; i ++){
-    event_array->data[i].user_id = table.data[i][0].data;
-    event_array->data[i].title = table.data[i][1].data;
-    event_array->data[i].start_date = table.data[i][2].data;
-    event_array->data[i].end_date = table.data[i][3].data;
-    event_array->data[i].start_time = table.data[i][4].data;
-    event_array->data[i].end_time = table.data[i][5].data;
-    event_array->data[i].location = table.data[i][6].data;
-    event_array->data[i].publicity_type = table.data[i][7].data;
-    event_array->data[i].invitees = table.data[i][8].data;
-    event_array->data[i].details = table.data[i][9].data;
+    printf("\n\n Event user_id: %s\n\n", table.data[i][0].data);
+    event_array->data[i].user_id = calloc(table.data[i][0].capacity, sizeof(char));
+    if(event_array->data[i].user_id == NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event user_id copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event user_id copy.\n"};
+    }
+    event_array->data[i].title = calloc(table.data[i][1].capacity, sizeof(char));
+    if(event_array->data[i].title== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event title copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event title copy.\n"};
+    }
+    event_array->data[i].start_date = calloc(table.data[i][2].capacity, sizeof(char));
+    if(event_array->data[i].start_date== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event start_date copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event start_date copy.\n"};
+    }
+    event_array->data[i].end_date = calloc(table.data[i][3].capacity, sizeof(char));
+    if(event_array->data[i].end_date== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event end_date copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event end_date copy.\n"};
+    }
+    event_array->data[i].start_time = calloc(table.data[i][4].capacity, sizeof(char));
+    if(event_array->data[i].start_time== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event start_time copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event start_time copy.\n"};
+    }
+    event_array->data[i].end_time = calloc(table.data[i][5].capacity, sizeof(char));
+    if(event_array->data[i].end_time== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event end_time copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event end_time copy.\n"};
+    }
+    event_array->data[i].location = calloc(table.data[i][6].capacity, sizeof(char));
+    if(event_array->data[i].location== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event location copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event location copy.\n"};
+    }
+    event_array->data[i].publicity_type = calloc(table.data[i][7].capacity, sizeof(char));
+    if(event_array->data[i].publicity_type== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event publicity_type copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event publicity_type copy.\n"};
+    }
+    event_array->data[i].invitees = calloc(table.data[i][8].capacity, sizeof(char));
+    if(event_array->data[i].invitees== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event invitees copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event invitees copy.\n"};
+    }
+    event_array->data[i].details = calloc(table.data[i][9].capacity, sizeof(char));
+    if(event_array->data[i].details== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event details copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event edtails copy.\n"};
+    }
+    event_array->data[i].groups = calloc(table.data[i][10].capacity, sizeof(char));
+    if(event_array->data[i].groups== NULL ){
+      fprintf(stderr, "ERROR: Failed to allocate memory for event groups copy.\n");
+      return (Error) {MEMORY_ALLOCATION_ERROR,
+                      "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event groups copy.\n"};
+    }
+    snprintf(event_array->data[i].user_id, table.data[i][0].capacity, "%s", table.data[i][0].data);
+    snprintf(event_array->data[i].title,  table.data[i][1].capacity, "%s", table.data[i][1].data);
+    snprintf(event_array->data[i].start_date, table.data[i][2].capacity, "%s", table.data[i][2].data);
+    snprintf(event_array->data[i].end_date, table.data[i][3].capacity, "%s", table.data[i][3].data);
+    snprintf(event_array->data[i].start_time, table.data[i][4].capacity, "%s", table.data[i][4].data);
+    snprintf(event_array->data[i].end_time, table.data[i][5].capacity, "%s", table.data[i][5].data);
+    snprintf(event_array->data[i].location, table.data[i][6].capacity, "%s", table.data[i][6].data);
+    snprintf(event_array->data[i].publicity_type, table.data[i][7].capacity, "%s", table.data[i][7].data);
+    snprintf(event_array->data[i].invitees, table.data[i][8].capacity, "%s", table.data[i][8].data);
+    snprintf(event_array->data[i].details, table.data[i][9].capacity, "%s", table.data[i][9].data);
+    snprintf(event_array->data[i].groups, table.data[i][10].capacity, "%s", table.data[i][10].data);
     event_array->length ++;
   }
   return (Error) {OK, "Success"};
 }
 Error convert_event_to_json(json_object *result, Event event){
   char *end;
+  printf("\n\nuser_id: %s\n", event.user_id); //DEBUG
+  printf("start_time: %s\n", event.start_time); //DEBUG
+  printf("end_time: %s\n\n", event.end_time); //DEBUG
   long user_id = strtol(event.user_id, &end, 10);
   long start_time = strtol(event.start_time, &end, 10);
   long end_time = strtol(event.end_time, &end, 10);
+  if(user_id == 0 || start_time == 0 || end_time == 0){
+    fprintf(stderr, "Failed to convert event to json.\n");
+    printf("\n\n user_id long: %l\n", user_id);
+    printf("\n\n start_time long: %l\n", start_time);
+    printf("\n\n end_time long: %l\n", end_time);
+    return (Error) {STRING_ERROR, 
+                    "event_management.c/convert_event_to_json/ERROR: Failed to convert event to json.\n"};
+  }
   json_object_object_add(result, "user_id", json_object_new_int64(user_id));
   json_object_object_add(result, "title", json_object_new_string(event.title));
   json_object_object_add(result, "start_date", json_object_new_string(event.start_date));
@@ -378,4 +457,6 @@ Error convert_event_to_json(json_object *result, Event event){
   json_object_object_add(result, "publicity_type", json_object_new_string(event.publicity_type));
   json_object_object_add(result, "invitees", json_object_new_string(event.invitees));
   json_object_object_add(result, "details", json_object_new_string(event.details));
+  json_object_object_add(result, "groups", json_object_new_string(event.groups));
+  return (Error) {OK,"Success"};
 }

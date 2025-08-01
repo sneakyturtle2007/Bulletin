@@ -1,7 +1,7 @@
 CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o: \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/arraylist.c \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/arraylist.c \
  /usr/include/stdc-predef.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/libc-header-start.h \
@@ -35,4 +35,4 @@ CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o: \
  /usr/include/bits/stdlib-float.h /usr/include/string.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/arraylist.h
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/arraylist.h

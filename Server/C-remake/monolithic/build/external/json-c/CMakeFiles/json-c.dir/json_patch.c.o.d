@@ -1,7 +1,7 @@
 external/json-c/CMakeFiles/json-c.dir/json_patch.c.o: \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_patch.c \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_patch.c \
  /usr/include/stdc-predef.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
  /usr/include/stdlib.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
@@ -31,23 +31,23 @@ external/json-c/CMakeFiles/json-c.dir/json_patch.c.o: \
  /usr/include/linux/errno.h /usr/include/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/bits/types/error_t.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_patch.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_pointer.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_object.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_inttypes.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/json_config.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_patch.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_pointer.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_object.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_inttypes.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/json_config.h \
  /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_types.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_object_private.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_types.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_object_private.h \
  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
  /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
  /usr/include/bits/unistd_ext.h /usr/include/linux/close_range.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_pointer_private.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_pointer_private.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \

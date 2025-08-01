@@ -1,0 +1,1896 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 6.15.8-arch1-1 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /sbin/gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/luis/github/Bulletin/build/CMakeFiles/4.0.3-dirty/CompilerIdC/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-HuKT7W"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-HuKT7W"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-HuKT7W'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_b9e1c
+        [1/2] /sbin/gcc   -v -o CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/sbin/gcc
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.1.1 20250425 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b9e1c.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_b9e1c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccNePkSd.s
+        GNU C23 (GCC) version 15.1.1 20250425 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 15.1.1 20250425, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include
+         /usr/local/include
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 335c205337bb594afdc1dd844ba56be5
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b9e1c.dir/'
+         as -v --64 -o CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o /tmp/ccNePkSd.s
+        GNU assembler version 2.45 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.45
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /sbin/gcc  -v -Wl,-v CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o -o cmTC_b9e1c   && :
+        Using built-in specs.
+        COLLECT_GCC=/sbin/gcc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 15.1.1 20250425 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b9e1c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b9e1c.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCnHa4k.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b9e1c /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
+        collect2 version 15.1.1 20250425
+        /sbin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCnHa4k.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b9e1c /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
+        GNU ld (GNU Binutils) 2.45
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b9e1c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b9e1c.'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:191 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include]
+          add: [/usr/local/include]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include;/usr/local/include;/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:227 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-HuKT7W']
+        ignore line: []
+        ignore line: [Run Build Command(s): /sbin/ninja -v cmTC_b9e1c]
+        ignore line: [[1/2] /sbin/gcc   -v -o CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/sbin/gcc]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.1.1 20250425 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b9e1c.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_b9e1c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccNePkSd.s]
+        ignore line: [GNU C23 (GCC) version 15.1.1 20250425 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 15.1.1 20250425  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include-fixed]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 335c205337bb594afdc1dd844ba56be5]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b9e1c.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o /tmp/ccNePkSd.s]
+        ignore line: [GNU assembler version 2.45 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.45]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /sbin/gcc  -v -Wl -v CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o -o cmTC_b9e1c   && :]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/sbin/gcc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-__cxa_atexit --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 15.1.1 20250425 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b9e1c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_b9e1c.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCnHa4k.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b9e1c /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccCnHa4k.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_b9e1c] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o]
+        ignore line: [collect2 version 15.1.1 20250425]
+        ignore line: [/sbin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccCnHa4k.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_b9e1c /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_b9e1c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o]
+        linker tool for 'C': /sbin/ld
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o] ==> [/usr/lib/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o;/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:270 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/sbin/ld" "-v"
+      GNU ld (GNU Binutils) 2.45
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:98 (check_include_file)"
+    checks:
+      - "Looking for fcntl.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jWKRUy"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jWKRUy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_FCNTL_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jWKRUy'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_233f1
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_233f1.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jWKRUy/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_233f1.dir/CheckIncludeFile.c.o -o cmTC_233f1  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:99 (check_include_file)"
+    checks:
+      - "Looking for inttypes.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-TVbEep"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-TVbEep"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_INTTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-TVbEep'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_50a09
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_50a09.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-TVbEep/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_50a09.dir/CheckIncludeFile.c.o -o cmTC_50a09  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:100 (check_include_file)"
+    checks:
+      - "Looking for stdarg.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-sZWpNE"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-sZWpNE"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDARG_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-sZWpNE'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_80ea8
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_80ea8.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-sZWpNE/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_80ea8.dir/CheckIncludeFile.c.o -o cmTC_80ea8  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:101 (check_include_file)"
+    checks:
+      - "Looking for strings.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-CMxZqU"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-CMxZqU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRINGS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-CMxZqU'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_41abe
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_41abe.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-CMxZqU/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_41abe.dir/CheckIncludeFile.c.o -o cmTC_41abe  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:102 (check_include_file)"
+    checks:
+      - "Looking for string.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cZPeDp"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cZPeDp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRING_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cZPeDp'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_92b2e
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_92b2e.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cZPeDp/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_92b2e.dir/CheckIncludeFile.c.o -o cmTC_92b2e  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:103 (check_include_file)"
+    checks:
+      - "Looking for syslog.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-UVR1OX"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-UVR1OX"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYSLOG_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-UVR1OX'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_7c2f6
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_7c2f6.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-UVR1OX/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_7c2f6.dir/CheckIncludeFile.c.o -o cmTC_7c2f6  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "external/json-c/CMakeLists.txt:106 (check_include_files)"
+    checks:
+      - "Looking for 4 include files stdlib.h, ..., float.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-LgL0ie"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-LgL0ie"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "STDC_HEADERS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-LgL0ie'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_ca835
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_ca835.dir/STDC_HEADERS.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-LgL0ie/STDC_HEADERS.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_ca835.dir/STDC_HEADERS.c.o -o cmTC_ca835  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:108 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-EcfecH"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-EcfecH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-EcfecH'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_18743
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_18743.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-EcfecH/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_18743.dir/CheckIncludeFile.c.o -o cmTC_18743  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:109 (check_include_file)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Oybm2r"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Oybm2r"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Oybm2r'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_58267
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_58267.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Oybm2r/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_58267.dir/CheckIncludeFile.c.o -o cmTC_58267  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:110 (check_include_file)"
+    checks:
+      - "Looking for sys/resource.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-sLD5iZ"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-sLD5iZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_RESOURCE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-sLD5iZ'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_2467f
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_2467f.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-sLD5iZ/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_2467f.dir/CheckIncludeFile.c.o -o cmTC_2467f  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:112 (check_include_file)"
+    checks:
+      - "Looking for dlfcn.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-W9uCce"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-W9uCce"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DLFCN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-W9uCce'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_a0347
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a0347.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-W9uCce/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_a0347.dir/CheckIncludeFile.c.o -o cmTC_a0347  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:113 (check_include_file)"
+    checks:
+      - "Looking for endian.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-OWe4Wu"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-OWe4Wu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ENDIAN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-OWe4Wu'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_a0bcd
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a0bcd.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-OWe4Wu/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_a0bcd.dir/CheckIncludeFile.c.o -o cmTC_a0bcd  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:114 (check_include_file)"
+    checks:
+      - "Looking for limits.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-xMUvP5"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-xMUvP5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_LIMITS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-xMUvP5'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_e6ee1
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e6ee1.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-xMUvP5/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_e6ee1.dir/CheckIncludeFile.c.o -o cmTC_e6ee1  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:115 (check_include_file)"
+    checks:
+      - "Looking for locale.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-lLCzbj"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-lLCzbj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_LOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-lLCzbj'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_af526
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_af526.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-lLCzbj/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_af526.dir/CheckIncludeFile.c.o -o cmTC_af526  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:116 (check_include_file)"
+    checks:
+      - "Looking for memory.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Dp030u"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Dp030u"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_MEMORY_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Dp030u'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_e1a5b
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e1a5b.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Dp030u/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_e1a5b.dir/CheckIncludeFile.c.o -o cmTC_e1a5b  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:118 (check_include_file)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-2mj4W3"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-2mj4W3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-2mj4W3'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_5f1ab
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_5f1ab.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-2mj4W3/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_5f1ab.dir/CheckIncludeFile.c.o -o cmTC_5f1ab  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:119 (check_include_file)"
+    checks:
+      - "Looking for stdlib.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-dAgjRv"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-dAgjRv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-dAgjRv'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_4d246
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_4d246.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-dAgjRv/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_4d246.dir/CheckIncludeFile.c.o -o cmTC_4d246  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:120 (check_include_file)"
+    checks:
+      - "Looking for sys/cdefs.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Q7Goij"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Q7Goij"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_CDEFS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Q7Goij'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_454fb
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_454fb.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Q7Goij/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_454fb.dir/CheckIncludeFile.c.o -o cmTC_454fb  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:121 (check_include_file)"
+    checks:
+      - "Looking for sys/param.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-wCifSp"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-wCifSp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_PARAM_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-wCifSp'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_b46a6
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b46a6.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-wCifSp/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_b46a6.dir/CheckIncludeFile.c.o -o cmTC_b46a6  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:122 (check_include_file)"
+    checks:
+      - "Looking for sys/random.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ZFeCYh"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ZFeCYh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_RANDOM_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ZFeCYh'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_74676
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_74676.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ZFeCYh/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_74676.dir/CheckIncludeFile.c.o -o cmTC_74676  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:123 (check_include_file)"
+    checks:
+      - "Looking for sys/stat.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Apemuj"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Apemuj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_STAT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Apemuj'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_847d5
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_847d5.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Apemuj/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_847d5.dir/CheckIncludeFile.c.o -o cmTC_847d5  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "external/json-c/CMakeLists.txt:124 (check_include_file)"
+    checks:
+      - "Looking for xlocale.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7Vmykf"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7Vmykf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_XLOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7Vmykf'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_91a6f
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_91a6f.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7Vmykf/CheckIncludeFile.c
+        FAILED: CMakeFiles/cmTC_91a6f.dir/CheckIncludeFile.c.o 
+        /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_91a6f.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7Vmykf/CheckIncludeFile.c
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7Vmykf/CheckIncludeFile.c:1:10: fatal error: xlocale.h: No such file or directory
+            1 | #include <xlocale.h>
+              |          ^~~~~~~~~~~
+        compilation terminated.
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:136 (check_symbol_exists)"
+    checks:
+      - "Looking for _isnan"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jaGPjm"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jaGPjm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL__ISNAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jaGPjm'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_ecb3b
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_ecb3b.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jaGPjm/CheckSymbolExists.c
+        FAILED: CMakeFiles/cmTC_ecb3b.dir/CheckSymbolExists.c.o 
+        /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_ecb3b.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jaGPjm/CheckSymbolExists.c
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jaGPjm/CheckSymbolExists.c: In function ‘main’:
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jaGPjm/CheckSymbolExists.c:8:19: error: ‘_isnan’ undeclared (first use in this function)
+            8 |   return ((int*)(&_isnan))[argc];
+              |                   ^~~~~~
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-jaGPjm/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:137 (check_symbol_exists)"
+    checks:
+      - "Looking for _finite"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7wtNjI"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7wtNjI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL__FINITE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7wtNjI'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_a2b26
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a2b26.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7wtNjI/CheckSymbolExists.c
+        FAILED: CMakeFiles/cmTC_a2b26.dir/CheckSymbolExists.c.o 
+        /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a2b26.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7wtNjI/CheckSymbolExists.c
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7wtNjI/CheckSymbolExists.c: In function ‘main’:
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7wtNjI/CheckSymbolExists.c:8:19: error: ‘_finite’ undeclared (first use in this function)
+            8 |   return ((int*)(&_finite))[argc];
+              |                   ^~~~~~~
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7wtNjI/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:140 (check_symbol_exists)"
+    checks:
+      - "Looking for INFINITY"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ujZxwF"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ujZxwF"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_INFINITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ujZxwF'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_df886
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_df886.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ujZxwF/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_df886.dir/CheckSymbolExists.c.o -o cmTC_df886  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:141 (check_symbol_exists)"
+    checks:
+      - "Looking for isinf"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-89wUP4"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-89wUP4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_ISINF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-89wUP4'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_6b315
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_6b315.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-89wUP4/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_6b315.dir/CheckSymbolExists.c.o -o cmTC_6b315  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:142 (check_symbol_exists)"
+    checks:
+      - "Looking for isnan"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-pJhnxp"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-pJhnxp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_ISNAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-pJhnxp'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_7dbd8
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_7dbd8.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-pJhnxp/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_7dbd8.dir/CheckSymbolExists.c.o -o cmTC_7dbd8  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:143 (check_symbol_exists)"
+    checks:
+      - "Looking for nan"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-MYISf3"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-MYISf3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_NAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-MYISf3'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_fb24b
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_fb24b.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-MYISf3/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_fb24b.dir/CheckSymbolExists.c.o -o cmTC_fb24b  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:146 (check_symbol_exists)"
+    checks:
+      - "Looking for _doprnt"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Yz5i6V"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Yz5i6V"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DOPRNT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Yz5i6V'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_7397d
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_7397d.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Yz5i6V/CheckSymbolExists.c
+        FAILED: CMakeFiles/cmTC_7397d.dir/CheckSymbolExists.c.o 
+        /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_7397d.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Yz5i6V/CheckSymbolExists.c
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Yz5i6V/CheckSymbolExists.c: In function ‘main’:
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Yz5i6V/CheckSymbolExists.c:8:19: error: ‘_doprnt’ undeclared (first use in this function)
+            8 |   return ((int*)(&_doprnt))[argc];
+              |                   ^~~~~~~
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Yz5i6V/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:148 (check_symbol_exists)"
+    checks:
+      - "Looking for snprintf"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-uG5qeK"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-uG5qeK"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-uG5qeK'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_c6a37
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_c6a37.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-uG5qeK/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_c6a37.dir/CheckSymbolExists.c.o -o cmTC_c6a37  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:150 (check_symbol_exists)"
+    checks:
+      - "Looking for vasprintf"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-WIHTTl"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-WIHTTl"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VASPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-WIHTTl'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_714cc
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_714cc.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-WIHTTl/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_714cc.dir/CheckSymbolExists.c.o -o cmTC_714cc  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:151 (check_symbol_exists)"
+    checks:
+      - "Looking for vsnprintf"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-yUvejF"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-yUvejF"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VSNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-yUvejF'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_eff69
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_eff69.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-yUvejF/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_eff69.dir/CheckSymbolExists.c.o -o cmTC_eff69  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:152 (check_symbol_exists)"
+    checks:
+      - "Looking for vprintf"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-P6KjQy"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-P6KjQy"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-P6KjQy'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_a8c9c
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a8c9c.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-P6KjQy/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_a8c9c.dir/CheckSymbolExists.c.o -o cmTC_a8c9c  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:154 (check_symbol_exists)"
+    checks:
+      - "Looking for arc4random"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-x8jPDN"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-x8jPDN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ARC4RANDOM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-x8jPDN'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_8d5bd
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_8d5bd.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-x8jPDN/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_8d5bd.dir/CheckSymbolExists.c.o -o cmTC_8d5bd  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:168 (check_symbol_exists)"
+    checks:
+      - "Looking for open"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-9f9q42"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-9f9q42"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_OPEN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-9f9q42'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_ff424
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_ff424.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-9f9q42/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_ff424.dir/CheckSymbolExists.c.o -o cmTC_ff424  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:171 (check_symbol_exists)"
+    checks:
+      - "Looking for realloc"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7d2MQ6"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7d2MQ6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_REALLOC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7d2MQ6'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_b1a3b
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b1a3b.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-7d2MQ6/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_b1a3b.dir/CheckSymbolExists.c.o -o cmTC_b1a3b  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:174 (check_symbol_exists)"
+    checks:
+      - "Looking for setlocale"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ORfLaA"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ORfLaA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SETLOCALE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ORfLaA'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_e7d77
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e7d77.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ORfLaA/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_e7d77.dir/CheckSymbolExists.c.o -o cmTC_e7d77  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:175 (check_symbol_exists)"
+    checks:
+      - "Looking for uselocale"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cTOSXC"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cTOSXC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_USELOCALE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cTOSXC'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_9943a
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_9943a.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cTOSXC/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_9943a.dir/CheckSymbolExists.c.o -o cmTC_9943a  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:191 (check_symbol_exists)"
+    checks:
+      - "Looking for strcasecmp"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-u89sdp"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-u89sdp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-u89sdp'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_f93d5
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_f93d5.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-u89sdp/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_f93d5.dir/CheckSymbolExists.c.o -o cmTC_f93d5  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:192 (check_symbol_exists)"
+    checks:
+      - "Looking for strncasecmp"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-HYq8Qf"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-HYq8Qf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRNCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-HYq8Qf'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_4e9e9
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_4e9e9.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-HYq8Qf/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_4e9e9.dir/CheckSymbolExists.c.o -o cmTC_4e9e9  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:195 (check_symbol_exists)"
+    checks:
+      - "Looking for strdup"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ls02lp"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ls02lp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRDUP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ls02lp'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_771e4
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_771e4.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-ls02lp/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_771e4.dir/CheckSymbolExists.c.o -o cmTC_771e4  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:196 (check_symbol_exists)"
+    checks:
+      - "Looking for strerror"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-w0PJTW"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-w0PJTW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRERROR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-w0PJTW'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_30cc0
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_30cc0.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-w0PJTW/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_30cc0.dir/CheckSymbolExists.c.o -o cmTC_30cc0  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:199 (check_symbol_exists)"
+    checks:
+      - "Looking for vsyslog"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-CAqhDq"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-CAqhDq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VSYSLOG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-CAqhDq'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_6901c
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_6901c.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-CAqhDq/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_6901c.dir/CheckSymbolExists.c.o -o cmTC_6901c  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:202 (check_symbol_exists)"
+    checks:
+      - "Looking for getrandom"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-a9uXh4"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-a9uXh4"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_GETRANDOM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-a9uXh4'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_86e9b
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_86e9b.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-a9uXh4/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_86e9b.dir/CheckSymbolExists.c.o -o cmTC_86e9b  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:205 (check_symbol_exists)"
+    checks:
+      - "Looking for getrusage"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cvzG7X"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cvzG7X"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_GETRUSAGE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cvzG7X'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_f7205
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_f7205.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-cvzG7X/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_f7205.dir/CheckSymbolExists.c.o -o cmTC_f7205  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:208 (check_symbol_exists)"
+    checks:
+      - "Looking for strtoll"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-E2Nv89"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-E2Nv89"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRTOLL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-E2Nv89'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_5c29b
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_5c29b.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-E2Nv89/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_5c29b.dir/CheckSymbolExists.c.o -o cmTC_5c29b  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:160 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:65 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:209 (check_symbol_exists)"
+    checks:
+      - "Looking for strtoull"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-3PKSsB"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-3PKSsB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRTOULL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-3PKSsB'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_5e707
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_5e707.dir/CheckSymbolExists.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-3PKSsB/CheckSymbolExists.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_5e707.dir/CheckSymbolExists.c.o -o cmTC_5e707  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:99 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:320 (check_include_file)"
+      - "external/json-c/CMakeLists.txt:232 (check_type_size)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-4D8MLf"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-4D8MLf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-4D8MLf'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_88703
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_88703.dir/CheckIncludeFile.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-4D8MLf/CheckIncludeFile.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_88703.dir/CheckIncludeFile.c.o -o cmTC_88703  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:232 (check_type_size)"
+    checks:
+      - "Check size of int"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-D3Jgqw"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-D3Jgqw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-D3Jgqw'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_637dd
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_637dd.dir/SIZEOF_INT.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-D3Jgqw/SIZEOF_INT.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_637dd.dir/SIZEOF_INT.c.o -o cmTC_637dd  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:233 (check_type_size)"
+    checks:
+      - "Check size of int64_t"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-JAxWaZ"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-JAxWaZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT64_T"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-JAxWaZ'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_dfd87
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_dfd87.dir/SIZEOF_INT64_T.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-JAxWaZ/SIZEOF_INT64_T.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_dfd87.dir/SIZEOF_INT64_T.c.o -o cmTC_dfd87  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:234 (check_type_size)"
+    checks:
+      - "Check size of long"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-BNLNWE"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-BNLNWE"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-BNLNWE'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_cfdc9
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_cfdc9.dir/SIZEOF_LONG.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-BNLNWE/SIZEOF_LONG.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_cfdc9.dir/SIZEOF_LONG.c.o -o cmTC_cfdc9  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:235 (check_type_size)"
+    checks:
+      - "Check size of long long"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-fu2Lvo"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-fu2Lvo"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-fu2Lvo'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_a769a
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a769a.dir/SIZEOF_LONG_LONG.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-fu2Lvo/SIZEOF_LONG_LONG.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_a769a.dir/SIZEOF_LONG_LONG.c.o -o cmTC_a769a  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:236 (check_type_size)"
+    checks:
+      - "Check size of size_t"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-DXouop"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-DXouop"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_SIZE_T"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-DXouop'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_3302e
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_3302e.dir/SIZEOF_SIZE_T.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-DXouop/SIZEOF_SIZE_T.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_3302e.dir/SIZEOF_SIZE_T.c.o -o cmTC_3302e  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:212 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:339 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:241 (check_type_size)"
+    checks:
+      - "Check size of ssize_t"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-FvY1SZ"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-FvY1SZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_SSIZE_T"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-FvY1SZ'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_a5653
+        [1/2] /sbin/gcc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a5653.dir/SIZEOF_SSIZE_T.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-FvY1SZ/SIZEOF_SSIZE_T.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_a5653.dir/SIZEOF_SSIZE_T.c.o -o cmTC_a5653  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:244 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAS_GNU_WARNING_LONG"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAS_GNU_WARNING_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_cd941
+        [1/2] /sbin/gcc -DHAS_GNU_WARNING_LONG -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_cd941.dir/src.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk/src.c
+        FAILED: CMakeFiles/cmTC_cd941.dir/src.c.o 
+        /sbin/gcc -DHAS_GNU_WARNING_LONG -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_cd941.dir/src.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk/src.c
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk/src.c:3:9: warning: missing terminating " character
+            3 | __asm__(".section .gnu.json_object_get
+              |         ^
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk/src.c:3:9: error: missing terminating " character
+            3 | __asm__(".section .gnu.json_object_get
+              |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk/src.c:4:9: error: expected string literal before ‘.’ token
+            4 |         .ascii "Please link against libjson-c instead of libjson"
+              |         ^
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk/src.c:5:14: warning: missing terminating " character
+            5 |         .text");
+              |              ^
+        /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-KOm9Vk/src.c:5:14: error: missing terminating " character
+            5 |         .text");
+              |              ^~~
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:252 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_ATOMIC_BUILTINS"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-4vLI0O"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-4vLI0O"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ATOMIC_BUILTINS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-4vLI0O'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_0a8d7
+        [1/2] /sbin/gcc -DHAVE_ATOMIC_BUILTINS -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_0a8d7.dir/src.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-4vLI0O/src.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_0a8d7.dir/src.c.o -o cmTC_0a8d7  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:257 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE___THREAD"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Eemb3w"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Eemb3w"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE___THREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Eemb3w'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_42122
+        [1/2] /sbin/gcc -DHAVE___THREAD -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_42122.dir/src.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-Eemb3w/src.c
+        [2/2] : && /sbin/gcc   CMakeFiles/cmTC_42122.dir/src.c.o -o cmTC_42122  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:329 (check_c_source_compiles)"
+    checks:
+      - "Performing Test REENTRANT_WORKS"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-iFt0Zx"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-iFt0Zx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "REENTRANT_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-iFt0Zx'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_86724
+        [1/2] /sbin/gcc -DREENTRANT_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -std=gnu2x -fPIE -o CMakeFiles/cmTC_86724.dir/src.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-iFt0Zx/src.c
+        [2/2] : && /sbin/gcc -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_86724.dir/src.c.o -o cmTC_86724  -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:348 (check_c_source_compiles)"
+    checks:
+      - "Performing Test BSYMBOLIC_WORKS"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-MSc4FY"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-MSc4FY"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "BSYMBOLIC_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-MSc4FY'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_a5f5b
+        [1/2] /sbin/gcc -DBSYMBOLIC_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a5f5b.dir/src.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-MSc4FY/src.c
+        [2/2] : && /sbin/gcc -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_a5f5b.dir/src.c.o -o cmTC_a5f5b  -lm  -Wl,-Bsymbolic-functions && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:366 (check_c_source_compiles)"
+    checks:
+      - "Performing Test VERSION_SCRIPT_WORKS"
+    directories:
+      source: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-w9EaUi"
+      binary: "/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-w9EaUi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "VERSION_SCRIPT_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-w9EaUi'
+        
+        Run Build Command(s): /sbin/ninja -v cmTC_b5fda
+        [1/2] /sbin/gcc -DVERSION_SCRIPT_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b5fda.dir/src.c.o -c /home/luis/github/Bulletin/build/CMakeFiles/CMakeScratch/TryCompile-w9EaUi/src.c
+        [2/2] : && /sbin/gcc -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_b5fda.dir/src.c.o -o cmTC_b5fda  -lm  -Wl,--version-script,/home/luis/github/Bulletin/build/external/json-c/check-version-script.sym && :
+        
+      exitCode: 0
+...

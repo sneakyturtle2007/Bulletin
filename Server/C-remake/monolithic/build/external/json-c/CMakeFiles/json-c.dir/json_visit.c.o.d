@@ -1,5 +1,5 @@
 external/json-c/CMakeFiles/json-c.dir/json_visit.c.o: \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_visit.c \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_visit.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -16,16 +16,16 @@ external/json-c/CMakeFiles/json-c.dir/json_visit.c.o: \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
  /usr/include/bits/floatn-common.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_inttypes.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/json_config.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_inttypes.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/json_config.h \
  /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_object.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_types.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_visit.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/linkhash.h
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_object.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_types.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_visit.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/linkhash.h

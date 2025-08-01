@@ -1,7 +1,7 @@
 CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o: \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.c \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.c \
  /usr/include/stdc-predef.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
  /usr/include/errno.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
  /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
@@ -45,10 +45,10 @@ CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o: \
  /usr/include/bits/stdlib-float.h /usr/include/string.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/debug.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/snprintf_compat.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/vasprintf_compat.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/debug.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/snprintf_compat.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/vasprintf_compat.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h

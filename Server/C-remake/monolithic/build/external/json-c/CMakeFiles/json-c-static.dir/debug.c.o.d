@@ -1,7 +1,7 @@
 external/json-c/CMakeFiles/json-c-static.dir/debug.c.o: \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/debug.c \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/debug.c \
  /usr/include/stdc-predef.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/config.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
  /usr/include/stdio.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -61,4 +61,4 @@ external/json-c/CMakeFiles/json-c-static.dir/debug.c.o: \
  /usr/include/bits/signal_ext.h /usr/include/bits/param.h \
  /usr/include/linux/param.h /usr/include/asm/param.h \
  /usr/include/asm-generic/param.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/debug.h
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/debug.h

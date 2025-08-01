@@ -1,7 +1,7 @@
 CMakeFiles/bulletin.dir/src/api/calendar_management.c.o: \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/src/api/calendar_management.c \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/src/api/calendar_management.c \
  /usr/include/stdc-predef.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/api/calendar_management.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/api/calendar_management.h \
  /usr/include/stdlib.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
@@ -34,35 +34,35 @@ CMakeFiles/bulletin.dir/src/api/calendar_management.c.o: \
  /usr/include/bits/stdio_lim.h /usr/include/string.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/lib/string_utils.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/lib/error_handling.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/lib/table.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/lib/string_utils.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/lib/error_handling.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/database/database.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/lib/string_utils.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/lib/error_handling.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/lib/table.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/lib/string_utils.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/lib/error_handling.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/database/database.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdbool.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/json.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/arraylist.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/debug.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_c_version.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_object.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_inttypes.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/json_config.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/json.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/arraylist.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/debug.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_c_version.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_object.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_inttypes.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/json_config.h \
  /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_types.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_object_iterator.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_patch.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_pointer.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_object.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_pointer.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_tokener.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json_util.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/linkhash.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/database/sqlite3.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/api/event_management.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/api/user_management.h \
- /home/luis/github/Bulletin/Server/C-remake/monolithic/include/database/sqlite3.h
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_types.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/printbuf.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_object_iterator.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_patch.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_pointer.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_object.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_pointer.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_tokener.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json_util.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/linkhash.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/database/sqlite3.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/api/event_management.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/api/user_management.h \
+ /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/include/database/sqlite3.h

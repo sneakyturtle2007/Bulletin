@@ -17,15 +17,15 @@
 #define PORT 8080
 
 typedef struct{
-  int serverSocket;
-  int newSocket;
+  int server_socket;
+  int new_socket;
   struct sockaddr_in address;
   int opt;
   int addrlen;
   char buffer[BUFFER];
 }Server;
 
-void setupServerL(Server *server);
+void setup_server(Server *server);
 
 int main(){
   //Setting up database
@@ -39,20 +39,21 @@ int main(){
   // Setting up server
 
   Server server = {
-    .serverSocket = 0,
-    .newSocket = 0,
+    .server_socket = 0,
+    .new_socket = 0,
     .opt = 1,
     .addrlen = sizeof(struct sockaddr_in),
     .buffer = {0}
   };
 
-  setupServerL(&server);
+  setup_server(&server);
 
   while(true){
-    if( (server.newSocket = accept(server.serverSocket,
+    if( (server.new_socket = accept(server.server_socket,
         (struct sockaddr*) &(server.address),
         (socklen_t*) &(server.addrlen))) < 0 ){
       perror("Failed to accept new connection\n");
+      close(server.new_socket);
       exit(EXIT_FAILURE);
     }
 
@@ -60,14 +61,14 @@ int main(){
 
     bool quit = false;
     ssize_t valread = 0;
-    while( (valread == read(server.newSocket, server.buffer, 
-            sizeof(server.buffer))) != 0 || !quit){
+    while( (valread = read(server.new_socket, server.buffer, 
+            sizeof(server.buffer))) != 0 ){
       
       printf("Client: %s\n", server.buffer);
       if(strcmp(server.buffer, "terminate") == 0){
         printf("terminating connection....\n");
         memset(server.buffer, 0, sizeof(server.buffer));
-        close(server.newSocket);
+        close(server.new_socket);
         break;
       }else if(strcmp(server.buffer, "password") == 0){
         memset(server.buffer, 0, sizeof(server.buffer));
@@ -86,36 +87,41 @@ int main(){
         if(status.code != OK){
           fprintf(stderr, 
             "%s\n", status.message);
-          free(response.data);
+          status = error_to_json(status, &response);
           memset(server.buffer, 0, sizeof(server.buffer));
-          printf("server response: %s\n", status.message);
-          write(server.newSocket, status.message, strlen(status.message));
+          if(status.code != OK){
+            fprintf(stderr, "ERROR: Failed to convert error message to json.\n");
+            printf("server response: %s\n", status.message);
+            send(server.new_socket, status.message, strlen(status.message), MSG_NOSIGNAL);
+          }else{
+            printf("server response: %s\n", response.data);
+            send(server.new_socket, response.data, response.length, MSG_NOSIGNAL);
+          }
         }else{
           printf("server response: %s\n", response.data);
-          write(server.newSocket, response.data, response.length);
-          free(response.data);
+          send(server.new_socket, response.data, response.length, MSG_NOSIGNAL);
         }
+        free(response.data);
       }
       memset(server.buffer, 0, sizeof(server.buffer));
-
     }
-    server.newSocket = 0;
+    server.new_socket = 0;
     printf("closing connection\n\n");
   }
-  close(server.newSocket);
-  close(server.serverSocket);
+  close(server.new_socket);
+  close(server.server_socket);
 
   return 0;
 }
 
-void setupServerL(Server *server){
+void setup_server(Server *server){
 
-  if( (server->serverSocket = socket(AF_INET, SOCK_STREAM, 0)) == 0){
+  if( (server->server_socket = socket(AF_INET, SOCK_STREAM, 0)) == 0){
     perror("Failed to create socket\n");
     exit(EXIT_FAILURE);
   }
 
-  if(setsockopt(server->serverSocket, SOL_SOCKET, SO_REUSEADDR, &(server->opt), 
+  if(setsockopt(server->server_socket, SOL_SOCKET, SO_REUSEADDR, &(server->opt), 
         sizeof(server->opt))){
     perror("Failed to setsockopt\n");
     exit(EXIT_FAILURE);
@@ -125,13 +131,13 @@ void setupServerL(Server *server){
   server->address.sin_addr.s_addr = INADDR_ANY;
   server->address.sin_port = htons(PORT);
 
-  if(bind(server->serverSocket, (struct sockaddr*) &(server->address), 
+  if(bind(server->server_socket, (struct sockaddr*) &(server->address), 
         sizeof(server->address)) < 0){
     perror("Binding failed\n");
     exit(EXIT_FAILURE);
   }
 
-  if(listen(server->serverSocket, 5) < 0){
+  if(listen(server->server_socket, 5) < 0){
     perror("Failed to listen\n");
     exit(EXIT_FAILURE);
   }

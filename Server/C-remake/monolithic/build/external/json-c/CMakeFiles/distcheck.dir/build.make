@@ -53,10 +53,10 @@ RM = /sbin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic
+CMAKE_SOURCE_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/github/Bulletin/Server/C-remake/monolithic/build
+CMAKE_BINARY_DIR = /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build
 
 # Utility rule file for distcheck.
 
@@ -67,13 +67,13 @@ include external/json-c/CMakeFiles/distcheck.dir/compiler_depend.make
 include external/json-c/CMakeFiles/distcheck.dir/progress.make
 
 external/json-c/CMakeFiles/distcheck:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && make package_source
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && tar -xvf json-c-0.18.-Source.tar.gz
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && mkdir json-c-0.18.-Source/build
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && cmake json-c-0.18.-Source/ -B"./json-c-0.18.-Source/build/"
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && make -C json-c-0.18.-Source/build
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && make test -C json-c-0.18.-Source/build
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && rm -rf json-c-0.18.-Source
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && make package_source
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && tar -xvf json-c-0.18.-Source.tar.gz
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && mkdir json-c-0.18.-Source/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && cmake json-c-0.18.-Source/ -B"./json-c-0.18.-Source/build/"
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && make -C json-c-0.18.-Source/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && make test -C json-c-0.18.-Source/build
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && rm -rf json-c-0.18.-Source
 
 external/json-c/CMakeFiles/distcheck.dir/codegen:
 .PHONY : external/json-c/CMakeFiles/distcheck.dir/codegen
@@ -87,10 +87,10 @@ external/json-c/CMakeFiles/distcheck.dir/build: distcheck
 .PHONY : external/json-c/CMakeFiles/distcheck.dir/build
 
 external/json-c/CMakeFiles/distcheck.dir/clean:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c && $(CMAKE_COMMAND) -P CMakeFiles/distcheck.dir/cmake_clean.cmake
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c && $(CMAKE_COMMAND) -P CMakeFiles/distcheck.dir/cmake_clean.cmake
 .PHONY : external/json-c/CMakeFiles/distcheck.dir/clean
 
 external/json-c/CMakeFiles/distcheck.dir/depend:
-	cd /home/luis/github/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/github/Bulletin/Server/C-remake/monolithic /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c /home/luis/github/Bulletin/Server/C-remake/monolithic/build /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/CMakeFiles/distcheck.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/github/personal/Bulletin/Server/C-remake/monolithic /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/CMakeFiles/distcheck.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : external/json-c/CMakeFiles/distcheck.dir/depend
 

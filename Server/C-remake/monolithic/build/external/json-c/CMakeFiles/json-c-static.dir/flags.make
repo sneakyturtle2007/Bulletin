@@ -4,7 +4,7 @@
 # compile C with /sbin/cc
 C_DEFINES = -D_GNU_SOURCE
 
-C_INCLUDES = -I/home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c -I/home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c
+C_INCLUDES = -I/home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c -I/home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c
 
 C_FLAGS =  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes -g -std=gnu2x -fPIC   -D JSON_C_DLL -D_REENTRANT
 

@@ -15,6 +15,8 @@ client.connect(PORT, IP, async () =>{
     console.log("Running Event Functionality Test");
     let result1 = await event_functionality();
     console.log(result1);
+    let result2 = await calendar_functionality();
+    console.log(result2);
   }catch(err){
     console.error(err);
   }
@@ -107,8 +109,7 @@ function event_functionality(){
           client.write(`deleteevent|${event_id}`);
           testindex ++;
         }else if(response.status == "Success" && testindex == 11){
-          console.log("terminate");
-          client.write("terminate");
+          
           client.removeListener('data', onData);
           resolve("Event Test" + ' \u2713');
         }else{
@@ -118,10 +119,37 @@ function event_functionality(){
         }
       }
       client.on('data', onData);
-      client.write("createevent|3|test|2021/2/24|2021/3/24|1500|1600|NONE|private|NONE|NONE");
+      client.write("createevent|3|test|2021-2-24|2021-3-24|1500|1600|NONE|private|NONE|NONE");
     }catch(err){
       console.log(err);
       reject("Event Test" + ' \u2717' + "\n" + err.message);
+    }
+  });
+}
+function calendar_functionality(){
+  return new Promise( (resolve, reject) =>{
+    try{
+      let onData = async (data) => {
+        let response = data.toString().trim();
+        response = response.substring(0, response.length -1);
+        console.log(response + "\n");
+        response = JSON.parse(response);
+        if(response[0].status == "Success" && testindex == 11){
+          console.log("terminate");
+          client.write("terminate");
+          resolve("Calendar Test" + ' \u2713');
+        }else{
+          client.write("terminate");
+          client.removeListener('data', onData);
+          reject("Calendar Test" + ' \u2717' + "\n" + response.status);
+        }
+      }
+      client.on('data', onData);
+      
+      client.write("getmonthevents|3|2021|1");
+    }catch(err){
+      console.log(err);
+      reject("Calendar Test" + ' \u2717' + "\n" + err.message);
     }
   });
 }

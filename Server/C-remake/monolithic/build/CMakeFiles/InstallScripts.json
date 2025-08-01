@@ -1,9 +1,9 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/luis/github/Bulletin/Server/C-remake/monolithic/build/cmake_install.cmake",
-		"/home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/cmake_install.cmake",
-		"/home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c/doc/cmake_install.cmake"
+		"/home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/cmake_install.cmake",
+		"/home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/cmake_install.cmake",
+		"/home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c/doc/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

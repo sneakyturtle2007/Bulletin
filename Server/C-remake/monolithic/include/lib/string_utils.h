@@ -16,6 +16,6 @@ typedef struct{
 
 Error strncpy_exclude(String *dest, char *src,  const char *exclude);
 
-Error strcpy_dynamic(String *dest, char *src);
+Error strcpy_dynamic(String *dest, const char *src);
 
 #endif
