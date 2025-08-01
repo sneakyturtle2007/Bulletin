@@ -1,4 +1,5 @@
 ./Server/C-remake/monolithic/build/
-.vscode/
+./.vscode/
 ./Server/C-remake/.vscode/
 ./Server/C-remake/.idea/
+./build/
