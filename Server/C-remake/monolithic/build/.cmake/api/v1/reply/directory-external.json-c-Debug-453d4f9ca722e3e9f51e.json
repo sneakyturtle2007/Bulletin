@@ -1,0 +1,163 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"external/json-c/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 521,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 529,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 541,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 572,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 574,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"external/json-c/libjson-c.so.5.4.0",
+				"external/json-c/libjson-c.so.5"
+			],
+			"targetId" : "json-c::@f6ce63fa30fb96cb90bd",
+			"targetIndex" : 31,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"external/json-c/libjson-c.so"
+			],
+			"targetId" : "json-c::@f6ce63fa30fb96cb90bd",
+			"targetIndex" : 31,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"external/json-c/libjson-c.a"
+			],
+			"targetId" : "json-c-static::@f6ce63fa30fb96cb90bd",
+			"targetIndex" : 32,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/json-c",
+			"exportName" : "json-c-targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "json-c::@f6ce63fa30fb96cb90bd",
+					"index" : 31
+				},
+				{
+					"id" : "json-c-static::@f6ce63fa30fb96cb90bd",
+					"index" : 32
+				}
+			],
+			"paths" : 
+			[
+				"external/json-c/CMakeFiles/Export/c72427da9e5c73ebf6c111c2977a0759/json-c-targets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/json-c",
+			"paths" : 
+			[
+				"build/external/json-c/json-c-config.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib/pkgconfig",
+			"paths" : 
+			[
+				"build/external/json-c/json-c.pc"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "/usr/local/include/json-c",
+			"paths" : 
+			[
+				"build/external/json-c/json_config.h",
+				"build/external/json-c/json.h",
+				"external/json-c/arraylist.h",
+				"external/json-c/debug.h",
+				"external/json-c/json_c_version.h",
+				"external/json-c/json_inttypes.h",
+				"external/json-c/json_object.h",
+				"external/json-c/json_object_iterator.h",
+				"external/json-c/json_tokener.h",
+				"external/json-c/json_types.h",
+				"external/json-c/json_util.h",
+				"external/json-c/json_visit.h",
+				"external/json-c/linkhash.h",
+				"external/json-c/printbuf.h",
+				"external/json-c/json_pointer.h",
+				"external/json-c/json_patch.h"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "external/json-c",
+		"source" : "external/json-c"
+	}
+}

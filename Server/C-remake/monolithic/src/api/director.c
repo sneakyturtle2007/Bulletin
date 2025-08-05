@@ -142,6 +142,7 @@ Error prepare_and_exec_login(sqlite3 **db, char *input, String *output){
   }
   if(necessary_user_info.data == "Invalid credentials"){
     status = strcpy_dynamic(output, necessary_user_info.data);
+    free(necessary_user_info.data);
     if(status.code != OK){
       fprintf(stderr, "ERROR: Failed to copy login results to output string.\n");
     }
@@ -157,6 +158,7 @@ Error prepare_and_exec_login(sqlite3 **db, char *input, String *output){
   json_object_object_add(json_output, "invited", json_object_new_string(strtok(NULL, "|")));
   json_object_object_add(json_output, "groups", json_object_new_string(strtok(NULL, "|")));
   status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB));
+  free(necessary_user_info.data);
   json_object_put(json_output);
   if(status.code != OK){
     fprintf(stderr, "ERROR: Failed to stringify user info.\n");
@@ -443,6 +445,19 @@ Error prepare_and_exec_get_month_events(sqlite3 **db, char *input, String *outpu
       return status;
     }
     json_object_array_add(json_event_objects, event);
+  }
+  for(int i = 0; i < month_events.length; i ++){
+    free(month_events.data[i].user_id);
+    free(month_events.data[i].title);
+    free(month_events.data[i].start_date);
+    free(month_events.data[i].end_date);
+    free(month_events.data[i].start_time);
+    free(month_events.data[i].end_time);
+    free(month_events.data[i].location);
+    free(month_events.data[i].publicity_type);
+    free(month_events.data[i].invitees);
+    free(month_events.data[i].details);
+    free(month_events.data[i].groups);
   }
   free(month_events.data);
   char *events_stringified = json_object_to_json_string_ext(json_event_objects, JSON_C_TO_STRING_PRETTY_TAB);

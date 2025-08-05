@@ -346,6 +346,7 @@ Error convert_table_to_list_of_events(Table_String table, Event_Array *event_arr
       return (Error) {MEMORY_ALLOCATION_ERROR,
                       "event_management.c/convert_table_to_list_of_event/ERROR: Failed to reallocate memory for event_array.\n"};
     }
+    free(event_array->data);
     event_array->data = new_data;
   }
   for(int i = 0; i < table.rows; i ++){

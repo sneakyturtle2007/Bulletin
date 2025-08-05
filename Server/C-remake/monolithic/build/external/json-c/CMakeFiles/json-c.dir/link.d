@@ -1,7 +1,7 @@
 libjson-c.so.5.4.0: \
-  /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
+  /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym \
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o \
+  /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o \
   CMakeFiles/json-c.dir/arraylist.c.o \
   CMakeFiles/json-c.dir/debug.c.o \
   CMakeFiles/json-c.dir/json_c_version.c.o \
@@ -16,37 +16,37 @@ libjson-c.so.5.4.0: \
   CMakeFiles/json-c.dir/strerror_override.c.o \
   CMakeFiles/json-c.dir/json_pointer.c.o \
   CMakeFiles/json-c.dir/json_patch.c.o \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libm.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libm.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libm.so \
-  /usr/lib/libm.so.6 \
-  /usr/lib/libmvec.so.1 \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so.1 \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libc.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libc.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libc.so \
-  /usr/lib/libc.so.6 \
-  /usr/lib/libc_nonshared.a \
-  /usr/lib/ld-linux-x86-64.so.2 \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so.1 \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so \
+  /lib/x86_64-linux-gnu/libm.so.6 \
+  /lib/x86_64-linux-gnu/libmvec.so.1 \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libgcc_s.so.1 \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a \
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libc.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libc.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libc.so \
+  /lib/x86_64-linux-gnu/libc.so.6 \
+  /usr/lib/x86_64-linux-gnu/libc_nonshared.a \
+  /lib64/ld-linux-x86-64.so.2 \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so \
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libgcc_s.so.1 \
+  /usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a \
+  /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o \
+  /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
 
-/home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym:
+/home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c/json-c.sym:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
+/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o:
 
 CMakeFiles/json-c.dir/arraylist.c.o:
 
@@ -76,52 +76,52 @@ CMakeFiles/json-c.dir/json_pointer.c.o:
 
 CMakeFiles/json-c.dir/json_patch.c.o:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libm.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libm.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libm.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so:
 
-/usr/lib/libm.so.6:
+/lib/x86_64-linux-gnu/libm.so.6:
 
-/usr/lib/libmvec.so.1:
+/lib/x86_64-linux-gnu/libmvec.so.1:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so.1:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libgcc_s.so.1:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libc.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libc.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libc.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libc.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libc.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libc.so:
 
-/usr/lib/libc.so.6:
+/lib/x86_64-linux-gnu/libc.so.6:
 
-/usr/lib/libc_nonshared.a:
+/usr/lib/x86_64-linux-gnu/libc_nonshared.a:
 
-/usr/lib/ld-linux-x86-64.so.2:
+/lib64/ld-linux-x86-64.so.2:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc_s.so:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so.1:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libgcc_s.so.1:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
+/usr/lib/gcc/x86_64-linux-gnu/14/libgcc.a:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o:
+/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crtn.o:
+/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o:

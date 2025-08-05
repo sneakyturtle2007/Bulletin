@@ -40,12 +40,14 @@ Error strcpy_dynamic(String *dest, const char *src){
   }
   if(dest->data == NULL){
     dest->capacity = strlen(src) +1; // +1 for null termination character
-    dest->data = calloc(dest->capacity, sizeof(char));
-    if(dest->data == NULL){
+    char *new_data = calloc(dest->capacity, sizeof(char));
+    if(new_data == NULL){
       fprintf(stderr, "ERROR: Failed to allocate memory for dest string.\n");
       return (Error) {MEMORY_ALLOCATION_ERROR,
                       "string_utils.c/snprintf_dynamic/ERROR: Failed to allocate memory for dest string.\n"};
     }
+    free(dest->data);
+    dest->data = new_data;
   }
   if(dest->capacity <= strlen(src)){
     printf("src length: %d\n", strlen(src)* sizeof(char));
@@ -56,6 +58,7 @@ Error strcpy_dynamic(String *dest, const char *src){
       return (Error) {MEMORY_ALLOCATION_ERROR,
                       "string_utils.c/snprintf_dynamic/ERROR: Failed to reallocate memory for dest string.\n"};
     }
+    free(dest->data);
     dest->data = new_data;
   }
   snprintf(dest->data, dest->capacity, "%s", src);

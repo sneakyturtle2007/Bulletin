@@ -4,17 +4,17 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c
-BuildDirectory: /home/luis/github/personal/Bulletin/Server/C-remake/monolithic/build/external/json-c
+SourceDirectory: /home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c
+BuildDirectory: /home/luis/github/Bulletin/Server/C-remake/monolithic/build/external/json-c
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: CommandCenter
+Site: MobileCommand
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-cc
+BuildName: Linux-g++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/sbin/cmake" "/home/luis/github/personal/Bulletin/Server/C-remake/monolithic/external/json-c"
-MakeCommand: /sbin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
+ConfigureCommand: "/usr/bin/cmake" "/home/luis/github/Bulletin/Server/C-remake/monolithic/external/json-c"
+MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -63,7 +63,7 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: 
+Compiler: /usr/bin/g++
 CompilerVersion: 
 
 # Dynamic analysis (MemCheck)
@@ -76,12 +76,12 @@ CudaSanitizerCommand:
 CudaSanitizerCommandOptions: 
 MemoryCheckType: 
 MemoryCheckSanitizerOptions: 
-MemoryCheckCommand: /sbin/valgrind
+MemoryCheckCommand: /usr/bin/valgrind
 MemoryCheckCommandOptions: 
 MemoryCheckSuppressionFile: 
 
 # Coverage
-CoverageCommand: /sbin/gcov
+CoverageCommand: /usr/bin/gcov
 CoverageExtraFlags: -l
 
 # Testing options
