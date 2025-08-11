@@ -4,8 +4,6 @@
 
 #include "user_management.h"
 
-// Function declarations (if needed)
-
 
 // Function implementations
 Error create_user(sqlite3 **db, char *username, char *email, char *password) {
@@ -53,7 +51,7 @@ Error delete_user(sqlite3 **db, char *user_id) {
 	}
 	sprintf(condition, "id = %s", user_id);
 	Table_String user_check = {.data = calloc(64, sizeof(String**)), .rows = 0, .cols = 0, .table_capacity = 64};
-	Error status = get_user_info(db, user_id, &user_check, true /*user_id*/);
+	Error status = get_user_info(db, user_id, &user_check, USER_ID);
 	if(status.code != OK){
 		fprintf(stderr, "ERROR: Failed to get user info for %s\n%s", user_id, status.message);
 		free(condition);
@@ -106,7 +104,12 @@ Error login(sqlite3 **db, char *username, char *password, String *output){
 		free_table(&user_table);
 		return (Error) {MEMORY_ALLOCATION_ERROR, "user_management.c/login/ERROR: Failed to allocate memory for user_table.\n"};
 	}
-	Error status = get_user_info(db, username, &user_table, false /*user_id*/);
+	Error status;
+	if(strchr(username, '@') != NULL){
+		status = get_user_info(db, username, &user_table, USER_EMAIL);
+	}else{
+		status = get_user_info(db, username, &user_table, USERNAME);
+	}
 	if(status.code != OK){
 		fprintf(stderr, "ERROR: Failed to get user info.\n");
 		free_table(&user_table);
@@ -158,7 +161,7 @@ Error add_friend(sqlite3 **db, char *user_id, char *friend_username){
 	}
 	sprintf(condition, "id=%s", user_id);
 	Table_String user = {.data = calloc(64, sizeof(String**)), .rows = 0, .cols = 0, .table_capacity = 64};
-	Error status = get_user_info(db, user_id, &user, true /*user_id*/);
+	Error status = get_user_info(db, user_id, &user, USER_ID );
 	if(status.code != OK) {
 		fprintf(stderr, "ERROR: Failed to get user info for %s\n%s", user_id, status.message);
 		free(condition);
@@ -221,7 +224,7 @@ Error add_friend(sqlite3 **db, char *user_id, char *friend_username){
 
 Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 	Table_String user_info = {.data = calloc(64, sizeof(String**)), .rows = 0, .cols = 0, .table_capacity = 64};
-	Error status = get_user_info(db, user_id, &user_info, true /*user_id*/);
+	Error status = get_user_info(db, user_id, &user_info, USER_ID);
 	if(status.code != OK){
 		fprintf(stderr, "ERROR: Failed getting user info for %s\n%s", user_id, status.message);
 		free_table(&user_info);
@@ -303,8 +306,9 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 }
 
 // Internal functions to get user inforamation
-Error get_user_info(sqlite3 **db, char *user_id_or_username, Table_String *result, bool user_id){
-	int condition_length = strlen(user_id_or_username) + 64; // +64 overhead for formatting
+
+Error get_user_info(sqlite3 **db, char *user_identifying_info, Table_String *result, int id_type){
+	int condition_length = strlen(user_identifying_info) + 64; // +64 overhead for formatting
 	char *condition = calloc(condition_length, sizeof(char));
 	if(condition == NULL) {
 		fprintf(stderr, "ERROR: Memory allocation failed for condition string\n");
@@ -312,30 +316,36 @@ Error get_user_info(sqlite3 **db, char *user_id_or_username, Table_String *resul
 		return (Error) {MEMORY_ALLOCATION_ERROR, 
 										"user_management.c/get_user_info/ERROR: Failed to allocate memory for condition string.\n"};
 	}
-	if(user_id){
-		snprintf(condition, condition_length, "id=%s", user_id_or_username);
-	}else{
-		snprintf(condition, condition_length, "username='%s'", user_id_or_username);
+	switch(id_type){
+		case USER_ID:
+			snprintf(condition, condition_length, "id=%s", user_identifying_info);
+			break;
+		case USERNAME:
+			snprintf(condition, condition_length, "username='%s'", user_identifying_info);
+			break;
+		case USER_EMAIL:
+			snprintf(condition, condition_length, "email='%s'", user_identifying_info);
+			break;
 	}
 	
 	Error status = get_from_table(db, "*", "users", condition, result);
 	free(condition);
 	if(status.code != OK) {
-		fprintf(stderr, "ERROR: Failed to get user info for %s\n%s", user_id_or_username, status.message);
+		fprintf(stderr, "ERROR: Failed to get user info for %s\n%s", user_identifying_info, status.message);
 	}
 	return status;
 }
 
 // Utility functions
 
-Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, bool remove, bool if_user_id){
+Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, bool remove, int id_type){
   Table_String invitee_info = {.data = calloc(1, sizeof(String**)), .rows = 0, .cols = 0, .table_capacity = 1};
   if(invitee_info.data == NULL){
     fprintf(stderr, "ERROR: Failed to allocate memory for invitee info.\n");
     return (Error) {MEMORY_ALLOCATION_ERROR, 
                     "event_management.c/add_invitee/ERROR: Failed to allocate memory for invitee info.\n"};
   }
-  Error status = get_user_info(db, invitee, &invitee_info, if_user_id /*user_id option*/);
+  Error status = get_user_info(db, invitee, &invitee_info, id_type /*user_id, email, or username option*/);
   if(status.code != OK){
     fprintf(stderr, "ERROR: Failed to get invitee info.\n");
     free_table(&invitee_info);

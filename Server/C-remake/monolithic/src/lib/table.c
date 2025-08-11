@@ -9,6 +9,7 @@ Error free_table(Table_String *table){
 		if(table->data[i] != NULL) {
 			for(int j = 0; j < table->cols; j++){
 				free(table->data[i][j]->data); // Free string data for column j at row i
+				free(table->data[i][j]); // Free String struct for column j at row i
 			}
 			free(table->data[i]); // Free row of String structs
 		}
@@ -48,23 +49,26 @@ int convert_to_string_table(void *data, int numCols, char **colValues, char **co
 		}
 		printf("DEBUG: colValues[%i] adjusted for possible null values: %s\n", i, column_value); // DEBUG
 		printf("DEBUG: colValues[%i] strlen: %i\n", i, strlen(column_value)); // DEBUG
-		table->data[table->rows][i] = malloc(sizeof(String));
-		printf("DEBUG: bookmark after memory allocation for table->data[table->rows][i] in convert_to_string_table/table.c\n"); // DEBUG
-		table->data[table->rows][i]->length = strlen(column_value) + 1; // +1 for null termination character
-		table->data[table->rows][i]->capacity = strlen(column_value) + 1; // +1 for null termination character
-		table->data[table->rows][i]->data = calloc(table->data[table->rows][i]->capacity, sizeof(char));
-		printf("DEBUG: bookmark after memory allocation for table->data[table->rows][i] in convert_to_string_table/table.c\n"); // DEBUG
-		if(table->data[table->rows][i]->data == NULL){
-			fprintf(stderr, "ERROR: Failed to allocate memory for column %i at row %i\n", i, table->rows);
-			return 1; // Failed to allocate memory for table cell
+		String *temp_string = malloc(sizeof(String));
+		if(temp_string == NULL) {
+			fprintf(stderr, "Memory allocation failed for String struct\n");
+			return 1; // Memory allocation error
 		}
-		char *status = strncpy(table->data[table->rows][i]->data, column_value, table->data[table->rows][i]->length);
+		temp_string->length = strlen(column_value) + 1; // +1 for null termination character
+		temp_string->capacity = strlen(column_value) + 1; // +1 for null termination character
+		temp_string->data = calloc(temp_string->capacity, sizeof(char));
+		if(temp_string->data == NULL) {
+			fprintf(stderr, "Memory allocation failed for String data\n");
+			free(temp_string);
+			return 1; // Memory allocation error
+		}
+		char *status = strncpy(temp_string->data, column_value, temp_string->length);
 		if(status == NULL){
 			fprintf(stderr, "ERROR: strncpy failed (function convert_to_string_table)\n");
 			return 1; 
 		}
 		//status = memcpy(&table->data[table->rows][i], &temp_string, sizeof(temp_string));
-		
+		table->data[table->rows][i] = temp_string; // Assign the String struct to the table
 	} 
 	table->rows++;
 	

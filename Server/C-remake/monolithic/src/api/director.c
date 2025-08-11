@@ -20,11 +20,9 @@ Error prepare_and_exec_create_event(sqlite3 **db, char *input, String *output);
 
 Error prepare_and_exec_delete_event(sqlite3 **db, char *input, String *output);
 
-Error prepare_and_exec_add_invitee(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_add_invitees(sqlite3 **db, char *input, String *output);
 
-Error prepare_and_exec_remove_invitee(sqlite3 **db, char *input, String *output);
-
-Error prepare_and_exec_remove_multiple_invitees(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_remove_invitees(sqlite3 **db, char *input, String *output);
 
 Error prepare_and_exec_get_month_events(sqlite3 **db, char *input, String *output);
 
@@ -61,14 +59,11 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
   } else if(strcmp(inputToken, "deleteevent") == 0){
     return prepare_and_exec_delete_event(db, input, output);
 
-  }else if(strcmp(inputToken, "addinvitee") == 0){
-    return prepare_and_exec_add_invitee(db, input, output);
+  }else if(strcmp(inputToken, "addinvitees") == 0){
+    return prepare_and_exec_add_invitees(db, input, output);
 
-  }else if(strcmp(inputToken, "removeinvitee") == 0){
-    return prepare_and_exec_remove_invitee(db, input, output);
-
-  }else if(strcmp(inputToken, "removemultipleinvitees") == 0){
-    return prepare_and_exec_remove_multiple_invitees(db, input, output);
+  }else if(strcmp(inputToken, "removeinvitees") == 0){
+    return prepare_and_exec_remove_invitees(db, input, output);
 
   }else if (strcmp(inputToken, "getmonthevents") == 0){
     return prepare_and_exec_get_month_events(db, input, output);
@@ -229,8 +224,10 @@ Error prepare_and_exec_create_event(sqlite3 **db, char *input, String *output){
   char *publicity_type = strtok(NULL, "|");
   char *invitees = strtok(NULL, "|");
   char *details = strtok(NULL, "|");
+  char *groups = strtok(NULL, "|");
   if(user_id == NULL || title == NULL || start_date == NULL || end_date == NULL || start_time == NULL
-    || end_time == NULL || location == NULL || publicity_type == NULL || invitees == NULL || details == NULL){
+    || end_time == NULL || location == NULL || publicity_type == NULL || invitees == NULL || details == NULL
+    || groups == NULL ){
     fprintf(stderr, "ERROR: Invalid Arguments.\n");
     return (Error) {INVALID_ARGUMENT, 
                     "director.c/prepare_and_exec_create_event/ERROR: Missing parameters for createevent command.\n"};
@@ -279,7 +276,7 @@ Error prepare_and_exec_create_event(sqlite3 **db, char *input, String *output){
   }
   snprintf(end_date_formatted.data, end_date_formatted.capacity, "%04ld-%02ld-%02ld", end_year_l, end_month_l, end_day_l);
   Event new_event = {.user_id = user_id, .title = title, .start_date = start_date_formatted.data, .end_date = end_date_formatted.data, .start_time = start_time , 
-                .end_time = end_time, .location = location, .publicity_type = publicity_type, .invitees = invitees, .details = details};
+                .end_time = end_time, .location = location, .publicity_type = publicity_type, .invitees = invitees, .details = details, .groups = groups};
   String event_id = {.data = calloc(output->capacity, sizeof(char)), .capacity = output->capacity};
   if(event_id.data == NULL){
     fprintf(stderr, "ERROR: Failed to allocate memory for event_id.\n");
@@ -329,7 +326,7 @@ Error prepare_and_exec_delete_event(sqlite3 **db, char *input, String *output){
   return status;
 }
 
-Error prepare_and_exec_add_invitee(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_add_invitees(sqlite3 **db, char *input, String *output){
   char *event_id = strtok(NULL, "|");
   char *invitee = strtok(NULL, "|");
   printf("event_id: %s\n", event_id);
@@ -338,9 +335,14 @@ Error prepare_and_exec_add_invitee(sqlite3 **db, char *input, String *output){
     fprintf(stderr, "ERROR: Invalid arguments.\n");
     return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for addinvitee command.\n"};
   }
-  Error status = add_invitee(db, event_id, invitee);
+  Error status;
+  if(strchr(invitee, ',') == NULL){
+    status = add_invitee(db, event_id, invitee);
+  }else{
+    status = add_multiple_invitees(db, event_id, invitee);
+  }
   if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to add invitee.\n");
+    fprintf(stderr, "ERROR: Failed to add invitee(s).\n");
     return status;
   }
   json_object *json_output = json_object_new_object();
@@ -353,18 +355,23 @@ Error prepare_and_exec_add_invitee(sqlite3 **db, char *input, String *output){
   return status;
 }
 
-Error prepare_and_exec_remove_invitee(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_remove_invitees(sqlite3 **db, char *input, String *output){
   char *event_id = strtok(NULL, "|");
-  char *invitee = strtok(NULL, "|");
+  char *invitee_s = strtok(NULL, "|");
   printf("event_id: %s\n", event_id);
-  printf("invitee: %s\n",invitee );
-  if(event_id == NULL || invitee == NULL){
+  printf("invitee: %s\n",invitee_s );
+  if(event_id == NULL || invitee_s == NULL){
     fprintf(stderr, "ERROR: Invalid arguments.\n");
     return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for removeinvitee command.\n"};
   }
-  Error status = remove_invitee(db, event_id, invitee);
+  Error status;
+  if(strchr(invitee_s, ',') != NULL){
+    status = remove_multiple_invitees(db, event_id, invitee_s);
+  }else{
+    status = remove_invitee(db, event_id, invitee_s);
+  }
   if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to remove invitee.\n");
+    fprintf(stderr, "ERROR: Failed to remove invitee(s).\n");
     return status;
   }
   json_object *json_output = json_object_new_object();
@@ -373,29 +380,6 @@ Error prepare_and_exec_remove_invitee(sqlite3 **db, char *input, String *output)
   json_object_put(json_output);
   if(status.code != OK){
     fprintf(stderr, "ERROR: Failed to convert remove_invitee result from JSON to string for output.\n");
-  }
-  return status;
-}
-
-Error prepare_and_exec_remove_multiple_invitees(sqlite3 **db, char *input, String *output){
-  char *event_id = strtok(NULL, "|");
-  char *invitees = strtok(NULL, "|");
-  if(event_id == NULL || invitees == NULL){
-    fprintf(stderr, "ERROR: Invalid arguments.\n");
-    return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for removemultipleinvitees command.\n"};
-  }
-  Error status = remove_multiple_invitees(db, event_id, invitees, false /*user_id option*/);
-  if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to remove invitees.\n");
-    return status;
-  }
-  json_object *json_output = json_object_new_object();
-  json_object_object_add(json_output, "status", json_object_new_string("Success"));
-  status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB));
-  json_object_put(json_output);
-  if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to convert output to JSON string.\n");
-    
   }
   return status;
 }

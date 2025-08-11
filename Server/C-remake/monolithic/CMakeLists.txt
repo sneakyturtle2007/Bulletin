@@ -25,8 +25,7 @@ file(GLOB_RECURSE EXTERNAL CONFIGURE_DEPENDS "external/*.c")
   endif()
   # Debug build
   if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    add_compile_options(-fsanitize=address -g -O0 -Wall -Wextra)
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fsanitize=address")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 -Wall -Wextra") # optional flags for debugging -fsanitize=address
   endif()
 # Define the executable
 add_executable(bulletin ${SRC} ${EXTERNAL})

@@ -40,9 +40,11 @@ Error delete_event(sqlite3 **db, char *event_id);
 
 Error add_invitee(sqlite3 **db, char *event_id, char *invitee);
 
+Error add_multiple_invitees(sqlite3 **db, char *event_id, char *invitees_list);
+
 Error remove_invitee(sqlite3 **db, char *event_id, char *invitee);
 
-Error remove_multiple_invitees(sqlite3 **db, char *event_id, char *invitees_list, bool user_id);
+Error remove_multiple_invitees(sqlite3 **db, char *event_id, char *invitees_list);
 
 Error convert_table_to_list_of_events(Table_String table, Event_Array *event_array);
 

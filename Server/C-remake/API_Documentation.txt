@@ -1,51 +1,168 @@
-API_Commands and their returns-
+
+User Management:
+
+   createuser|<username>|<email>|<password> 
+      - Description
+         If successful, returns a stringified json object of the structure detailed below. If there is an error, it returns a json of the same structure but with 
+		   an error message in the status field.
+         {
+            status:"Success"
+         }
+         Users username cannot include the following symbols: @, '', "", or |.
+		- Example
+			Input: createuser|example_name|example.name@gmail.com|example_password
+			Output(No Error): {status:"Success"}
+			Output(Error): {status:"<ERROR>"}
+			
+
+   deleteuser|<user ID>
+      - Description
+         If successful, returns a stringified json object of the structure detailed below . If there is an error, it returns a json of the same structure but with 
+			an error message in the status field.
+         {
+            status:"Success"
+         }
+		- Example
+			Input: deleteuser|1
+			Output(No Error): {status:"Success"}
+			Output(Error): {status:"<ERROR>"}
+
 
    login|<username or email>|<password> 
-      - returns "User logged in" if login is successful, "Incorrect login" if login is unsuccessful, "User not found" if there is no user found, or "Error: <Error message here>" if there is an error.
-   
-   createuser|<username>|<email>|<password> 
-      - returns "User created" if user is created successfully, "User already exists" if user already exists, or "Error: <Error message here>" if there is an error.
+      - Description
+         If successful, returns a stringified json object in the structure shown below. If the login is invalid, the json object will only include the status field 
+         containing "Invalid credentials". If there is an error, the json object will just include the status field with the error code as the value.
+         {
+            status:"Success",
+            user_id:<integer value>,
+            friends:"test1,test2,test3",
+            invited:"<eventid>,<eventid>,<eventid>",
+            groups:"<groupid>,<groupid>",
+         }
+      - Example
+         Input: login|example_name_or_email|example_password
+         Output(No Error): {status:"Success",user_id:1,friends:"friend1,friend2,frien3",invited:"1,2,3",groups:"1,2,3"}
+               (Invalid login):  {status:"Invalid credentials"}
+         Output(Error): {status:"<Error>"};
 
-   deleteuser|<username>
-      - returns "User deleted" if user is deleted successfully, "User not found" if user doesn't exist, or "Error: <Error message here>" if there is an error.
-   
-   getuserinfo|<username or email or userid>
-      - returns "<userID>,<username>,<user email>,(<user friends>)(Comma separated)" , "User not found" if user doesn't exist, or "Error: <Error message here>" if there is an error.
-   
-   addfriend|<username>|<friend username>
-      - returns "Friend added" if friend is added successfully, "Friend already added" if the user already has the person as a friend,
-       "Friend does not exist" if user to be friended doesn't exist, or "Error: <Error message here>" if there is an error.
+
+   addfriend|<user ID>|<friend username>
+      - Description
+         If successful, returns a stringified json object of the structure detailed below. If there is an error, it returns a json of the same structure but with 
+		   an error message in the status field.
+         {
+            status:"Success"
+         }
+         Friends' username cannot include the following symbols: @, '', "", or |.
+		- Example
+			Input: addfriend|1|friend1
+			Output(No Error): {status:"Success"}
+			Output(Error): {status:"<ERROR>"}
+
 
    removefriend|<username>|<friend username>
-      - returns "Friend removed" if friend is successfully removed, "Friend not found" if the friend doesn't exist, or "Error: <Error message here>" if there is an error.
+      - Description
+         If successful, returns a stringified json object of the structure detailed below. If there is an error, it returns a json of the same structure but with 
+		   an error message in the status field.
+         {
+            status:"Success"
+         }
+         Friends' username cannot include the following symbols: @, '', "", or |.
+		- Example
+			Input: removefriend|1|friend1
+			Output(No Error): {status:"Success"}
+			Output(Error): }{status:"<ERROR>"}
 
-   createevent|<userid>|<title>|<date>|<startTime>|<endTime>|<publicityType>|<invitees>|<details>
-      - returns "Event created <eventID>" if the event is created successfully. "Error: <Error message here>" if there is an error.
 
-   addinvitee|<eventid>|<username of invitee>
-      - returns "Invitee added" if invitee is added successfully, "Invitee already added" if the invitee was already added, or "Error: <Error message here>".
-   
-   removeinvitee|<eventid>|<username of invitee>
-      - returns "Invitee removed" if invitee is removed successfully, "No invitees to remove" if the event doesn't have any invitees, "Invitee not found" if the invitee doesn't exist in the invitees 
-      list of the event, or "Error: <Error message here>" if there is an error .
-   
-   getevents|<userid>
-      - returns all events(JSON stringified) associated with the user, or "Error: <Error message here>" if there is an error. 
-        JSON format: {userid: <userid> int, title: <eventitle> string, date: <start and end date> string, startTime: <start time in military time> int, endTime: <end time in military time> int, location: <location> string, publicityType: <publicity type> string, invitees: <all users invited> string, details: <event details> string, eventid: <eventID>}
-   
-   geteventinfo|<eventid> 
-      - returns "<event title>,(<event details>), <YYYY/M/D(start date), YYYY/M/D(end date)>,<startTime>,<endTime>,<publicityType>,(<invitees of the event>),<userID of event creator>".
-        If error, returns "Error: <Error message here>".
-   
+Event Management:
+
+   createevent|<user ID>|<title>|<start date>|<end date>|<start time>|<end time>|<location>|<publicity type>|<invitees>|<details>|<groups>
+      - Description
+         If successful, returns a stringified json object of the structure detailed below. If there is an error, it returns a json object with just the status 
+         field containing the error code.
+         {
+            status:"Success",
+            event_id:1
+         }
+				 Non of the parameters that use text can include: "", '', or |.
+      - Example
+                                                              Public|Private|Group       
+                                      Year Month Day   Military time   |     Usernames of invited  group ID's
+                                        |   |  __/          |          |               |              | 
+         Input: createevent|1|birthday|2024-2-20|2024-2-20|1600|1600|9900 Jamaica Ave S|Public|friend1,friend2,friend3|1,2,3
+         Output(No Error): {status:"Success",event_id:1}
+         Output(Error): {status:"<ERROR>"}
+
+
    deleteevent|<eventid
-      - returns "Event deleted" if event is deleted successfully. If error, returns "Error: <Error message here>".
+      - Description
+         If successful, returns a stringified json object wi the structure detailed below. If there is an error, it returns a json object with  just the status 
+         field containing the error code.
+         {
+            status:"Success"
+         }
+      - Example
+         Input: deleteevent|1
+         Output(No Error): {status:"Success"}
+         Output(Error): {status:"<ERROR>"}
+         
+
+   addinvitees|<eventid>|<username of invitee>
+      - Description
+         If successful, returns a stringified json object of the structure detailed below. If there is an error, it returns a json object with just the status
+         field containing the error code.
+         {
+            status:"Success",
+         }
+      - Example
+         Input: addinvitee|1|friend1
+         Output(No Error): {status:"Success"}
+         Output(Error): {status:"<ERROR>"}
+
+   
+   removeinvitees|<eventid>|<username of invitee(s)>
+      - Description
+         If successful, returns a stringified json object of the structure detailed below. If there is an error, it returns a json object with just the status
+         field containing the error code.
+         {
+            status:"Success"
+         }
+      - Example
+         Input: removeinvitees|1|friend1,friend2
+              	OR removeinvitees|1|friend1
+         Output(No Error): {status:"Success"}
+         Output(Error): {status:"<ERROR>"}
+
+
+Calendar Calls:
 
    getmonthevents|<userid>|<year>|<month>
-      - returns all events(JSON stringified) of the specified user from the given month of the specificied year. If no events can be found, returns "No events found".
-        If error, returns "Error: <Error message here>".  
-        JSON format: {userid: <userid> int, title: <eventitle> string, date: <start and end date> string, startTime: <start time in military time> int, endTime: <end time in military time> int, location: <location> string, publicityType: <publicity type> string, invitees: <all users invited> string, details: <event details> string, eventid: <eventID>}
+      - Description 
+         If successful, returns a stringified json object with the structure detailed below. If there is an error, it returns the an array with a single json object 
+         containing just the status field with the value of the error code.
+         [
+            {
+               status:"Success"
+            },
+            {
+               user_id:1,
+               title:"example_title",
+               start_date:"Year-Month-Day",
+               end_date:"Year-Month-Day",
+               start_time:1500,
+               end_time:1600,
+               location:"9900 Jamaica Ave S",
+               publicity_type:"Public",
+               invitees:"friend1,friend2",
+               details:"The fitness gram pacer test....",
+               groups:"1,2,3,4"
+            },
+            {Copy of structure above}
+         ]
+		- Example 
+         Input: getmonthevents|1|2024|3
+         Output(No Error): [{status:"Success"},{user_id:1,title:"birthday",start_date:"2024-3-23",end_date:"2024-4-23",start_time:1500,end_time:1600,
+                           location:"9900 Jamaica Ave S", publicity_type:"Public",invitees:"friend1,friend2,friend3",details:"The fitness gram pacer test...",
+                           groups:"1,2,3,4"}, ...and so on with more events] 
+         Output(Error): [{status:"<ERROR>"}]
 
-   getbusytimeinmonth|<userid>|<other user username>|<year>|<month>
-      - returns the time(JSON stringified) for each day in the specified month in which an event already occupies.
-         If error, returns "Error: <Error message here>".
-         JSON format: A nested array of strings.

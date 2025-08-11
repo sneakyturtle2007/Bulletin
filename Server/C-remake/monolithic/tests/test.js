@@ -81,35 +81,29 @@ function event_functionality(){
         response = response.substring(0, response.length -1);
         console.log(response + "\n");
         response = JSON.parse(response);
-        if(response.event_id != 0 && testindex == 5){
+        if(response.status == "Success" && testindex == 5){
           event_id = response.event_id;
-          console.log(`addinvitee|${event_id}|admin`);
-          client.write(`addinvitee|${event_id}|admin`);
+          console.log(`addinvitees|${event_id}|admin`);
+          client.write(`addinvitees|${event_id}|admin`);
           
           testindex ++;
-        
         }else if(response.status == "Success" && testindex == 6){
-          console.log(`removeinvitee|${event_id}|admin`);
-          client.write(`removeinvitee|${event_id}|admin`);
+          console.log(`removeinvitees|${event_id}|admin`);
+          client.write(`removeinvitees|${event_id}|admin`);
           testindex ++;
         }else if(response.status == "Success" && testindex == 7){
-          console.log(`addinvitee|${event_id}|test`);
-          client.write(`addinvitee|${event_id}|test`);
+          console.log(`addinvitees|${event_id}|test,friend,Backend`);
+          client.write(`addinvitees|${event_id}|test,friend,Backend`);
           testindex ++;
         }else if(response.status == "Success" && testindex == 8){
-          console.log(`addinvitee|${event_id}|friend`);
-          client.write(`addinvitee|${event_id}|friend`);
+          console.log(`removeinvitees|${event_id}|test,friend`);
+          client.write(`removeinvitees|${event_id}|test,friend`);
           testindex ++;
         }else if(response.status == "Success" && testindex == 9){
-          console.log(`removemultipleinvitees|${event_id}|test,friend`);
-          client.write(`removemultipleinvitees|${event_id}|test,friend`);
-          testindex ++;
-        }else if(response.status == "Success" && testindex == 10){
           console.log(`deleteevent|${event_id}`);
           client.write(`deleteevent|${event_id}`);
           testindex ++;
-        }else if(response.status == "Success" && testindex == 11){
-          
+        }else if(response.status == "Success" && testindex == 10){
           client.removeListener('data', onData);
           resolve("Event Test" + ' \u2713');
         }else{
@@ -119,7 +113,7 @@ function event_functionality(){
         }
       }
       client.on('data', onData);
-      client.write("createevent|3|test|2021-2-24|2021-3-24|1500|1600|NONE|private|NONE|NONE");
+      client.write("createevent|3|test|2021-2-24|2021-3-24|1500|1600|NONE|private|NONE|NONE|NONE");
     }catch(err){
       console.log(err);
       reject("Event Test" + ' \u2717' + "\n" + err.message);
@@ -134,7 +128,7 @@ function calendar_functionality(){
         response = response.substring(0, response.length -1);
         console.log(response + "\n");
         response = JSON.parse(response);
-        if(response[0].status == "Success" && testindex == 11){
+        if(response[0].status == "Success" && testindex == 10){
           console.log("terminate");
           client.write("terminate");
           resolve("Calendar Test" + ' \u2713');
@@ -145,7 +139,7 @@ function calendar_functionality(){
         }
       }
       client.on('data', onData);
-      
+      console.log("getmonthevents|3|2021|1");
       client.write("getmonthevents|3|2021|1");
     }catch(err){
       console.log(err);
