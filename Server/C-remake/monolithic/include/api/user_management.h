@@ -38,4 +38,8 @@ Error get_user_info(sqlite3 **db, char *user_id_or_username, Table_String *resul
 
 Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, bool remove, int if_user_id);
 
+Error remove_multiple_friends(sqlite3 **db, char *user_id, char *friends);
+
+Error add_multiple_friends(sqlite3 **db, char *user_id, char *friends);
+
 #endif //USER_MANAGEMENT_H

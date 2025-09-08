@@ -18,7 +18,7 @@ Error create_event(sqlite3 **db, Event new_event, String *output){
   snprintf(values, values_length, "%s, '%s', '%s', '%s', %s, %s, '%s', '%s', '%s', '%s', '%s'", 
           new_event.user_id, new_event.title, new_event.start_date, new_event.end_date, new_event.start_time, new_event.end_time, 
           new_event.location, new_event.publicity_type, new_event.invitees, new_event.details, new_event.groups);
-  printf("%s\n", values);
+  //printf("%s\n", values); // DEBUG
   Error status = insert_into_table(db, "events", 
                                   "userid, title, start_date, end_date, startTime, endTime, location, publicityType, invitees, details, groups", values);
   if(status.code != OK){
@@ -35,7 +35,7 @@ Error create_event(sqlite3 **db, Event new_event, String *output){
                     "event_management.c/create_event/ERROR: Failed to allocate memory for condition.\n"};
   }
   snprintf(condition, condition_length, "userid=%s", new_event.user_id);
-  printf("%s\n", condition);
+  //printf("%s\n", condition); // DEBUG
   status = get_from_table(db, "MAX(eventid)", "events", condition, &event);
   free(condition);
   free(values);
@@ -47,7 +47,7 @@ Error create_event(sqlite3 **db, Event new_event, String *output){
   if(strcmp(new_event.invitees, "NONE") != 0){
     char *invitee = strtok(new_event.invitees, ",");
     while(invitee != NULL && invitee[0] != '\0'){
-      printf("invitee: %s\n", invitee);
+      //printf("invitee: %s\n", invitee); // DEBUG
       status = update_users_invited_list(db, invitee, event_id->data, false /*remove option*/, USERNAME);
       if(status.code != OK){
         fprintf(stderr, "ERROR: Failed to add invitee.\n");
@@ -115,13 +115,13 @@ Error add_invitee(sqlite3 **db, char *event_id, char *invitee){
     return status;
   }
   if(invitee_info.rows == 0){
-    fprintf(stderr, "ERROR: Invitee %s doesn't exist.\n");
+    fprintf(stderr, "ERROR: Invitee %s doesn't exist.\n", invitee);
     free_table(&invitee_info);
     return (Error) {INVALID_ARGUMENT, 
                     "event_management.c/add_invitee/ERROR: Specified invitee doesn't exist.\n"};
   }
   String *invitee_id = invitee_info.data[0][0]; // invitee_info.data[0][0] is the user_id of the invitee
-  printf("invitee_id: %s\nevent_id: %s\n", invitee_id->data, event_id);
+  //printf("invitee_id: %s\nevent_id: %s\n", invitee_id->data, event_id); // DEBUG
   status = update_users_invited_list(db, invitee_id->data, event_id, false /*remove option*/, USER_ID);
   if(status.code != OK){
     fprintf(stderr, "ERROR: Failed to update invitees invited list.\n");
@@ -230,7 +230,7 @@ Error remove_invitee(sqlite3 **db, char *event_id, char *invitee){
     return (Error) {MEMORY_ALLOCATION_ERROR, 
                     "event_management.c/remove_invitee/ERROR: Failed to allocate memory for query condition.\n"};
   }
-  snprintf(condition.data, condition.capacity, "eventid='%s'", event_id);
+  snprintf(condition.data, condition.capacity, "eventid=%s", event_id);
   status = get_from_table(db, "*", "events", condition.data, &event_info);
   if(status.code != OK){
     fprintf(stderr, "ERROR: Failed to get event info from events table.\n");
@@ -239,24 +239,25 @@ Error remove_invitee(sqlite3 **db, char *event_id, char *invitee){
     return status;
   }
   if(event_info.rows == 0){
-    fprintf(stderr, "ERROR: Event %s doesn't exist.\n");
+    fprintf(stderr, "ERROR: Event %s doesn't exist.\n", event_id);
     free(condition.data);
     free_table(&event_info);
     return (Error) {INVALID_ARGUMENT,
                     "event_management.c/remove_invitee/ERROR: Specified event doesn't exist.\n"};
   }
   String *invitees_list = event_info.data[0][8];
+  
   String *invitee_username = invitee_info.data[0][1];
   String values = {.length = 0, .capacity = invitees_list->length - invitee_username->length};
   bool invitees_list_empty = false;
-  if(((int) values.capacity) < 2){ // Checks if values.capacity is less than 2 to account for any remaining commas and null-termination characters
+  if(((int) values.capacity) <= 2){ // Checks if values.capacity is less than 2 to account for any remaining commas and null-termination characters
     values.capacity = strlen("NONE") + 1;
     values.data = calloc(values.capacity, sizeof(char));
     invitees_list_empty = true;
   }else{
-    printf("\nvalues.capacity: %d\n", values.capacity);
-    printf("invitee_id length: %d\n\n", invitee_username->length);
-    printf("invitee_id: %s\n", invitee_username->data);
+    //printf("\nvalues.capacity: %d\n", values.capacity); // DEBUG
+    //printf("invitee_id length: %d\n\n", invitee_username->length); // DEBUG
+    //printf("invitee_id: %s\n", invitee_username->data); // DEBUG
     values.data = calloc(values.capacity, sizeof(char));
   }
   if(values.data == NULL){
@@ -272,7 +273,7 @@ Error remove_invitee(sqlite3 **db, char *event_id, char *invitee){
     snprintf(values.data, values.capacity, "%s", "NONE");
     values.length = strlen("NONE") + 1; // +1 for null termination character
   }else{
-    String exclude_token = {.capacity = strlen(invitee) + 1};// +1 for comma
+    String exclude_token = {.capacity = strlen(invitee) + 2};// +2 for comma and null-termination character
     exclude_token.data = calloc(exclude_token.capacity, sizeof(char)); 
     if(exclude_token.data == NULL){
       fprintf(stderr, "ERROR: Failed to allocate memory for exclude_token.\n");
@@ -282,13 +283,17 @@ Error remove_invitee(sqlite3 **db, char *event_id, char *invitee){
       return (Error) {MEMORY_ALLOCATION_ERROR,
                       "event_management.c/remove_invitee/ERROR: Failed to allocate memory fo exclude_token.\n"};
     }
-    if(strstr(invitees_list->data, invitee) == 0){
+    if(invitees_list->data - strstr(invitees_list->data, invitee) == 0){
       snprintf(exclude_token.data, exclude_token.capacity, "%s,", invitee_username->data);
     }else{
       snprintf(exclude_token.data, exclude_token.capacity, ",%s", invitee_username->data);
     }
+    //printf("exclude_token: %s\n", exclude_token.data); // DEBUG
+    //printf("\n\ninvitees_list: %s\n", invitees_list->data); // DEBUG
     status = strncpy_exclude(&values, invitees_list->data, exclude_token.data);
+    //printf("strncpy_exclude: values.data: %s\n", values.data); // DEBUG
     free(exclude_token.data);
+    
     if(status.code != OK){
       fprintf(stderr, "ERROR: Failed to cpy invitee list excluding invitee.\n");
       free(condition.data);
@@ -298,6 +303,7 @@ Error remove_invitee(sqlite3 **db, char *event_id, char *invitee){
   }
   free_table(&invitee_info);
   free_table(&event_info);
+  //printf("strncpy_exclude: values.data after exclude: %s\n", values.data); // DEBUG
   String variables_and_values = {.capacity = values.length + 16}; // +16 for formatting
   variables_and_values.data = calloc(variables_and_values.capacity, sizeof(char));
   if(variables_and_values.data == NULL){
@@ -326,9 +332,9 @@ Error add_multiple_invitees(sqlite3 **db, char *event_id, char *invitees_list){
   }
   Error status;
   char *invitee = strtok(invitees_list, ",");
-  printf("\n\nadd_multiple_invitees: event_id: %s\n", event_id);
+  //printf("\n\nadd_multiple_invitees: event_id: %s\n", event_id); // DEBUG
   while(invitee != NULL && invitee[0] != '\0'){
-    printf("invitee: %s\n", invitee);
+    //printf("invitee: %s\n", invitee); // DEBUG
     status = add_invitee(db, event_id, invitee);
     if(status.code != OK){
       fprintf(stderr, "ERROR: Failed to add invitee.\n");
@@ -344,9 +350,9 @@ Error remove_multiple_invitees(sqlite3 **db, char *event_id, char *invitees_list
   }
   Error status;
   char *invitee = strtok(invitees_list, ",");
-  printf("\n\nremove_multiple_invitees: event_id: %s\n", event_id);
+  //printf("\n\nremove_multiple_invitees: event_id: %s\n\n", event_id); // DEBUG
   while(invitee != NULL && invitee[0] != '\0'){
-    printf("invitee: %s\n", invitee);
+    //printf("invitee: %s\n", invitee); // DEBUG
     status = remove_invitee(db, event_id, invitee);
     if(status.code != OK){
       fprintf(stderr, "ERROR: Failed to delete invitee.\n");
@@ -354,17 +360,18 @@ Error remove_multiple_invitees(sqlite3 **db, char *event_id, char *invitees_list
     }
     invitee = strtok(NULL, ",");
   }
+  //printf("\n"); // DEBUG
   return status;
 }
 
 Error convert_table_to_list_of_events(Table_String table, Event_Array *event_array){
   if(table.cols < 9){
-    printf("cols: %d\n", table.cols);
+    //printf("cols: %ld\n", table.cols); // DEBUG
     fprintf(stderr, "ERROR: Invalid argument, not enough column in table.\n");
     return (Error) {INVALID_ARGUMENT,
                     "event_management.c/convert_table_to_event/ERROR: Invalid argument, not enough columns in table.\n"};
   }
-  for(int col = 0; col < table.cols; col++){
+  for(size_t col = 0; col < table.cols; col++){
     if(table.data[0][col]->data == NULL){
       fprintf(stderr, "ERROR: Missing value in column.\n");
       return (Error) {INVALID_ARGUMENT, 
@@ -382,8 +389,8 @@ Error convert_table_to_list_of_events(Table_String table, Event_Array *event_arr
     free(event_array->data);
     event_array->data = new_data;
   }
-  for(int i = 0; i < table.rows; i ++){
-    printf("\n\n Event user_id: %s\n\n", table.data[i][0]->data);
+  for(size_t i = 0; i < table.rows; i ++){
+    //printf("\n\n Event user_id: %s\n\n", table.data[i][0]->data); // DEBUG
     event_array->data[i].user_id = calloc(table.data[i][0]->capacity, sizeof(char));
     if(event_array->data[i].user_id == NULL ){
       fprintf(stderr, "ERROR: Failed to allocate memory for event user_id copy.\n");
@@ -467,17 +474,17 @@ Error convert_table_to_list_of_events(Table_String table, Event_Array *event_arr
 }
 Error convert_event_to_json(json_object *result, Event event){
   char *end;
-  printf("\n\nuser_id: %s\n", event.user_id); //DEBUG
-  printf("start_time: %s\n", event.start_time); //DEBUG
-  printf("end_time: %s\n\n", event.end_time); //DEBUG
+  //printf("\n\nuser_id: %s\n", event.user_id); //DEBUG
+  //printf("start_time: %s\n", event.start_time); //DEBUG
+  //printf("end_time: %s\n\n", event.end_time); //DEBUG
   long user_id = strtol(event.user_id, &end, 10);
   long start_time = strtol(event.start_time, &end, 10);
   long end_time = strtol(event.end_time, &end, 10);
   if(user_id == 0 || start_time == 0 || end_time == 0){
     fprintf(stderr, "Failed to convert event to json.\n");
-    printf("\n\n user_id long: %l\n", user_id);
-    printf("\n\n start_time long: %l\n", start_time);
-    printf("\n\n end_time long: %l\n", end_time);
+    //printf("\n\n user_id long: %ld\n", user_id); // DEBUG
+    //printf("\n\n start_time long: %ld\n", start_time); // DEBUG
+    //printf("\n\n end_time long: %ld\n", end_time); // DEBUG
     return (Error) {STRING_ERROR, 
                     "event_management.c/convert_event_to_json/ERROR: Failed to convert event to json.\n"};
   }

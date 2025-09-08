@@ -120,7 +120,6 @@ Error login(sqlite3 **db, char *username, char *password, String *output){
 		char *result = "Invalid credentials";
 		
 		status = strcpy_dynamic(output, result);
-		printf(" DEBUG: %s\n", output->data);
 		free_table(&user_table);		
 		if(status.code != OK){
 			fprintf(stderr, "ERROR: Failed to copy result to output string\n");
@@ -129,10 +128,10 @@ Error login(sqlite3 **db, char *username, char *password, String *output){
 	}
 	/*
 	user_table.data[0][0] is the user_id, user_table.data[0][4] is the friends, user_table.data[0][5] is the users list of events invited to,
-	and user_table.data[0][6] is the groups the user is a part of.
+	user_table.data[0][6] is the groups the user is a part of, and user_table.data[0][7] is the users friend requests.
 	*/
 	String necessary_user_info = {.capacity =  user_table.data[0][0]->length + user_table.data[0][4]->length 
-											+ user_table.data[0][5]->length + user_table.data[0][6]->length + 1};// +1 for null terminator
+											+ user_table.data[0][5]->length + user_table.data[0][6]->length + user_table.data[0][7]->length + 1};// +1 for null terminator
 	necessary_user_info.data = calloc(necessary_user_info.capacity, sizeof(char));
 	if(necessary_user_info.data == NULL) {
 		fprintf(stderr, "ERROR: Memory allocation failed for result string\n");
@@ -140,8 +139,9 @@ Error login(sqlite3 **db, char *username, char *password, String *output){
 		return (Error) {MEMORY_ALLOCATION_ERROR, 
 										"user_management.c/login/ERROR: Failed to allocate memory for result string.\n"};
 	}
-	snprintf(necessary_user_info.data, necessary_user_info.capacity, "%s|%s|%s|%s", 
-					user_table.data[0][0]->data, user_table.data[0][4]->data, user_table.data[0][5]->data, user_table.data[0][6]->data);
+	snprintf(necessary_user_info.data, necessary_user_info.capacity, "%s|%s|%s|%s|%s", 
+					user_table.data[0][0]->data, user_table.data[0][4]->data, user_table.data[0][5]->data, user_table.data[0][6]->data,
+					user_table.data[0][7]->data);
 	status = strcpy_dynamic(output, necessary_user_info.data);
 	free(necessary_user_info.data);
 	free_table(&user_table);
@@ -161,7 +161,7 @@ Error add_friend(sqlite3 **db, char *user_id, char *friend_username){
 	}
 	sprintf(condition, "id=%s", user_id);
 	Table_String user = {.data = calloc(64, sizeof(String**)), .rows = 0, .cols = 0, .table_capacity = 64};
-	Error status = get_user_info(db, user_id, &user, USER_ID );
+	Error status = get_user_info(db, user_id, &user, USER_ID);
 	if(status.code != OK) {
 		fprintf(stderr, "ERROR: Failed to get user info for %s\n%s", user_id, status.message);
 		free(condition);
@@ -236,6 +236,11 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 		return (Error){INVALID_ARGUMENT, "user_management.c/remove_friend/ERROR: User does not exist.\n"};
 	}
 	String *user_friends = user_info.data[0][4]; // user_info.data[0][4] is the friends list column 
+	if(strstr(user_friends->data, friend_username) == NULL){
+		fprintf(stderr, "ERROR: User %s is not friends with %s\n", user_id, friend_username);
+		free_table(&user_info);
+		return (Error){INVALID_ARGUMENT, "user_management.c/remove_friend/ERROR: User is not friends with specified user.\n"};
+	}
 	String friends_list = {.length = 0, .capacity = (user_friends->length - strlen(friend_username) - 1)};// -1 for comma
 	bool friends_list_empty = false;
 	if(friends_list.capacity < 2){
@@ -249,6 +254,7 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 	if(friends_list.data == NULL){
 		fprintf(stderr, "ERROR: Memory allocation failed for friends list string.\n");
 		free(friends_list.data);
+		free_table(&user_info);
 		return (Error) {MEMORY_ALLOCATION_ERROR, 
 										"user_management.c/remove_friend/ERROR: Failed to allocate memory for friends list string.\n"};
 	}
@@ -267,9 +273,10 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 		}else{
 			snprintf(temp_string.data, temp_string.capacity, ",%s", friend_username);
 		}
-		status = strncpy_exclude(&friends_list, user_friends->data, friend_username);
+		status = strncpy_exclude(&friends_list, user_friends->data, temp_string.data);
+		free(temp_string.data);
 	}
-	printf("Friend_list\n data: %s\n length: %d\n capacity: %d\n", friends_list.data,friends_list.length, friends_list.capacity); // DEBUG
+	//printf("Friend_list\n data: %s\n length: %d\n capacity: %d\n", friends_list.data,friends_list.length, friends_list.capacity); // DEBUG
 	free_table(&user_info); // free'd here because otherwise it would free the memory user_friends.data pointer points to
 	if(status.code != OK){
 		fprintf(stderr, "ERROR: strncpy_exclude failed.\n");
@@ -287,6 +294,7 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 	}
 	snprintf(variables_and_values.data, variables_and_values.capacity, "friends='%s'", friends_list.data);
 	free(friends_list.data);
+	
 	int condition_length = strlen(user_id) + 8; // +8 overhead for formatting
 	char *condition = calloc(condition_length, sizeof(char));
 	if(condition == NULL){
@@ -305,8 +313,7 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 	return status;
 }
 
-// Internal functions to get user inforamation
-
+// Utility functions
 Error get_user_info(sqlite3 **db, char *user_identifying_info, Table_String *result, int id_type){
 	int condition_length = strlen(user_identifying_info) + 64; // +64 overhead for formatting
 	char *condition = calloc(condition_length, sizeof(char));
@@ -335,8 +342,6 @@ Error get_user_info(sqlite3 **db, char *user_identifying_info, Table_String *res
 	}
 	return status;
 }
-
-// Utility functions
 
 Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, bool remove, int id_type){
   Table_String invitee_info = {.data = calloc(1, sizeof(String**)), .rows = 0, .cols = 0, .table_capacity = 1};
@@ -394,8 +399,8 @@ Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, boo
 				return (Error) {MEMORY_ALLOCATION_ERROR,
 												"user_management.c/update_users_invited_list/ERROR: Failed to allocate memory for temp invited list.\n"};
 			}
-			printf("update_users_invited_list\nevent_id: %s\n", event_id);
-			printf("invited_list: %s\nTemp_string: %s\n", invited_list.data, temp_string.data);
+			//printf("update_users_invited_list\nevent_id: %s\n", event_id); // DEBUG
+			//printf("invited_list: %s\nTemp_string: %s\n", invited_list.data, temp_string.data); // DEBUG
       status = strncpy_exclude(&temp_invited_list, invited_list.data, temp_string.data);
 			snprintf(invited_list.data, invited_list.capacity, "%s", temp_invited_list.data);
 			free(temp_invited_list.data);
@@ -408,6 +413,13 @@ Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, boo
       }
 			if(strlen(invited_list.data) == 0){
 				char *state = strncat(invited_list.data, "NONE", 5);
+				if(state == NULL){
+					fprintf(stderr, "ERROR: Failed to copy 'NONE' to invited list.\n");
+					free(invited_list.data);
+					free_table(&invitee_info);
+					return (Error) {STRING_ERROR, 
+													"user_management.c/update_users_invited_list/ERROR: Failed to copy 'NONE' to invited list.\n"};
+				}
 			}
     }
   }
@@ -440,4 +452,32 @@ Error update_users_invited_list(sqlite3 **db, char *invitee, char *event_id, boo
     fprintf(stderr, "ERROR: Failed to update invitees invited list.\n");
   }
   return status;
+}
+
+Error add_multiple_friends(sqlite3 **db, char *user_id, char *friends){
+	char *friend_username = strtok(friends, ",");
+	Error status;
+	while(friend_username != NULL && friend_username[0] != '\0'){
+		status = add_friend(db, user_id, friend_username);
+		if(status.code != OK){
+			fprintf(stderr, "ERROR: Failed to remove friend %s from user %s\n%s", friend_username, user_id, status.message);
+			return status;
+		}
+		friend_username = strtok(NULL, ",");
+	}
+	return status;
+}
+
+Error remove_multiple_friends(sqlite3 **db, char *user_id, char *friends){
+	char *friend_username = strtok(friends, ",");
+	Error status;
+	while(friend_username != NULL && friend_username[0] != '\0'){
+		status = remove_friend(db, user_id, friend_username);
+		if(status.code != OK){
+			fprintf(stderr, "ERROR: Failed to remove friend %s from user %s\n%s", friend_username, user_id, status.message);
+			return status;
+		}
+		friend_username = strtok(NULL, ",");
+	}
+	return status;
 }

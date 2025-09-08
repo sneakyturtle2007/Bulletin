@@ -59,7 +59,6 @@ int main(){
 
     printf("Connection Accepted\n");
 
-    bool quit = false;
     ssize_t valread = 0;
     while( (valread = read(server.new_socket, server.buffer, 
             sizeof(server.buffer))) != 0 ){
@@ -73,7 +72,6 @@ int main(){
       }else if(strcmp(server.buffer, "password") == 0){
         memset(server.buffer, 0, sizeof(server.buffer));
         printf("shutting down server.....\n");
-        quit = true;
         break;
       }else{
         String response = {

@@ -37,22 +37,26 @@ function user_functionality_test(){
           testindex++;
         }else if(response.status != "Invalid credentials" && testindex == 1){
           userID = response.user_id;
-          console.log(`addfriend|${userID}|luis2`);
-          client.write(`addfriend|${userID}|luis2`);
+          console.log(`addfriends|${userID}|admin,test,friend`);
+          client.write(`addfriends|${userID}|admin,test,friend`);
           testindex++;
         }else if(response.status == "Success" && testindex == 2){
-          console.log(`removefriend|${userID}|luis2`);
-          client.write(`removefriend|${userID}|luis2`);
+          console.log(`removefriends|${userID}|admin`);
+          client.write(`removefriends|${userID}|admin`);
           testindex++;
         }else if(response.status == "Success" && testindex == 3){
+          console.log(`removefriends|${userID}|test,friend`);
+          client.write(`removefriends|${userID}|test,friend`);
+          testindex++;
+        }else if(response.status == "Success" && testindex == 4){
           console.log(`deleteuser|${userID}`);
           client.write(`deleteuser|${userID}`);
           testindex++;
-        } else if(response.status ==  "Success" && testindex == 4){
+        } else if(response.status ==  "Success" && testindex == 5){
           console.log(`deleteuser|${userID}`);
           client.write(`deleteuser|${userID}`);
           testindex++;
-        }else if(response.status ==  "user_management.c/delete_user/ERROR: User does not exist.\n" && testindex == 5){
+        }else if(response.status ==  "user_management.c/delete_user/ERROR: User does not exist.\n" && testindex == 6){
           //client.write("terminate");
           client.removeListener('data', onData);
           resolve("User Test" + ' \u2713');
@@ -81,29 +85,29 @@ function event_functionality(){
         response = response.substring(0, response.length -1);
         console.log(response + "\n");
         response = JSON.parse(response);
-        if(response.status == "Success" && testindex == 5){
+        if(response.status == "Success" && testindex == 6){
           event_id = response.event_id;
           console.log(`addinvitees|${event_id}|admin`);
           client.write(`addinvitees|${event_id}|admin`);
           
           testindex ++;
-        }else if(response.status == "Success" && testindex == 6){
+        }else if(response.status == "Success" && testindex == 7){
           console.log(`removeinvitees|${event_id}|admin`);
           client.write(`removeinvitees|${event_id}|admin`);
           testindex ++;
-        }else if(response.status == "Success" && testindex == 7){
+        }else if(response.status == "Success" && testindex == 8){
           console.log(`addinvitees|${event_id}|test,friend,Backend`);
           client.write(`addinvitees|${event_id}|test,friend,Backend`);
           testindex ++;
-        }else if(response.status == "Success" && testindex == 8){
+        }else if(response.status == "Success" && testindex ==  9){
           console.log(`removeinvitees|${event_id}|test,friend`);
           client.write(`removeinvitees|${event_id}|test,friend`);
           testindex ++;
-        }else if(response.status == "Success" && testindex == 9){
+        }else if(response.status == "Success" && testindex == 10){
           console.log(`deleteevent|${event_id}`);
           client.write(`deleteevent|${event_id}`);
           testindex ++;
-        }else if(response.status == "Success" && testindex == 10){
+        }else if(response.status == "Success" && testindex == 11){
           client.removeListener('data', onData);
           resolve("Event Test" + ' \u2713');
         }else{
@@ -128,7 +132,7 @@ function calendar_functionality(){
         response = response.substring(0, response.length -1);
         console.log(response + "\n");
         response = JSON.parse(response);
-        if(response[0].status == "Success" && testindex == 10){
+        if(response[0].status == "Success" && testindex == 11){
           console.log("terminate");
           client.write("terminate");
           resolve("Calendar Test" + ' \u2713');

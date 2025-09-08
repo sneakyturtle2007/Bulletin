@@ -50,7 +50,7 @@ Error open_database(sqlite3 **db){
     int command_length = strlen(name) + strlen(name) + strlen(columns) + 64;
     char *command = malloc(command_length * sizeof(char));
     sprintf(command, "CREATE TABLE IF NOT EXISTS %s (%s);", name, columns);
-    printf("%s\n", command);
+    //printf("%s\n", command); // DEBUG
     char *errmsg;
     int state = sqlite3_exec(*db, command, NULL, NULL, &errmsg);
     if(state != SQLITE_OK){
@@ -66,7 +66,7 @@ Error open_database(sqlite3 **db){
     int command_length = strlen(table_name) + 64;
     char *command = malloc(command_length * sizeof(char));
     sprintf(command, "DROP TABLE IF EXISTS %s;", table_name);
-    printf("%s\n", command);
+    //printf("%s\n", command); // DEBUG
     char *errmsg;
     int state = sqlite3_exec(*db, command, NULL, NULL, &errmsg);
     free(command);
@@ -84,7 +84,7 @@ Error open_database(sqlite3 **db){
       int command_length = strlen(table_name) + strlen(condition) + 64; // +64 overhead for formatting
       char *command = malloc(command_length * sizeof(char));
       sprintf(command, "SELECT %s FROM %s WHERE %s;", operation, table_name, condition);
-      printf("%s\n", command);
+      //printf("%s\n", command); // DEBUG
       char *errmsg;
       int state = sqlite3_exec(*db, command, convert_to_string_table, result, &errmsg);
       free(command);
@@ -101,6 +101,7 @@ Error open_database(sqlite3 **db){
       int command_length = strlen(table_name) + strlen(condition) + 64; // +64 overhead for formatting
       char *command = malloc(command_length * sizeof(char));
       sprintf(command, "DELETE FROM %s WHERE %s;", table_name, condition);
+      //printf("%s\n", command); // DEBUG
       char *errmsg;
       int state = sqlite3_exec(*db, command, NULL, NULL, &errmsg);
       free(command); 
@@ -117,7 +118,7 @@ Error open_database(sqlite3 **db){
       int command_length = strlen(table_name) + strlen(variables) + strlen(values) + 64;
       char *command = malloc(command_length * sizeof(char));
       sprintf(command, "INSERT INTO %s (%s) VALUES (%s);", table_name, variables, values);
-      printf("%s\n", command);
+      //printf("%s\n", command); // DEBUG
       char *errmsg;
       int state = sqlite3_exec(*db, command, NULL, NULL, &errmsg);
       free(command); 
@@ -134,7 +135,7 @@ Error open_database(sqlite3 **db){
       int command_length = strlen(table_name) + strlen(variables_and_values) + strlen(condition) + 64;
       char *command = malloc(command_length * sizeof(char));
       sprintf(command, "UPDATE %s SET %s WHERE %s;", table_name, variables_and_values, condition);
-      printf("%s\n", command);
+      //printf("%s\n", command); // DEBUG
       char *errmsg;
       int state = sqlite3_exec(*db, command, NULL, NULL, &errmsg);
       free(command);
@@ -144,7 +145,7 @@ Error open_database(sqlite3 **db){
         return (Error) {DATABASE_ERROR, 
                         "database.c/update_table_info/ERROR: Failed to update table information.\n"}; 
       }
-      printf("Table %s updated successfully\n", table_name);
+      //printf("Table %s updated successfully\n", table_name); // DEBUG
       return (Error) {OK, "Success"};
     }
 

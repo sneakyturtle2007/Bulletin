@@ -5,9 +5,9 @@ Error free_table(Table_String *table){
 	if(table == NULL || table->data == NULL) {
 		return (Error) {OK, "Nothing to free\n"};
 	}
-	for(int i = 0; i < table->rows; i++){
+	for(size_t i = 0; i < table->rows; i++){
 		if(table->data[i] != NULL) {
-			for(int j = 0; j < table->cols; j++){
+			for(size_t j = 0; j < table->cols; j++){
 				free(table->data[i][j]->data); // Free string data for column j at row i
 				free(table->data[i][j]); // Free String struct for column j at row i
 			}
@@ -23,9 +23,9 @@ Error free_table(Table_String *table){
 
 int convert_to_string_table(void *data, int numCols, char **colValues, char **colNames){
 	Table_String *table = (Table_String *)data;
-	printf("DEBUG: About to enter function\n"); // DEBUG
-	printf("DEBUG: table->rows=%zu, table->table_capacity=%zu\n", table->rows, table->table_capacity); // DEBUG
-	printf("DEBUG: numCols=%d\n", numCols); // DEBUG
+	//printf("DEBUG: About to enter function\n"); // DEBUG
+	//printf("DEBUG: table->rows=%zu, table->table_capacity=%zu\n", table->rows, table->table_capacity); // DEBUG
+	//printf("DEBUG: numCols=%d\n", numCols); // DEBUG
 	if(table->rows >= table->table_capacity) {
 		table->table_capacity *= 2;
 		table->data = realloc(table->data, table->table_capacity * sizeof(String**));
@@ -40,15 +40,15 @@ int convert_to_string_table(void *data, int numCols, char **colValues, char **co
 		return 1;
 	}
 	table->cols = numCols;
-	for(int i = 0; i < table->cols; i++){
+	for(size_t i = 0; i < table->cols; i++){
 		char *column_value;
 		if(colValues[i] == NULL){
 			column_value = "NONE";
 		}else{
 			column_value = colValues[i];
 		}
-		printf("DEBUG: colValues[%i] adjusted for possible null values: %s\n", i, column_value); // DEBUG
-		printf("DEBUG: colValues[%i] strlen: %i\n", i, strlen(column_value)); // DEBUG
+		//printf("DEBUG: colValues[%i] adjusted for possible null values: %s\n", i, column_value); // DEBUG
+		//printf("DEBUG: colValues[%i] strlen: %i\n", i, strlen(column_value)); // DEBUG
 		String *temp_string = malloc(sizeof(String));
 		if(temp_string == NULL) {
 			fprintf(stderr, "Memory allocation failed for String struct\n");
@@ -77,8 +77,8 @@ int convert_to_string_table(void *data, int numCols, char **colValues, char **co
 
 Error convert_table_to_string(Table_String *table, String *result){
   char *state;
-  for(int i = 0; i < table->rows; i++){
-    for(int k = 0; k < table->cols; k++){
+  for(size_t i = 0; i < table->rows; i++){
+    for(size_t k = 0; k < table->cols; k++){
       if(result->capacity < result->length + strlen(table->data[i][k]->data) + 2){
         result->capacity *= 2;
         char *new_data = realloc(result->data, result->capacity);
@@ -106,7 +106,7 @@ Error convert_table_to_string(Table_String *table, String *result){
     state = strncat(result->data, "\n", 2);
     result->length += 1; // Increment length for the new line character
     if(state == NULL){
-      fprintf(stderr, "ERROR: Failed to convert table to string (failed to concatenate new line character onto end of row %d)\n", i);
+      fprintf(stderr, "ERROR: Failed to convert table to string (failed to concatenate new line character onto end of row %ld)\n", i);
       return (Error) {STRING_ERROR,
                       "director.c/convert_table_to_string/ERROR: Failed to concatenate new line character onto end of row.\n"};
     }

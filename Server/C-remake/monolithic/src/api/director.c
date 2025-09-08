@@ -6,25 +6,25 @@
 
 // Function declarations 
 
-Error prepare_and_exec_create_user(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_create_user(sqlite3 **db, String *output);
 
-Error prepare_and_exec_delete_user(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_delete_user(sqlite3 **db, String *output);
 
-Error prepare_and_exec_login(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_login(sqlite3 **db, String *output);
 
-Error prepare_and_exec_add_friend(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_add_friends(sqlite3 **db, String *output);
 
-Error prepare_and_exec_remove_friend(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_remove_friends(sqlite3 **db, String *output);
 
-Error prepare_and_exec_create_event(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_create_event(sqlite3 **db, String *output);
 
-Error prepare_and_exec_delete_event(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_delete_event(sqlite3 **db, String *output);
 
-Error prepare_and_exec_add_invitees(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_add_invitees(sqlite3 **db, String *output);
 
-Error prepare_and_exec_remove_invitees(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_remove_invitees(sqlite3 **db, String *output);
 
-Error prepare_and_exec_get_month_events(sqlite3 **db, char *input, String *output);
+Error prepare_and_exec_get_month_events(sqlite3 **db,String *output);
 
 // Function definitions
 
@@ -39,34 +39,34 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
   }
 
   if (strcmp(inputToken, "createuser") == 0) {
-    return prepare_and_exec_create_user(db, input, output);
+    return prepare_and_exec_create_user(db, output);
 
   }else if(strcmp(inputToken, "deleteuser") == 0) {
-    return prepare_and_exec_delete_user(db, input, output);
+    return prepare_and_exec_delete_user(db, output);
 
   }else if (strcmp(inputToken, "login") == 0) {
-    return prepare_and_exec_login(db, input, output);
+    return prepare_and_exec_login(db, output);
 
-  }else if(strcmp(inputToken, "addfriend") == 0) {
-    return prepare_and_exec_add_friend(db, input, output);
+  }else if(strcmp(inputToken, "addfriends") == 0) {
+    return prepare_and_exec_add_friends(db, output);
 
-  }else if (strcmp(inputToken, "removefriend") == 0){
-    return prepare_and_exec_remove_friend(db, input, output);
+  }else if (strcmp(inputToken, "removefriends") == 0){
+    return prepare_and_exec_remove_friends(db, output);
 
   }else if(strcmp(inputToken, "createevent") == 0){
-    return prepare_and_exec_create_event(db, input, output);
+    return prepare_and_exec_create_event(db, output);
 
   } else if(strcmp(inputToken, "deleteevent") == 0){
-    return prepare_and_exec_delete_event(db, input, output);
+    return prepare_and_exec_delete_event(db, output);
 
   }else if(strcmp(inputToken, "addinvitees") == 0){
-    return prepare_and_exec_add_invitees(db, input, output);
+    return prepare_and_exec_add_invitees(db, output);
 
   }else if(strcmp(inputToken, "removeinvitees") == 0){
-    return prepare_and_exec_remove_invitees(db, input, output);
+    return prepare_and_exec_remove_invitees(db, output);
 
   }else if (strcmp(inputToken, "getmonthevents") == 0){
-    return prepare_and_exec_get_month_events(db, input, output);
+    return prepare_and_exec_get_month_events(db, output);
 
   }else{
     printf("Cause of ERROR --> %s | ERROR: Invalid command\n ", inputToken);
@@ -76,7 +76,7 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
   }
 }
 
-Error prepare_and_exec_create_user(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_create_user(sqlite3 **db, String *output){
   char *username = strtok(NULL, "|");
   char *email = strtok(NULL, "|");
   char *password = strtok(NULL, "|");
@@ -100,7 +100,7 @@ Error prepare_and_exec_create_user(sqlite3 **db, char *input, String *output){
   return status;
 }
 
-Error prepare_and_exec_delete_user(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_delete_user(sqlite3 **db, String *output){
   char *userID = strtok(NULL, "|");
   if(userID == NULL) {
     fprintf(stderr, "ERROR: Missing userID for deleteuser command\n");
@@ -122,7 +122,7 @@ Error prepare_and_exec_delete_user(sqlite3 **db, char *input, String *output){
   return status;
 }
 
-Error prepare_and_exec_login(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_login(sqlite3 **db, String *output){
   char *username = strtok(NULL, "|");
   char *password = strtok(NULL, "|");
   if(username == NULL || password == NULL) {
@@ -139,7 +139,7 @@ Error prepare_and_exec_login(sqlite3 **db, char *input, String *output){
 
   if(strncmp(necessary_user_info.data, "Invalid credentials", necessary_user_info.length) == 0){
     json_object_object_add(json_output, "status", json_object_new_string(necessary_user_info.data));
-    printf(" DEBUG: necessary user info: %s\n", necessary_user_info.data);
+    //printf(" DEBUG: necessary user info: %s\n", necessary_user_info.data); // DEBUG
     status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB));
     json_object_put(json_output);
     //free(necessary_user_info.data);
@@ -150,14 +150,15 @@ Error prepare_and_exec_login(sqlite3 **db, char *input, String *output){
   }
   char *end;
   long user_id = strtol(strtok(necessary_user_info.data, "|"), &end, 10);
-  printf("DEBUG: necessary user info: %s\n", necessary_user_info.data);
-  printf("DEBUG: user_id_long: %ld\n", user_id);
+  //printf("DEBUG: necessary user info: %s\n", necessary_user_info.data); // DEBUG
+  //printf("DEBUG: user_id_long: %ld\n", user_id); // DEBUG
   
   json_object_object_add(json_output, "status", json_object_new_string("Success"));
   json_object_object_add(json_output, "user_id", json_object_new_int64(user_id));
   json_object_object_add(json_output, "friends", json_object_new_string(strtok(NULL, "|")));
   json_object_object_add(json_output, "invited", json_object_new_string(strtok(NULL, "|")));
   json_object_object_add(json_output, "groups", json_object_new_string(strtok(NULL, "|")));
+  json_object_object_add(json_output, "friend_requests", json_object_new_string(strtok(NULL, "|")));
   status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB));
   free(necessary_user_info.data);
   json_object_put(json_output);
@@ -167,15 +168,20 @@ Error prepare_and_exec_login(sqlite3 **db, char *input, String *output){
   return status;
 }
 
-Error prepare_and_exec_add_friend(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_add_friends(sqlite3 **db, String *output){
   char *user_id = strtok(NULL, "|");
-  char *friend_username = strtok(NULL, "|");
-  if(user_id == NULL || friend_username == NULL){
+  char *friends_usernames = strtok(NULL, "|");
+  if(user_id == NULL || friends_usernames == NULL){
     fprintf(stderr, "ERROR: Missing parameters for addfriend command.\n");
     return (Error) {INVALID_ARGUMENT,
                     "director.c/input_handler/ERROR: Missing parameters for addfriend command.\n"};
   }
-  Error status = add_friend(db, user_id, friend_username);
+  Error status;
+  if(strchr(friends_usernames, ',') != NULL){
+    status = add_multiple_friends(db, user_id, friends_usernames);
+  }else{
+    status = add_friend(db, user_id, friends_usernames);
+  }
   if(status.code != OK){
     fprintf(stderr, "ERROR: Failed to add friend.\n");
     return status;
@@ -190,17 +196,22 @@ Error prepare_and_exec_add_friend(sqlite3 **db, char *input, String *output){
   return status;
 }
 
-Error prepare_and_exec_remove_friend(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_remove_friends(sqlite3 **db, String *output){
   char *user_id = strtok(NULL, "|");
-  char *friend_username = strtok(NULL, "|");
-  if(user_id == NULL || friend_username == NULL){
+  char *friends_usernames = strtok(NULL, "|");
+  if(user_id == NULL || friends_usernames == NULL){
     fprintf(stderr, "ERROR: Missing parameters for removefriend command.\n");
     return (Error) {INVALID_ARGUMENT,
                     "director.c/input_handler/ERROR: Missing parameters for removefriend command.\n"};
   }
-  Error status = remove_friend(db, user_id, friend_username);
+  Error status;
+  if(strchr(friends_usernames, ',') != NULL){
+    status = remove_multiple_friends(db, user_id, friends_usernames);
+  }else{
+    status = remove_friend(db, user_id, friends_usernames);
+  }
   if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to remove friend.\n");
+    fprintf(stderr, "ERROR: Failed to remove friend(s).\n");
     return status;
   }
   json_object *json_output = json_object_new_object();
@@ -208,12 +219,12 @@ Error prepare_and_exec_remove_friend(sqlite3 **db, char *input, String *output){
   status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB));
   json_object_put(json_output);
   if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to convert remove_friend result from JSON to string for output.\n");
+    fprintf(stderr, "ERROR: Failed to convert remove_friends result from JSON to string for output.\n");
   }
   return status;
 }
 
-Error prepare_and_exec_create_event(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_create_event(sqlite3 **db, String *output){
   char *user_id = strtok(NULL, "|");
   char *title = strtok(NULL, "|");
   char *start_date = strtok(NULL, "|");
@@ -305,7 +316,7 @@ Error prepare_and_exec_create_event(sqlite3 **db, char *input, String *output){
   return status;
 }
 
-Error prepare_and_exec_delete_event(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_delete_event(sqlite3 **db, String *output){
   char *event_id = strtok(NULL, "|");
   if(event_id == NULL){
     fprintf(stderr, "ERROR: Invalid Argument.\n");
@@ -326,11 +337,11 @@ Error prepare_and_exec_delete_event(sqlite3 **db, char *input, String *output){
   return status;
 }
 
-Error prepare_and_exec_add_invitees(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_add_invitees(sqlite3 **db, String *output){
   char *event_id = strtok(NULL, "|");
   char *invitee = strtok(NULL, "|");
-  printf("event_id: %s\n", event_id);
-  printf("invitee: %s\n",invitee );
+  //printf("event_id: %s\n", event_id); // DEBUG
+  //printf("invitee: %s\n",invitee ); // DEBUG
   if(event_id == NULL || invitee == NULL){
     fprintf(stderr, "ERROR: Invalid arguments.\n");
     return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for addinvitee command.\n"};
@@ -355,11 +366,11 @@ Error prepare_and_exec_add_invitees(sqlite3 **db, char *input, String *output){
   return status;
 }
 
-Error prepare_and_exec_remove_invitees(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_remove_invitees(sqlite3 **db, String *output){
   char *event_id = strtok(NULL, "|");
   char *invitee_s = strtok(NULL, "|");
-  printf("event_id: %s\n", event_id);
-  printf("invitee: %s\n",invitee_s );
+  //printf("event_id: %s\n", event_id); // DEBUG
+  //printf("invitee: %s\n",invitee_s ); // DEBUG
   if(event_id == NULL || invitee_s == NULL){
     fprintf(stderr, "ERROR: Invalid arguments.\n");
     return (Error) {INVALID_ARGUMENT, "director.c/input_handler/ERROR: Missing parameters for removeinvitee command.\n"};
@@ -384,7 +395,7 @@ Error prepare_and_exec_remove_invitees(sqlite3 **db, char *input, String *output
   return status;
 }
 
-Error prepare_and_exec_get_month_events(sqlite3 **db, char *input, String *output){
+Error prepare_and_exec_get_month_events(sqlite3 **db, String *output){
   char *user_id = strtok(NULL, "|");
   char *year_s = strtok(NULL, "|");
   char *month_s = strtok(NULL, "|");
@@ -424,7 +435,7 @@ Error prepare_and_exec_get_month_events(sqlite3 **db, char *input, String *outpu
     json_object_object_add(status_json, "status", json_object_new_string("Success"));
     json_object_array_add(json_event_objects, status_json);
   }
-  for(int i = 0; i < month_events.length; i ++){
+  for(size_t i = 0; i < month_events.length; i ++){
     json_object *event = json_object_new_object();
     status = convert_event_to_json(event, month_events.data[i]);
     //printf("\n\n prepare_and_exec_get_month_events/eventid: %s\n\n", month_events.data[i].user_id); // DEBUG
@@ -436,7 +447,7 @@ Error prepare_and_exec_get_month_events(sqlite3 **db, char *input, String *outpu
     }
     json_object_array_add(json_event_objects, event);
   }
-  for(int i = 0; i < month_events.length; i ++){
+  for(size_t i = 0; i < month_events.length; i ++){
     free(month_events.data[i].user_id);
     free(month_events.data[i].title);
     free(month_events.data[i].start_date);

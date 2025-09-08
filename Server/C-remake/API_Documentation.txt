@@ -46,7 +46,7 @@ User Management:
          Output(Error): {status:"<Error>"};
 
 
-   addfriend|<user ID>|<friend username>
+   addfriends|<user ID>|<friend(s) username(s)>
       - Description
          If successful, returns a stringified json object of the structure detailed below. If there is an error, it returns a json of the same structure but with 
 		   an error message in the status field.
@@ -55,12 +55,13 @@ User Management:
          }
          Friends' username cannot include the following symbols: @, '', "", or |.
 		- Example
-			Input: addfriend|1|friend1
+			Input: addfriends|1|friend1,friend2,friend3
+         OR Input: addfriends|1|friend1
 			Output(No Error): {status:"Success"}
 			Output(Error): {status:"<ERROR>"}
 
 
-   removefriend|<username>|<friend username>
+   removefriends|<username>|<friend(s) username(s)>
       - Description
          If successful, returns a stringified json object of the structure detailed below. If there is an error, it returns a json of the same structure but with 
 		   an error message in the status field.
@@ -69,7 +70,8 @@ User Management:
          }
          Friends' username cannot include the following symbols: @, '', "", or |.
 		- Example
-			Input: removefriend|1|friend1
+			Input: removefriends|1|friend1,friend2,friend3
+         OR Input: removefriends|1|friend1
 			Output(No Error): {status:"Success"}
 			Output(Error): }{status:"<ERROR>"}
 
@@ -115,7 +117,8 @@ Event Management:
             status:"Success",
          }
       - Example
-         Input: addinvitee|1|friend1
+         Input: addinvitee|1|friend1,friend2,friend3
+         OR Input: addinvitee|1|friend1
          Output(No Error): {status:"Success"}
          Output(Error): {status:"<ERROR>"}
 
