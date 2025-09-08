@@ -21,7 +21,7 @@
         <code>npm install net https express path sqlite3</code>
         <br><br>
         <li>Run</li>
-        <code>node ServerMain.js // sudo may be required to setup the server TCP & HTTPS port. </code>
+        <code>node ServerMain.js // sudo may be required to setup the server TCP & HTTPS  port. </code>
     </ol>
 </div>
 
