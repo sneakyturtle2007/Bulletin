@@ -1,0 +1,3534 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/sbin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Linux - 7.0.10-arch1-1 - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/sbin/gmake"
+      - "/usr/bin/gmake"
+      - "/sbin/gmake"
+      - "/bin/gmake"
+      - "/var/lib/flatpak/exports/bin/gmake"
+      - "/usr/lib/jvm/default/bin/gmake"
+      - "/usr/bin/site_perl/gmake"
+      - "/usr/bin/vendor_perl/gmake"
+      - "/usr/bin/core_perl/gmake"
+      - "/usr/local/sbin/make"
+      - "/usr/local/bin/make"
+    found: "/usr/sbin/make"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cc"
+      - "gcc"
+      - "cl"
+      - "bcc"
+      - "xlc"
+      - "icx"
+      - "clang"
+    candidate_directories:
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/local/sbin/cc"
+      - "/usr/local/bin/cc"
+    found: "/usr/sbin/cc"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/usr/share/cmake/Modules/"
+    found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/sbin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/4.3.3/CompilerIdC/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ar"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/sbin/ar"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ranlib"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/sbin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "strip"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/sbin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/sbin/ld"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nm"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/sbin/nm"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objdump"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/sbin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objcopy"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/sbin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "readelf"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/sbin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dlltool"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/sbin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/bin/dlltool"
+      - "/sbin/dlltool"
+      - "/bin/dlltool"
+      - "/var/lib/flatpak/exports/bin/dlltool"
+      - "/usr/lib/jvm/default/bin/dlltool"
+      - "/usr/bin/site_perl/dlltool"
+      - "/usr/bin/vendor_perl/dlltool"
+      - "/usr/bin/core_perl/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "addr2line"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/sbin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/sbin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/bin/tapi"
+      - "/sbin/tapi"
+      - "/bin/tapi"
+      - "/var/lib/flatpak/exports/bin/tapi"
+      - "/usr/lib/jvm/default/bin/tapi"
+      - "/usr/bin/site_perl/tapi"
+      - "/usr/bin/vendor_perl/tapi"
+      - "/usr/bin/core_perl/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-16.1"
+      - "gcc-ar-16"
+      - "gcc-ar16"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/sbin/gcc-ar-16.1"
+      - "/usr/local/sbin/gcc-ar-16.1"
+      - "/usr/local/bin/gcc-ar-16.1"
+      - "/usr/bin/gcc-ar-16.1"
+      - "/sbin/gcc-ar-16.1"
+      - "/bin/gcc-ar-16.1"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-16.1"
+      - "/usr/lib/jvm/default/bin/gcc-ar-16.1"
+      - "/usr/bin/site_perl/gcc-ar-16.1"
+      - "/usr/bin/vendor_perl/gcc-ar-16.1"
+      - "/usr/bin/core_perl/gcc-ar-16.1"
+      - "/usr/sbin/gcc-ar-16"
+      - "/usr/local/sbin/gcc-ar-16"
+      - "/usr/local/bin/gcc-ar-16"
+      - "/usr/bin/gcc-ar-16"
+      - "/sbin/gcc-ar-16"
+      - "/bin/gcc-ar-16"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-16"
+      - "/usr/lib/jvm/default/bin/gcc-ar-16"
+      - "/usr/bin/site_perl/gcc-ar-16"
+      - "/usr/bin/vendor_perl/gcc-ar-16"
+      - "/usr/bin/core_perl/gcc-ar-16"
+      - "/usr/sbin/gcc-ar16"
+      - "/usr/local/sbin/gcc-ar16"
+      - "/usr/local/bin/gcc-ar16"
+      - "/usr/bin/gcc-ar16"
+      - "/sbin/gcc-ar16"
+      - "/bin/gcc-ar16"
+      - "/var/lib/flatpak/exports/bin/gcc-ar16"
+      - "/usr/lib/jvm/default/bin/gcc-ar16"
+      - "/usr/bin/site_perl/gcc-ar16"
+      - "/usr/bin/vendor_perl/gcc-ar16"
+      - "/usr/bin/core_perl/gcc-ar16"
+    found: "/usr/sbin/gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-16.1"
+      - "gcc-ranlib-16"
+      - "gcc-ranlib16"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/sbin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/sbin/gcc-ranlib-16.1"
+      - "/usr/local/sbin/gcc-ranlib-16.1"
+      - "/usr/local/bin/gcc-ranlib-16.1"
+      - "/usr/bin/gcc-ranlib-16.1"
+      - "/sbin/gcc-ranlib-16.1"
+      - "/bin/gcc-ranlib-16.1"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-16.1"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-16.1"
+      - "/usr/bin/site_perl/gcc-ranlib-16.1"
+      - "/usr/bin/vendor_perl/gcc-ranlib-16.1"
+      - "/usr/bin/core_perl/gcc-ranlib-16.1"
+      - "/usr/sbin/gcc-ranlib-16"
+      - "/usr/local/sbin/gcc-ranlib-16"
+      - "/usr/local/bin/gcc-ranlib-16"
+      - "/usr/bin/gcc-ranlib-16"
+      - "/sbin/gcc-ranlib-16"
+      - "/bin/gcc-ranlib-16"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-16"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-16"
+      - "/usr/bin/site_perl/gcc-ranlib-16"
+      - "/usr/bin/vendor_perl/gcc-ranlib-16"
+      - "/usr/bin/core_perl/gcc-ranlib-16"
+      - "/usr/sbin/gcc-ranlib16"
+      - "/usr/local/sbin/gcc-ranlib16"
+      - "/usr/local/bin/gcc-ranlib16"
+      - "/usr/bin/gcc-ranlib16"
+      - "/sbin/gcc-ranlib16"
+      - "/bin/gcc-ranlib16"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib16"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib16"
+      - "/usr/bin/site_perl/gcc-ranlib16"
+      - "/usr/bin/vendor_perl/gcc-ranlib16"
+      - "/usr/bin/core_perl/gcc-ranlib16"
+    found: "/usr/sbin/gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kytxk1"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kytxk1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kytxk1'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_fa1a4/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_fa1a4.dir/build.make CMakeFiles/cmTC_fa1a4.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kytxk1'
+        Building C object CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o
+        /usr/sbin/cc   -v -o CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/sbin/cc
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.1.1 20260430 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa1a4.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_fa1a4.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccLeLShG.s
+        GNU C23 (GCC) version 16.1.1 20260430 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 16.1.1 20260430, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Compiler executable checksum: d640c2d0cc84ebd71ee43ed7e2df63fb
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa1a4.dir/'
+         as -v --64 -o CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o /tmp/ccLeLShG.s
+        GNU assembler version 2.46.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46.0
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_fa1a4
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_fa1a4.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/sbin/cc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.1.1 20260430 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa1a4' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fa1a4.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfwhq9A.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fa1a4 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
+        collect2 version 16.1.1 20260430
+        /usr/sbin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfwhq9A.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fa1a4 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
+        GNU ld (GNU Binutils) 2.46.0
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa1a4' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fa1a4.'
+        /usr/sbin/cc  -v -Wl,-v CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o -o cmTC_fa1a4
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kytxk1'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kytxk1']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_fa1a4/fast]
+        ignore line: [/usr/sbin/make  -f CMakeFiles/cmTC_fa1a4.dir/build.make CMakeFiles/cmTC_fa1a4.dir/build]
+        ignore line: [make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kytxk1']
+        ignore line: [Building C object CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/sbin/cc   -v -o CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/sbin/cc]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.1.1 20260430 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa1a4.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_fa1a4.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccLeLShG.s]
+        ignore line: [GNU C23 (GCC) version 16.1.1 20260430 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 16.1.1 20260430  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: d640c2d0cc84ebd71ee43ed7e2df63fb]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa1a4.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o /tmp/ccLeLShG.s]
+        ignore line: [GNU assembler version 2.46.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46.0]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_fa1a4]
+        ignore line: [/usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_fa1a4.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/sbin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.1.1 20260430 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_fa1a4' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_fa1a4.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfwhq9A.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fa1a4 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccfwhq9A.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s_asneeded] ==> ignore
+          arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s_asneeded] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_fa1a4] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_s_asneeded] ==> lib [gcc_s_asneeded]
+          arg [-latomic_asneeded] ==> lib [atomic_asneeded]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_s_asneeded] ==> lib [gcc_s_asneeded]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
+        ignore line: [collect2 version 16.1.1 20260430]
+        ignore line: [/usr/sbin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfwhq9A.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_fa1a4 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_fa1a4.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
+        linker tool for 'C': /usr/sbin/ld
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o] ==> [/usr/lib/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s_asneeded;atomic_asneeded;c;gcc;gcc_s_asneeded]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/sbin/ld" "-v"
+      GNU ld (GNU Binutils) 2.46.0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CTest.cmake:188 (find_program)"
+      - "external/json-c/CMakeLists.txt:19 (include)"
+    mode: "program"
+    variable: "MEMORYCHECK_COMMAND"
+    description: "Path to the memory checking command, used for memory error detection."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "purify"
+      - "valgrind"
+      - "boundscheck"
+      - "drmemory"
+      - "cuda-memcheck"
+      - "compute-sanitizer"
+    candidate_directories:
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/usr/local/sbin/purify"
+      - "/usr/local/bin/purify"
+      - "/usr/sbin/purify"
+      - "/usr/bin/purify"
+      - "/sbin/purify"
+      - "/bin/purify"
+      - "/var/lib/flatpak/exports/bin/purify"
+      - "/usr/lib/jvm/default/bin/purify"
+      - "/usr/bin/site_perl/purify"
+      - "/usr/bin/vendor_perl/purify"
+      - "/usr/bin/core_perl/purify"
+      - "/usr/local/bin/purify"
+      - "/usr/local/sbin/purify"
+      - "/usr/local/purify"
+      - "/usr/bin/purify"
+      - "/usr/sbin/purify"
+      - "/usr/purify"
+      - "/bin/purify"
+      - "/sbin/purify"
+      - "/usr/X11R6/bin/purify"
+      - "/usr/X11R6/sbin/purify"
+      - "/usr/X11R6/purify"
+      - "/usr/pkg/bin/purify"
+      - "/usr/pkg/sbin/purify"
+      - "/usr/pkg/purify"
+      - "/opt/bin/purify"
+      - "/opt/sbin/purify"
+      - "/opt/purify"
+      - "/usr/local/sbin/valgrind"
+      - "/usr/local/bin/valgrind"
+    found: "/usr/sbin/valgrind"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CTest.cmake:196 (find_program)"
+      - "external/json-c/CMakeLists.txt:19 (include)"
+    mode: "program"
+    variable: "COVERAGE_COMMAND"
+    description: "Path to the coverage program that CTest uses for performing coverage inspection"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcov"
+    candidate_directories:
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/usr/local/sbin/gcov"
+      - "/usr/local/bin/gcov"
+    found: "/usr/sbin/gcov"
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:98 (check_include_file)"
+    checks:
+      - "Looking for fcntl.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-JgHEsC"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-JgHEsC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_FCNTL_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-JgHEsC'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_eb0fe/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_eb0fe.dir/build.make CMakeFiles/cmTC_eb0fe.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-JgHEsC'
+        Building C object CMakeFiles/cmTC_eb0fe.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_eb0fe.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-JgHEsC/CheckIncludeFile.c
+        Linking C executable cmTC_eb0fe
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_eb0fe.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_eb0fe.dir/CheckIncludeFile.c.o -o cmTC_eb0fe  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-JgHEsC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:99 (check_include_file)"
+    checks:
+      - "Looking for inttypes.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-bRjPil"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-bRjPil"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_INTTYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-bRjPil'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_902f3/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_902f3.dir/build.make CMakeFiles/cmTC_902f3.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-bRjPil'
+        Building C object CMakeFiles/cmTC_902f3.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_902f3.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-bRjPil/CheckIncludeFile.c
+        Linking C executable cmTC_902f3
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_902f3.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_902f3.dir/CheckIncludeFile.c.o -o cmTC_902f3  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-bRjPil'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:100 (check_include_file)"
+    checks:
+      - "Looking for stdarg.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2A6JE7"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2A6JE7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDARG_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2A6JE7'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_932a1/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_932a1.dir/build.make CMakeFiles/cmTC_932a1.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2A6JE7'
+        Building C object CMakeFiles/cmTC_932a1.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_932a1.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2A6JE7/CheckIncludeFile.c
+        Linking C executable cmTC_932a1
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_932a1.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_932a1.dir/CheckIncludeFile.c.o -o cmTC_932a1  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2A6JE7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:101 (check_include_file)"
+    checks:
+      - "Looking for strings.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wgk3Nt"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wgk3Nt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRINGS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wgk3Nt'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_86f48/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_86f48.dir/build.make CMakeFiles/cmTC_86f48.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wgk3Nt'
+        Building C object CMakeFiles/cmTC_86f48.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_86f48.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wgk3Nt/CheckIncludeFile.c
+        Linking C executable cmTC_86f48
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_86f48.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_86f48.dir/CheckIncludeFile.c.o -o cmTC_86f48  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wgk3Nt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:102 (check_include_file)"
+    checks:
+      - "Looking for string.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-zOI05r"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-zOI05r"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRING_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-zOI05r'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_a2d22/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_a2d22.dir/build.make CMakeFiles/cmTC_a2d22.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-zOI05r'
+        Building C object CMakeFiles/cmTC_a2d22.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_a2d22.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-zOI05r/CheckIncludeFile.c
+        Linking C executable cmTC_a2d22
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_a2d22.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_a2d22.dir/CheckIncludeFile.c.o -o cmTC_a2d22  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-zOI05r'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:103 (check_include_file)"
+    checks:
+      - "Looking for syslog.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GFCyJf"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GFCyJf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYSLOG_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GFCyJf'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_220ff/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_220ff.dir/build.make CMakeFiles/cmTC_220ff.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GFCyJf'
+        Building C object CMakeFiles/cmTC_220ff.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_220ff.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GFCyJf/CheckIncludeFile.c
+        Linking C executable cmTC_220ff
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_220ff.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_220ff.dir/CheckIncludeFile.c.o -o cmTC_220ff  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GFCyJf'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFiles.cmake:201 (try_compile)"
+      - "external/json-c/CMakeLists.txt:106 (check_include_files)"
+    checks:
+      - "Looking for 4 include files stdlib.h, ..., float.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nJXdMC"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nJXdMC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "STDC_HEADERS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nJXdMC'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_68a1c/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_68a1c.dir/build.make CMakeFiles/cmTC_68a1c.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nJXdMC'
+        Building C object CMakeFiles/cmTC_68a1c.dir/STDC_HEADERS.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_68a1c.dir/STDC_HEADERS.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nJXdMC/STDC_HEADERS.c
+        Linking C executable cmTC_68a1c
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_68a1c.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_68a1c.dir/STDC_HEADERS.c.o -o cmTC_68a1c  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nJXdMC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:108 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wPSMEH"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wPSMEH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wPSMEH'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_91749/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_91749.dir/build.make CMakeFiles/cmTC_91749.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wPSMEH'
+        Building C object CMakeFiles/cmTC_91749.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_91749.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wPSMEH/CheckIncludeFile.c
+        Linking C executable cmTC_91749
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_91749.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_91749.dir/CheckIncludeFile.c.o -o cmTC_91749  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-wPSMEH'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:109 (check_include_file)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2DhCYt"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2DhCYt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2DhCYt'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_7b2d8/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_7b2d8.dir/build.make CMakeFiles/cmTC_7b2d8.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2DhCYt'
+        Building C object CMakeFiles/cmTC_7b2d8.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_7b2d8.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2DhCYt/CheckIncludeFile.c
+        Linking C executable cmTC_7b2d8
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_7b2d8.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_7b2d8.dir/CheckIncludeFile.c.o -o cmTC_7b2d8  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-2DhCYt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:110 (check_include_file)"
+    checks:
+      - "Looking for sys/resource.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RJfKHV"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RJfKHV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_RESOURCE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RJfKHV'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_1b70e/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_1b70e.dir/build.make CMakeFiles/cmTC_1b70e.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RJfKHV'
+        Building C object CMakeFiles/cmTC_1b70e.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_1b70e.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RJfKHV/CheckIncludeFile.c
+        Linking C executable cmTC_1b70e
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_1b70e.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_1b70e.dir/CheckIncludeFile.c.o -o cmTC_1b70e  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RJfKHV'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:112 (check_include_file)"
+    checks:
+      - "Looking for dlfcn.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OT08zB"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OT08zB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DLFCN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OT08zB'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_fcbb2/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_fcbb2.dir/build.make CMakeFiles/cmTC_fcbb2.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OT08zB'
+        Building C object CMakeFiles/cmTC_fcbb2.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_fcbb2.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OT08zB/CheckIncludeFile.c
+        Linking C executable cmTC_fcbb2
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_fcbb2.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_fcbb2.dir/CheckIncludeFile.c.o -o cmTC_fcbb2  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OT08zB'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:113 (check_include_file)"
+    checks:
+      - "Looking for endian.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-v8GgjQ"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-v8GgjQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ENDIAN_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-v8GgjQ'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_3926d/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_3926d.dir/build.make CMakeFiles/cmTC_3926d.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-v8GgjQ'
+        Building C object CMakeFiles/cmTC_3926d.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_3926d.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-v8GgjQ/CheckIncludeFile.c
+        Linking C executable cmTC_3926d
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_3926d.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_3926d.dir/CheckIncludeFile.c.o -o cmTC_3926d  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-v8GgjQ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:114 (check_include_file)"
+    checks:
+      - "Looking for limits.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kd0xPc"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kd0xPc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_LIMITS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kd0xPc'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_613e6/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_613e6.dir/build.make CMakeFiles/cmTC_613e6.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kd0xPc'
+        Building C object CMakeFiles/cmTC_613e6.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_613e6.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kd0xPc/CheckIncludeFile.c
+        Linking C executable cmTC_613e6
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_613e6.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_613e6.dir/CheckIncludeFile.c.o -o cmTC_613e6  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-kd0xPc'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:115 (check_include_file)"
+    checks:
+      - "Looking for locale.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RF4kRg"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RF4kRg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_LOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RF4kRg'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_30397/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_30397.dir/build.make CMakeFiles/cmTC_30397.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RF4kRg'
+        Building C object CMakeFiles/cmTC_30397.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_30397.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RF4kRg/CheckIncludeFile.c
+        Linking C executable cmTC_30397
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_30397.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_30397.dir/CheckIncludeFile.c.o -o cmTC_30397  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RF4kRg'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:116 (check_include_file)"
+    checks:
+      - "Looking for memory.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nWBrvH"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nWBrvH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_MEMORY_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nWBrvH'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_d8c60/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_d8c60.dir/build.make CMakeFiles/cmTC_d8c60.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nWBrvH'
+        Building C object CMakeFiles/cmTC_d8c60.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_d8c60.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nWBrvH/CheckIncludeFile.c
+        Linking C executable cmTC_d8c60
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_d8c60.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_d8c60.dir/CheckIncludeFile.c.o -o cmTC_d8c60  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-nWBrvH'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:118 (check_include_file)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-KB54IQ"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-KB54IQ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-KB54IQ'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_ab747/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_ab747.dir/build.make CMakeFiles/cmTC_ab747.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-KB54IQ'
+        Building C object CMakeFiles/cmTC_ab747.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_ab747.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-KB54IQ/CheckIncludeFile.c
+        Linking C executable cmTC_ab747
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_ab747.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_ab747.dir/CheckIncludeFile.c.o -o cmTC_ab747  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-KB54IQ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:119 (check_include_file)"
+    checks:
+      - "Looking for stdlib.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7zT95e"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7zT95e"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDLIB_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7zT95e'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_b2647/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_b2647.dir/build.make CMakeFiles/cmTC_b2647.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7zT95e'
+        Building C object CMakeFiles/cmTC_b2647.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b2647.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7zT95e/CheckIncludeFile.c
+        Linking C executable cmTC_b2647
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_b2647.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_b2647.dir/CheckIncludeFile.c.o -o cmTC_b2647  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7zT95e'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:120 (check_include_file)"
+    checks:
+      - "Looking for sys/cdefs.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-XUGLyt"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-XUGLyt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_CDEFS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-XUGLyt'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_3bfd4/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_3bfd4.dir/build.make CMakeFiles/cmTC_3bfd4.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-XUGLyt'
+        Building C object CMakeFiles/cmTC_3bfd4.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_3bfd4.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-XUGLyt/CheckIncludeFile.c
+        Linking C executable cmTC_3bfd4
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_3bfd4.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_3bfd4.dir/CheckIncludeFile.c.o -o cmTC_3bfd4  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-XUGLyt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:121 (check_include_file)"
+    checks:
+      - "Looking for sys/param.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GS0AXC"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GS0AXC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_PARAM_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GS0AXC'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_54e09/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_54e09.dir/build.make CMakeFiles/cmTC_54e09.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GS0AXC'
+        Building C object CMakeFiles/cmTC_54e09.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_54e09.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GS0AXC/CheckIncludeFile.c
+        Linking C executable cmTC_54e09
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_54e09.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_54e09.dir/CheckIncludeFile.c.o -o cmTC_54e09  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GS0AXC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:122 (check_include_file)"
+    checks:
+      - "Looking for sys/random.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-asEXZu"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-asEXZu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_RANDOM_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-asEXZu'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_83d2f/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_83d2f.dir/build.make CMakeFiles/cmTC_83d2f.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-asEXZu'
+        Building C object CMakeFiles/cmTC_83d2f.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_83d2f.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-asEXZu/CheckIncludeFile.c
+        Linking C executable cmTC_83d2f
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_83d2f.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_83d2f.dir/CheckIncludeFile.c.o -o cmTC_83d2f  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-asEXZu'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:123 (check_include_file)"
+    checks:
+      - "Looking for sys/stat.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-junIH5"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-junIH5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SYS_STAT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-junIH5'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_81d88/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_81d88.dir/build.make CMakeFiles/cmTC_81d88.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-junIH5'
+        Building C object CMakeFiles/cmTC_81d88.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_81d88.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-junIH5/CheckIncludeFile.c
+        Linking C executable cmTC_81d88
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_81d88.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_81d88.dir/CheckIncludeFile.c.o -o cmTC_81d88  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-junIH5'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "external/json-c/CMakeLists.txt:124 (check_include_file)"
+    checks:
+      - "Looking for xlocale.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-vawRL1"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-vawRL1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_XLOCALE_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-vawRL1'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_910ee/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_910ee.dir/build.make CMakeFiles/cmTC_910ee.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-vawRL1'
+        Building C object CMakeFiles/cmTC_910ee.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_910ee.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-vawRL1/CheckIncludeFile.c
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-vawRL1/CheckIncludeFile.c:1:10: fatal error: xlocale.h: No such file or directory
+            1 | #include <xlocale.h>
+              |          ^~~~~~~~~~~
+        compilation terminated.
+        make[1]: *** [CMakeFiles/cmTC_910ee.dir/build.make:81: CMakeFiles/cmTC_910ee.dir/CheckIncludeFile.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-vawRL1'
+        make: *** [Makefile:134: cmTC_910ee/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:136 (check_symbol_exists)"
+    checks:
+      - "Looking for _isnan"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GU5zGN"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GU5zGN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL__ISNAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GU5zGN'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_04427/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_04427.dir/build.make CMakeFiles/cmTC_04427.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GU5zGN'
+        Building C object CMakeFiles/cmTC_04427.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_04427.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GU5zGN/CheckSymbolExists.c
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GU5zGN/CheckSymbolExists.c: In function ‘main’:
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GU5zGN/CheckSymbolExists.c:8:19: error: ‘_isnan’ undeclared (first use in this function)
+            8 |   return ((int*)(&_isnan))[argc];
+              |                   ^~~~~~
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GU5zGN/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        make[1]: *** [CMakeFiles/cmTC_04427.dir/build.make:81: CMakeFiles/cmTC_04427.dir/CheckSymbolExists.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GU5zGN'
+        make: *** [Makefile:134: cmTC_04427/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:137 (check_symbol_exists)"
+    checks:
+      - "Looking for _finite"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-yQbQpU"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-yQbQpU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL__FINITE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-yQbQpU'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_5e1da/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_5e1da.dir/build.make CMakeFiles/cmTC_5e1da.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-yQbQpU'
+        Building C object CMakeFiles/cmTC_5e1da.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_5e1da.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-yQbQpU/CheckSymbolExists.c
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-yQbQpU/CheckSymbolExists.c: In function ‘main’:
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-yQbQpU/CheckSymbolExists.c:8:19: error: ‘_finite’ undeclared (first use in this function)
+            8 |   return ((int*)(&_finite))[argc];
+              |                   ^~~~~~~
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-yQbQpU/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        make[1]: *** [CMakeFiles/cmTC_5e1da.dir/build.make:81: CMakeFiles/cmTC_5e1da.dir/CheckSymbolExists.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-yQbQpU'
+        make: *** [Makefile:134: cmTC_5e1da/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:140 (check_symbol_exists)"
+    checks:
+      - "Looking for INFINITY"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-EckDy6"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-EckDy6"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_INFINITY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-EckDy6'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_7c263/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_7c263.dir/build.make CMakeFiles/cmTC_7c263.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-EckDy6'
+        Building C object CMakeFiles/cmTC_7c263.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_7c263.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-EckDy6/CheckSymbolExists.c
+        Linking C executable cmTC_7c263
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_7c263.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_7c263.dir/CheckSymbolExists.c.o -o cmTC_7c263  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-EckDy6'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:141 (check_symbol_exists)"
+    checks:
+      - "Looking for isinf"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-McbqW8"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-McbqW8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_ISINF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-McbqW8'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_91cfc/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_91cfc.dir/build.make CMakeFiles/cmTC_91cfc.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-McbqW8'
+        Building C object CMakeFiles/cmTC_91cfc.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_91cfc.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-McbqW8/CheckSymbolExists.c
+        Linking C executable cmTC_91cfc
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_91cfc.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_91cfc.dir/CheckSymbolExists.c.o -o cmTC_91cfc  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-McbqW8'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:142 (check_symbol_exists)"
+    checks:
+      - "Looking for isnan"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-tl8pBV"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-tl8pBV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_ISNAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-tl8pBV'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_7920e/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_7920e.dir/build.make CMakeFiles/cmTC_7920e.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-tl8pBV'
+        Building C object CMakeFiles/cmTC_7920e.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_7920e.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-tl8pBV/CheckSymbolExists.c
+        Linking C executable cmTC_7920e
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_7920e.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_7920e.dir/CheckSymbolExists.c.o -o cmTC_7920e  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-tl8pBV'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:143 (check_symbol_exists)"
+    checks:
+      - "Looking for nan"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-43QuRv"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-43QuRv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DECL_NAN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-43QuRv'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_e0222/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_e0222.dir/build.make CMakeFiles/cmTC_e0222.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-43QuRv'
+        Building C object CMakeFiles/cmTC_e0222.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e0222.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-43QuRv/CheckSymbolExists.c
+        Linking C executable cmTC_e0222
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_e0222.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_e0222.dir/CheckSymbolExists.c.o -o cmTC_e0222  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-43QuRv'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:146 (check_symbol_exists)"
+    checks:
+      - "Looking for _doprnt"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-LDojnJ"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-LDojnJ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_DOPRNT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-LDojnJ'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_e13dd/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_e13dd.dir/build.make CMakeFiles/cmTC_e13dd.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-LDojnJ'
+        Building C object CMakeFiles/cmTC_e13dd.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e13dd.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-LDojnJ/CheckSymbolExists.c
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-LDojnJ/CheckSymbolExists.c: In function ‘main’:
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-LDojnJ/CheckSymbolExists.c:8:19: error: ‘_doprnt’ undeclared (first use in this function)
+            8 |   return ((int*)(&_doprnt))[argc];
+              |                   ^~~~~~~
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-LDojnJ/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+        make[1]: *** [CMakeFiles/cmTC_e13dd.dir/build.make:81: CMakeFiles/cmTC_e13dd.dir/CheckSymbolExists.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-LDojnJ'
+        make: *** [Makefile:134: cmTC_e13dd/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:148 (check_symbol_exists)"
+    checks:
+      - "Looking for snprintf"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GkRgxF"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GkRgxF"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GkRgxF'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_51256/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_51256.dir/build.make CMakeFiles/cmTC_51256.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GkRgxF'
+        Building C object CMakeFiles/cmTC_51256.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_51256.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GkRgxF/CheckSymbolExists.c
+        Linking C executable cmTC_51256
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_51256.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_51256.dir/CheckSymbolExists.c.o -o cmTC_51256  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-GkRgxF'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:150 (check_symbol_exists)"
+    checks:
+      - "Looking for vasprintf"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RxrqD7"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RxrqD7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VASPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RxrqD7'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_85db8/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_85db8.dir/build.make CMakeFiles/cmTC_85db8.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RxrqD7'
+        Building C object CMakeFiles/cmTC_85db8.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_85db8.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RxrqD7/CheckSymbolExists.c
+        Linking C executable cmTC_85db8
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_85db8.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_85db8.dir/CheckSymbolExists.c.o -o cmTC_85db8  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-RxrqD7'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:151 (check_symbol_exists)"
+    checks:
+      - "Looking for vsnprintf"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-1dCkJv"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-1dCkJv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VSNPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-1dCkJv'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_6ca82/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_6ca82.dir/build.make CMakeFiles/cmTC_6ca82.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-1dCkJv'
+        Building C object CMakeFiles/cmTC_6ca82.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_6ca82.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-1dCkJv/CheckSymbolExists.c
+        Linking C executable cmTC_6ca82
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_6ca82.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_6ca82.dir/CheckSymbolExists.c.o -o cmTC_6ca82  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-1dCkJv'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:152 (check_symbol_exists)"
+    checks:
+      - "Looking for vprintf"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-sIY5i3"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-sIY5i3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VPRINTF"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-sIY5i3'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_de5d5/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_de5d5.dir/build.make CMakeFiles/cmTC_de5d5.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-sIY5i3'
+        Building C object CMakeFiles/cmTC_de5d5.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_de5d5.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-sIY5i3/CheckSymbolExists.c
+        Linking C executable cmTC_de5d5
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_de5d5.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_de5d5.dir/CheckSymbolExists.c.o -o cmTC_de5d5  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-sIY5i3'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:154 (check_symbol_exists)"
+    checks:
+      - "Looking for arc4random"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-MODLFI"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-MODLFI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ARC4RANDOM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-MODLFI'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_8469a/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_8469a.dir/build.make CMakeFiles/cmTC_8469a.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-MODLFI'
+        Building C object CMakeFiles/cmTC_8469a.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_8469a.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-MODLFI/CheckSymbolExists.c
+        Linking C executable cmTC_8469a
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_8469a.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_8469a.dir/CheckSymbolExists.c.o -o cmTC_8469a  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-MODLFI'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:168 (check_symbol_exists)"
+    checks:
+      - "Looking for open"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jshOcd"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jshOcd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_OPEN"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jshOcd'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_f34ef/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_f34ef.dir/build.make CMakeFiles/cmTC_f34ef.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jshOcd'
+        Building C object CMakeFiles/cmTC_f34ef.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_f34ef.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jshOcd/CheckSymbolExists.c
+        Linking C executable cmTC_f34ef
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_f34ef.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_f34ef.dir/CheckSymbolExists.c.o -o cmTC_f34ef  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jshOcd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:171 (check_symbol_exists)"
+    checks:
+      - "Looking for realloc"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-mLKVNA"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-mLKVNA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_REALLOC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-mLKVNA'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_c7945/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_c7945.dir/build.make CMakeFiles/cmTC_c7945.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-mLKVNA'
+        Building C object CMakeFiles/cmTC_c7945.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_c7945.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-mLKVNA/CheckSymbolExists.c
+        Linking C executable cmTC_c7945
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_c7945.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_c7945.dir/CheckSymbolExists.c.o -o cmTC_c7945  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-mLKVNA'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:174 (check_symbol_exists)"
+    checks:
+      - "Looking for setlocale"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-P4QgZe"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-P4QgZe"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SETLOCALE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-P4QgZe'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_be775/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_be775.dir/build.make CMakeFiles/cmTC_be775.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-P4QgZe'
+        Building C object CMakeFiles/cmTC_be775.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_be775.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-P4QgZe/CheckSymbolExists.c
+        Linking C executable cmTC_be775
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_be775.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_be775.dir/CheckSymbolExists.c.o -o cmTC_be775  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-P4QgZe'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:175 (check_symbol_exists)"
+    checks:
+      - "Looking for uselocale"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-cNGGbj"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-cNGGbj"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_USELOCALE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-cNGGbj'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_b96c5/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_b96c5.dir/build.make CMakeFiles/cmTC_b96c5.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-cNGGbj'
+        Building C object CMakeFiles/cmTC_b96c5.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b96c5.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-cNGGbj/CheckSymbolExists.c
+        Linking C executable cmTC_b96c5
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_b96c5.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_b96c5.dir/CheckSymbolExists.c.o -o cmTC_b96c5  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-cNGGbj'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:191 (check_symbol_exists)"
+    checks:
+      - "Looking for strcasecmp"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-fWys9F"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-fWys9F"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-fWys9F'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_8e10c/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_8e10c.dir/build.make CMakeFiles/cmTC_8e10c.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-fWys9F'
+        Building C object CMakeFiles/cmTC_8e10c.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_8e10c.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-fWys9F/CheckSymbolExists.c
+        Linking C executable cmTC_8e10c
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_8e10c.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_8e10c.dir/CheckSymbolExists.c.o -o cmTC_8e10c  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-fWys9F'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:192 (check_symbol_exists)"
+    checks:
+      - "Looking for strncasecmp"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-buZmuv"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-buZmuv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRNCASECMP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-buZmuv'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_c5100/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_c5100.dir/build.make CMakeFiles/cmTC_c5100.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-buZmuv'
+        Building C object CMakeFiles/cmTC_c5100.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_c5100.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-buZmuv/CheckSymbolExists.c
+        Linking C executable cmTC_c5100
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_c5100.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_c5100.dir/CheckSymbolExists.c.o -o cmTC_c5100  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-buZmuv'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:195 (check_symbol_exists)"
+    checks:
+      - "Looking for strdup"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-0AqYuf"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-0AqYuf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRDUP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-0AqYuf'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_04bce/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_04bce.dir/build.make CMakeFiles/cmTC_04bce.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-0AqYuf'
+        Building C object CMakeFiles/cmTC_04bce.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_04bce.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-0AqYuf/CheckSymbolExists.c
+        Linking C executable cmTC_04bce
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_04bce.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_04bce.dir/CheckSymbolExists.c.o -o cmTC_04bce  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-0AqYuf'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:196 (check_symbol_exists)"
+    checks:
+      - "Looking for strerror"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9fTCe2"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9fTCe2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRERROR"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9fTCe2'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_b2bb3/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_b2bb3.dir/build.make CMakeFiles/cmTC_b2bb3.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9fTCe2'
+        Building C object CMakeFiles/cmTC_b2bb3.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_b2bb3.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9fTCe2/CheckSymbolExists.c
+        Linking C executable cmTC_b2bb3
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_b2bb3.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_b2bb3.dir/CheckSymbolExists.c.o -o cmTC_b2bb3  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9fTCe2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:199 (check_symbol_exists)"
+    checks:
+      - "Looking for vsyslog"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-IUnEnh"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-IUnEnh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_VSYSLOG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-IUnEnh'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_7c8b1/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_7c8b1.dir/build.make CMakeFiles/cmTC_7c8b1.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-IUnEnh'
+        Building C object CMakeFiles/cmTC_7c8b1.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_7c8b1.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-IUnEnh/CheckSymbolExists.c
+        Linking C executable cmTC_7c8b1
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_7c8b1.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_7c8b1.dir/CheckSymbolExists.c.o -o cmTC_7c8b1  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-IUnEnh'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:202 (check_symbol_exists)"
+    checks:
+      - "Looking for getrandom"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-ZILsh2"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-ZILsh2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_GETRANDOM"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-ZILsh2'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_939e0/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_939e0.dir/build.make CMakeFiles/cmTC_939e0.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-ZILsh2'
+        Building C object CMakeFiles/cmTC_939e0.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_939e0.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-ZILsh2/CheckSymbolExists.c
+        Linking C executable cmTC_939e0
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_939e0.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_939e0.dir/CheckSymbolExists.c.o -o cmTC_939e0  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-ZILsh2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:205 (check_symbol_exists)"
+    checks:
+      - "Looking for getrusage"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-qXkowr"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-qXkowr"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_GETRUSAGE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-qXkowr'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_72d58/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_72d58.dir/build.make CMakeFiles/cmTC_72d58.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-qXkowr'
+        Building C object CMakeFiles/cmTC_72d58.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_72d58.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-qXkowr/CheckSymbolExists.c
+        Linking C executable cmTC_72d58
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_72d58.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_72d58.dir/CheckSymbolExists.c.o -o cmTC_72d58  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-qXkowr'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:208 (check_symbol_exists)"
+    checks:
+      - "Looking for strtoll"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OqsuRV"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OqsuRV"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRTOLL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OqsuRV'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_66bf8/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_66bf8.dir/build.make CMakeFiles/cmTC_66bf8.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OqsuRV'
+        Building C object CMakeFiles/cmTC_66bf8.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_66bf8.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OqsuRV/CheckSymbolExists.c
+        Linking C executable cmTC_66bf8
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_66bf8.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_66bf8.dir/CheckSymbolExists.c.o -o cmTC_66bf8  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-OqsuRV'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckSymbolExists.cmake:98 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "external/json-c/CMakeLists.txt:209 (check_symbol_exists)"
+    checks:
+      - "Looking for strtoull"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-hk9OYB"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-hk9OYB"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STRTOULL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-hk9OYB'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_aedc0/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_aedc0.dir/build.make CMakeFiles/cmTC_aedc0.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-hk9OYB'
+        Building C object CMakeFiles/cmTC_aedc0.dir/CheckSymbolExists.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_aedc0.dir/CheckSymbolExists.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-hk9OYB/CheckSymbolExists.c
+        Linking C executable cmTC_aedc0
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_aedc0.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_aedc0.dir/CheckSymbolExists.c.o -o cmTC_aedc0  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-hk9OYB'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckIncludeFile.cmake:174 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:464 (check_include_file)"
+      - "external/json-c/CMakeLists.txt:232 (check_type_size)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-U88krt"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-U88krt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-U88krt'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_3a095/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_3a095.dir/build.make CMakeFiles/cmTC_3a095.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-U88krt'
+        Building C object CMakeFiles/cmTC_3a095.dir/CheckIncludeFile.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_3a095.dir/CheckIncludeFile.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-U88krt/CheckIncludeFile.c
+        Linking C executable cmTC_3a095
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_3a095.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_3a095.dir/CheckIncludeFile.c.o -o cmTC_3a095  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-U88krt'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:348 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:481 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:232 (check_type_size)"
+    checks:
+      - "Check size of int"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-8QRHRq"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-8QRHRq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-8QRHRq'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_74555/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_74555.dir/build.make CMakeFiles/cmTC_74555.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-8QRHRq'
+        Building C object CMakeFiles/cmTC_74555.dir/SIZEOF_INT.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_74555.dir/SIZEOF_INT.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-8QRHRq/SIZEOF_INT.c
+        Linking C executable cmTC_74555
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_74555.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_74555.dir/SIZEOF_INT.c.o -o cmTC_74555  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-8QRHRq'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:348 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:481 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:233 (check_type_size)"
+    checks:
+      - "Check size of int64_t"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-j1X4jd"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-j1X4jd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_INT64_T"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-j1X4jd'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_3fcdd/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_3fcdd.dir/build.make CMakeFiles/cmTC_3fcdd.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-j1X4jd'
+        Building C object CMakeFiles/cmTC_3fcdd.dir/SIZEOF_INT64_T.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_3fcdd.dir/SIZEOF_INT64_T.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-j1X4jd/SIZEOF_INT64_T.c
+        Linking C executable cmTC_3fcdd
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_3fcdd.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_3fcdd.dir/SIZEOF_INT64_T.c.o -o cmTC_3fcdd  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-j1X4jd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:348 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:481 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:234 (check_type_size)"
+    checks:
+      - "Check size of long"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Q5KHqT"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Q5KHqT"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Q5KHqT'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_8fc4e/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_8fc4e.dir/build.make CMakeFiles/cmTC_8fc4e.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Q5KHqT'
+        Building C object CMakeFiles/cmTC_8fc4e.dir/SIZEOF_LONG.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_8fc4e.dir/SIZEOF_LONG.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Q5KHqT/SIZEOF_LONG.c
+        Linking C executable cmTC_8fc4e
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_8fc4e.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_8fc4e.dir/SIZEOF_LONG.c.o -o cmTC_8fc4e  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Q5KHqT'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:348 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:481 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:235 (check_type_size)"
+    checks:
+      - "Check size of long long"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-NgKQ3d"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-NgKQ3d"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_LONG_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-NgKQ3d'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_5acf2/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_5acf2.dir/build.make CMakeFiles/cmTC_5acf2.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-NgKQ3d'
+        Building C object CMakeFiles/cmTC_5acf2.dir/SIZEOF_LONG_LONG.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_5acf2.dir/SIZEOF_LONG_LONG.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-NgKQ3d/SIZEOF_LONG_LONG.c
+        Linking C executable cmTC_5acf2
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_5acf2.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_5acf2.dir/SIZEOF_LONG_LONG.c.o -o cmTC_5acf2  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-NgKQ3d'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:348 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:481 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:236 (check_type_size)"
+    checks:
+      - "Check size of size_t"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Ic4HCC"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Ic4HCC"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_SIZE_T"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Ic4HCC'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_e49c6/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_e49c6.dir/build.make CMakeFiles/cmTC_e49c6.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Ic4HCC'
+        Building C object CMakeFiles/cmTC_e49c6.dir/SIZEOF_SIZE_T.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_e49c6.dir/SIZEOF_SIZE_T.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Ic4HCC/SIZEOF_SIZE_T.c
+        Linking C executable cmTC_e49c6
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_e49c6.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_e49c6.dir/SIZEOF_SIZE_T.c.o -o cmTC_e49c6  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-Ic4HCC'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:348 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckTypeSize.cmake:481 (__check_type_size_impl)"
+      - "external/json-c/CMakeLists.txt:241 (check_type_size)"
+    checks:
+      - "Check size of ssize_t"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7V8yLb"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7V8yLb"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SIZEOF_SSIZE_T"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7V8yLb'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_14ed5/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_14ed5.dir/build.make CMakeFiles/cmTC_14ed5.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7V8yLb'
+        Building C object CMakeFiles/cmTC_14ed5.dir/SIZEOF_SSIZE_T.c.o
+        /usr/sbin/cc -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_14ed5.dir/SIZEOF_SSIZE_T.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7V8yLb/SIZEOF_SSIZE_T.c
+        Linking C executable cmTC_14ed5
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_14ed5.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_14ed5.dir/SIZEOF_SSIZE_T.c.o -o cmTC_14ed5  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-7V8yLb'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:244 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAS_GNU_WARNING_LONG"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAS_GNU_WARNING_LONG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_63a0d/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_63a0d.dir/build.make CMakeFiles/cmTC_63a0d.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk'
+        Building C object CMakeFiles/cmTC_63a0d.dir/src.c.o
+        /usr/sbin/cc -DHAS_GNU_WARNING_LONG -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_63a0d.dir/src.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk/src.c
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk/src.c:3:9: warning: missing terminating " character
+            3 | __asm__(".section .gnu.json_object_get
+              |         ^
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk/src.c:3:9: error: missing terminating " character
+            3 | __asm__(".section .gnu.json_object_get
+              |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk/src.c:4:9: error: expected string literal before ‘.’ token
+            4 |         .ascii "Please link against libjson-c instead of libjson"
+              |         ^
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk/src.c:5:14: warning: missing terminating " character
+            5 |         .text");
+              |              ^
+        /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk/src.c:5:14: error: missing terminating " character
+            5 |         .text");
+              |              ^~~
+        make[1]: *** [CMakeFiles/cmTC_63a0d.dir/build.make:81: CMakeFiles/cmTC_63a0d.dir/src.c.o] Error 1
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eMNXMk'
+        make: *** [Makefile:134: cmTC_63a0d/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:252 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE_ATOMIC_BUILTINS"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eWsvgh"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eWsvgh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_ATOMIC_BUILTINS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eWsvgh'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_50afc/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_50afc.dir/build.make CMakeFiles/cmTC_50afc.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eWsvgh'
+        Building C object CMakeFiles/cmTC_50afc.dir/src.c.o
+        /usr/sbin/cc -DHAVE_ATOMIC_BUILTINS -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_50afc.dir/src.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eWsvgh/src.c
+        Linking C executable cmTC_50afc
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_50afc.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_50afc.dir/src.c.o -o cmTC_50afc  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-eWsvgh'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:257 (check_c_source_compiles)"
+    checks:
+      - "Performing Test HAVE___THREAD"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jrrYlh"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jrrYlh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE___THREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jrrYlh'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_8a353/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_8a353.dir/build.make CMakeFiles/cmTC_8a353.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jrrYlh'
+        Building C object CMakeFiles/cmTC_8a353.dir/src.c.o
+        /usr/sbin/cc -DHAVE___THREAD -D_GNU_SOURCE  -std=gnu2x -fPIE -o CMakeFiles/cmTC_8a353.dir/src.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jrrYlh/src.c
+        Linking C executable cmTC_8a353
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_8a353.dir/link.txt --verbose=1
+        /usr/sbin/cc CMakeFiles/cmTC_8a353.dir/src.c.o -o cmTC_8a353  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-jrrYlh'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:329 (check_c_source_compiles)"
+    checks:
+      - "Performing Test REENTRANT_WORKS"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-QqgRvi"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-QqgRvi"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "REENTRANT_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-QqgRvi'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_adb63/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_adb63.dir/build.make CMakeFiles/cmTC_adb63.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-QqgRvi'
+        Building C object CMakeFiles/cmTC_adb63.dir/src.c.o
+        /usr/sbin/cc -DREENTRANT_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -std=gnu2x -fPIE -o CMakeFiles/cmTC_adb63.dir/src.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-QqgRvi/src.c
+        Linking C executable cmTC_adb63
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_adb63.dir/link.txt --verbose=1
+        /usr/sbin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_adb63.dir/src.c.o -o cmTC_adb63  -lm
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-QqgRvi'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:348 (check_c_source_compiles)"
+    checks:
+      - "Performing Test BSYMBOLIC_WORKS"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9gfLye"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9gfLye"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "BSYMBOLIC_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9gfLye'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_29ad8/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_29ad8.dir/build.make CMakeFiles/cmTC_29ad8.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9gfLye'
+        Building C object CMakeFiles/cmTC_29ad8.dir/src.c.o
+        /usr/sbin/cc -DBSYMBOLIC_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -std=gnu2x -fPIE -o CMakeFiles/cmTC_29ad8.dir/src.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9gfLye/src.c
+        Linking C executable cmTC_29ad8
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_29ad8.dir/link.txt --verbose=1
+        /usr/sbin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_29ad8.dir/src.c.o -o cmTC_29ad8  -lm -Wl,-Bsymbolic-functions
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-9gfLye'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "external/json-c/CMakeLists.txt:366 (check_c_source_compiles)"
+    checks:
+      - "Performing Test VERSION_SCRIPT_WORKS"
+    directories:
+      source: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-DLlsKt"
+      binary: "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-DLlsKt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "VERSION_SCRIPT_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-DLlsKt'
+        
+        Run Build Command(s): /usr/sbin/cmake -E env VERBOSE=1 /usr/sbin/make -f Makefile cmTC_65ea9/fast
+        /usr/sbin/make  -f CMakeFiles/cmTC_65ea9.dir/build.make CMakeFiles/cmTC_65ea9.dir/build
+        make[1]: Entering directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-DLlsKt'
+        Building C object CMakeFiles/cmTC_65ea9.dir/src.c.o
+        /usr/sbin/cc -DVERSION_SCRIPT_WORKS -D_GNU_SOURCE  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  -std=gnu2x -fPIE -o CMakeFiles/cmTC_65ea9.dir/src.c.o -c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-DLlsKt/src.c
+        Linking C executable cmTC_65ea9
+        /usr/sbin/cmake -E cmake_link_script CMakeFiles/cmTC_65ea9.dir/link.txt --verbose=1
+        /usr/sbin/cc  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes  CMakeFiles/cmTC_65ea9.dir/src.c.o -o cmTC_65ea9  -lm -Wl,--version-script,/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c/check-version-script.sym
+        make[1]: Leaving directory '/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/CMakeFiles/CMakeScratch/TryCompile-DLlsKt'
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindDoxygen.cmake:770 (find_program)"
+      - "/usr/share/cmake/Modules/FindDoxygen.cmake:955 (_Doxygen_find_doxygen)"
+      - "external/json-c/doc/CMakeLists.txt:3 (find_package)"
+    mode: "program"
+    variable: "DOXYGEN_EXECUTABLE"
+    description: "Doxygen documentation generation tool (https://www.doxygen.nl)"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "doxygen"
+    candidate_directories:
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+      - "/Applications/Doxygen.app/Contents/Resources/"
+      - "/Applications/Doxygen.app/Contents/MacOS/"
+      - "/Applications/Utilities/Doxygen.app/Contents/Resources/"
+      - "/Applications/Utilities/Doxygen.app/Contents/MacOS/"
+    searched_directories:
+      - "/usr/local/sbin/doxygen"
+      - "/usr/local/bin/doxygen"
+      - "/usr/sbin/doxygen"
+      - "/usr/bin/doxygen"
+      - "/sbin/doxygen"
+      - "/bin/doxygen"
+      - "/var/lib/flatpak/exports/bin/doxygen"
+      - "/usr/lib/jvm/default/bin/doxygen"
+      - "/usr/bin/site_perl/doxygen"
+      - "/usr/bin/vendor_perl/doxygen"
+      - "/usr/bin/core_perl/doxygen"
+      - "/usr/local/bin/doxygen"
+      - "/usr/local/sbin/doxygen"
+      - "/usr/local/doxygen"
+      - "/usr/bin/doxygen"
+      - "/usr/sbin/doxygen"
+      - "/usr/doxygen"
+      - "/bin/doxygen"
+      - "/sbin/doxygen"
+      - "/usr/X11R6/bin/doxygen"
+      - "/usr/X11R6/sbin/doxygen"
+      - "/usr/X11R6/doxygen"
+      - "/usr/pkg/bin/doxygen"
+      - "/usr/pkg/sbin/doxygen"
+      - "/usr/pkg/doxygen"
+      - "/opt/bin/doxygen"
+      - "/opt/sbin/doxygen"
+      - "/opt/doxygen"
+      - "/Applications/Doxygen.app/Contents/Resources/doxygen"
+      - "/Applications/Doxygen.app/Contents/MacOS/doxygen"
+      - "/Applications/Utilities/Doxygen.app/Contents/Resources/doxygen"
+      - "/Applications/Utilities/Doxygen.app/Contents/MacOS/doxygen"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindDoxygen.cmake:858 (find_program)"
+      - "/usr/share/cmake/Modules/FindDoxygen.cmake:959 (_Doxygen_find_dot)"
+      - "external/json-c/doc/CMakeLists.txt:3 (find_package)"
+    mode: "program"
+    variable: "DOXYGEN_DOT_EXECUTABLE"
+    description: "Dot tool for use with Doxygen"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dot"
+    candidate_directories:
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+      - "/ATT/Graphviz/bin/"
+      - "C:/Program Files/ATT/Graphviz/bin/"
+      - "/Applications/Graphviz.app/Contents/MacOS/"
+      - "/Applications/Utilities/Graphviz.app/Contents/MacOS/"
+      - "/Applications/Doxygen.app/Contents/Resources/"
+      - "/Applications/Doxygen.app/Contents/MacOS/"
+      - "/Applications/Utilities/Doxygen.app/Contents/Resources/"
+      - "/Applications/Utilities/Doxygen.app/Contents/MacOS/"
+    searched_directories:
+      - "/usr/local/sbin/dot"
+      - "/usr/local/bin/dot"
+      - "/usr/sbin/dot"
+      - "/usr/bin/dot"
+      - "/sbin/dot"
+      - "/bin/dot"
+      - "/var/lib/flatpak/exports/bin/dot"
+      - "/usr/lib/jvm/default/bin/dot"
+      - "/usr/bin/site_perl/dot"
+      - "/usr/bin/vendor_perl/dot"
+      - "/usr/bin/core_perl/dot"
+      - "/usr/local/bin/dot"
+      - "/usr/local/sbin/dot"
+      - "/usr/local/dot"
+      - "/usr/bin/dot"
+      - "/usr/sbin/dot"
+      - "/usr/dot"
+      - "/bin/dot"
+      - "/sbin/dot"
+      - "/usr/X11R6/bin/dot"
+      - "/usr/X11R6/sbin/dot"
+      - "/usr/X11R6/dot"
+      - "/usr/pkg/bin/dot"
+      - "/usr/pkg/sbin/dot"
+      - "/usr/pkg/dot"
+      - "/opt/bin/dot"
+      - "/opt/sbin/dot"
+      - "/opt/dot"
+      - "/ATT/Graphviz/bin/dot"
+      - "C:/Program Files/ATT/Graphviz/bin/dot"
+      - "/Applications/Graphviz.app/Contents/MacOS/dot"
+      - "/Applications/Utilities/Graphviz.app/Contents/MacOS/dot"
+      - "/Applications/Doxygen.app/Contents/Resources/dot"
+      - "/Applications/Doxygen.app/Contents/MacOS/dot"
+      - "/Applications/Utilities/Doxygen.app/Contents/Resources/dot"
+      - "/Applications/Utilities/Doxygen.app/Contents/MacOS/dot"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...
