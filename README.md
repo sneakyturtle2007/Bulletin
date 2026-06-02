@@ -41,7 +41,7 @@
     </details>
 </div>
 
-<h3>Server C-Edition (Work in progress) - </h3>
+<h3>Server C-Edition 0.1_alpha - </h3>
 <div>
     <details closed>
         <summary><h4>Linux -</h4></summary>
