@@ -53,10 +53,10 @@ RM = /usr/sbin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/github/personal/Bulletin/Calendar-API/monolithic
+CMAKE_SOURCE_DIR = /home/luis/github/personal/Bulletin/C-remake/monolithic
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin
+CMAKE_BINARY_DIR = /home/luis/github/personal/Bulletin/C-remake/monolithic/bin
 
 # Utility rule file for Experimental.
 
@@ -67,7 +67,7 @@ include external/json-c/CMakeFiles/Experimental.dir/compiler_depend.make
 include external/json-c/CMakeFiles/Experimental.dir/progress.make
 
 external/json-c/CMakeFiles/Experimental:
-	cd /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c && /usr/sbin/ctest -DMODEL=Experimental -S CMakeFiles/CTestScript.cmake -V
+	cd /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c && /usr/sbin/ctest -DMODEL=Experimental -S CMakeFiles/CTestScript.cmake -V
 
 external/json-c/CMakeFiles/Experimental.dir/codegen:
 .PHONY : external/json-c/CMakeFiles/Experimental.dir/codegen
@@ -81,10 +81,10 @@ external/json-c/CMakeFiles/Experimental.dir/build: Experimental
 .PHONY : external/json-c/CMakeFiles/Experimental.dir/build
 
 external/json-c/CMakeFiles/Experimental.dir/clean:
-	cd /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c && $(CMAKE_COMMAND) -P CMakeFiles/Experimental.dir/cmake_clean.cmake
+	cd /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c && $(CMAKE_COMMAND) -P CMakeFiles/Experimental.dir/cmake_clean.cmake
 .PHONY : external/json-c/CMakeFiles/Experimental.dir/clean
 
 external/json-c/CMakeFiles/Experimental.dir/depend:
-	cd /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/github/personal/Bulletin/Calendar-API/monolithic /home/luis/github/personal/Bulletin/Calendar-API/monolithic/external/json-c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c/CMakeFiles/Experimental.dir/DependInfo.cmake "--color=$(COLOR)" Experimental
+	cd /home/luis/github/personal/Bulletin/C-remake/monolithic/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/github/personal/Bulletin/C-remake/monolithic /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c /home/luis/github/personal/Bulletin/C-remake/monolithic/bin /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/CMakeFiles/Experimental.dir/DependInfo.cmake "--color=$(COLOR)" Experimental
 .PHONY : external/json-c/CMakeFiles/Experimental.dir/depend
 

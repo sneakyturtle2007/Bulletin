@@ -4,7 +4,7 @@
 # compile C with /usr/sbin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/include -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/include/api -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/include/database -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/include/lib -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/external -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/external/json-c/include -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/external/sqlite3 -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/external/json-c -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c
+C_INCLUDES = -I/home/luis/github/personal/Bulletin/C-remake/monolithic/include -I/home/luis/github/personal/Bulletin/C-remake/monolithic/include/api -I/home/luis/github/personal/Bulletin/C-remake/monolithic/include/database -I/home/luis/github/personal/Bulletin/C-remake/monolithic/include/lib -I/home/luis/github/personal/Bulletin/C-remake/monolithic/external -I/home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/include -I/home/luis/github/personal/Bulletin/C-remake/monolithic/external/sqlite3 -I/home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c -I/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c
 
 C_FLAGS = -std=gnu2x
 

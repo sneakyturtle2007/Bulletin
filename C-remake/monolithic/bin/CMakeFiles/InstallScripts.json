@@ -1,9 +1,9 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/cmake_install.cmake",
-		"/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c/cmake_install.cmake",
-		"/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c/doc/cmake_install.cmake"
+		"/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/cmake_install.cmake",
+		"/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/cmake_install.cmake",
+		"/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/doc/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

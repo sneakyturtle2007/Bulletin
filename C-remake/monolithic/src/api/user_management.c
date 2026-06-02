@@ -126,7 +126,8 @@ Error login(sqlite3 **db, char *username, char *password, String *output){
 		}
 		return status;
 	}
-	/*
+	/* 
+	Assigning necessary to the output string to return after a successful login.
 	user_table.data[0][0] is the user_id, user_table.data[0][4] is the friends, user_table.data[0][5] is the users list of events invited to,
 	user_table.data[0][6] is the groups the user is a part of, and user_table.data[0][7] is the users friend requests.
 	*/

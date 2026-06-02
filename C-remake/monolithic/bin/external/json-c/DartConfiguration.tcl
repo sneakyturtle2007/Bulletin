@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/luis/github/personal/Bulletin/Calendar-API/monolithic/external/json-c
-BuildDirectory: /home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c
+SourceDirectory: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c
+BuildDirectory: /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/sbin/cmake" "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/external/json-c"
+ConfigureCommand: "/usr/sbin/cmake" "/home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c"
 MakeCommand: /usr/sbin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

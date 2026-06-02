@@ -53,6 +53,7 @@ Error open_database(sqlite3 **db){
     //printf("%s\n", command); // DEBUG
     char *errmsg;
     int state = sqlite3_exec(*db, command, NULL, NULL, &errmsg);
+    free(command);
     if(state != SQLITE_OK){
       fprintf(stderr, "ERROR: Failed to create table %s\n%s", name, errmsg);
       sqlite3_free(errmsg);
@@ -81,7 +82,7 @@ Error open_database(sqlite3 **db){
 
   // Info Management
     Error get_from_table(sqlite3 **db, char *operation, char *table_name, char *condition, Table_String *result){
-      int command_length = strlen(table_name) + strlen(condition) + 64; // +64 overhead for formatting
+      int command_length = strlen(table_name) + strlen(operation) + strlen(condition) + 64; // +64 overhead for formatting
       char *command = malloc(command_length * sizeof(char));
       sprintf(command, "SELECT %s FROM %s WHERE %s;", operation, table_name, condition);
       //printf("%s\n", command); // DEBUG

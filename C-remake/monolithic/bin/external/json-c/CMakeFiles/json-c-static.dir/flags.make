@@ -4,7 +4,7 @@
 # compile C with /usr/sbin/cc
 C_DEFINES = -D_GNU_SOURCE
 
-C_INCLUDES = -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/external/json-c -I/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c
+C_INCLUDES = -I/home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c -I/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c
 
 C_FLAGS =  -ffunction-sections -fdata-sections -Werror -Wall -Wcast-qual -Wno-error=deprecated-declarations -Wextra -Wwrite-strings -Wno-unused-parameter -Wstrict-prototypes -g -std=gnu2x -fPIC   -D JSON_C_DLL -D_REENTRANT
 

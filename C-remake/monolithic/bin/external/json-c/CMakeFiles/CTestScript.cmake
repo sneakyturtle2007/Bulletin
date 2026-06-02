@@ -5,8 +5,8 @@
 cmake_minimum_required(VERSION 4.3.3)
 
 # CTest Start Step
-set(CTEST_SOURCE_DIRECTORY "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/external/json-c")
-set(CTEST_BINARY_DIRECTORY "/home/luis/github/personal/Bulletin/Calendar-API/monolithic/bin/external/json-c")
+set(CTEST_SOURCE_DIRECTORY "/home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c")
+set(CTEST_BINARY_DIRECTORY "/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c")
 
 # CTest Update Step
 set(CTEST_UPDATE_COMMAND "")

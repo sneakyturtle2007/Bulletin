@@ -133,8 +133,8 @@ function calendar_functionality(){
         console.log(response + "\n");
         response = JSON.parse(response);
         if(response[0].status == "Success" && testindex == 11){
-          console.log("terminate");
-          client.write("terminate");
+          console.log("password");
+          client.write("password");
           resolve("Calendar Test" + ' \u2713');
         }else{
           client.write("terminate");

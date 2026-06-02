@@ -48,7 +48,8 @@ int main(){
 
   setup_server(&server);
 
-  while(true){
+  bool power_on = true;
+  while(power_on){
     if( (server.new_socket = accept(server.server_socket,
         (struct sockaddr*) &(server.address),
         (socklen_t*) &(server.addrlen))) < 0 ){
@@ -64,7 +65,7 @@ int main(){
             sizeof(server.buffer))) != 0 ){
       
       printf("Client: %s\n", server.buffer);
-      if(strcmp(server.buffer, "terminate") == 0){
+      if(strcmp(server.buffer, "terminate\0") == 0){
         printf("terminating connection....\n");
         memset(server.buffer, 0, sizeof(server.buffer));
         close(server.new_socket);
@@ -72,6 +73,7 @@ int main(){
       }else if(strcmp(server.buffer, "password") == 0){
         memset(server.buffer, 0, sizeof(server.buffer));
         printf("shutting down server.....\n");
+        power_on = false;
         break;
       }else{
         String response = {
@@ -108,6 +110,7 @@ int main(){
   }
   close(server.new_socket);
   close(server.server_socket);
+  sqlite3_close(db);
 
   return 0;
 }
