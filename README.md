@@ -11,7 +11,7 @@
 <p>Bulletin is a calendar app meant to handle the troublesome task of organizing events with other people. It takes the cumbersome task of organizing free time and automates it. So you can focus on creating a schedule instead of planning to make one.</p>
 <div>
     <h2>Quick Start</h2>
-    <h3>Server -</h3>
+    <h3>Server (DEPRICATED)-</h3>
     <details> <summary><h4>Linux -</h4></summary>
     <ol>
         <li>Install <a href="https://nodejs.org/en/download">Node.js</a></li>
@@ -41,7 +41,7 @@
     </details>
 </div>
 
-<h3>Server C-Edition (Work in progress) - </h3>
+<h3>Server C-Edition (0.1_alpha) - </h3>
 <div>
     <details closed>
         <summary><h4>Linux -</h4></summary>
