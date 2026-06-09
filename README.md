@@ -56,22 +56,32 @@
             <p>
                 Arch based systems -
                 <br>
-                <code>sudo pacman -s gcc cmake make</code>
+                <code>sudo pacman -S gcc cmake make</code>
             </p>
             <br>
-            <li>Move the <code>C-remake/</code> folder in the <code>Server/</code> directory to its own folder</li>
+            <li>Go to the <code>C-remake/</code> directory.</li>
             <br>
             <li>Compile & run</li>
             <br>
-            <ol>
-                <li>Delete everything aside from the <code>database.db</code> file in the <code>build/</code> directory.</li>
-                <br>
-                <li>Run <code>cmake -B ./build</code> from the base <code>C-remake/</code> directory.</li>
-                <br>
-                <li>Go the build directory and run <code>make</code>, or <code>make -d</code> for debug.</li>
-                <br>
-                <li>Run <code>./my_program</code>.</li>
-            </ol>
+            <ul>
+                <details closed>
+                    <summary>Monolithic -</summary>
+                    <ol>
+                        <li>Go to the <code>monolithic/</code> directory.</li>
+                        <br>
+                        <li>Delete everything aside from the <code>database.db</code> file in the <code>bin/</code> directory.</li>
+                        <br>
+                        <li>Run <code>cmake -S ./ -B ./bin</code> from within the <code>C-remake/monolithic/</code> directory.</li>
+                        <br>
+                        <li>Go the <code>bin/</code> directory and run <code>make</code>, or <code>make -d</code> for debug.</li>
+                        <br>
+                        <li>Run <code>./bulletin</code>.</li>
+                    </ol>
+                </details>
+                <details close>
+                    <summary>Micro Services (UNIMPLEMENTED) -</summary>
+                </details>
+            </ul>
         </ol>
     </details>
 </div>
