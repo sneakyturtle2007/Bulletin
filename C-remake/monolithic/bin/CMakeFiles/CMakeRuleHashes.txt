@@ -29,3 +29,4 @@ f1239b57f3d923ffb9b70b89712ebfc4 external/json-c/CMakeFiles/NightlyStart
 3369469dee3cb2704cb1e5b6718c4426 external/json-c/CMakeFiles/NightlyUpdate
 a1b899a6b9e59c988fd384e6d9d6181f external/json-c/CMakeFiles/distcheck
 c9b270b1d085e547720dcdc1a43911a1 external/json-c/CMakeFiles/uninstall
+b5732d5180821ac62c6d235cf56ec4a2 external/json-c/doc/CMakeFiles/doc

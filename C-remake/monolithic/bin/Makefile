@@ -611,6 +611,19 @@ json-c-static/fast:
 	$(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/build
 .PHONY : json-c-static/fast
 
+#=============================================================================
+# Target rules for targets named doc
+
+# Build rule for target.
+doc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 doc
+.PHONY : doc
+
+# fast build rule for target.
+doc/fast:
+	$(MAKE) $(MAKESILENT) -f external/json-c/doc/CMakeFiles/doc.dir/build.make external/json-c/doc/CMakeFiles/doc.dir/build
+.PHONY : doc/fast
+
 external/json-c/arraylist.o: external/json-c/arraylist.c.o
 .PHONY : external/json-c/arraylist.o
 
@@ -995,101 +1008,77 @@ external/sqlite3/sqlite3.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.s
 .PHONY : external/sqlite3/sqlite3.c.s
 
-src/api/calendar_management.o: src/api/calendar_management.c.o
-.PHONY : src/api/calendar_management.o
+src/backend/calendar_management.o: src/backend/calendar_management.c.o
+.PHONY : src/backend/calendar_management.o
 
 # target to build an object file
-src/api/calendar_management.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/calendar_management.c.o
-.PHONY : src/api/calendar_management.c.o
+src/backend/calendar_management.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o
+.PHONY : src/backend/calendar_management.c.o
 
-src/api/calendar_management.i: src/api/calendar_management.c.i
-.PHONY : src/api/calendar_management.i
+src/backend/calendar_management.i: src/backend/calendar_management.c.i
+.PHONY : src/backend/calendar_management.i
 
 # target to preprocess a source file
-src/api/calendar_management.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/calendar_management.c.i
-.PHONY : src/api/calendar_management.c.i
+src/backend/calendar_management.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/calendar_management.c.i
+.PHONY : src/backend/calendar_management.c.i
 
-src/api/calendar_management.s: src/api/calendar_management.c.s
-.PHONY : src/api/calendar_management.s
+src/backend/calendar_management.s: src/backend/calendar_management.c.s
+.PHONY : src/backend/calendar_management.s
 
 # target to generate assembly for a file
-src/api/calendar_management.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/calendar_management.c.s
-.PHONY : src/api/calendar_management.c.s
+src/backend/calendar_management.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/calendar_management.c.s
+.PHONY : src/backend/calendar_management.c.s
 
-src/api/director.o: src/api/director.c.o
-.PHONY : src/api/director.o
+src/backend/director.o: src/backend/director.c.o
+.PHONY : src/backend/director.o
 
 # target to build an object file
-src/api/director.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/director.c.o
-.PHONY : src/api/director.c.o
+src/backend/director.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/director.c.o
+.PHONY : src/backend/director.c.o
 
-src/api/director.i: src/api/director.c.i
-.PHONY : src/api/director.i
+src/backend/director.i: src/backend/director.c.i
+.PHONY : src/backend/director.i
 
 # target to preprocess a source file
-src/api/director.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/director.c.i
-.PHONY : src/api/director.c.i
+src/backend/director.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/director.c.i
+.PHONY : src/backend/director.c.i
 
-src/api/director.s: src/api/director.c.s
-.PHONY : src/api/director.s
+src/backend/director.s: src/backend/director.c.s
+.PHONY : src/backend/director.s
 
 # target to generate assembly for a file
-src/api/director.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/director.c.s
-.PHONY : src/api/director.c.s
+src/backend/director.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/director.c.s
+.PHONY : src/backend/director.c.s
 
-src/api/event_management.o: src/api/event_management.c.o
-.PHONY : src/api/event_management.o
+src/backend/event_management.o: src/backend/event_management.c.o
+.PHONY : src/backend/event_management.o
 
 # target to build an object file
-src/api/event_management.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/event_management.c.o
-.PHONY : src/api/event_management.c.o
+src/backend/event_management.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/event_management.c.o
+.PHONY : src/backend/event_management.c.o
 
-src/api/event_management.i: src/api/event_management.c.i
-.PHONY : src/api/event_management.i
-
-# target to preprocess a source file
-src/api/event_management.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/event_management.c.i
-.PHONY : src/api/event_management.c.i
-
-src/api/event_management.s: src/api/event_management.c.s
-.PHONY : src/api/event_management.s
-
-# target to generate assembly for a file
-src/api/event_management.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/event_management.c.s
-.PHONY : src/api/event_management.c.s
-
-src/api/user_management.o: src/api/user_management.c.o
-.PHONY : src/api/user_management.o
-
-# target to build an object file
-src/api/user_management.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/user_management.c.o
-.PHONY : src/api/user_management.c.o
-
-src/api/user_management.i: src/api/user_management.c.i
-.PHONY : src/api/user_management.i
+src/backend/event_management.i: src/backend/event_management.c.i
+.PHONY : src/backend/event_management.i
 
 # target to preprocess a source file
-src/api/user_management.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/user_management.c.i
-.PHONY : src/api/user_management.c.i
+src/backend/event_management.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/event_management.c.i
+.PHONY : src/backend/event_management.c.i
 
-src/api/user_management.s: src/api/user_management.c.s
-.PHONY : src/api/user_management.s
+src/backend/event_management.s: src/backend/event_management.c.s
+.PHONY : src/backend/event_management.s
 
 # target to generate assembly for a file
-src/api/user_management.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/api/user_management.c.s
-.PHONY : src/api/user_management.c.s
+src/backend/event_management.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/event_management.c.s
+.PHONY : src/backend/event_management.c.s
 
 src/backend/main.o: src/backend/main.c.o
 .PHONY : src/backend/main.o
@@ -1114,6 +1103,30 @@ src/backend/main.s: src/backend/main.c.s
 src/backend/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/main.c.s
 .PHONY : src/backend/main.c.s
+
+src/backend/user_management.o: src/backend/user_management.c.o
+.PHONY : src/backend/user_management.o
+
+# target to build an object file
+src/backend/user_management.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/user_management.c.o
+.PHONY : src/backend/user_management.c.o
+
+src/backend/user_management.i: src/backend/user_management.c.i
+.PHONY : src/backend/user_management.i
+
+# target to preprocess a source file
+src/backend/user_management.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/user_management.c.i
+.PHONY : src/backend/user_management.c.i
+
+src/backend/user_management.s: src/backend/user_management.c.s
+.PHONY : src/backend/user_management.s
+
+# target to generate assembly for a file
+src/backend/user_management.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/user_management.c.s
+.PHONY : src/backend/user_management.c.s
 
 src/database/database.o: src/database/database.c.o
 .PHONY : src/database/database.o
@@ -1230,6 +1243,7 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... distcheck"
+	@echo "... doc"
 	@echo "... uninstall"
 	@echo "... bulletin"
 	@echo "... json-c"
@@ -1282,21 +1296,21 @@ help:
 	@echo "... external/sqlite3/sqlite3.o"
 	@echo "... external/sqlite3/sqlite3.i"
 	@echo "... external/sqlite3/sqlite3.s"
-	@echo "... src/api/calendar_management.o"
-	@echo "... src/api/calendar_management.i"
-	@echo "... src/api/calendar_management.s"
-	@echo "... src/api/director.o"
-	@echo "... src/api/director.i"
-	@echo "... src/api/director.s"
-	@echo "... src/api/event_management.o"
-	@echo "... src/api/event_management.i"
-	@echo "... src/api/event_management.s"
-	@echo "... src/api/user_management.o"
-	@echo "... src/api/user_management.i"
-	@echo "... src/api/user_management.s"
+	@echo "... src/backend/calendar_management.o"
+	@echo "... src/backend/calendar_management.i"
+	@echo "... src/backend/calendar_management.s"
+	@echo "... src/backend/director.o"
+	@echo "... src/backend/director.i"
+	@echo "... src/backend/director.s"
+	@echo "... src/backend/event_management.o"
+	@echo "... src/backend/event_management.i"
+	@echo "... src/backend/event_management.s"
 	@echo "... src/backend/main.o"
 	@echo "... src/backend/main.i"
 	@echo "... src/backend/main.s"
+	@echo "... src/backend/user_management.o"
+	@echo "... src/backend/user_management.i"
+	@echo "... src/backend/user_management.s"
 	@echo "... src/database/database.o"
 	@echo "... src/database/database.i"
 	@echo "... src/database/database.s"

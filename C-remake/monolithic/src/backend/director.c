@@ -235,10 +235,9 @@ Error prepare_and_exec_create_event(sqlite3 **db, String *output){
   char *publicity_type = strtok(NULL, "|");
   char *invitees = strtok(NULL, "|");
   char *details = strtok(NULL, "|");
-  char *groups = strtok(NULL, "|");
+  //char *groups = strtok(NULL, "|");
   if(user_id == NULL || title == NULL || start_date == NULL || end_date == NULL || start_time == NULL
-    || end_time == NULL || location == NULL || publicity_type == NULL || invitees == NULL || details == NULL
-    || groups == NULL ){
+    || end_time == NULL || location == NULL || publicity_type == NULL || invitees == NULL || details == NULL){//|| groups == NULL 
     fprintf(stderr, "ERROR: Invalid Arguments.\n");
     return (Error) {INVALID_ARGUMENT, 
                     "director.c/prepare_and_exec_create_event/ERROR: Missing parameters for createevent command.\n"};
@@ -287,7 +286,7 @@ Error prepare_and_exec_create_event(sqlite3 **db, String *output){
   }
   snprintf(end_date_formatted.data, end_date_formatted.capacity, "%04ld-%02ld-%02ld", end_year_l, end_month_l, end_day_l);
   Event new_event = {.user_id = user_id, .title = title, .start_date = start_date_formatted.data, .end_date = end_date_formatted.data, .start_time = start_time , 
-                .end_time = end_time, .location = location, .publicity_type = publicity_type, .invitees = invitees, .details = details, .groups = groups};
+                .end_time = end_time, .location = location, .publicity_type = publicity_type, .invitees = invitees, .details = details};//, .groups = groups
   String event_id = {.data = calloc(output->capacity, sizeof(char)), .capacity = output->capacity};
   if(event_id.data == NULL){
     fprintf(stderr, "ERROR: Failed to allocate memory for event_id.\n");
@@ -447,21 +446,8 @@ Error prepare_and_exec_get_month_events(sqlite3 **db, String *output){
     }
     json_object_array_add(json_event_objects, event);
   }
-  for(size_t i = 0; i < month_events.length; i ++){
-    free(month_events.data[i].user_id);
-    free(month_events.data[i].title);
-    free(month_events.data[i].start_date);
-    free(month_events.data[i].end_date);
-    free(month_events.data[i].start_time);
-    free(month_events.data[i].end_time);
-    free(month_events.data[i].location);
-    free(month_events.data[i].publicity_type);
-    free(month_events.data[i].invitees);
-    free(month_events.data[i].details);
-    free(month_events.data[i].groups);
-  }
-  free(month_events.data);
-  char *events_stringified = json_object_to_json_string_ext(json_event_objects, JSON_C_TO_STRING_PRETTY_TAB);
+  free_event_array(&month_events);
+  const char *events_stringified = json_object_to_json_string_ext(json_event_objects, JSON_C_TO_STRING_PRETTY_TAB);
   // printf("\n\n events stringified: %s\n\n", events_stringified); // DEBUG
   status = strcpy_dynamic(output, events_stringified);
   json_object_put(json_event_objects);

@@ -54,6 +54,12 @@ Error strcpy_dynamic(String *dest, const char *src){
     return (Error) {INVALID_ARGUMENT, 
                     "string_utils.c/snprintf_dynamic/ERROR: Null input.\n"};
   }
+  if(dest == NULL){
+    fprintf(stderr, "ERROR: NULL dest string.\n");
+    return (Error) {INVALID_ARGUMENT, 
+                    "string_utils.c/snprintf_dynamic/ERROR: Null dest string.\n"};
+  }
+ 
   if(dest->data == NULL){
     dest->capacity = strlen(src) +1; // +1 for null termination character
     char *new_data = calloc(dest->capacity, sizeof(char));

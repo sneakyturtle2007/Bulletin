@@ -8,19 +8,19 @@ Error create_event(sqlite3 **db, Event new_event, String *output){
   
   int values_length = strlen(new_event.user_id) + strlen(new_event.title) + strlen(new_event.start_date) + strlen(new_event.end_date) +
                       strlen(new_event.start_time) + strlen(new_event.end_time) + strlen(new_event.location) + strlen(new_event.publicity_type) + 
-                      strlen(new_event.invitees) + strlen(new_event.details) + strlen(new_event.groups) + 128; // +128 for formatting 
+                      strlen(new_event.invitees) + strlen(new_event.details)  + 128; // +128 for formatting + strlen(new_event.groups)
   char *values = calloc(values_length, sizeof(char));
   if(values == NULL){
     fprintf(stderr, "ERROR: Failed to allocate memory for condition.\n");
     return (Error) {MEMORY_ALLOCATION_ERROR, 
                     "event_management.c/create_event/ERROR: Failed to allocate memory for values.\n"};
   }
-  snprintf(values, values_length, "%s, '%s', '%s', '%s', %s, %s, '%s', '%s', '%s', '%s', '%s'", 
+  snprintf(values, values_length, "%s, '%s', '%s', '%s', %s, %s, '%s', '%s', '%s', '%s'", 
           new_event.user_id, new_event.title, new_event.start_date, new_event.end_date, new_event.start_time, new_event.end_time, 
-          new_event.location, new_event.publicity_type, new_event.invitees, new_event.details, new_event.groups);
+          new_event.location, new_event.publicity_type, new_event.invitees, new_event.details); //, '%s', new_event.groups
   //printf("%s\n", values); // DEBUG
   Error status = insert_into_table(db, "events", 
-                                  "userid, title, start_date, end_date, startTime, endTime, location, publicityType, invitees, details, groups", values);
+                                  "userid, title, start_date, end_date, startTime, endTime, location, publicityType, invitees, details", values);//, groups
   if(status.code != OK){
     fprintf(stderr, "ERROR: Failed to create event.\n");
     free(values);
@@ -326,6 +326,51 @@ Error remove_invitee(sqlite3 **db, char *event_id, char *invitee){
 
 // Utility functions
 
+Error free_event(Event *event){
+  if(event->user_id != NULL){
+    free(event->user_id);
+  }
+  if(event->title != NULL){
+    free(event->title);
+  }
+  if(event->start_date != NULL){
+    free(event->start_date);
+  }
+  if(event->end_date != NULL){
+    free(event->end_date);
+  }
+  if(event->start_time != NULL){
+    free(event->start_time);
+  }
+  if(event->end_time != NULL){
+    free(event->end_time);
+  }
+  if(event->location != NULL){
+    free(event->location);
+  }
+  if(event->publicity_type != NULL){
+    free(event->publicity_type);
+  }
+  if(event->invitees != NULL){
+    free(event->invitees);
+  }
+  if(event->details != NULL){
+    free(event->details);
+  }
+  //if(event->groups != NULL){ // Uncomment this when groups is added back to the event struct
+   // free(event->groups);
+  //}
+  return (Error) {OK, "Success"};
+}
+
+Error free_event_array(Event_Array *event_array){
+  for(size_t i = 0; i < event_array->length; i++){
+    free_event(&event_array->data[i]);
+  }
+  free(event_array->data);
+  return (Error) {OK, "Success"};
+}
+
 Error add_multiple_invitees(sqlite3 **db, char *event_id, char *invitees_list){
   if(strcmp(invitees_list, "NONE") == 0){
     return (Error) {OK, "Success"};
@@ -451,12 +496,12 @@ Error convert_table_to_list_of_events(Table_String table, Event_Array *event_arr
       return (Error) {MEMORY_ALLOCATION_ERROR,
                       "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event edtails copy.\n"};
     }
-    event_array->data[i].groups = calloc(table.data[i][10]->capacity, sizeof(char));
+    /*event_array->data[i].groups = calloc(table.data[i][10]->capacity, sizeof(char));
     if(event_array->data[i].groups== NULL ){
       fprintf(stderr, "ERROR: Failed to allocate memory for event groups copy.\n");
       return (Error) {MEMORY_ALLOCATION_ERROR,
                       "event_management.c/convert_table_to_list_of_events/ERROR: Failed to allocate memory for event groups copy.\n"};
-    }
+    }*/
     snprintf(event_array->data[i].user_id, table.data[i][0]->capacity, "%s", table.data[i][0]->data);
     snprintf(event_array->data[i].title,  table.data[i][1]->capacity, "%s", table.data[i][1]->data);
     snprintf(event_array->data[i].start_date, table.data[i][2]->capacity, "%s", table.data[i][2]->data);
@@ -467,7 +512,7 @@ Error convert_table_to_list_of_events(Table_String table, Event_Array *event_arr
     snprintf(event_array->data[i].publicity_type, table.data[i][7]->capacity, "%s", table.data[i][7]->data);
     snprintf(event_array->data[i].invitees, table.data[i][8]->capacity, "%s", table.data[i][8]->data);
     snprintf(event_array->data[i].details, table.data[i][9]->capacity, "%s", table.data[i][9]->data);
-    snprintf(event_array->data[i].groups, table.data[i][10]->capacity, "%s", table.data[i][10]->data);
+    //snprintf(event_array->data[i].groups, table.data[i][10]->capacity, "%s", table.data[i][10]->data);
     event_array->length ++;
   }
   return (Error) {OK, "Success"};
@@ -498,6 +543,6 @@ Error convert_event_to_json(json_object *result, Event event){
   json_object_object_add(result, "publicity_type", json_object_new_string(event.publicity_type));
   json_object_object_add(result, "invitees", json_object_new_string(event.invitees));
   json_object_object_add(result, "details", json_object_new_string(event.details));
-  json_object_object_add(result, "groups", json_object_new_string(event.groups));
+  //json_object_object_add(result, "groups", json_object_new_string(event.groups));
   return (Error) {OK,"Success"};
 }

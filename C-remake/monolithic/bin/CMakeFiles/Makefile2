@@ -152,7 +152,7 @@ external/json-c/doc/preinstall:
 .PHONY : external/json-c/doc/preinstall
 
 # Recursive "clean" directory target.
-external/json-c/doc/clean:
+external/json-c/doc/clean: external/json-c/doc/CMakeFiles/doc.dir/clean
 .PHONY : external/json-c/doc/clean
 
 #=============================================================================
@@ -1210,6 +1210,38 @@ external/json-c/CMakeFiles/json-c-static.dir/codegen:
 external/json-c/CMakeFiles/json-c-static.dir/clean:
 	$(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/clean
 .PHONY : external/json-c/CMakeFiles/json-c-static.dir/clean
+
+#=============================================================================
+# Target rules for target external/json-c/doc/CMakeFiles/doc.dir
+
+# All Build rule for target.
+external/json-c/doc/CMakeFiles/doc.dir/all:
+	$(MAKE) $(MAKESILENT) -f external/json-c/doc/CMakeFiles/doc.dir/build.make external/json-c/doc/CMakeFiles/doc.dir/depend
+	$(MAKE) $(MAKESILENT) -f external/json-c/doc/CMakeFiles/doc.dir/build.make external/json-c/doc/CMakeFiles/doc.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num= "Built target doc"
+.PHONY : external/json-c/doc/CMakeFiles/doc.dir/all
+
+# Build rule for subdir invocation for target.
+external/json-c/doc/CMakeFiles/doc.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/CMakeFiles/doc.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles 0
+.PHONY : external/json-c/doc/CMakeFiles/doc.dir/rule
+
+# Convenience name for target.
+doc: external/json-c/doc/CMakeFiles/doc.dir/rule
+.PHONY : doc
+
+# codegen rule for target.
+external/json-c/doc/CMakeFiles/doc.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f external/json-c/doc/CMakeFiles/doc.dir/build.make external/json-c/doc/CMakeFiles/doc.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num= "Finished codegen for target doc"
+.PHONY : external/json-c/doc/CMakeFiles/doc.dir/codegen
+
+# clean rule for target.
+external/json-c/doc/CMakeFiles/doc.dir/clean:
+	$(MAKE) $(MAKESILENT) -f external/json-c/doc/CMakeFiles/doc.dir/build.make external/json-c/doc/CMakeFiles/doc.dir/clean
+.PHONY : external/json-c/doc/CMakeFiles/doc.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

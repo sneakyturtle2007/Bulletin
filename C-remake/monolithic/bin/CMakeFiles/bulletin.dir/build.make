@@ -72,66 +72,52 @@ include CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/codegen:
 .PHONY : CMakeFiles/bulletin.dir/codegen
 
-CMakeFiles/bulletin.dir/src/api/calendar_management.c.o: CMakeFiles/bulletin.dir/flags.make
-CMakeFiles/bulletin.dir/src/api/calendar_management.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/calendar_management.c
-CMakeFiles/bulletin.dir/src/api/calendar_management.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/bulletin.dir/src/api/calendar_management.c.o"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/api/calendar_management.c.o -MF CMakeFiles/bulletin.dir/src/api/calendar_management.c.o.d -o CMakeFiles/bulletin.dir/src/api/calendar_management.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/calendar_management.c
+CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o: CMakeFiles/bulletin.dir/flags.make
+CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/calendar_management.c
+CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o -MF CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o.d -o CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/calendar_management.c
 
-CMakeFiles/bulletin.dir/src/api/calendar_management.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bulletin.dir/src/api/calendar_management.c.i"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/calendar_management.c > CMakeFiles/bulletin.dir/src/api/calendar_management.c.i
+CMakeFiles/bulletin.dir/src/backend/calendar_management.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bulletin.dir/src/backend/calendar_management.c.i"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/calendar_management.c > CMakeFiles/bulletin.dir/src/backend/calendar_management.c.i
 
-CMakeFiles/bulletin.dir/src/api/calendar_management.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/api/calendar_management.c.s"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/calendar_management.c -o CMakeFiles/bulletin.dir/src/api/calendar_management.c.s
+CMakeFiles/bulletin.dir/src/backend/calendar_management.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/backend/calendar_management.c.s"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/calendar_management.c -o CMakeFiles/bulletin.dir/src/backend/calendar_management.c.s
 
-CMakeFiles/bulletin.dir/src/api/director.c.o: CMakeFiles/bulletin.dir/flags.make
-CMakeFiles/bulletin.dir/src/api/director.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/director.c
-CMakeFiles/bulletin.dir/src/api/director.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/bulletin.dir/src/api/director.c.o"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/api/director.c.o -MF CMakeFiles/bulletin.dir/src/api/director.c.o.d -o CMakeFiles/bulletin.dir/src/api/director.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/director.c
+CMakeFiles/bulletin.dir/src/backend/director.c.o: CMakeFiles/bulletin.dir/flags.make
+CMakeFiles/bulletin.dir/src/backend/director.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/director.c
+CMakeFiles/bulletin.dir/src/backend/director.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/bulletin.dir/src/backend/director.c.o"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/backend/director.c.o -MF CMakeFiles/bulletin.dir/src/backend/director.c.o.d -o CMakeFiles/bulletin.dir/src/backend/director.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/director.c
 
-CMakeFiles/bulletin.dir/src/api/director.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bulletin.dir/src/api/director.c.i"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/director.c > CMakeFiles/bulletin.dir/src/api/director.c.i
+CMakeFiles/bulletin.dir/src/backend/director.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bulletin.dir/src/backend/director.c.i"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/director.c > CMakeFiles/bulletin.dir/src/backend/director.c.i
 
-CMakeFiles/bulletin.dir/src/api/director.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/api/director.c.s"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/director.c -o CMakeFiles/bulletin.dir/src/api/director.c.s
+CMakeFiles/bulletin.dir/src/backend/director.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/backend/director.c.s"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/director.c -o CMakeFiles/bulletin.dir/src/backend/director.c.s
 
-CMakeFiles/bulletin.dir/src/api/event_management.c.o: CMakeFiles/bulletin.dir/flags.make
-CMakeFiles/bulletin.dir/src/api/event_management.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/event_management.c
-CMakeFiles/bulletin.dir/src/api/event_management.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/bulletin.dir/src/api/event_management.c.o"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/api/event_management.c.o -MF CMakeFiles/bulletin.dir/src/api/event_management.c.o.d -o CMakeFiles/bulletin.dir/src/api/event_management.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/event_management.c
+CMakeFiles/bulletin.dir/src/backend/event_management.c.o: CMakeFiles/bulletin.dir/flags.make
+CMakeFiles/bulletin.dir/src/backend/event_management.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/event_management.c
+CMakeFiles/bulletin.dir/src/backend/event_management.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/bulletin.dir/src/backend/event_management.c.o"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/backend/event_management.c.o -MF CMakeFiles/bulletin.dir/src/backend/event_management.c.o.d -o CMakeFiles/bulletin.dir/src/backend/event_management.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/event_management.c
 
-CMakeFiles/bulletin.dir/src/api/event_management.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bulletin.dir/src/api/event_management.c.i"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/event_management.c > CMakeFiles/bulletin.dir/src/api/event_management.c.i
+CMakeFiles/bulletin.dir/src/backend/event_management.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bulletin.dir/src/backend/event_management.c.i"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/event_management.c > CMakeFiles/bulletin.dir/src/backend/event_management.c.i
 
-CMakeFiles/bulletin.dir/src/api/event_management.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/api/event_management.c.s"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/event_management.c -o CMakeFiles/bulletin.dir/src/api/event_management.c.s
-
-CMakeFiles/bulletin.dir/src/api/user_management.c.o: CMakeFiles/bulletin.dir/flags.make
-CMakeFiles/bulletin.dir/src/api/user_management.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/user_management.c
-CMakeFiles/bulletin.dir/src/api/user_management.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/bulletin.dir/src/api/user_management.c.o"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/api/user_management.c.o -MF CMakeFiles/bulletin.dir/src/api/user_management.c.o.d -o CMakeFiles/bulletin.dir/src/api/user_management.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/user_management.c
-
-CMakeFiles/bulletin.dir/src/api/user_management.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bulletin.dir/src/api/user_management.c.i"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/user_management.c > CMakeFiles/bulletin.dir/src/api/user_management.c.i
-
-CMakeFiles/bulletin.dir/src/api/user_management.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/api/user_management.c.s"
-	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/user_management.c -o CMakeFiles/bulletin.dir/src/api/user_management.c.s
+CMakeFiles/bulletin.dir/src/backend/event_management.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/backend/event_management.c.s"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/event_management.c -o CMakeFiles/bulletin.dir/src/backend/event_management.c.s
 
 CMakeFiles/bulletin.dir/src/backend/main.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/src/backend/main.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/main.c
 CMakeFiles/bulletin.dir/src/backend/main.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/bulletin.dir/src/backend/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/bulletin.dir/src/backend/main.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/backend/main.c.o -MF CMakeFiles/bulletin.dir/src/backend/main.c.o.d -o CMakeFiles/bulletin.dir/src/backend/main.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/main.c
 
 CMakeFiles/bulletin.dir/src/backend/main.c.i: cmake_force
@@ -141,6 +127,20 @@ CMakeFiles/bulletin.dir/src/backend/main.c.i: cmake_force
 CMakeFiles/bulletin.dir/src/backend/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/backend/main.c.s"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/main.c -o CMakeFiles/bulletin.dir/src/backend/main.c.s
+
+CMakeFiles/bulletin.dir/src/backend/user_management.c.o: CMakeFiles/bulletin.dir/flags.make
+CMakeFiles/bulletin.dir/src/backend/user_management.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/user_management.c
+CMakeFiles/bulletin.dir/src/backend/user_management.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/bulletin.dir/src/backend/user_management.c.o"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/backend/user_management.c.o -MF CMakeFiles/bulletin.dir/src/backend/user_management.c.o.d -o CMakeFiles/bulletin.dir/src/backend/user_management.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/user_management.c
+
+CMakeFiles/bulletin.dir/src/backend/user_management.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bulletin.dir/src/backend/user_management.c.i"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/user_management.c > CMakeFiles/bulletin.dir/src/backend/user_management.c.i
+
+CMakeFiles/bulletin.dir/src/backend/user_management.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/backend/user_management.c.s"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/user_management.c -o CMakeFiles/bulletin.dir/src/backend/user_management.c.s
 
 CMakeFiles/bulletin.dir/src/database/database.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/src/database/database.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/database/database.c
@@ -410,11 +410,11 @@ CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.s: cmake_force
 
 # Object files for target bulletin
 bulletin_OBJECTS = \
-"CMakeFiles/bulletin.dir/src/api/calendar_management.c.o" \
-"CMakeFiles/bulletin.dir/src/api/director.c.o" \
-"CMakeFiles/bulletin.dir/src/api/event_management.c.o" \
-"CMakeFiles/bulletin.dir/src/api/user_management.c.o" \
+"CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o" \
+"CMakeFiles/bulletin.dir/src/backend/director.c.o" \
+"CMakeFiles/bulletin.dir/src/backend/event_management.c.o" \
 "CMakeFiles/bulletin.dir/src/backend/main.c.o" \
+"CMakeFiles/bulletin.dir/src/backend/user_management.c.o" \
 "CMakeFiles/bulletin.dir/src/database/database.c.o" \
 "CMakeFiles/bulletin.dir/src/lib/string_utils.c.o" \
 "CMakeFiles/bulletin.dir/src/lib/table.c.o" \
@@ -438,11 +438,11 @@ bulletin_OBJECTS = \
 # External object files for target bulletin
 bulletin_EXTERNAL_OBJECTS =
 
-bulletin: CMakeFiles/bulletin.dir/src/api/calendar_management.c.o
-bulletin: CMakeFiles/bulletin.dir/src/api/director.c.o
-bulletin: CMakeFiles/bulletin.dir/src/api/event_management.c.o
-bulletin: CMakeFiles/bulletin.dir/src/api/user_management.c.o
+bulletin: CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o
+bulletin: CMakeFiles/bulletin.dir/src/backend/director.c.o
+bulletin: CMakeFiles/bulletin.dir/src/backend/event_management.c.o
 bulletin: CMakeFiles/bulletin.dir/src/backend/main.c.o
+bulletin: CMakeFiles/bulletin.dir/src/backend/user_management.c.o
 bulletin: CMakeFiles/bulletin.dir/src/database/database.c.o
 bulletin: CMakeFiles/bulletin.dir/src/lib/string_utils.c.o
 bulletin: CMakeFiles/bulletin.dir/src/lib/table.c.o

@@ -231,11 +231,6 @@ Error remove_friend(sqlite3 **db, char *user_id, char *friend_username){
 		free_table(&user_info);
 		return status;
 	}
-	if(user_info.rows == 0){
-		fprintf(stderr, "ERROR: User %s does not exist\n", user_id);
-		free_table(&user_info);
-		return (Error){INVALID_ARGUMENT, "user_management.c/remove_friend/ERROR: User does not exist.\n"};
-	}
 	String *user_friends = user_info.data[0][4]; // user_info.data[0][4] is the friends list column 
 	if(strstr(user_friends->data, friend_username) == NULL){
 		fprintf(stderr, "ERROR: User %s is not friends with %s\n", user_id, friend_username);

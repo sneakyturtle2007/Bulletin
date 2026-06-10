@@ -182,6 +182,20 @@ depend:
 	cd /home/luis/github/personal/Bulletin/C-remake/monolithic/bin && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+external/json-c/doc/CMakeFiles/doc.dir/rule:
+	cd /home/luis/github/personal/Bulletin/C-remake/monolithic/bin && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/json-c/doc/CMakeFiles/doc.dir/rule
+.PHONY : external/json-c/doc/CMakeFiles/doc.dir/rule
+
+# Convenience name for target.
+doc: external/json-c/doc/CMakeFiles/doc.dir/rule
+.PHONY : doc
+
+# fast build rule for target.
+doc/fast:
+	cd /home/luis/github/personal/Bulletin/C-remake/monolithic/bin && $(MAKE) $(MAKESILENT) -f external/json-c/doc/CMakeFiles/doc.dir/build.make external/json-c/doc/CMakeFiles/doc.dir/build
+.PHONY : doc/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -196,6 +210,7 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... doc"
 .PHONY : help
 
 

@@ -47,6 +47,7 @@
 /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/CMakeFiles/install.dir
 /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/CMakeFiles/install/local.dir
 /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/CMakeFiles/install/strip.dir
+/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/doc/CMakeFiles/doc.dir
 /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/doc/CMakeFiles/package.dir
 /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/doc/CMakeFiles/package_source.dir
 /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/external/json-c/doc/CMakeFiles/edit_cache.dir

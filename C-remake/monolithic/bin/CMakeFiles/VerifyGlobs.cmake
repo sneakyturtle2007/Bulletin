@@ -45,11 +45,11 @@ endif()
 # SRC at CMakeLists.txt:17 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/*.c")
 set(OLD_GLOB
-  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/calendar_management.c"
-  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/director.c"
-  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/event_management.c"
-  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/api/user_management.c"
+  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/calendar_management.c"
+  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/director.c"
+  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/event_management.c"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/main.c"
+  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/user_management.c"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/database/database.c"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/lib/string_utils.c"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/lib/table.c"
