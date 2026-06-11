@@ -85,8 +85,14 @@
         </ol>
     </details>
 </div>
-
-## License and Copyright
+<h2>Server(C-Edition) Dependencies </h2>
+<div>
+    <ol>
+        <li><a href="https://github.com/json-c/json-c">Json-c</a></li>
+        <li><a href="https://sqlite.org/index.html">Sqlite</a></li>
+    </ol>
+</div>
+<h2>License and Copyright</h2>
 
 © 2025 Luis Blake (sneakyturtle2007), Lai Sengvilay (Laiknight), NoraBorealis10288, Colten Roberts (johnAppDev), and contributors.  
 This project is licensed under the GNU Affero General Public License v3.0 or later,  
