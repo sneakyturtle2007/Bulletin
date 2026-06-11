@@ -114,10 +114,24 @@ CMakeFiles/bulletin.dir/src/backend/event_management.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/backend/event_management.c.s"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/event_management.c -o CMakeFiles/bulletin.dir/src/backend/event_management.c.s
 
+CMakeFiles/bulletin.dir/src/backend/group_management.c.o: CMakeFiles/bulletin.dir/flags.make
+CMakeFiles/bulletin.dir/src/backend/group_management.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/group_management.c
+CMakeFiles/bulletin.dir/src/backend/group_management.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/bulletin.dir/src/backend/group_management.c.o"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/backend/group_management.c.o -MF CMakeFiles/bulletin.dir/src/backend/group_management.c.o.d -o CMakeFiles/bulletin.dir/src/backend/group_management.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/group_management.c
+
+CMakeFiles/bulletin.dir/src/backend/group_management.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/bulletin.dir/src/backend/group_management.c.i"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/group_management.c > CMakeFiles/bulletin.dir/src/backend/group_management.c.i
+
+CMakeFiles/bulletin.dir/src/backend/group_management.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/bulletin.dir/src/backend/group_management.c.s"
+	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/group_management.c -o CMakeFiles/bulletin.dir/src/backend/group_management.c.s
+
 CMakeFiles/bulletin.dir/src/backend/main.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/src/backend/main.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/main.c
 CMakeFiles/bulletin.dir/src/backend/main.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/bulletin.dir/src/backend/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/bulletin.dir/src/backend/main.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/backend/main.c.o -MF CMakeFiles/bulletin.dir/src/backend/main.c.o.d -o CMakeFiles/bulletin.dir/src/backend/main.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/main.c
 
 CMakeFiles/bulletin.dir/src/backend/main.c.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/bulletin.dir/src/backend/main.c.s: cmake_force
 CMakeFiles/bulletin.dir/src/backend/user_management.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/src/backend/user_management.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/user_management.c
 CMakeFiles/bulletin.dir/src/backend/user_management.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/bulletin.dir/src/backend/user_management.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/bulletin.dir/src/backend/user_management.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/backend/user_management.c.o -MF CMakeFiles/bulletin.dir/src/backend/user_management.c.o.d -o CMakeFiles/bulletin.dir/src/backend/user_management.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/user_management.c
 
 CMakeFiles/bulletin.dir/src/backend/user_management.c.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/bulletin.dir/src/backend/user_management.c.s: cmake_force
 CMakeFiles/bulletin.dir/src/database/database.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/src/database/database.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/database/database.c
 CMakeFiles/bulletin.dir/src/database/database.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/bulletin.dir/src/database/database.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/bulletin.dir/src/database/database.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/database/database.c.o -MF CMakeFiles/bulletin.dir/src/database/database.c.o.d -o CMakeFiles/bulletin.dir/src/database/database.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/database/database.c
 
 CMakeFiles/bulletin.dir/src/database/database.c.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/bulletin.dir/src/database/database.c.s: cmake_force
 CMakeFiles/bulletin.dir/src/lib/string_utils.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/src/lib/string_utils.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/lib/string_utils.c
 CMakeFiles/bulletin.dir/src/lib/string_utils.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/bulletin.dir/src/lib/string_utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/bulletin.dir/src/lib/string_utils.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/lib/string_utils.c.o -MF CMakeFiles/bulletin.dir/src/lib/string_utils.c.o.d -o CMakeFiles/bulletin.dir/src/lib/string_utils.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/lib/string_utils.c
 
 CMakeFiles/bulletin.dir/src/lib/string_utils.c.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/bulletin.dir/src/lib/string_utils.c.s: cmake_force
 CMakeFiles/bulletin.dir/src/lib/table.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/src/lib/table.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/src/lib/table.c
 CMakeFiles/bulletin.dir/src/lib/table.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/bulletin.dir/src/lib/table.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/bulletin.dir/src/lib/table.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/src/lib/table.c.o -MF CMakeFiles/bulletin.dir/src/lib/table.c.o.d -o CMakeFiles/bulletin.dir/src/lib/table.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/src/lib/table.c
 
 CMakeFiles/bulletin.dir/src/lib/table.c.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/bulletin.dir/src/lib/table.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/arraylist.c
 CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o -MF CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/arraylist.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/arraylist.c
 
 CMakeFiles/bulletin.dir/external/json-c/arraylist.c.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/bulletin.dir/external/json-c/arraylist.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/debug.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/debug.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/debug.c
 CMakeFiles/bulletin.dir/external/json-c/debug.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/bulletin.dir/external/json-c/debug.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/bulletin.dir/external/json-c/debug.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/debug.c.o -MF CMakeFiles/bulletin.dir/external/json-c/debug.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/debug.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/debug.c
 
 CMakeFiles/bulletin.dir/external/json-c/debug.c.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/bulletin.dir/external/json-c/debug.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_c_version.c
 CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.o -MF CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_c_version.c
 
 CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/bulletin.dir/external/json-c/json_c_version.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/json_object.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/json_object.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_object.c
 CMakeFiles/bulletin.dir/external/json-c/json_object.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_object.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_object.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/json_object.c.o -MF CMakeFiles/bulletin.dir/external/json-c/json_object.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/json_object.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_object.c
 
 CMakeFiles/bulletin.dir/external/json-c/json_object.c.i: cmake_force
@@ -243,7 +257,7 @@ CMakeFiles/bulletin.dir/external/json-c/json_object.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_object_iterator.c
 CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.o -MF CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_object_iterator.c
 
 CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.i: cmake_force
@@ -257,7 +271,7 @@ CMakeFiles/bulletin.dir/external/json-c/json_object_iterator.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/json_patch.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/json_patch.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_patch.c
 CMakeFiles/bulletin.dir/external/json-c/json_patch.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_patch.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_patch.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/json_patch.c.o -MF CMakeFiles/bulletin.dir/external/json-c/json_patch.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/json_patch.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_patch.c
 
 CMakeFiles/bulletin.dir/external/json-c/json_patch.c.i: cmake_force
@@ -271,7 +285,7 @@ CMakeFiles/bulletin.dir/external/json-c/json_patch.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_pointer.c
 CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.o -MF CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_pointer.c
 
 CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.i: cmake_force
@@ -285,7 +299,7 @@ CMakeFiles/bulletin.dir/external/json-c/json_pointer.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_tokener.c
 CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.o -MF CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_tokener.c
 
 CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.i: cmake_force
@@ -299,7 +313,7 @@ CMakeFiles/bulletin.dir/external/json-c/json_tokener.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/json_util.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/json_util.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_util.c
 CMakeFiles/bulletin.dir/external/json-c/json_util.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_util.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_util.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/json_util.c.o -MF CMakeFiles/bulletin.dir/external/json-c/json_util.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/json_util.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_util.c
 
 CMakeFiles/bulletin.dir/external/json-c/json_util.c.i: cmake_force
@@ -313,7 +327,7 @@ CMakeFiles/bulletin.dir/external/json-c/json_util.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/json_visit.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/json_visit.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_visit.c
 CMakeFiles/bulletin.dir/external/json-c/json_visit.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_visit.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/bulletin.dir/external/json-c/json_visit.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/json_visit.c.o -MF CMakeFiles/bulletin.dir/external/json-c/json_visit.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/json_visit.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/json_visit.c
 
 CMakeFiles/bulletin.dir/external/json-c/json_visit.c.i: cmake_force
@@ -327,7 +341,7 @@ CMakeFiles/bulletin.dir/external/json-c/json_visit.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/libjson.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/libjson.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/libjson.c
 CMakeFiles/bulletin.dir/external/json-c/libjson.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/bulletin.dir/external/json-c/libjson.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/bulletin.dir/external/json-c/libjson.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/libjson.c.o -MF CMakeFiles/bulletin.dir/external/json-c/libjson.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/libjson.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/libjson.c
 
 CMakeFiles/bulletin.dir/external/json-c/libjson.c.i: cmake_force
@@ -341,7 +355,7 @@ CMakeFiles/bulletin.dir/external/json-c/libjson.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/linkhash.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/linkhash.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/linkhash.c
 CMakeFiles/bulletin.dir/external/json-c/linkhash.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/bulletin.dir/external/json-c/linkhash.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/bulletin.dir/external/json-c/linkhash.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/linkhash.c.o -MF CMakeFiles/bulletin.dir/external/json-c/linkhash.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/linkhash.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/linkhash.c
 
 CMakeFiles/bulletin.dir/external/json-c/linkhash.c.i: cmake_force
@@ -355,7 +369,7 @@ CMakeFiles/bulletin.dir/external/json-c/linkhash.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/printbuf.c
 CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o -MF CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/printbuf.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/printbuf.c
 
 CMakeFiles/bulletin.dir/external/json-c/printbuf.c.i: cmake_force
@@ -369,7 +383,7 @@ CMakeFiles/bulletin.dir/external/json-c/printbuf.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/random_seed.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/random_seed.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/random_seed.c
 CMakeFiles/bulletin.dir/external/json-c/random_seed.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/bulletin.dir/external/json-c/random_seed.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/bulletin.dir/external/json-c/random_seed.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/random_seed.c.o -MF CMakeFiles/bulletin.dir/external/json-c/random_seed.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/random_seed.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/random_seed.c
 
 CMakeFiles/bulletin.dir/external/json-c/random_seed.c.i: cmake_force
@@ -383,7 +397,7 @@ CMakeFiles/bulletin.dir/external/json-c/random_seed.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/strerror_override.c
 CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.o -MF CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.o.d -o CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/json-c/strerror_override.c
 
 CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.i: cmake_force
@@ -397,7 +411,7 @@ CMakeFiles/bulletin.dir/external/json-c/strerror_override.c.s: cmake_force
 CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.o: CMakeFiles/bulletin.dir/flags.make
 CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.o: /home/luis/github/personal/Bulletin/C-remake/monolithic/external/sqlite3/sqlite3.c
 CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.o: CMakeFiles/bulletin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.o"
 	/usr/sbin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.o -MF CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.o.d -o CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.o -c /home/luis/github/personal/Bulletin/C-remake/monolithic/external/sqlite3/sqlite3.c
 
 CMakeFiles/bulletin.dir/external/sqlite3/sqlite3.c.i: cmake_force
@@ -413,6 +427,7 @@ bulletin_OBJECTS = \
 "CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o" \
 "CMakeFiles/bulletin.dir/src/backend/director.c.o" \
 "CMakeFiles/bulletin.dir/src/backend/event_management.c.o" \
+"CMakeFiles/bulletin.dir/src/backend/group_management.c.o" \
 "CMakeFiles/bulletin.dir/src/backend/main.c.o" \
 "CMakeFiles/bulletin.dir/src/backend/user_management.c.o" \
 "CMakeFiles/bulletin.dir/src/database/database.c.o" \
@@ -441,6 +456,7 @@ bulletin_EXTERNAL_OBJECTS =
 bulletin: CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o
 bulletin: CMakeFiles/bulletin.dir/src/backend/director.c.o
 bulletin: CMakeFiles/bulletin.dir/src/backend/event_management.c.o
+bulletin: CMakeFiles/bulletin.dir/src/backend/group_management.c.o
 bulletin: CMakeFiles/bulletin.dir/src/backend/main.c.o
 bulletin: CMakeFiles/bulletin.dir/src/backend/user_management.c.o
 bulletin: CMakeFiles/bulletin.dir/src/database/database.c.o
@@ -466,7 +482,7 @@ bulletin: CMakeFiles/bulletin.dir/build.make
 bulletin: CMakeFiles/bulletin.dir/compiler_depend.ts
 bulletin: external/json-c/libjson-c.so.5.4.0
 bulletin: CMakeFiles/bulletin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking C executable bulletin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C executable bulletin"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bulletin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

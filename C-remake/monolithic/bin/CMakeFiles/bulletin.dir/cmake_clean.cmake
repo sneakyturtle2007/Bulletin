@@ -38,6 +38,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/bulletin.dir/src/backend/director.c.o.d"
   "CMakeFiles/bulletin.dir/src/backend/event_management.c.o"
   "CMakeFiles/bulletin.dir/src/backend/event_management.c.o.d"
+  "CMakeFiles/bulletin.dir/src/backend/group_management.c.o"
+  "CMakeFiles/bulletin.dir/src/backend/group_management.c.o.d"
   "CMakeFiles/bulletin.dir/src/backend/main.c.o"
   "CMakeFiles/bulletin.dir/src/backend/main.c.o.d"
   "CMakeFiles/bulletin.dir/src/backend/user_management.c.o"

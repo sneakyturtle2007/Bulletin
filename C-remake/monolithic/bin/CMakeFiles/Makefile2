@@ -162,12 +162,12 @@ external/json-c/doc/clean: external/json-c/doc/CMakeFiles/doc.dir/clean
 CMakeFiles/bulletin.dir/all: external/json-c/CMakeFiles/json-c.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 "Built target bulletin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26 "Built target bulletin"
 .PHONY : CMakeFiles/bulletin.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/bulletin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles 40
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/bulletin.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles 0
 .PHONY : CMakeFiles/bulletin.dir/rule
@@ -179,7 +179,7 @@ bulletin: CMakeFiles/bulletin.dir/rule
 # codegen rule for target.
 CMakeFiles/bulletin.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25 "Finished codegen for target bulletin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26 "Finished codegen for target bulletin"
 .PHONY : CMakeFiles/bulletin.dir/codegen
 
 # clean rule for target.
@@ -1154,7 +1154,7 @@ external/json-c/CMakeFiles/uninstall.dir/clean:
 external/json-c/CMakeFiles/json-c.dir/all:
 	$(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/depend
 	$(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=26,27,28,29,30,31,32,33,34,35,36,37,38,39,40 "Built target json-c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Built target json-c"
 .PHONY : external/json-c/CMakeFiles/json-c.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1171,7 +1171,7 @@ json-c: external/json-c/CMakeFiles/json-c.dir/rule
 # codegen rule for target.
 external/json-c/CMakeFiles/json-c.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c.dir/build.make external/json-c/CMakeFiles/json-c.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=26,27,28,29,30,31,32,33,34,35,36,37,38,39,40 "Finished codegen for target json-c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Finished codegen for target json-c"
 .PHONY : external/json-c/CMakeFiles/json-c.dir/codegen
 
 # clean rule for target.
@@ -1186,7 +1186,7 @@ external/json-c/CMakeFiles/json-c.dir/clean:
 external/json-c/CMakeFiles/json-c-static.dir/all:
 	$(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/depend
 	$(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=41,42,43,44,45,46,47,48,49,50,51,52,53,54,55 "Built target json-c-static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=42,43,44,45,46,47,48,49,50,51,52,53,54,55,56 "Built target json-c-static"
 .PHONY : external/json-c/CMakeFiles/json-c-static.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1203,7 +1203,7 @@ json-c-static: external/json-c/CMakeFiles/json-c-static.dir/rule
 # codegen rule for target.
 external/json-c/CMakeFiles/json-c-static.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f external/json-c/CMakeFiles/json-c-static.dir/build.make external/json-c/CMakeFiles/json-c-static.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=41,42,43,44,45,46,47,48,49,50,51,52,53,54,55 "Finished codegen for target json-c-static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/luis/github/personal/Bulletin/C-remake/monolithic/bin/CMakeFiles --progress-num=42,43,44,45,46,47,48,49,50,51,52,53,54,55,56 "Finished codegen for target json-c-static"
 .PHONY : external/json-c/CMakeFiles/json-c-static.dir/codegen
 
 # clean rule for target.

@@ -11,7 +11,7 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 #add_subdirectory(external/json-c)
 add_subdirectory(external/json-c)
 # Include header directory
-include_directories(include include/api include/database include/lib)
+include_directories(include include/backend include/database include/lib)
 include_directories(external external/json-c/include external/sqlite3)
 # Recursively collect all .c files in src/
 file(GLOB_RECURSE SRC CONFIGURE_DEPENDS "src/*.c")

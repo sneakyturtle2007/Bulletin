@@ -1080,6 +1080,30 @@ src/backend/event_management.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/event_management.c.s
 .PHONY : src/backend/event_management.c.s
 
+src/backend/group_management.o: src/backend/group_management.c.o
+.PHONY : src/backend/group_management.o
+
+# target to build an object file
+src/backend/group_management.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/group_management.c.o
+.PHONY : src/backend/group_management.c.o
+
+src/backend/group_management.i: src/backend/group_management.c.i
+.PHONY : src/backend/group_management.i
+
+# target to preprocess a source file
+src/backend/group_management.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/group_management.c.i
+.PHONY : src/backend/group_management.c.i
+
+src/backend/group_management.s: src/backend/group_management.c.s
+.PHONY : src/backend/group_management.s
+
+# target to generate assembly for a file
+src/backend/group_management.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulletin.dir/build.make CMakeFiles/bulletin.dir/src/backend/group_management.c.s
+.PHONY : src/backend/group_management.c.s
+
 src/backend/main.o: src/backend/main.c.o
 .PHONY : src/backend/main.o
 
@@ -1305,6 +1329,9 @@ help:
 	@echo "... src/backend/event_management.o"
 	@echo "... src/backend/event_management.i"
 	@echo "... src/backend/event_management.s"
+	@echo "... src/backend/group_management.o"
+	@echo "... src/backend/group_management.i"
+	@echo "... src/backend/group_management.s"
 	@echo "... src/backend/main.o"
 	@echo "... src/backend/main.i"
 	@echo "... src/backend/main.s"

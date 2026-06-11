@@ -15,7 +15,7 @@ Error create_user(sqlite3 **db, char *username, char *email, char *password) {
 										"user_management.c/create_user/ERROR: Failed to allocate memory for condition string.\n"};
 	}
 	sprintf(condition, "username = '%s'", username);
-	Table_String user_check = {.data = calloc(64, sizeof(String**)), .rows = 0, .cols = 0, .table_capacity = 64};
+	Table_String user_check = {.data = calloc(1, sizeof(String**)), .rows = 0, .cols = 0, .table_capacity = 1};
 	Error status = get_from_table(db, "*", "users", condition, &user_check);
 	if(user_check.rows > 0){
 		fprintf(stderr, "ERROR: User %s already exists\n", username);

@@ -48,6 +48,7 @@ set(OLD_GLOB
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/calendar_management.c"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/director.c"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/event_management.c"
+  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/group_management.c"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/main.c"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/user_management.c"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/database/database.c"

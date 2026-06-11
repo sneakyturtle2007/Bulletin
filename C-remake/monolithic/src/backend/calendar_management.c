@@ -38,7 +38,14 @@ Error get_month_events(sqlite3 **db, char *user_id, long year, long month, Event
   return status;
 }
 
-/*Error get_month_schedule(sqlite3 **db, char *user_id, char *year, char *month, char *other_users, Event_Array *events){
-
-}*/
+Error get_month_schedule(sqlite3 **db, char *user_id, char *year, char *month, char *group_id, Event_Array *events){
+  Table_String user_info = {.data = calloc(1, sizeof(String**)), .rows = 0, .cols = 0, .table_capacity = 1};
+  if(user_info.data == NULL){
+    fprintf(stderr, "ERROR: Failed to allocate memory for temp user info table.\n");
+    return (Error) {MEMORY_ALLOCATION_ERROR, 
+                    "calendar_management.c/get_month_schedule/ERROR: Failed to allocate memory for temp user info table.\n"};
+  }
+  // user_info.data[0][6] is the column that contains the groups the user is a part of.
+  
+}
 

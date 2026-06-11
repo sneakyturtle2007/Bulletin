@@ -27,6 +27,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/calendar_management.c" "CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o" "gcc" "CMakeFiles/bulletin.dir/src/backend/calendar_management.c.o.d"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/director.c" "CMakeFiles/bulletin.dir/src/backend/director.c.o" "gcc" "CMakeFiles/bulletin.dir/src/backend/director.c.o.d"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/event_management.c" "CMakeFiles/bulletin.dir/src/backend/event_management.c.o" "gcc" "CMakeFiles/bulletin.dir/src/backend/event_management.c.o.d"
+  "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/group_management.c" "CMakeFiles/bulletin.dir/src/backend/group_management.c.o" "gcc" "CMakeFiles/bulletin.dir/src/backend/group_management.c.o.d"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/main.c" "CMakeFiles/bulletin.dir/src/backend/main.c.o" "gcc" "CMakeFiles/bulletin.dir/src/backend/main.c.o.d"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/backend/user_management.c" "CMakeFiles/bulletin.dir/src/backend/user_management.c.o" "gcc" "CMakeFiles/bulletin.dir/src/backend/user_management.c.o.d"
   "/home/luis/github/personal/Bulletin/C-remake/monolithic/src/database/database.c" "CMakeFiles/bulletin.dir/src/database/database.c.o" "gcc" "CMakeFiles/bulletin.dir/src/database/database.c.o.d"

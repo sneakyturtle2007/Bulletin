@@ -13,12 +13,15 @@
 #include <string.h>
 #include "json.h"
 #include "sqlite3.h"
+#include "string_utils.h"
+#include "table.h"
+#include "error_handling.h"
 #include "user_management.h"
 #include "event_management.h"
 #include "calendar_management.h"
-#include "error_handling.h"
-#include "string_utils.h"
-#include "table.h"
+#include "group_management.h"
+
+
 
 Error input_handler(sqlite3 **db, char *input, String *output);
 

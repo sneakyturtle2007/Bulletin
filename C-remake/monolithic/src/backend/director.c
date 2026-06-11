@@ -4,7 +4,7 @@
 
 #include "director.h"
 
-// Function declarations 
+// Local function declarations 
 
 Error prepare_and_exec_create_user(sqlite3 **db, String *output);
 
@@ -25,6 +25,14 @@ Error prepare_and_exec_add_invitees(sqlite3 **db, String *output);
 Error prepare_and_exec_remove_invitees(sqlite3 **db, String *output);
 
 Error prepare_and_exec_get_month_events(sqlite3 **db,String *output);
+
+Error prepare_and_exec_create_group(sqlite3** db, String *output);
+
+Error prepare_and_exec_delete_group(sqlite3** db, String* output);
+
+Error prepare_and_exec_add_users_to_group(sqlite3** db, String* output);
+
+Error return_json_success(String* output);
 
 // Function definitions
 
@@ -68,6 +76,14 @@ Error input_handler(sqlite3 **db, char* input, String *output) {
   }else if (strcmp(inputToken, "getmonthevents") == 0){
     return prepare_and_exec_get_month_events(db, output);
 
+  }else if(strcmp(inputToken, "creategroup") == 0){
+    return prepare_and_exec_create_group(db, output);
+
+  }else if(strcmp(inputToken, "deletegroup") == 0){
+    return prepare_and_exec_delete_group(db, output);
+  }else if(strcmp(inputToken, "adduserstogroup") == 0){
+    return prepare_and_exec_add_users_to_group(db, output);
+  
   }else{
     printf("Cause of ERROR --> %s | ERROR: Invalid command\n ", inputToken);
     return (Error) {INVALID_ARGUMENT,
@@ -90,14 +106,7 @@ Error prepare_and_exec_create_user(sqlite3 **db, String *output){
     fprintf(stderr, "ERROR: Failed to create user\n");
     return status;
   }
-  json_object *json_output = json_object_new_object();
-  json_object_object_add(json_output, "status", json_object_new_string("Success"));
-  status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB | JSON_C_TO_STRING_SPACED));
-  json_object_put(json_output);
-  if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to convert add_friend result from JSON to string for output.\n");
-  } 
-  return status;
+  return return_json_success(output);
 }
 
 Error prepare_and_exec_delete_user(sqlite3 **db, String *output){
@@ -112,14 +121,7 @@ Error prepare_and_exec_delete_user(sqlite3 **db, String *output){
     fprintf(stderr, "ERROR: Failed to delete user\n");
     return status;
   }
-  json_object *json_output = json_object_new_object();
-  json_object_object_add(json_output, "status", json_object_new_string("Success"));
-  status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB | JSON_C_TO_STRING_SPACED));
-  json_object_put(json_output);
-  if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to convert add_friend result from JSON to string for output.\n");
-  }
-  return status;
+  return return_json_success(output);
 }
 
 Error prepare_and_exec_login(sqlite3 **db, String *output){
@@ -186,14 +188,7 @@ Error prepare_and_exec_add_friends(sqlite3 **db, String *output){
     fprintf(stderr, "ERROR: Failed to add friend.\n");
     return status;
   }
-  json_object *json_output = json_object_new_object();
-  json_object_object_add(json_output, "status", json_object_new_string("Success"));
-  status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB));
-  json_object_put(json_output);
-  if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to convert add_friend result from JSON to string for output.\n");
-  }
-  return status;
+  return return_json_success(output);
 }
 
 Error prepare_and_exec_remove_friends(sqlite3 **db, String *output){
@@ -214,14 +209,7 @@ Error prepare_and_exec_remove_friends(sqlite3 **db, String *output){
     fprintf(stderr, "ERROR: Failed to remove friend(s).\n");
     return status;
   }
-  json_object *json_output = json_object_new_object();
-  json_object_object_add(json_output, "status", json_object_new_string("Success"));
-  status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB));
-  json_object_put(json_output);
-  if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to convert remove_friends result from JSON to string for output.\n");
-  }
-  return status;
+  return return_json_success(output);
 }
 
 Error prepare_and_exec_create_event(sqlite3 **db, String *output){
@@ -326,14 +314,7 @@ Error prepare_and_exec_delete_event(sqlite3 **db, String *output){
     fprintf(stderr, "ERROR: Failed to delete event.\n");
     return status;
   }
-  json_object *json_output = json_object_new_object();
-  json_object_object_add(json_output, "status", json_object_new_string("Success"));
-  status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB));
-  json_object_put(json_output);
-  if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to convert delete_event result from JSON to string for output.\n");
-  }
-  return status;
+  return return_json_success(output);
 }
 
 Error prepare_and_exec_add_invitees(sqlite3 **db, String *output){
@@ -355,14 +336,7 @@ Error prepare_and_exec_add_invitees(sqlite3 **db, String *output){
     fprintf(stderr, "ERROR: Failed to add invitee(s).\n");
     return status;
   }
-  json_object *json_output = json_object_new_object();
-  json_object_object_add(json_output, "status", json_object_new_string("Success"));
-  status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB));
-  json_object_put(json_output);
-  if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to convert add_invitee result from JSON to string for output.\n");
-  }
-  return status;
+  return return_json_success(output);
 }
 
 Error prepare_and_exec_remove_invitees(sqlite3 **db, String *output){
@@ -384,14 +358,7 @@ Error prepare_and_exec_remove_invitees(sqlite3 **db, String *output){
     fprintf(stderr, "ERROR: Failed to remove invitee(s).\n");
     return status;
   }
-  json_object *json_output = json_object_new_object();
-  json_object_object_add(json_output, "status", json_object_new_string("Success"));
-  status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB ));
-  json_object_put(json_output);
-  if(status.code != OK){
-    fprintf(stderr, "ERROR: Failed to convert remove_invitee result from JSON to string for output.\n");
-  }
-  return status;
+  return return_json_success(output);
 }
 
 Error prepare_and_exec_get_month_events(sqlite3 **db, String *output){
@@ -458,6 +425,54 @@ Error prepare_and_exec_get_month_events(sqlite3 **db, String *output){
   return status;
 }
 
+Error prepare_and_exec_create_group(sqlite3** db, String *output){
+  char* users = strtok(NULL, "|");
+  char* public = strtok(NULL, "|");
+  if(users == NULL || public == NULL){
+    fprintf(stderr, "ERROR: Invalid input for create group.\n");
+    return (Error) { INVALID_ARGUMENT,
+                    "director.c/prepaer_and_exec_create_group/ERROR: Invalid input for create group.\n"};
+  }
+  Error status = create_group(db, users, public);
+  if(status.code != OK){
+    fprintf(stderr, "ERROR: Failed to create group.\n");
+    return status;
+  }
+  return return_json_success(output);
+}
+
+Error prepare_and_exec_delete_group(sqlite3** db, String* output){
+  char* group_id = strtok(NULL, "|");
+  if(group_id == NULL){
+    fprintf(stderr, "ERROR: Invalid input for delete group.\n");
+    return (Error) {INVALID_ARGUMENT,
+                    "director.c/prepare_and_exec_delete_group/ERROR: Invalid input for delet group.\n"};
+  }
+  Error status = delete_group(db, group_id);
+  if(status.code != OK){
+    fprintf(stderr, "ERROR: Failed to delete group.\n");
+    return status;
+  }
+  return return_json_success(output);
+}
+
+Error prepare_and_exec_add_users_to_group(sqlite3** db, String* output){
+  char* group_id = strtok(NULL, "|");
+  char* users = strtok(NULL,"|");
+  if(group_id == NULL || users == NULL){
+    fprintf(stderr, "ERROR: Invalid input into add users to group.\n");
+    return (Error) {INVALID_ARGUMENT,
+                    "director.c/prepare_and_exec_add_user_to_group/ERROR: Invalid input into add users to group.\n"};
+  }
+  Error status = add_users_to_group(db, group_id, users);
+  if(status.code != OK){
+    fprintf(stderr, "ERROR: Failed to add users to group.\n");
+    return status;
+  }
+  return return_json_success(output);
+}
+
+// Utility methods
 Error error_to_json(Error status, String *output){
   json_object *json_error_code = json_object_new_object();
   json_object_object_add(json_error_code, "status", json_object_new_string(status.message));
@@ -469,4 +484,15 @@ Error error_to_json(Error status, String *output){
   }
   return (Error) {OK, 
                   "Success"};
+}
+
+Error return_json_success(String* output){
+  json_object *json_output = json_object_new_object();
+  json_object_object_add(json_output, "status", json_object_new_string("Success"));
+  Error status = strcpy_dynamic(output, json_object_to_json_string_ext(json_output, JSON_C_TO_STRING_PRETTY_TAB | JSON_C_TO_STRING_SPACED));
+  json_object_put(json_output);
+  if(status.code != OK){
+    fprintf(stderr, "ERROR: Failed to convert add_friend result from JSON to string for output.\n");
+  }
+  return status;
 }
